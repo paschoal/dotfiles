@@ -1,0 +1,25 @@
+# ConkyRC
+# Based on Mossepo's file
+# dotshare.it/dots/764
+
+out_to_x          no
+out_to_console    yes
+short_units       yes
+update_interval   2
+double_buffer     yes
+
+TEXT
+[
+# Date
+  { "full_text": " Battery ",           "color": "\#444444", "separator": false, "separator_block_width": 4 },
+  { "full_text": "${battery}",          "color": "\#888888", "separator": false, "separator_block_width": 4 },
+  { "full_text": " Mem ",               "color": "\#444444", "separator": false, "separator_block_width": 4 },
+  { "full_text": "${memperc}%",         "color": "\#888888", "separator": false, "separator_block_width": 4 },
+  { "full_text": " CPU ",               "color": "\#444444", "separator": false, "separator_block_width": 4 },
+  { "full_text": "${cpu}%",             "color": "\#888888", "separator": false, "separator_block_width": 4 },
+  { "full_text": " Date ",              "color": "\#444444", "separator": false, "separator_block_width": 4 },
+  { "full_text": "${time %d.%m.%Y}",    "color": "\#888888", "separator": false, "separator_block_width": 4 },
+  { "full_text": " Time ",              "color": "\#444444", "separator": false, "separator_block_width": 4 },
+  { "full_text": "${time %R}",          "color": "\#888888", "separator": false } 
+],
+
