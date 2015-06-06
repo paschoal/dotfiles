@@ -1,0 +1,36 @@
+URxvt.loginShell: true
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt.visualBell: true
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+URxvt.font: xft:Terminus:pixelsize=14:style=regular
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
+
+URxvt*background:              #000000
+URxvt*foreground:              #FFFFFF
+URxvt*fading:                  40
+URxvt*fadeColor:               #000000
+URxvt*cursorColor:             #FF8400
+
+URxvt*color0:                  #2E3436
+URxvt*color1:                  #A40000
+URxvt*color2:                  #4E9A06
+URxvt*color3:                  #C4A000
+URxvt*color4:                  #3465A4
+URxvt*color5:                  #75507B
+URxvt*color6:                  #CE5C00
+URxvt*color7:                  #BABDB9
+URxvt*color9:                  #555753
+URxvt*color8:                  #EF2929
+URxvt*color10:                 #8AE234
+URxvt*color11:                 #FCE94F
+URxvt*color12:                 #729FCF
+URxvt*color13:                 #AD7FA8
+URxvt*color14:                 #FCAF3E
+URxvt*color15:                 #EEEEEC
