@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/paschoal'
+let g:netrw_dirhist_2='/home/paschoal/.i3'
+let g:netrw_dirhist_3='/home/paschoal'
+let g:netrw_dirhist_4='/home/paschoal/.i3'
+let g:netrw_dirhist_5='/data/repos/navut'
+let g:netrw_dirhist_6='/data/repos/navut/config'
+let g:netrw_dirhist_7='/home/paschoal'
+let g:netrw_dirhist_8='/data/repos/navut'
+let g:netrw_dirhist_9='/data/repos/navut/config'
