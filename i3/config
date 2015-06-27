@@ -71,6 +71,7 @@ bar {
   position              top
   workspace_buttons     yes
   status_command        py3status -c ~/.i3/i3status.conf
+  font pango: Anorexia 12
 }
 
 exec feh --bg-scale ~/.wallpaper
