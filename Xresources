@@ -4,7 +4,7 @@ URxvt.cursorBlink: true
 URxvt.visualBell: true
 URxvt.perl-ext:
 URxvt.perl-ext-common: default
-URxvt.font: xft:Terminus:pixelsize=14:style=regular
+URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=15:style=regular
 
 Xft.dpi: 96
 Xft.antialias: true
