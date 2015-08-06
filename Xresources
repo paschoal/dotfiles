@@ -1,16 +1,18 @@
+Xft.dpi: 96
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
 URxvt.loginShell: true
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.visualBell: true
 URxvt.perl-ext:
 URxvt.perl-ext-common: default
-URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=15:style=regular
-
-Xft.dpi: 96
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
-Xft.hintstyle: hintslight
+URxvt.font: xft:Ubuntu Mono:pixelsize=16:style=Regular
 
 URxvt*background:              #000000
 URxvt*foreground:              #FFFFFF
