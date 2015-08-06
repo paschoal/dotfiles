@@ -1,10 +1,6 @@
 "Pathogen load
 execute pathogen#infect()
 
-"Filetypes
-" filetype plugin on
-" filetype indent on
-
 "Indent
 set expandtab
 set shiftwidth=2
@@ -12,6 +8,7 @@ set softtabstop=2
 
 "Misc
 syntax enable
+set background=dark
 set ruler
 set nowrap
 set backspace=2
@@ -25,7 +22,6 @@ set ffs=unix
 
 "Theme
 colorscheme molokai
-set t_Co=256
 
 "Airline
 "Installed through Arch AUR
@@ -39,23 +35,14 @@ let g:airline_section_z=''
 
 "NerdTree
 let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
+let NERDTreeDirArrows=0
 
-"Color column if > 81
-" let &colorcolumn=join(range(81,999),",")
-" highlight ColorColumn ctermbg=235 guibg=#2c2d27
-
-"Gvim Configuration
-" set guioptions-=m "Menu Bar
-" set guioptions-=T "Toolbar
-" set guioptions-=r "Right Scrollbar
-" set guioptions-=L "Left Scrollbar
+" Color column if > 81
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 "Font
-set guifont=Ubuntu\ Mono\ 15
+"set guifont=Ubuntu\ Mono\ 16
 
 "Clipboard
-" set clipboard=unnamedplus
-
-"Space as map leader
-" let mapleader = "\<Space>"
+set clipboard=unnamedplus
