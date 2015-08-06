@@ -18,7 +18,7 @@ bindsym                 $mod+Shift+X            exit
 bindsym                 $mod+Shift+Q            kill
 bindsym                 $mod+Shift+R            restart
 bindsym                 $mod+Shift+C            reload
-bindsym                 $mod+d                  exec dmenu_run
+bindsym                 $mod+d                  exec dmenu_run -fn "Ubuntu One" -h 48
 
 bindsym                 $mod+Left               focus left
 bindsym                 $mod+Down               focus down
