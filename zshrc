@@ -1,4 +1,4 @@
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/bin:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
