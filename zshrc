@@ -16,7 +16,7 @@ compinit
 # End of lines added by compinstall
 
 # Liquid Prompt Call
-[[ $-=*i* ]] && source /home/paschoal/.prompt
+[[ $-=*i* ]] && source $HOME/.prompt
 
 # Alias
 alias ls='ls --color'
