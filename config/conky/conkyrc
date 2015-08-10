@@ -1,0 +1,22 @@
+out_to_x              no
+own_window            no
+out_to_console        yes
+background            no
+max_text_width        0
+update_interval       2
+total_run_times       0
+override_utf8_locale  no
+use_xft               no
+use_spacer            none
+
+# #4B6579
+# #98A6B1, #6B8091, #344F65, #1F3C52
+
+TEXT
+
+[ { "full_text" : " ${memperc}%", "separator": false, "color": "\#98A6B1" },
+  { "full_text" : " ${cpu cpu0}%", "separator": false, "color": "\#98A6B1" },
+  { "full_text" : " ${downspeedf enp2s0}", "separator": false, "color": "\#6B8091" },
+  { "full_text" : " ${upspeedf enp2s0}", "separator": false, "color": "\#6B8091" },
+  { "full_text" : " ${time %a %b/%d}", "separator": false, "color": "\#344F65" },
+  { "full_text" : " ${time %H:%M %p}", "separator": false, "color": "\#1F3C52" }],
