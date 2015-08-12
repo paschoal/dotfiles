@@ -5,15 +5,9 @@ new_window              none
 new_float               none
 hide_edge_borders       horizontal
 
-# Colors
-#client.focused          #121212 #101010 #9e8a8e
-#client.focused_inactive #101010 #191919 #999999
-#client.unfocused        #101010 #191919 #999999
-#client.urgent           #cd989a #cd989a #2e3436
-#client.background       #1d1d1d
-
 # Shortcuts
 bindsym                 $mod+Return             exec urxvtc
+bindsym                 $mod+Shift+L            exec i3lock-wrapper
 bindsym                 $mod+Shift+X            exit
 bindsym                 $mod+Shift+Q            kill
 bindsym                 $mod+Shift+R            restart
