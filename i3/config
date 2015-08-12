@@ -88,7 +88,7 @@ bar {
     background #000000
     statusline #4B6579
   }
-  status_command /home/paschoal/bin/conky-i3bar
+  status_command ~/bin/conky-i3bar
 }
 
 exec feh --bg-scale ~/.wallpaper
