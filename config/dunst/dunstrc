@@ -7,7 +7,7 @@
     word_wrap = yes
     indicate_hidden = true
     idle_threshold = 0
-    geometry = "300x5-20+20"
+    geometry = "300x5-0+23"
     show_age_threshold = 60
     sticky_history = yes
     follow = mouse
