@@ -22,3 +22,7 @@ compinit
 alias ls='ls --color'
 alias off='shutdown -h now'
 alias rbt='shutdown -r now'
+
+# ZSH Syntax Highlight
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
