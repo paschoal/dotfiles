@@ -9,13 +9,19 @@ override_utf8_locale  no
 use_xft               no
 use_spacer            none
 
-# 1F3C52
+# 11 Steps Color
+#
+# FEA957, E69850, CE884A
+# B67844, 9F683E, 875838
+# 6F4831, 68382B, 402825
+# 28181F, 110819
+# 
 
 TEXT
 
-[ { "full_text" : " ${memperc}%",          "separator": false, "color": "\#344F65" },
-  { "full_text" : " ${cpu cpu0}%",         "separator": false, "color": "\#344F65" },
-  { "full_text" : " ${downspeedf enp2s0}", "separator": false, "color": "\#6B8091" },
-  { "full_text" : " ${upspeedf enp2s0}",   "separator": false, "color": "\#6B8091" },
-  { "full_text" : " ${time %a %b/%d}",     "separator": false, "color": "\#98A6B1" },
-  { "full_text" : " ${time %H:%M %p}",     "separator": false, "color": "\#98A6B1" }],
+[ { "full_text" : " ${memperc}%",          "separator": false, "color": "\#FEA957" },
+  { "full_text" : " ${cpu cpu0}%",         "separator": false, "color": "\#E69850" },
+  { "full_text" : " ${downspeedf enp2s0}", "separator": false, "color": "\#CE884A" },
+  { "full_text" : " ${upspeedf enp2s0}",   "separator": false, "color": "\#B67844" },
+  { "full_text" : " ${time %a %b/%d}",     "separator": false, "color": "\#9F683E" },
+  { "full_text" : " ${time %H:%M %p}",     "separator": false, "color": "\#876838" }],
