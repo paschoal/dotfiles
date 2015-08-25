@@ -23,6 +23,10 @@ alias ls='ls --color'
 alias off='shutdown -h now'
 alias rbt='shutdown -r now'
 
-# ZSH Syntax Highlight
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+source "/data/repos/zgen/zgen.zsh"
+if ! zgen saved; then
+  zgen oh-my-zsh
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-completions src
+  zgen save
+fi
