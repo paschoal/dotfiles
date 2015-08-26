@@ -14,6 +14,9 @@ URxvt.perl-ext:
 URxvt.perl-ext-common: default
 URxvt.font: xft:Ubuntu Mono:pixelsize=14:style=Regular
 
+URxvt*.transparent: true
+URxvt*.shading: 20
+
 URxvt*background:              #000000
 URxvt*foreground:              #FFFFFF
 URxvt*fading:                  40
