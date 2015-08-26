@@ -1,0 +1,2 @@
+#!/bin/sh
+scrot '%y%m%d%H%M%S.png' -e 'mv $f ~/downloads/; notify-send "Screenshot" "file $f created"'
