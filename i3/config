@@ -6,11 +6,11 @@ new_float               none
 
 for_window[class="^.*"] border pixel 5
 smart_borders no_gaps
-smart_gaps on
+# smart_gaps on
 gaps inner 7
 gaps outer 3
 
-client.focused          #FEA957 #FEA957 #FFFFFF #FEA957
+client.focused          #110819 #110819 #FFFFFF #110819
 client.focused_inactive #110819 #110819 #888888 #110819
 client.unfocused        #110819 #110819 #888888 #110819
 client.urgent           #E63983 #E63983 #FFFFFF #E63983
@@ -87,6 +87,7 @@ bar {
   position              top
   workspace_buttons     yes
   font pango:Ubuntu Mono, Icons 12
+  height 25
   colors {
     focused_workspace #FEA957 #110819 #FEA957
     background #110819
