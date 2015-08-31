@@ -20,6 +20,11 @@ set history=1000
 set list listchars=eol:¬,trail:-,extends:>,precedes:<
 set ffs=unix
 
+set guioptions-=m " No menu bar
+set guioptions-=T " No tool bar
+set guioptions-=r " No right-hand scroll bar
+set guioptions-=L " No left-hand scroll bar
+
 "Theme
 colorscheme molokai
 
@@ -42,7 +47,7 @@ let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 "Font
-"set guifont=Ubuntu\ Mono\ 16
+set guifont=Ubuntu\ Mono\ 14
 
 "Clipboard
 set clipboard=unnamedplus
