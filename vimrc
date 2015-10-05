@@ -33,10 +33,10 @@ colorscheme molokai
 set laststatus=2
 set noshowmode
 let g:airline_powerline_fonts = 1
-let g:airline_left_sep="▙"
+let g:airline_left_sep=" "
 let g:airline_right_sep="▟"
 let g:airline_theme="powerlineish"
-let g:airline_section_z=''
+let g:airline_section_z=""
 
 "NerdTree
 let NERDTreeMinimalUI=1
@@ -47,7 +47,7 @@ let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 "Font
-set guifont=Ubuntu\ Mono\ 14
+set guifont=Roboto\ Mono\ 10
 
 "Clipboard
 set clipboard=unnamedplus
