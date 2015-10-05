@@ -12,7 +12,7 @@ URxvt.cursorBlink: true
 URxvt.visualBell: true
 URxvt.perl-ext:
 URxvt.perl-ext-common: default
-URxvt.font: xft:Ubuntu Mono:pixelsize=16:style=Regular
+URxvt.font: xft:Roboto Mono:size=10
 
 URxvt*.transparent: true
 URxvt*.shading: 20
