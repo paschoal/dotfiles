@@ -4,7 +4,7 @@ floating_modifier       Mod4
 new_window              none
 new_float               none
 
-for_window[class="^.*"] border pixel 5
+for_window[class="^.*"] border pixel 2
 smart_borders no_gaps
 # smart_gaps on
 gaps inner 7
@@ -86,7 +86,8 @@ bar {
   mode                  dock
   position              top
   workspace_buttons     yes
-  font pango:Ubuntu Mono, Icons 12
+  tray_output           none
+  font pango:Roboto Mono, Icons 12
   height 25
   colors {
     focused_workspace #FEA957 #110819 #FEA957
