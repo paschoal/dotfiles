@@ -1,0 +1,12 @@
+no-dnd-shadow = true;
+no-dock-shadow = false;
+clear-shadow = true;
+shadow-radius = 6;
+shadow-offset-x = -6;
+shadow-offset-y = -6;
+shadow-opacity = 0.8;
+shadow = true;
+fading = true;
+fading-delta = 1;
+shadow-exclude = [ "n:s:bar","n:a:separator","n:e:Notification"];
+backend = "glx";
