@@ -19,9 +19,9 @@ use_spacer            none
 
 TEXT
 
-[ { "full_text" : " ${memperc}%",          "separator": false, "color": "\#FEA957" },
-  { "full_text" : " ${cpu cpu0}%",         "separator": false, "color": "\#E69850" },
-  { "full_text" : " ${downspeedf enp2s0}", "separator": false, "color": "\#CE884A" },
-  { "full_text" : " ${upspeedf enp2s0}",   "separator": false, "color": "\#B67844" },
-  { "full_text" : " ${time %a %b/%d}",     "separator": false, "color": "\#9F683E" },
-  { "full_text" : " ${time %H:%M %p}",     "separator": false, "color": "\#876838" }],
+[ { "full_text" : "    ${memperc}%",          "separator": false, "color": "\#FEA957" },
+  { "full_text" : "    ${cpu cpu0}%",         "separator": false, "color": "\#E69850" },
+  { "full_text" : "    ${downspeedf wlp6s0}", "separator": false, "color": "\#CE884A" },
+  { "full_text" : "    ${upspeedf wlp6s0}",   "separator": false, "color": "\#B67844" },
+  { "full_text" : "    ${time %a %b/%d}",     "separator": false, "color": "\#9F683E" },
+  { "full_text" : "    ${time %H:%M %p}",     "separator": false, "color": "\#876838" }],
