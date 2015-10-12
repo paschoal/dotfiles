@@ -15,6 +15,7 @@ alias ls='ls --color'
 alias off='shutdown -h now'
 alias rbt='shutdown -r now'
 alias chrome="google-chrome-stable"
+alias vim='nvim'
 
 source "/data/repositories/zgen/zgen.zsh"
 if ! zgen saved; then
@@ -23,5 +24,5 @@ if ! zgen saved; then
   zgen save
 fi
 
-# WTF?
-eval $(thefuck --alias)
+bindkey -v
+export KEYTIMEOUT=1
