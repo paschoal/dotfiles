@@ -12,9 +12,6 @@
 # BEHAVIOUR #
 #############
 
-# Disable last status code
-LP_ENABLE_ERROR=0
-
 # Maximal value under which the battery level is displayed
 # Recommended value is 75
 LP_BATTERY_THRESHOLD=75
