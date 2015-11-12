@@ -10,6 +10,7 @@
   set shiftwidth=2
   set softtabstop=2
   set nowrap
+  set list listchars=eol:¬,trail:-,extends:>,precedes:<
 
 " UI
   filetype indent on
@@ -52,10 +53,11 @@
   let g:ctrlp_match_window = "bottom,order:ttb"
   let g:ctrlp_switch_buffer = 0
   let g:ctrlp_working_path_mode = 0
-  "let g:ctrlp_user_command = 'ag -l --no-color --hidden -g ""'
+  let g:ctrlp_user_command = 'ag -i --ignore .git --nocolor --nogroup --hidden -g "" %s'
+  "let g:ctrlp_match_func = { "match": "pymatcher#PyMatch" }
 
 " Airline
-  let g:airline_powerline_fonts = 1
+  let g:airline_powerline_fonts = 0
   let g:airline_theme = "powerlineish"
   let g:airline_section_z = ""
   let g:airline_left_sep = ""
