@@ -1,0 +1,28 @@
+# --- APPLY XRES BEGIN
+
+c_red_l="CC6666"
+c_green_l="BDE077"
+c_cyan_d="72AD8C"
+c_cursor="fff000"
+c_yellow_d="FEA63C"
+c_green_d="B7CE42"
+c_yellow_l="FFE863"
+c_foreground="ddeedd"
+c_blue_l="AACCBB"
+c_magenta_l="ff5879"
+c_black_d="25374A"
+c_background="131D24"
+c_magenta_d="F26B9E"
+c_black_l="3A526B"
+c_blue_d="66AABB"
+c_white_l="FFFFFF"
+c_cyan_l="9FE3BC"
+c_red_d="BD4A4A"
+c_white_d="DDEEDD"
+
+# --- APPLY XRES END
+
+bg="#$c_black_d"
+fg="#$c_black_l"
+
+rofi -show run -fg "$fg" -bg "$bg" -hlbg "$bg" -hlfg "$fg" -bc "#$c_background" -location 0 -lines 5 -bw 0 -font "Input 12" -separator-style none -opacity 85

@@ -12,12 +12,16 @@ setopt appendhistory autocd extendedglob nomatch
 unsetopt beep
 
 #
+# Disable capslock
+#
+setxkbmap -option caps:none
+
+#
 # Alias
 #
 alias ls='ls --color'
 alias off='shutdown -h now'
 alias rbt='shutdown -r now'
-alias chrome="google-chrome-stable"
 alias vim='nvim'
 
 #

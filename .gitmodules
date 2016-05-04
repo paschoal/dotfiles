@@ -1,21 +1,6 @@
-[submodule "nvim/bundle/vim-airline"]
-	path = nvim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline
-[submodule "nvim/bundle/nerdtree"]
-	path = nvim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "nvim/bundle/ctrlp.vim"]
-	path = nvim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule "nvim/bundle/ag"]
-	path = nvim/bundle/ag
-	url = https://github.com/rking/ag.vim
 [submodule "liquidprompt"]
 	path = liquidprompt
 	url = https://github.com/nojhan/liquidprompt.git
 [submodule "zgen"]
 	path = zgen
 	url = git@github.com:tarjoilija/zgen.git
-[submodule "nvim/bundle/ctrlp-py-matcher"]
-	path = nvim/bundle/ctrlp-py-matcher
-	url = https://github.com/FelikZ/ctrlp-py-matcher
