@@ -1,6 +1,7 @@
-export PATH="$PATH:$HOME/bin:$HOME/.rvm/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 export DOT_FILES="/data/repositories/dotfiles"
+export GOPATH="/data/go"
+export PATH="$PATH:/data/go/bin:$HOME/bin:$HOME/.rvm/bin"
 
 #
 # Default new install configurations
@@ -22,7 +23,6 @@ setxkbmap -option caps:none
 alias ls='ls --color'
 alias off='shutdown -h now'
 alias rbt='shutdown -r now'
-alias vim='nvim'
 
 #
 # Zsh using Vim keybinds / behaviour
