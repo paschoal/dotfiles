@@ -94,21 +94,4 @@ client.focused_inactive #110819 #110819 #888888 #110819
 client.unfocused        #110819 #110819 #888888 #110819
 client.urgent           #E63983 #E63983 #FFFFFF #E63983
 
-#bar {
-#  mode                  dock
-#  position              top
-#  workspace_buttons     yes
-#  tray_output           none
-#  font pango:Input Mono, Icons 12
-#  height 25
-#  colors {
-#    focused_workspace #FEA957 #110819 #FEA957
-#    background #110819
-#    statusline #110819
-#  }
-#  # status_command ~/bin/conky-i3bar #}
-#}
-
 exec --no-startup-id feh --bg-scale ~/.wallpaper
-#exec --no-startup-id yabar
-#exec --no-startup-id compton -cCGf --vsync opengl
