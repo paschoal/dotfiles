@@ -1,0 +1,4 @@
+Color = auto
+TargetDir =/data/aur
+
+# vim: set noet syn=conf
