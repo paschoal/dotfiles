@@ -4,3 +4,12 @@
 [submodule "zgen"]
 	path = zgen
 	url = git@github.com:tarjoilija/zgen.git
+[submodule "config/vim/bundle/nerdtree"]
+	path = config/vim/bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "config/vim/bundle/vim-airline"]
+	path = config/vim/bundle/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
+[submodule "config/vim/bundle/vim-airline-themes"]
+	path = config/vim/bundle/vim-airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
