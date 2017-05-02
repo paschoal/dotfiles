@@ -1,7 +1,7 @@
 Xft.dpi: 96
-Xft.antialias: 1
-Xft.autohint: 0
-Xft.hinting: 1
+Xft.antialias: true
+Xft.autohint: false
+Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
@@ -12,7 +12,7 @@ URxvt.cursorBlink: true
 URxvt.visualBell: true
 URxvt.perl-ext:
 URxvt.perl-ext-common: default
-URxvt.font: xft:Hack:size=11
+URxvt.font: xft:Monoid:size=10
 
 URxvt*.transparent: true
 URxvt*.shading: 20
