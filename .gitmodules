@@ -19,3 +19,6 @@
 [submodule "config/vim/bundle/syntastic-local-eslint.vim"]
 	path = config/vim/bundle/syntastic-local-eslint.vim
 	url = git@github.com:mtscout6/syntastic-local-eslint.vim.git
+[submodule "config/vim/bundle/ctrlp.vim"]
+	path = config/vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
