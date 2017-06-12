@@ -64,10 +64,6 @@
   let &colorcolumn=join(range(81,999),",")
   highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
-" Open NerdTree
-  autocmd VimEnter * NERDTree
-  autocmd VimEnter * wincmd p
-
 " Syntastic
   let g:syntastic_always_populate_loc_list = 1
   let g:syntastic_auto_loc_list = 0
@@ -75,3 +71,6 @@
   let g:syntastic_check_on_wq = 0
 
   let g:syntastic_javascript_checkers = ['eslint']
+
+" CTRL P
+  set wildignore+=*/tmp/*,*/log/*,*.so,*.swp,*.zip,*.bz2,*.tar.gz,*.gz
