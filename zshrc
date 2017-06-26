@@ -21,6 +21,7 @@ setxkbmap -option caps:none
 # Alias
 #
 alias ls='ls --color'
+alias qutebrowser='qutebrowser --backend webengine --enable-webengine-inspector'
 alias off='shutdown -h now'
 alias rbt='shutdown -r now'
 
