@@ -73,4 +73,4 @@
   let g:syntastic_javascript_checkers = ['eslint']
 
 " CTRL P
-  set wildignore+=*/tmp/*,*/log/*,*.so,*.swp,*.zip,*.bz2,*.tar.gz,*.gz
+  set wildignore+=*/node_modules/*,*/tmp/*,*/log/*,*.so,*.swp,*.zip,*.bz2,*.tar.gz,*.gz
