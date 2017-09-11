@@ -94,4 +94,10 @@ client.focused_inactive #110819 #110819 #888888 #110819
 client.unfocused        #110819 #110819 #888888 #110819
 client.urgent           #E63983 #E63983 #FFFFFF #E63983
 
+bar {
+  font pango:Monoid, Icons 10
+  position top
+  status_command /usr/local/bin/i3status-rs /data/home/.config/i3/status.toml
+}
+
 exec --no-startup-id feh --bg-scale ~/.wallpaper

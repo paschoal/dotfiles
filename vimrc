@@ -74,3 +74,6 @@
 
 " CTRL P
   set wildignore+=*/node_modules/*,*/tmp/*,*/log/*,*.so,*.swp,*.zip,*.bz2,*.tar.gz,*.gz
+
+" Code Style
+  highlight Comment cterm=italic
