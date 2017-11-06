@@ -25,6 +25,7 @@
   set showcmd
   set wildmenu
   set number
+  set relativenumber
   set lazyredraw
   set showmatch
 
