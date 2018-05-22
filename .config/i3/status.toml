@@ -1,0 +1,18 @@
+icons = "awesome"
+
+[theme]
+name = "solarized-dark"
+[theme.overrides]
+idle_bg = "#6A6B4C"
+idle_fg = "#FFFFFF"
+info_bg = "#515F50"
+info_fg = "#FFFFFF"
+
+[[block]]
+block = "focused_window"
+max_width = 200
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
