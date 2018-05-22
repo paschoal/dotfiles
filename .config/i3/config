@@ -1,0 +1,105 @@
+# Configuration
+set                     $mod Mod4
+set                     $alt Mod1
+floating_modifier       Mod4
+new_window              none
+new_float               none
+
+for_window[class="^.*"] border pixel 1
+# for_window[class="Apache Directory Studio"] floating enable
+#smart_borders no_gaps
+#smart_gaps on
+
+gaps inner 7
+gaps outer 3
+
+# Shortcuts
+bindsym                 $mod+Return             exec alacritty
+bindsym                 $mod+Shift+L            exec i3lock-wrapper
+bindsym                 $mod+Shift+X            exit
+bindsym                 $mod+Shift+Q            kill
+bindsym                 $mod+Shift+R            restart
+bindsym                 $mod+Shift+C            reload
+bindsym                 $mod+d                  exec rofi -show run
+bindsym                 $alt+Tab                exec rofi -show window
+
+bindsym                 $mod+Left               focus left
+bindsym                 $mod+Down               focus down
+bindsym                 $mod+Up                 focus up
+bindsym                 $mod+Right              focus right
+
+bindsym                 $mod+Shift+Left         move left
+bindsym                 $mod+Shift+Down         move down
+bindsym                 $mod+Shift+Up           move up
+bindsym                 $mod+Shift+Right        move right
+
+bindsym                 $mod+h                  split h
+bindsym                 $mod+v                  split v
+bindsym                 $mod+f                  fullscreen toggle
+
+set $tag1 "1"
+set $tag2 "2"
+set $tag3 "3"
+set $tag4 "4"
+set $tag5 "5"
+set $tag6 "6"
+set $tag7 "7"
+set $tag8 "8"
+set $tag9 "9"
+set $tag0 "10"
+
+bindsym                 $mod+1                  workspace $tag1
+bindsym                 $mod+2                  workspace $tag2
+bindsym                 $mod+3                  workspace $tag3
+bindsym                 $mod+4                  workspace $tag4
+bindsym                 $mod+5                  workspace $tag5
+bindsym                 $mod+6                  workspace $tag6
+bindsym                 $mod+7                  workspace $tag7
+bindsym                 $mod+8                  workspace $tag8
+bindsym                 $mod+9                  workspace $tag9
+bindsym                 $mod+0                  workspace $tag0
+bindsym                 $mod+Shift+1            move container to workspace $tag1
+bindsym                 $mod+Shift+2            move container to workspace $tag2
+bindsym                 $mod+Shift+3            move container to workspace $tag3
+bindsym                 $mod+Shift+4            move container to workspace $tag4
+bindsym                 $mod+Shift+5            move container to workspace $tag5
+bindsym                 $mod+Shift+6            move container to workspace $tag6
+bindsym                 $mod+Shift+7            move container to workspace $tag7
+bindsym                 $mod+Shift+8            move container to workspace $tag8
+bindsym                 $mod+Shift+9            move container to workspace $tag9
+bindsym                 $mod+Shift+0            move container to workspace $tag0
+
+# Volume Control
+bindsym                 XF86AudioRaiseVolume    exec amixer -q sset Master 5%+
+bindsym                 XF86AudioLowerVolume    exec amixer -q sset Master 5%-
+bindsym                 XF86AudioMute           exec amixer -q sset Master toggle
+
+# Brightness Screen
+bindsym                 XF86MonBrightnessDown   exec xbacklight -dec 10
+bindsym                 XF86MonBrightnessUp     exec xbacklight -inc 10
+
+mode "resize" {
+  bindsym               Left                    resize shrink width 10 px
+  bindsym               Down                    resize grow height 10 px
+  bindsym               Up                      resize shrink height 10 px
+  bindsym               Right                   resize grow width 10 px
+
+  bindsym               Return                  mode "default"
+  bindsym               Escape                  mode "default"
+}
+
+bindsym                 $mod+t                  mode "resize"
+
+client.focused          #110819 #110819 #FFFFFF #110819
+client.focused_inactive #110819 #110819 #888888 #110819
+client.unfocused        #110819 #110819 #888888 #110819
+client.urgent           #E63983 #E63983 #FFFFFF #E63983
+
+bar {
+  font pango:Hack 10
+  position top
+  status_command i3status-rs /data/home/.config/i3/status.toml
+}
+
+exec --no-startup-id compton -b
+exec --no-startup-id feh --bg-scale ~/.wallpaper
