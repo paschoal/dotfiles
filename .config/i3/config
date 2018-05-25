@@ -6,7 +6,6 @@ new_window              none
 new_float               none
 
 for_window[class="^.*"] border pixel 1
-# for_window[class="Apache Directory Studio"] floating enable
 #smart_borders no_gaps
 #smart_gaps on
 
@@ -96,7 +95,7 @@ client.unfocused        #110819 #110819 #888888 #110819
 client.urgent           #E63983 #E63983 #FFFFFF #E63983
 
 bar {
-  font pango:Hack 10
+  font pango:Hack 12
   position top
   status_command i3status-rs /data/home/.config/i3/status.toml
 }
