@@ -1,50 +1,61 @@
 configuration {
-  modi: "window,run,drun";
-  sidebar-mode: true;
-  disable-history: true;
-  font: "Hack 13";
-  fullscreen: false;
-  hide-scrollbar: true;
-  columns: 1;
-  width: 50;
-  lines: 4;
-  bw: 1;
-  case-sensitive: false;
-  location: 0;
-  separator-style: "none";
+  modi:                          "window,run,drun";
+  sidebar-mode:                  true;
+  disable-history:               true;
+  font:                          "Hack 13";
+  fullscreen:                    false;
+  hide-scrollbar:                true;
+  columns:                       1;
+  width:                         50;
+  lines:                         4;
+  bw:                            1;
+  case-sensitive:                false;
+  location:                      0;
+  separator-style:               "none";
+}
+* {
+  gray-dark:    #383830;
+  gray-darkest: #141411;
+  gray:         #595959;
+  gray-light:   #E6E6E6;
+  gray-lighest: #595959;
+  green:        #A6E22A;
+  green-light:  #A6E22E;
+  purple:       #AE81FF;
+  purple-light: #FD5FF1;
+  yellow:       #E6DB74;
+  yellow-dark:  #75715E;
+  yellow-light: #F8F8F2;
+
+  
+    active-background:           @background-color;
+    normal-background:           @background-color;
+    urgent-background:           @background-color;
+    normal-foreground:           @yellow-light;
+    active-foreground:           @yellow-light;
+    urgent-foreground:           @yellow-light;
+
+    alternate-active-background: @background-color;
+    alternate-normal-background: @background-color;
+    alternate-urgent-background: @background-color;
+    alternate-urgent-foreground: @yellow;
+    alternate-active-foreground: @yellow;
+    alternate-normal-foreground: @yellow;
+
+    selected-active-background:  @yellow-dark;
+    selected-normal-background:  @yellow-dark;
+    selected-urgent-background:  @yellow-dark;
+    selected-urgent-foreground:  @gray-darkest;
+    selected-active-foreground:  @gray-darkest;
+    selected-normal-foreground:  @gray-darkest;
+
+    background-color:            @gray-dark;
+    foreground:                  @gray-dark;
+    border-color:                @gray-dark;
+    spacing:                     2;
 }
 
-* {
-    selected-normal-foreground:  rgba ( 248, 248, 242, 100 % );
-    foreground:                  rgba ( 248, 248, 242, 100 % );
-    normal-foreground:           @foreground;
-    alternate-normal-background: rgba ( 39, 40, 34, 0 % );
-    red:                         rgba ( 220, 50, 47, 100 % );
-    selected-urgent-foreground:  rgba ( 248, 248, 242, 100 % );
-    blue:                        rgba ( 38, 139, 210, 100 % );
-    urgent-foreground:           rgba ( 249, 38, 114, 100 % );
-    alternate-urgent-background: rgba ( 39, 40, 34, 0 % );
-    active-foreground:           rgba ( 166, 226, 42, 100 % );
-    lightbg:                     rgba ( 238, 232, 213, 100 % );
-    selected-active-foreground:  rgba ( 166, 226, 42, 100 % );
-    alternate-active-background: rgba ( 39, 40, 34, 0 % );
-    background:                  rgba ( 39, 40, 34, 93 % );
-    bordercolor:                 rgba ( 0, 43, 54, 100 % );
-    alternate-normal-foreground: @foreground;
-    normal-background:           rgba ( 39, 40, 34, 0 % );
-    lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  rgba ( 20, 20, 17, 100 % );
-    border-color:                @foreground;
-    spacing:                     2;
-    separatorcolor:              rgba ( 230, 219, 116, 100 % );
-    urgent-background:           rgba ( 39, 40, 34, 0 % );
-    selected-urgent-background:  rgba ( 249, 38, 114, 100 % );
-    alternate-urgent-foreground: @urgent-foreground;
-    background-color:            rgba ( 0, 0, 0, 0 % );
-    alternate-active-foreground: @active-foreground;
-    active-background:           rgba ( 39, 40, 34, 0 % );
-    selected-active-background:  rgba ( 20, 20, 17, 100 % );
-}
+
 #window {
     background-color: @background;
     border:           1;
@@ -60,13 +71,13 @@ configuration {
     padding:      1px ;
 }
 #textbox {
-    text-color: @foreground;
+    text-color:   @foreground;
 }
 #listview {
     fixed-height: 0;
     border:       2px 0px 0px ;
     border-color: @separatorcolor;
-    spacing:      2px ;
+    spacing:      @spacing ;
     scrollbar:    true;
     padding:      2px 0px 0px ;
 }
@@ -120,30 +131,37 @@ configuration {
     border:       2px 0px 0px ;
     border-color: @separatorcolor;
 }
+
 #button.selected {
     background-color: @selected-normal-background;
     text-color:       @selected-normal-foreground;
 }
+
 #inputbar {
     spacing:    0;
     text-color: @normal-foreground;
     padding:    1px ;
 }
+
 #case-indicator {
     spacing:    0;
     text-color: @normal-foreground;
 }
+
 #entry {
     spacing:    0;
     text-color: @normal-foreground;
 }
+
 #prompt {
     spacing:    0;
     text-color: @normal-foreground;
 }
+
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
+
 #textbox-prompt-colon {
     expand:     false;
     str:        ":";
