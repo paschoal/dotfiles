@@ -26,6 +26,17 @@ alias ls='ls --color'
 alias off='shutdown -h now'
 alias rbt='shutdown -r now'
 
+alias gta='git add'
+alias gtc='git commit -m'
+alias gts='git status'
+alias gtd='git diff'
+
+alias dps='docker ps -a'
+alias dpi='docker images'
+alias dex='docker exec -it'
+alias dcu='docker-compose up'
+alias dcd='docker-compose down'
+
 #
 # Zsh using Vim keybinds / behaviour
 #
@@ -44,7 +55,7 @@ fi
 #
 # Load Liquid Prompt
 #
-[[ $- = *i* ]] && source $DOT_FILES/liquidprompt/liquidprompt
+[[ $- = *i* ]] && source $DOT_FILES/.liquidprompt/liquidprompt
 
 #
 # Time with Memory
