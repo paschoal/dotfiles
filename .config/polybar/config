@@ -1,0 +1,84 @@
+[bar/primary]
+
+width    = 100%
+height   = 25
+offset-y = 0
+offset-x = 0
+
+border-top-size    = 0
+border-bottom-size = 0
+border-right-size  = 0
+border-left-size   = 0
+border-color       = 0
+
+tray-position = none
+tray-detached = true
+
+bottom            = false
+wm-restack        = none
+override-redirect = false
+
+font-0 = Hack:size=12;3
+font-1 = "FontAwesome5Free:pixelsize=12;3"
+font-2 = "FontAwesome5Brands:pixelsize=12;3"
+
+background = #
+foreground = #C5A9F9
+fixed-center = true
+padding-left = 1
+padding-right = 1
+module-margin = 1.5
+modules-left = battery backlight volume
+modules-center = i3
+modules-right = cpu memory time
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full-prefix = "B "
+ramp-capacity-0 = "B "
+ramp-capacity-1 = "B "
+ramp-capacity-2 = "B "
+ramp-capacity-3 = "B "
+ramp-capacity-4 = "B "
+animation-charging-0 = "- "
+animation-charging-1 = "/ "
+animation-charging-2 = "- "
+animation-charging-3 = "| "
+animation-charging-framerate = 750
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+enable-scroll = false
+label-unfocused-foreground = #141411
+label-focused-foreground = #AE81FF
+label-urgent-foreground = #75715E
+
+[module/time]
+type = internal/date
+interval = 1.0
+date = "C %H:%M %D"
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+format-muted = "V 0%"
+
+ramp-volume-0 = "V "
+ramp-volume-1 = "V "
+ramp-volume-2 = "V "
+
+[module/cpu]
+type = internal/cpu
+label = "P %percentage%%"
+
+[module/memory]
+type = internal/memory
+label = "M %gb_used%"

@@ -30,6 +30,8 @@ alias gta='git add'
 alias gtc='git commit -m'
 alias gts='git status'
 alias gtd='git diff'
+alias gtp='git push'
+alias gto='git checkout'
 
 alias dps='docker ps -a'
 alias dpi='docker images'

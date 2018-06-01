@@ -92,6 +92,3 @@ set eol
 set nowrapscan
 set noerrorbells
 set novisualbell
-
-" Ctrl + P
-

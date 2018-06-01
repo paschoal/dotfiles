@@ -1,18 +1,15 @@
-# Configuration
 set                     $mod Mod4
 set                     $alt Mod1
 floating_modifier       Mod4
 new_window              none
 new_float               none
 
-for_window[class="^.*"] border pixel 1
-#smart_borders no_gaps
-#smart_gaps on
+for_window[class="^.*"] border pixel 0
 
-gaps inner 7
-gaps outer 3
+gaps inner 10
+gaps outer 0
 
-# Shortcuts
+bindsym                 $mod+Shift+Return       exec xterm
 bindsym                 $mod+Return             exec alacritty
 bindsym                 $mod+Shift+L            exec i3lock-wrapper
 bindsym                 $mod+Shift+X            exit
@@ -36,16 +33,16 @@ bindsym                 $mod+h                  split h
 bindsym                 $mod+v                  split v
 bindsym                 $mod+f                  fullscreen toggle
 
-set $tag1 "1"
-set $tag2 "2"
-set $tag3 "3"
-set $tag4 "4"
-set $tag5 "5"
-set $tag6 "6"
-set $tag7 "7"
-set $tag8 "8"
-set $tag9 "9"
-set $tag0 "10"
+set $tag1 " 1 "
+set $tag2 " 2 "
+set $tag3 " 3 "
+set $tag4 " 4 "
+set $tag5 " 5 "
+set $tag6 " 6 "
+set $tag7 " 7 "
+set $tag8 " 8 "
+set $tag9 " 9 "
+set $tag0 " 0 "
 
 bindsym                 $mod+1                  workspace $tag1
 bindsym                 $mod+2                  workspace $tag2
@@ -68,37 +65,20 @@ bindsym                 $mod+Shift+8            move container to workspace $tag
 bindsym                 $mod+Shift+9            move container to workspace $tag9
 bindsym                 $mod+Shift+0            move container to workspace $tag0
 
-# Volume Control
 bindsym                 XF86AudioRaiseVolume    exec amixer -q sset Master 5%+
 bindsym                 XF86AudioLowerVolume    exec amixer -q sset Master 5%-
 bindsym                 XF86AudioMute           exec amixer -q sset Master toggle
 
-# Brightness Screen
 bindsym                 XF86MonBrightnessDown   exec xbacklight -dec 10
 bindsym                 XF86MonBrightnessUp     exec xbacklight -inc 10
 
-mode "resize" {
-  bindsym               Left                    resize shrink width 10 px
-  bindsym               Down                    resize grow height 10 px
-  bindsym               Up                      resize shrink height 10 px
-  bindsym               Right                   resize grow width 10 px
-
-  bindsym               Return                  mode "default"
-  bindsym               Escape                  mode "default"
-}
-
-bindsym                 $mod+t                  mode "resize"
-
-client.focused          #110819 #110819 #FFFFFF #110819
-client.focused_inactive #110819 #110819 #888888 #110819
-client.unfocused        #110819 #110819 #888888 #110819
-client.urgent           #E63983 #E63983 #FFFFFF #E63983
-
-bar {
-  font pango:Hack 12
-  position top
-  status_command i3status-rs /data/home/.config/i3/status.toml
-}
+# class
+client.focused          # # # # #
+client.focused_inactive # # # # #
+client.unfocused        # # # # #
+client.urgent           # # # # #
 
 exec --no-startup-id compton -b
 exec --no-startup-id feh --bg-scale ~/.wallpaper
+exec_always --no-startup-id ~/bin/bar.sh
+exec_always --no-startup-id xrdb -merge ~/.Xresource
