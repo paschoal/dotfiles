@@ -11,12 +11,12 @@ c.fonts.prompts = "14px monospace"
 c.fonts.statusbar = "14px monospace"
 c.fonts.tabs = "14px monospace"
 
-c.fonts.web.family.standard = 'Roboto'
-c.fonts.web.family.fixed = 'monospace'
-c.fonts.web.family.serif = 'Roboto'
-c.fonts.web.family.sans_serif = 'Roboto'
-c.fonts.web.family.cursive = 'Ubuntu'
-c.fonts.web.family.fantasy = 'Ubuntu'
+# c.fonts.web.family.standard = 'monospace'
+# c.fonts.web.family.fixed = 'monospace'
+# c.fonts.web.family.serif = 'monospace'
+# c.fonts.web.family.sans_serif = 'monospace'
+# c.fonts.web.family.cursive = 'monospace'
+# c.fonts.web.family.fantasy = 'monospace'
 
 c.content.developer_extras = True
 c.content.geolocation = False
@@ -29,3 +29,5 @@ c.completion.height = '20%'
 c.downloads.location.prompt = False
 c.downloads.location.directory = '~/downloads/'
 c.downloads.remove_finished = 3000
+
+c.backend = 'webengine'
