@@ -39,6 +39,8 @@ alias dex='docker exec -it'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 
+alias qutebrowser='qutebrowser --enable-webengine-inspector'
+
 #
 # Zsh using Vim keybinds / behaviour
 #
