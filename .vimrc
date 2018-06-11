@@ -16,8 +16,6 @@ highlight NonText ctermbg=none
 " Airline
 set laststatus=2
 let g:airline_powerline_fonts=1
-let g:airline_extensions=[]
-let g:airline_section_z=[]
 
 " Space and Tabs
 set expandtab
@@ -34,7 +32,6 @@ set ruler
 set showcmd
 set wildmenu
 set number
-" set relativenumber
 set lazyredraw
 set regexpengine=1
 set showmatch
@@ -63,10 +60,6 @@ nnoremap ^ <nop>
 nnoremap <leader>1 :NERDTree .<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-
-" Color Column
-" let &colorcolumn=join(range(121, 999), ",")
-" highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " Tagbar
 nnoremap <leader>0 :TagbarToggle<CR>
