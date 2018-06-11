@@ -2,6 +2,8 @@ export XDG_DESKTOP_DIR="$HOME"
 export XDG_DOWNLOAD_DIR="$HOME/download"
 export XDG_CONFIG_HOME="$HOME/.config"
 
+export PATH="$PATH:$HOME/bin"
+
 export DOT_FILES="/data/source/dotfiles"
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
 
