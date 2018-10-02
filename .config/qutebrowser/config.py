@@ -18,10 +18,9 @@ c.fonts.tabs = "14px monospace"
 # c.fonts.web.family.cursive = 'monospace'
 # c.fonts.web.family.fantasy = 'monospace'
 
-c.content.developer_extras = True
 c.content.geolocation = False
 c.content.media_capture = False
-c.content.notifications = False
+c.content.notifications = True
 c.content.pdfjs = True
 
 c.completion.height = '20%'
