@@ -1,4 +1,5 @@
 [bar/primary]
+monitor               = ${env:MONITOR:}
 override-redirect     = false
 wm-restack            = none
 
