@@ -1,5 +1,16 @@
 set nocompatible
 
+" Install Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'ctrlpvim/ctrlp.vim'
+call plug#end()
+
 " Pathogen
 execute pathogen#infect()
 
@@ -26,8 +37,8 @@ set list listchars=eol:¬,trail:-,extends:>,precedes:<
 set cursorline
 
 " UI
-" filetype indent on
-filetype plugin indent on
+filetype indent on
+" filetype plugin indent on
 set ruler
 set showcmd
 set wildmenu

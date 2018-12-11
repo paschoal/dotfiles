@@ -15,12 +15,11 @@ bindsym                 $mod+z                  scratchpad show
 bindsym                 $mod+Shift+Return       exec xterm
 bindsym                 $mod+Return             exec alacritty
 bindsym                 $mod+Shift+L            exec i3lock -c 000000
-bindsym                 $mod+Shift+X            exit
+bindsym                 $mod+Shift+E            exit
 bindsym                 $mod+Shift+Q            kill
 bindsym                 $mod+Shift+R            restart
 bindsym                 $mod+Shift+C            reload
 bindsym                 $mod+d                  exec rofi -show run
-bindsym                 $alt+Tab                exec rofi -show window
 
 bindsym                 $mod+Left               focus left
 bindsym                 $mod+Down               focus down
@@ -95,6 +94,4 @@ client.unfocused        # # # # #
 client.urgent           # # # # #
 
 exec --no-startup-id compton -b
-exec --no-startup-id feh --bg-scale ~/.wallpaper
-exec_always --no-startup-id ~/bin/bar.sh
 exec_always --no-startup-id xrdb -merge ~/.Xresource

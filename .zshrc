@@ -5,7 +5,13 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$PATH:$HOME/bin"
 
 export DOT_FILES="/data/source/dotfiles"
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
+
+export JVM_ARGS="$JVM_ARGS -Dawt.useSystemAAFontSettings=lcd"
+export JVM_ARGS="$JVM_ARGS -Dswing.plaf.metal.controlFont=Hack-13"
+export JVM_ARGS="$JVM_ARGS -Dswing.plaf.metal.systemFont=Hack-13"
+export JVM_ARGS="$JVM_ARGS -Dswing.plaf.metal.userFont=Hack-13"
+export JVM_ARGS="$JVM_ARGS -Dswing.plaf.metal.smallFont=Hack-13"
+export JVM_ARGS="$JVM_ARGS -Djsyntaxtextarea.font.family=Hack"
 
 #
 # Default new install configurations
@@ -35,7 +41,7 @@ alias gtd='git diff'
 alias gtp='git push'
 alias gto='git checkout'
 
-alias dps='docker ps -a'
+alias dps='docker ps -a --format "{{.ID}}  {{.Names}}|{{.Image}}   →   {{.Status}}"'
 alias dpi='docker images'
 alias dex='docker exec -it'
 alias dcu='docker-compose up'
