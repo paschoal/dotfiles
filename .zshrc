@@ -3,8 +3,7 @@ export XDG_DOWNLOAD_DIR="$HOME/download"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export PATH="$PATH:$HOME/bin"
-
-export DOT_FILES="/data/source/dotfiles"
+export DOT_FILES="/data/repositories/dotfiles"
 
 export JVM_ARGS="$JVM_ARGS -Dawt.useSystemAAFontSettings=lcd"
 export JVM_ARGS="$JVM_ARGS -Dswing.plaf.metal.controlFont=Hack-13"
@@ -30,24 +29,16 @@ setxkbmap -option caps:none
 #
 # Alias
 #
+alias cat='bat'
 alias ls='ls --color'
 alias off='shutdown -h now'
 alias rbt='shutdown -r now'
-
-alias gta='git add'
-alias gtc='git commit -m'
-alias gts='git status'
-alias gtd='git diff'
-alias gtp='git push'
-alias gto='git checkout'
-
+alias vim='nvim'
 alias dps='docker ps -a --format "{{.ID}}  {{.Names}}|{{.Image}}   →   {{.Status}}"'
 alias dpi='docker images'
 alias dex='docker exec -it'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
-
-alias qutebrowser='qutebrowser --enable-webengine-inspector'
 
 #
 # Zsh using Vim keybinds / behaviour
@@ -83,5 +74,5 @@ fi
 
 if [[ "$SSH_AGENT_PID" == "" ]]; then
   eval "$(<~/.ssh-agent)"
-  ssh-add ~/.ssh/id_rsa > /dev/null
+  ssh-add ~/.ssh/id_rsa.videri > /dev/null
 fi

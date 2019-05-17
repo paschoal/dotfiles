@@ -1,3 +1,5 @@
+font ttf:Hack 13
+
 set                     $mod Mod4
 set                     $alt Mod1
 floating_modifier       Mod4
@@ -12,26 +14,38 @@ gaps outer 0
 bindsym                 $mod+Shift+Z            move scratchpad
 bindsym                 $mod+z                  scratchpad show
 
+bindsym                 $mod+x                  exec xtrlock
+
 bindsym                 $mod+Shift+Return       exec xterm
 bindsym                 $mod+Return             exec alacritty
-bindsym                 $mod+Shift+L            exec i3lock -c 000000
+
 bindsym                 $mod+Shift+E            exit
 bindsym                 $mod+Shift+Q            kill
 bindsym                 $mod+Shift+R            restart
 bindsym                 $mod+Shift+C            reload
-bindsym                 $mod+d                  exec rofi -show run
+bindsym                 $mod+d                  exec rofi -show run -display-window ""
+
+bindsym                 $mod+h                  focus left
+bindsym                 $mod+j                  focus down
+bindsym                 $mod+k                  focus up
+bindsym                 $mod+l                  focus right
 
 bindsym                 $mod+Left               focus left
 bindsym                 $mod+Down               focus down
 bindsym                 $mod+Up                 focus up
 bindsym                 $mod+Right              focus right
 
+bindsym                 $mod+Shift+H            move left
+bindsym                 $mod+Shift+J            move down
+bindsym                 $mod+Shift+K            move up
+bindsym                 $mod+Shift+L            move right
+
 bindsym                 $mod+Shift+Left         move left
 bindsym                 $mod+Shift+Down         move down
 bindsym                 $mod+Shift+Up           move up
 bindsym                 $mod+Shift+Right        move right
 
-bindsym                 $mod+h                  split h
+bindsym                 $mod+b                  split h
 bindsym                 $mod+v                  split v
 bindsym                 $mod+f                  fullscreen toggle
 
@@ -45,9 +59,6 @@ set $tag7 " 7 "
 set $tag8 " 8 "
 set $tag9 " 9 "
 set $tag0 " 0 "
-set $monitor0 HDMI-0
-set $monitor1 DP-1-1
-set $monitor2 eDP-1-1
 
 bindsym                 $mod+1                  workspace $tag1
 bindsym                 $mod+2                  workspace $tag2
@@ -70,28 +81,13 @@ bindsym                 $mod+Shift+8            move container to workspace $tag
 bindsym                 $mod+Shift+9            move container to workspace $tag9
 bindsym                 $mod+Shift+0            move container to workspace $tag0
 
-workspace $tag1 output $monitor0
-workspace $tag2 output $monitor0
-workspace $tag3 output $monitor0
-workspace $tag4 output $monitor1
-workspace $tag5 output $monitor1
-workspace $tag6 output $monitor1
-workspace $tag7 output $monitor2
-workspace $tag8 output $monitor2
-workspace $tag9 output $monitor2
-
 bindsym                 XF86AudioRaiseVolume    exec amixer -q sset Master 5%+
 bindsym                 XF86AudioLowerVolume    exec amixer -q sset Master 5%-
 bindsym                 XF86AudioMute           exec amixer -q sset Master toggle
+bindsym                 $mod + m                exec amixer -q sset Master toggle
 
 bindsym                 XF86MonBrightnessDown   exec xbacklight -dec 10
 bindsym                 XF86MonBrightnessUp     exec xbacklight -inc 10
 
-# class
-client.focused          # # # # #
-client.focused_inactive # # # # #
-client.unfocused        # # # # #
-client.urgent           # # # # #
-
-exec --no-startup-id compton -b
-exec_always --no-startup-id xrdb -merge ~/.Xresource
+exec_always --no-startup-id launch_bar
+exec_always --no-startup-id compton -b

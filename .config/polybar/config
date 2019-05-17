@@ -30,7 +30,7 @@ padding-right     = 1
 module-margin     = 1.5
 modules-left      = battery backlight volume
 modules-center    = i3
-modules-right     = cpu memory time
+modules-right     = time
 
 [module/battery]
 type = internal/battery

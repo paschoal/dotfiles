@@ -38,7 +38,7 @@ set cursorline
 
 " UI
 filetype indent on
-" filetype plugin indent on
+filetype plugin indent on
 set ruler
 set showcmd
 set wildmenu
@@ -71,12 +71,6 @@ nnoremap ^ <nop>
 nnoremap <leader>1 :NERDTree .<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-
-" Tagbar
-nnoremap <leader>0 :TagbarToggle<CR>
-
-" Codi
-let g:codi#width=50
 
 " IndentGuide
 nnoremap <leader>ig :IndentGuidesToggle<CR>
