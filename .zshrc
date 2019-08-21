@@ -39,6 +39,11 @@ alias dpi='docker images'
 alias dex='docker exec -it'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
+alias kcat='kafkacat'
+alias screenshot='flameshot gui -p ~/downloads'
+alias notes='vim ~/.notes'
+alias copy='wl-copy'
+alias paste='wl-paste'
 
 #
 # Zsh using Vim keybinds / behaviour
