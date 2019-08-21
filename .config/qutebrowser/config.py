@@ -23,6 +23,8 @@ c.content.media_capture = False
 c.content.notifications = True
 c.content.pdfjs = True
 
+c.content.headers.user_agent = 'Mozila/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0'
+
 c.completion.height = '20%'
 
 c.downloads.location.prompt = False
