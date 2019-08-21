@@ -1,0 +1,118 @@
+set $mod Mod4
+
+set $left         h
+set $down         j
+set $up           k
+set $right        l
+set $term         alacritty
+
+set $menu         /data/home/bin/menu.sh
+
+default_border pixel 2
+gaps inner 10
+gaps outer 0
+
+output DP-1 {
+  resolution 1920x1080 position 1920,0
+  background /data/home/.wallpaper fill
+}
+
+output eDP-1 {
+  disable
+}
+
+output HDMI-A-2 {
+  resolution 1920x1080 position 0,0
+  background /data/home/.wallpaper.portrait fill
+  transform 270
+}
+
+floating_modifier $mod normal
+
+bindsym $mod+Return               exec $term
+bindsym $mod+Shift+q              kill
+bindsym $mod+d                    exec $menu
+bindsym $mod+Shift+r              reload
+bindsym $mod+Shift+e              exec swaymsg exit
+bindsym $mod+x                    exec swaylock -c "#00000022"
+
+bindsym $mod+$left                focus left
+bindsym $mod+$down                focus down
+bindsym $mod+$up                  focus up
+bindsym $mod+$right               focus right
+bindsym $mod+Shift+$left          move left
+bindsym $mod+Shift+$down          move down
+bindsym $mod+Shift+$up            move up
+bindsym $mod+Shift+$right         move right
+
+bindsym $mod+1                    workspace 1
+bindsym $mod+2                    workspace 2
+bindsym $mod+3                    workspace 3
+bindsym $mod+4                    workspace 4
+bindsym $mod+5                    workspace 5
+bindsym $mod+6                    workspace 6
+bindsym $mod+7                    workspace 7
+bindsym $mod+8                    workspace 8
+bindsym $mod+9                    workspace 9
+bindsym $mod+0                    workspace 10
+
+bindsym $mod+Shift+1              move container to workspace 1
+bindsym $mod+Shift+2              move container to workspace 2
+bindsym $mod+Shift+3              move container to workspace 3
+bindsym $mod+Shift+4              move container to workspace 4
+bindsym $mod+Shift+5              move container to workspace 5
+bindsym $mod+Shift+6              move container to workspace 6
+bindsym $mod+Shift+7              move container to workspace 7
+bindsym $mod+Shift+8              move container to workspace 8
+bindsym $mod+Shift+9              move container to workspace 9
+bindsym $mod+Shift+0              move container to workspace 10
+
+bindsym $mod+b                    splith
+bindsym $mod+v                    splitv
+
+bindsym $mod+s                    layout stacking
+bindsym $mod+w                    layout tabbed
+bindsym $mod+e                    layout toggle split
+
+bindsym $mod+f                    fullscreen
+
+bindsym $mod+Shift+space          floating toggle
+bindsym $mod+space                focus mode_toggle
+bindsym $mod+a                    focus parent
+
+bindsym $mod+Shift+minus          move scratchpad
+bindsym $mod+minus                scratchpad show
+
+bindsym XF86AudioRaiseVolume      exec amixer -q sset Master 1%+
+bindsym XF86AudioLowerVolume      exec amixer -q sset Master 1%-
+bindsym XF86AudioMute             exec amixer -q sset Master toggle
+bindsym $mod+m                    exec amixer -q sset Master toggle
+
+mode "resize" {
+    bindsym $left                 resize shrink width 10px
+    bindsym $down                 resize grow height 10px
+    bindsym $up                   resize shrink height 10px
+    bindsym $right                resize grow width 10px
+    bindsym Return                mode "default"
+    bindsym Escape                mode "default"
+}
+bindsym $mod+r mode "resize"
+
+bar {
+    position top
+    status_command while date +'%d/%m %H:%M:%S'; do sleep 1; done
+    colors {
+        statusline #ffffff
+        background #00000099
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
+client.background           #000000 #FFFFFF #000000 #000000 #000000
+client.focused              #000000 #285577 #FFFFFF #2E9EF4 #000000
+client.focused_inactive     #333333 #5F676A #FFFFFF #484E50 #5F676A
+client.unfocused            #333333 #222222 #888888 #292D2E #222222
+client.urgent               #2F343A #900000 #FFFFFF #900000 #900000
+client.placeholder          #000000 #0C0C0C #FFFFFF #000000 #0C0C0C
+
+include /etc/sway/config.d/*
