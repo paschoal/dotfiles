@@ -1,8 +1,8 @@
 configuration {
-  modi:                          "window,run,drun";
+  modi:                          "run";
   sidebar-mode:                  true;
   disable-history:               true;
-  font:                          "Hack 13";
+  font:                          "Monoid 26";
   fullscreen:                    false;
   hide-scrollbar:                true;
   columns:                       1;
@@ -26,33 +26,32 @@ configuration {
   yellow:       #E6DB74;
   yellow-dark:  #75715E;
   yellow-light: #F8F8F2;
-
   
-    active-background:           @background-color;
-    normal-background:           @background-color;
-    urgent-background:           @background-color;
-    normal-foreground:           @yellow-light;
-    active-foreground:           @yellow-light;
-    urgent-foreground:           @yellow-light;
+  active-background:           @background-color;
+  normal-background:           @background-color;
+  urgent-background:           @background-color;
+  normal-foreground:           @yellow-light;
+  active-foreground:           @yellow-light;
+  urgent-foreground:           @yellow-light;
 
-    alternate-active-background: @background-color;
-    alternate-normal-background: @background-color;
-    alternate-urgent-background: @background-color;
-    alternate-urgent-foreground: @yellow;
-    alternate-active-foreground: @yellow;
-    alternate-normal-foreground: @yellow;
+  alternate-active-background: @background-color;
+  alternate-normal-background: @background-color;
+  alternate-urgent-background: @background-color;
+  alternate-urgent-foreground: @yellow;
+  alternate-active-foreground: @yellow;
+  alternate-normal-foreground: @yellow;
 
-    selected-active-background:  @yellow-dark;
-    selected-normal-background:  @yellow-dark;
-    selected-urgent-background:  @yellow-dark;
-    selected-urgent-foreground:  @gray-darkest;
-    selected-active-foreground:  @gray-darkest;
-    selected-normal-foreground:  @gray-darkest;
+  selected-active-background:  @yellow-dark;
+  selected-normal-background:  @yellow-dark;
+  selected-urgent-background:  @yellow-dark;
+  selected-urgent-foreground:  @gray-darkest;
+  selected-active-foreground:  @gray-darkest;
+  selected-normal-foreground:  @gray-darkest;
 
-    background-color:            @gray-dark;
-    foreground:                  @gray-dark;
-    border-color:                @gray-dark;
-    spacing:                     2;
+  background-color:            @gray-dark;
+  foreground:                  @gray-dark;
+  border-color:                @gray-dark;
+  spacing:                     2;
 }
 
 
