@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/data/home'
-let g:netrw_dirhist_2='/data/home/.vim'
-let g:netrw_dirhist_3='/data/home/.vim/bundle'
-let g:netrw_dirhist_4='/data/home'
