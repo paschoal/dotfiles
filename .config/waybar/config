@@ -1,0 +1,7 @@
+{
+  "layer": "top",
+  "height": 35,
+  "modules-left": ["sway/workspaces"],
+  "modules-center": [],
+  "modules-right": ["backlight", "battery", "clock"]
+}
