@@ -1,4 +1,4 @@
-font ttf:Hack 13
+font ttf:Monoid 13
 
 set                     $mod Mod4
 set                     $alt Mod1
