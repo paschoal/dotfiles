@@ -35,13 +35,16 @@ alias ls='ls --color'
 alias off='shutdown -h now'
 alias rbt='shutdown -r now'
 alias vim='nvim'
+
 alias dps='docker ps -a --format "{{.ID}}  {{.Names}}|{{.Image}}   →   {{.Status}}"'
 alias dpi='docker images'
 alias dex='docker exec -it'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
+alias dcb='docker-compose build'
+alias dcr='docker-compose run --rm'
+
 alias kcat='kafkacat'
-alias screenshot='flameshot gui -p ~/downloads'
 alias notes='vim ~/.notes'
 alias copy='wl-copy'
 alias paste='wl-paste'
@@ -70,15 +73,3 @@ fi
 # Time with Memory
 #
 TIMEFMT="%J -- %U user | %S system | %P cpu | %*E total | memory %M MB"
-
-#
-# SSH-Agent
-#
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-  ssh-agent > ~/.ssh-agent
-fi
-
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-  eval "$(<~/.ssh-agent)"
-  ssh-add ~/.ssh/id_rsa.videri > /dev/null
-fi
