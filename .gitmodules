@@ -1,3 +1,6 @@
 [submodule ".liquidprompt"]
 	path = .liquidprompt
 	url = https://github.com/nojhan/liquidprompt.git
+[submodule ".config/polybar-themes"]
+	path = .config/polybar-themes
+	url = https://github.com/adi1090x/polybar-themes
