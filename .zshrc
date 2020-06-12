@@ -46,8 +46,9 @@ alias dcr='docker-compose run --rm'
 
 alias kcat='kafkacat'
 alias notes='vim ~/.notes'
-alias copy='wl-copy'
-alias paste='wl-paste'
+alias clipboard='xclip -i -selection CLIPBOARD'
+alias from_mouse='xclip -o -selection PRIMARY'
+alias transfer='from_mouse | clipboard'
 
 #
 # Zsh using Vim keybinds / behaviour
