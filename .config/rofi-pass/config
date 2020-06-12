@@ -1,0 +1,9 @@
+layout_cmd () {
+  setxkbmap us
+}
+
+default_autotype='path :tab pass'
+clip=clipboard
+
+EDITOR='nvim'
+BROWSER='xdg-open'

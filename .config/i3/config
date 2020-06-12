@@ -24,6 +24,7 @@ bindsym                 $mod+Shift+Q            kill
 bindsym                 $mod+Shift+R            restart
 bindsym                 $mod+Shift+C            reload
 bindsym                 $mod+d                  exec rofi -show run -display-window ""
+bindsym                 $mod+s                  exec rofi-pass
 
 bindsym                 $mod+h                  focus left
 bindsym                 $mod+j                  focus down
