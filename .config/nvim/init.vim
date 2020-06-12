@@ -6,9 +6,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf'
 call plug#end()
 
 " Pathogen
@@ -77,9 +75,13 @@ nnoremap <leader>ig :IndentGuidesToggle<CR>
 set ts=2 sw=2 et
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+
+hi IndentGuidesOdd ctermbg=235
+hi IndentGuidesEven ctermbg=239
 
 " Ruby Slowdown
-autocmd Filetype ruby setlocal nocursorline
+" autocmd Filetype ruby setlocal nocursorline
 
 " Shell
 set shell=zsh
@@ -90,3 +92,26 @@ set eol
 set nowrapscan
 set noerrorbells
 set novisualbell
+
+" FZF action
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+let g:fzf_layout = { 'down': '~ 20%' }
+
+let g:fzf_colors = {
+  \ 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
