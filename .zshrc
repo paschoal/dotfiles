@@ -1,11 +1,3 @@
-export XDG_DESKTOP_DIR="$HOME"
-export XDG_DOWNLOAD_DIR="$HOME/download"
-export XDG_CONFIG_HOME="$HOME/.config"
-
-export PATH="$PATH:$HOME/bin"
-export GIT_PATH="/data/git"
-export DOT_FILES="$GIT_PATH/dotfiles"
-
 export JVM_ARGS="$JVM_ARGS -Dawt.useSystemAAFontSettings=lcd"
 export JVM_ARGS="$JVM_ARGS -Dswing.plaf.metal.controlFont=Hack-13"
 export JVM_ARGS="$JVM_ARGS -Dswing.plaf.metal.systemFont=Hack-13"
