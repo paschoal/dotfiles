@@ -5,15 +5,18 @@
   home.homeDirectory = "/data/home";
 
   imports = [
-    ./zsh
-    ./wofi
-    ./nvim
-    ./eww
-    ./cursor
-    ./kitty
-    ./hypr
-    ./qutebrowser
-    ./aws-vault
+    ../../config/git
+    ../../config/zsh
+    ../../config/wofi
+    ../../config/nvim
+    ../../config/cursor
+    ../../config/kitty
+    ../../config/qutebrowser
+    ../../config/aws-vault
+    ../../config/wallpapers
+
+    ../../config/eww/mjolnir
+    ../../config/hypr/mjolnir
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -22,9 +25,9 @@
   ];
 
   home.packages = [
+    pkgs.docker-compose
     pkgs.monoid
     pkgs.bat
-    pkgs.stow
     pkgs.pass
     pkgs.discord
     pkgs.httpie
@@ -40,22 +43,6 @@
   programs = {
     home-manager = {
       enable = true;
-    };
-
-    git = {
-      enable = true;
-      userName = "Matheus Paschoal";
-      userEmail = "paschoal@gmail.com";
-
-      extraConfig = {
-        color = {
-          ui = true;
-          pager = true;
-        };
-        rerere = {
-          enabled = true;
-        };
-      };
     };
   };
 }
