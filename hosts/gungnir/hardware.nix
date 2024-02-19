@@ -56,6 +56,7 @@
   # network
   #
   networking.useDHCP = lib.mkDefault true;
+  networking.wireless.enable = true;
   networking.hostName = "gungnir";
 
   #
