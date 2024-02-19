@@ -19,6 +19,7 @@
       telescope-fzf-native-nvim
       neo-tree-nvim
       vim-endwise
+      vim-matchup
       (nvim-treesitter.withPlugins(p: [
         p.astro
         p.awk
