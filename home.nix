@@ -5,6 +5,7 @@
   home.homeDirectory = "/data/home";
 
   imports = [
+    ./zsh
     ./wofi
     ./nvim
     ./eww
@@ -12,11 +13,12 @@
     ./kitty
     ./hypr
     ./qutebrowser
-    ./liquidprompt
+    ./aws-vault
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
+    "awscli2"
   ];
 
   home.packages = [
@@ -24,9 +26,12 @@
     pkgs.bat
     pkgs.stow
     pkgs.pass
-    pkgs.zsh-completions
-    pkgs.wineWowPackages.staging
     pkgs.discord
+    pkgs.httpie
+    pkgs.dbeaver
+    pkgs.postgresql
+    pkgs.google-cloud-sdk
+    pkgs.sops
   ];
 
   home.stateVersion = "23.11";
@@ -41,6 +46,16 @@
       enable = true;
       userName = "Matheus Paschoal";
       userEmail = "paschoal@gmail.com";
+
+      extraConfig = {
+        color = {
+          ui = true;
+          pager = true;
+        };
+        rerere = {
+          enabled = true;
+        };
+      };
     };
   };
 }
