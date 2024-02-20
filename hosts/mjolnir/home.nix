@@ -11,10 +11,10 @@
     ../../config/nvim
     ../../config/cursor
     ../../config/kitty
-    ../../config/qutebrowser
     ../../config/aws-vault
     ../../config/wallpapers
 
+    ../../config/qutebrowser/mjolnir
     ../../config/eww/mjolnir
     ../../config/hypr/mjolnir
   ];
