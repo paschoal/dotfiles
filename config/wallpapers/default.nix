@@ -3,12 +3,12 @@
 {
 
   home.file = {
-    ".wallpaper/ow.landscape.jpg" = {
-      source = config.lib.file.mkOutOfStoreSymlink ./files/ow.landscape.jpg;
+    ".wallpaper/landscape.jpg" = {
+      source = ./files/ow.landscape.jpg;
     };
 
-    ".wallpaper/ow.portrait.jpg" = {
-      source = config.lib.file.mkOutOfStoreSymlink ./files/ow.portrait.jpg;
+    ".wallpaper/portrait.jpg" = {
+      source = ./files/ow.portrait.jpg;
     };
   };
 }
