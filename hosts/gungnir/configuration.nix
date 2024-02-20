@@ -5,6 +5,7 @@
     ./hardware.nix
 
     ../../common
+    ../../graphical/hyprland
     ../../locale
 
     <home-manager/nixos>
@@ -17,7 +18,7 @@
 
   users.users.paschoal = {
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "docker"];
     shell = pkgs.zsh;
     createHome = true;
     home = "/data/home";
