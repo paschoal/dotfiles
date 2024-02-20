@@ -1,0 +1,40 @@
+$font: 'Monoid';
+$font-size: 18px;
+$radius: 10px;
+
+.bar {
+  all: unset;
+  font-family: $font;
+  font-size: $font-size;
+}
+
+.left {
+}
+
+.center {
+  border-radius: $radius;
+
+  .spaces {
+    .workspace {
+      color: #FF8F17;
+      margin: 0px 1px;
+      padding: 0px 1px;
+    }
+  }
+}
+
+.right {
+  background-color: #FF8400;
+  border-radius: $radius;
+
+  .clock {
+    padding: 0px 5px;
+
+    .hour {
+      font-weight: bold;
+    }
+
+    .minutes {
+    }
+  }
+}
