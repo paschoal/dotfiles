@@ -24,11 +24,21 @@ $radius: 10px;
 }
 
 .right {
-  background-color: #FF8400;
-  border-radius: $radius;
+  .battery {
+    background-color: #FF8400;
+    border-radius: $radius;
+    padding: 0px 8px 0px 5px;
+    margin-right: 5px;
+
+      .number {
+        font-weight: bold;
+      }
+  }
 
   .clock {
-    padding: 0px 5px;
+    background-color: #FF8400;
+    border-radius: $radius;
+    padding: 0px 8px 0px 5px;
 
     .hour {
       font-weight: bold;

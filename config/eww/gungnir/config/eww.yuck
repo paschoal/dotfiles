@@ -1,5 +1,20 @@
 (defvar eww 'eww')
 
+(defwidget battery[]
+  (box
+    :class 'battery'
+    :space-evenly 'false'
+    :halign 'center'
+    (box
+      :class 'number'
+      "${EWW_BATTERY['BAT0']['capacity']}"
+    )
+    (box
+      :class 'percentage'
+      %
+    )
+  )
+)
 
 (defwidget spaces[]
   (box
@@ -54,6 +69,7 @@
     :class 'right'
     :space-evenly 'false'
     :halign 'end'
+    (battery)
     (clock)
   )
 )
