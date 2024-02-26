@@ -2,18 +2,12 @@
 
 {
   home.packages = [
-    pkgs.hyprpaper
+    pkgs.swww
   ];
 
   xdg.configFile = {
     "hypr/hyprland.conf" = {
       source = ./config/hyprland.conf;
-    };
-
-    "hypr/hyprpaper.conf" = {
-      text = ''
-        preload=$HOME/.wallpaper/landscape.jpg
-      '';
     };
   };
 }
