@@ -6,6 +6,7 @@
 
   imports = [
     ../../config/git
+    ../../config/development
     ../../config/zsh
     ../../config/wofi
     ../../config/nvim
@@ -24,17 +25,14 @@
     "awscli2"
   ];
 
-  home.packages = [
-    pkgs.docker-compose
-    pkgs.monoid
-    pkgs.bat
-    pkgs.pass
-    pkgs.discord
-    pkgs.httpie
-    pkgs.dbeaver
-    pkgs.postgresql
-    pkgs.google-cloud-sdk
-    pkgs.sops
+  home.packages = with pkgs; [
+    docker-compose
+    monoid
+    bat
+    pass
+    discord
+    vlc
+    feh
   ];
 
   home.stateVersion = "23.11";
