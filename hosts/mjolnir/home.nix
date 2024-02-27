@@ -27,7 +27,6 @@
 
   home.packages = with pkgs; [
     docker-compose
-    monoid
     bat
     pass
     discord
