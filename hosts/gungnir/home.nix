@@ -6,6 +6,7 @@
 
   imports = [
     ../../config/git
+    ../../config/development
     ../../config/zsh
     ../../config/wofi
     ../../config/nvim
@@ -19,14 +20,13 @@
     ../../config/hypr/gungnir
   ];
 
-  home.packages = [
-    pkgs.docker-compose
-    pkgs.monoid
-    pkgs.bat
-    pkgs.pass
-    pkgs.httpie
-    pkgs.dbeaver
-    pkgs.postgresql
+  home.packages = with pkgs; [
+    docker-compose
+    monoid
+    bat
+    pass
+    vlc
+    feh
   ];
 
   home.stateVersion = "23.11";
