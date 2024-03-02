@@ -3,6 +3,14 @@
 {
   home.username = "paschoal";
   home.homeDirectory = "/data/home";
+  home.sessionPath = [
+    "/data/home/bin"
+  ];
+
+  screenshots = {
+    folder = "/data/home/screenshots";
+    bin = "/data/home/bin";
+  };
 
   imports = [
     ../../config/git
@@ -14,6 +22,7 @@
     ../../config/kitty
     ../../config/aws-vault
     ../../config/wallpapers
+    ../../config/screenshot
 
     ../../config/qutebrowser/mjolnir
     ../../config/eww/mjolnir
@@ -42,4 +51,5 @@
       enable = true;
     };
   };
+
 }
