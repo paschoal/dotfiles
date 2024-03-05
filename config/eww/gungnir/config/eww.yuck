@@ -11,7 +11,7 @@
     )
     (box
       :class 'percentage'
-      %
+      "%"
     )
   )
 )
