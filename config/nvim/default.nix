@@ -20,6 +20,7 @@
       neo-tree-nvim
       vim-endwise
       vim-matchup
+      obsidian-nvim
       (nvim-treesitter.withPlugins(p: [
         p.astro
         p.awk
@@ -75,9 +76,16 @@
   };
 
   xdg.configFile = {
-    nvim = {
-      source = ./config;
-      recursive = true;
-    };
+    "nvim/lua/core.lua".source = ./lua/core.lua;
+    "nvim/lua/fold.lua".source = ./lua/fold.lua;
+    "nvim/lua/indent.lua".source = ./lua/indent.lua;
+    "nvim/lua/line.lua".source = ./lua/line.lua;
+    "nvim/lua/mapping.lua".source = ./lua/mapping.lua;
+    "nvim/lua/misc.lua".source = ./lua/misc.lua;
+    "nvim/lua/modal.lua".source = ./lua/modal.lua;
+    "nvim/lua/theme.lua".source = ./lua/theme.lua;
+    "nvim/lua/tree-sitter.lua".source = ./lua/tree-sitter.lua;
+    "nvim/lua/tree.lua".source = ./lua/tree.lua;
+    "nvim/init.lua".source = ./lua/init.lua;
   };
 }
