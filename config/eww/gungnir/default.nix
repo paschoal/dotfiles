@@ -2,7 +2,7 @@
 
 {
   home.packages = [
-    pkgs.eww-wayland
+    pkgs.eww
     pkgs.jq
     pkgs.socat
   ];
