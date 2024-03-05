@@ -12,6 +12,7 @@
     ../../config/nvim
     ../../config/cursor
     ../../config/kitty
+    ../../config/kitty-font/gungnir
     ../../config/aws-vault
     ../../config/wallpapers
 
@@ -22,7 +23,6 @@
 
   home.packages = with pkgs; [
     docker-compose
-    monoid
     bat
     pass
     vlc
