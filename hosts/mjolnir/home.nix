@@ -23,6 +23,9 @@
     ../../config/aws-vault
     ../../config/wallpapers
     ../../config/screenshot
+    ../../config/notes
+
+    ../../games/wow
 
     ../../config/qutebrowser/mjolnir
     ../../config/eww/mjolnir
@@ -32,6 +35,7 @@
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
     "awscli2"
+    "obsidian"
   ];
 
   home.packages = with pkgs; [
