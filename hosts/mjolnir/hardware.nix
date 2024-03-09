@@ -5,6 +5,8 @@
 
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+
+    ../../audio/mjolnir
   ];
 
   #
@@ -72,13 +74,4 @@
     ckb-next
   ];
   hardware.ckb-next.enable = true;
-
-  #
-  # sound
-  #
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
 }
