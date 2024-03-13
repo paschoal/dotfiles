@@ -20,6 +20,7 @@
     ../../config/nvim
     ../../config/cursor
     ../../config/kitty
+    ../../config/kitty-font/mjolnir
     ../../config/aws-vault
     ../../config/wallpapers
     ../../config/screenshot
