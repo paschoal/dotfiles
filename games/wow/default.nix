@@ -6,5 +6,7 @@
     ./addons/opie
     ./addons/dominos
     ./addons/suf
+    ./addons/details
+    ./addons/advanced-interface-options
   ];
 }
