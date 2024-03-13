@@ -1,91 +1,73 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.fd
-    pkgs.ripgrep
+  imports = [
+    ./plugins/onedark-nvim
+    ./plugins/lualine-nvim
+    ./plugins/indent-blankline-nvim
+    ./plugins/neo-tree-nvim
+    ./plugins/telescope-nvim
+    ./plugins/nvim-treesitter
+    ./plugins/vim-endwise
+    ./plugins/vim-matchup
   ];
 
   programs.neovim = {
     enable = true;
+    extraPackages = with pkgs; [
+      fd
+      ripgrep
+    ];
+
     vimAlias = true;
     defaultEditor = true;
+    withRuby = false;
+    withPython3 = false;
+    withNodeJs = false;
 
-    plugins = with pkgs.vimPlugins; [
-      onedark-nvim
-      lualine-nvim
-      indent-blankline-nvim
-      telescope-nvim
-      telescope-fzf-native-nvim
-      neo-tree-nvim
-      vim-endwise
-      vim-matchup
-      obsidian-nvim
-      (nvim-treesitter.withPlugins(p: [
-        p.astro
-        p.awk
-        p.bash
-        p.c
-        p.lua
-        p.luadoc
-        p.luap
-        p.query
-        p.vim
-        p.vimdoc
-        p.cpp
-        p.css
-        p.csv
-        p.dockerfile
-        p.elixir
-        p.erlang
-        p.git_config
-        p.git_rebase
-        p.gitattributes
-        p.gitcommit
-        p.gitignore
-        p.go
-        p.gpg
-        p.graphql
-        p.html
-        p.http
-        p.java
-        p.javascript
-        p.jq
-        p.json
-        p.json5
-        p.kotlin
-        p.make
-        p.markdown
-        p.markdown_inline
-        p.nix
-        p.passwd
-        p.proto
-        p.python
-        p.ruby
-        p.rust
-        p.scss
-        p.sql
-        p.terraform
-        p.toml
-        p.typescript
-        p.xml
-        p.yaml
-        p.yuck
-      ]))
-    ];
-  };
+    extraConfig = ''
+      let mapleader=","
 
-  xdg.configFile = {
-    "nvim/lua/core.lua".source = ./lua/core.lua;
-    "nvim/lua/fold.lua".source = ./lua/fold.lua;
-    "nvim/lua/indent.lua".source = ./lua/indent.lua;
-    "nvim/lua/line.lua".source = ./lua/line.lua;
-    "nvim/lua/mapping.lua".source = ./lua/mapping.lua;
-    "nvim/lua/misc.lua".source = ./lua/misc.lua;
-    "nvim/lua/modal.lua".source = ./lua/modal.lua;
-    "nvim/lua/theme.lua".source = ./lua/theme.lua;
-    "nvim/lua/tree-sitter.lua".source = ./lua/tree-sitter.lua;
-    "nvim/lua/tree.lua".source = ./lua/tree.lua;
-    "nvim/init.lua".source = ./lua/init.lua;
+      set updatetime=250
+      set nohlsearch
+      set incsearch 
+      set number
+      set noruler
+      set nowrap
+      set nocursorline
+      set eol
+      set nowrapscan
+      set noerrorbells
+      set novisualbell
+
+      set clipboard=unnamedplus
+
+      set list
+      set listchars+=tab:··,eol:¬,trail:-,extends:>,precedes:<
+
+      set expandtab
+      set autoindent
+      set smartindent
+      set nocindent
+      set shiftwidth=2
+      set softtabstop=2
+
+      set foldmethod=indent
+      set foldlevel=20
+
+      set termguicolors
+      set conceallevel=2
+
+      au FileType ruby setlocal indentkeys-=.
+
+      augroup filetypedetect
+        au! BufRead,BufNewFile dockerfile.yml setfiletype dockerfile
+        au! BufRead,BufNewFile dockerfile.yaml setfiletype dockerfile
+      augroup END
+
+      nmap <space> za
+      nmap <leader>ff <Cmd>Telescope find_files<CR>
+      nmap <leader>fb <Cmd>Telescope buffers<CR>
+    '';
   };
 }
