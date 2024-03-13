@@ -2,7 +2,8 @@
 {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-    	( nvim-treesitter.withPlugins(p: [
+      (
+        nvim-treesitter.withPlugins(p: [
           p.astro
           p.awk
           p.bash
@@ -52,7 +53,8 @@
           p.xml
           p.yaml
           p.yuck
-      ]))
+        ])
+      )
     ];
   };
 }

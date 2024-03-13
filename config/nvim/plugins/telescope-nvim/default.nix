@@ -6,8 +6,8 @@
 
       {
       	plugin = telescope-nvim;
-	type = "lua";
-	config = builtins.readFile ./config.lua;
+        type = "lua";
+        config = builtins.readFile ./config.lua;
       }
     ];
   };

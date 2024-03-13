@@ -4,8 +4,8 @@
     plugins = with pkgs.vimPlugins; [
       {
       	plugin = neo-tree-nvim;
-	type = "lua";
-	config = builtins.readFile ./config.lua;
+        type = "lua";
+        config = builtins.readFile ./config.lua;
       }
     ];
   };
