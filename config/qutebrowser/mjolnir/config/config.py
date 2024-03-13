@@ -1,6 +1,6 @@
 config.load_autoconfig()
 
-c.fonts.default_family ='Monoid'
+c.fonts.default_family ='Iosevka'
 c.fonts.default_size = '18pt'
 
 c.content.geolocation = False
