@@ -5,7 +5,6 @@
     zsh
     gnupg
     git
-    pinentry-curses
   ];
 
   services = {
@@ -18,7 +17,7 @@
     zsh.enable = true;
     gnupg.agent = {
       enable = true;
-      pinentryFlavor = "curses";
+      pinentryPackage = pkgs.pinentry-curses;
     };
   };
 }
