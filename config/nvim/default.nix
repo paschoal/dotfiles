@@ -10,6 +10,9 @@
     ./plugins/nvim-treesitter
     ./plugins/vim-endwise
     ./plugins/vim-matchup
+    ./plugins/nvim-cmp
+    ./plugins/nvim-notify
+    ./plugins/pomo-nvim
   ];
 
   programs.neovim = {
@@ -68,6 +71,9 @@
       nmap <space> za
       nmap <leader>ff <Cmd>Telescope find_files<CR>
       nmap <leader>fb <Cmd>Telescope buffers<CR>
+      nmap <leader>ot <Cmd>ObsidianToday<CR>
+      nmap <leader>oy <Cmd>ObsidianYesterday<CR>
+      nmap <leader>ow <Cmd>ObsidianTomorrow<CR>
     '';
   };
 }
