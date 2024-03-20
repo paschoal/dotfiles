@@ -5,6 +5,7 @@
     zsh
     gnupg
     git
+    pinentry-curses
   ];
 
   services = {
