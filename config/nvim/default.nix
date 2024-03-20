@@ -71,9 +71,12 @@
       nmap <space> za
       nmap <leader>ff <Cmd>Telescope find_files<CR>
       nmap <leader>fb <Cmd>Telescope buffers<CR>
+
       nmap <leader>ot <Cmd>ObsidianToday<CR>
       nmap <leader>oy <Cmd>ObsidianYesterday<CR>
       nmap <leader>ow <Cmd>ObsidianTomorrow<CR>
+      nmap <leader>on <Cmd>ObsidianNew
+      nmap <leader>os <Cmd>ObisidianSearch<CR>
     '';
   };
 }
