@@ -19,7 +19,7 @@
 
   users.users.paschoal = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker"];
+    extraGroups = ["wheel" "docker" "audio"];
     shell = pkgs.zsh;
     createHome = true;
     home = "/data/home";
