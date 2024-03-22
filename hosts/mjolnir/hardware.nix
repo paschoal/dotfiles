@@ -74,4 +74,9 @@
     ckb-next
   ];
   hardware.ckb-next.enable = true;
+
+  #
+  # QMK
+  #
+  hardware.keyboard.qmk.enable = true;
 }
