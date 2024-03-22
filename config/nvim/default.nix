@@ -76,7 +76,7 @@
       nmap <leader>oy <Cmd>ObsidianYesterday<CR>
       nmap <leader>ow <Cmd>ObsidianTomorrow<CR>
       nmap <leader>on <Cmd>ObsidianNew
-      nmap <leader>os <Cmd>ObisidianSearch<CR>
+      nmap <leader>os <Cmd>ObsidianSearch<CR>
     '';
   };
 }
