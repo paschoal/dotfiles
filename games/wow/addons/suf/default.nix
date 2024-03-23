@@ -4,10 +4,10 @@ with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-suf";
-    version = "v4.4.7";
+    version = "v4.4.8";
     src = fetchurl {
       url = "https://cdn.wowinterface.com/downloads/file13494/ShadowedUnitFrames-${version}.zip";
-      hash = "sha256-6CRyPR8Wj/Eb/n6Cglv39vbRFBmgpxDTYsCJ1/0fN0Q=";
+      hash = "sha256-BpU+SBApnNr+KmSMJ/9u7IgmA3gUokun6ZHtMs4fkLM=";
     };
     nativeBuildInputs = [unzip];
     unpackPhase = ''
