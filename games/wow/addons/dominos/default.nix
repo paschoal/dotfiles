@@ -4,10 +4,10 @@ with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-dominos";
-    version = "10.2.23";
+    version = "10.2.24";
     src = fetchurl {
       url = "https://cdn.wowinterface.com/downloads/file9085/Dominos-${version}.zip";
-      sha256 = "sha256-v2MKjUpvR0ymgp2GLWMlMAnyP7AWamM5HZW78pc7tJA=";
+      sha256 = "sha256-iYg2wxdPZbw7esqAqfqdIjDsizL0dJLMduNN2UVUyvo=";
     };
     nativeBuildInputs = [unzip];
     unpackPhase = ''
