@@ -6,10 +6,10 @@
       with import <nixpkgs> {};
       stdenv.mkDerivation rec {
         name = "wowaddons-opie";
-        version = "zeta4.5";
+        version = "zeta4.5b";
         src = fetchzip {
-          url = "https://www.townlong-yak.com/addons/gate/d7b52bf73bd91ca2/opie/OPie-${version}.zip";
-          hash = "sha256-mLD9Vdvj2veyJtMaow1I7HWaX0tP3l16f6THs56v8tE=";
+          url = "https://www.townlong-yak.com/addons/gate/93913ce981ba4e02/opie/OPie-${version}.zip";
+          sha256 = "sha256-SfYjFTaT/P7uuanfXsU5KH2ihvkjpZrrAjaAsOqbdaE=";
         };
         installPhase = ''
           mv Bundle $out
