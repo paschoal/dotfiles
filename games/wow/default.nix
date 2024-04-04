@@ -8,5 +8,7 @@
     ./addons/suf
     ./addons/details
     ./addons/advanced-interface-options
+    ./addons/simulationcraft
+    ./addons/plater
   ];
 }
