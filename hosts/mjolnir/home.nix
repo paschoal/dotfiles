@@ -31,6 +31,7 @@
     ../../config/qutebrowser/mjolnir
     ../../config/eww/mjolnir
     ../../config/hypr/mjolnir
+    ../../config/manufact
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
