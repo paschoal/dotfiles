@@ -7,6 +7,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
 
     ../../audio/mjolnir
+    ../../hardware/radeon
     ../../hardware/tartarus
   ];
 
@@ -79,7 +80,6 @@
   #
   environment.systemPackages = with pkgs; [
     ckb-next
-    lact
   ];
   hardware.ckb-next.enable = true;
 
