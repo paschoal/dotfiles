@@ -7,12 +7,25 @@
     (modulesPath + "/installer/scan/not-detected.nix")
 
     ../../audio/mjolnir
+    ../../hardware/tartarus
   ];
 
   #
   # cpu
   #
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  #
+  # gpu
+  #
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+  services.xserver.videoDrivers = ["amdgpu"];
+  boot.initrd.kernelModules = ["amdgpu"];
+  boot.kernelParams = ["video=DP-3:2560x1440@144" "video=HDMI-A-1:1920x1080@60"];
 
   #
   # kernel
@@ -25,12 +38,6 @@
     "usbhid"
     "sd_mod"
   ];
-
-  #
-  # graphical
-  #
-  boot.initrd.kernelModules = ["amdgpu"];
-  boot.kernelParams = ["video=DP-3:2560x1440@144" "video=HDMI-A-1:1920x1080@60"];
 
   #
   # bootload
@@ -68,10 +75,11 @@
   networking.hostName = "mjolnir";
 
   #
-  # mouse
+  # mouse & keyboard
   #
   environment.systemPackages = with pkgs; [
     ckb-next
+    lact
   ];
   hardware.ckb-next.enable = true;
 

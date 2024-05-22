@@ -7,6 +7,7 @@
     ../../common
     ../../graphical/hyprland
     ../../locale
+    ../../hardware/tartarus
     ../../games
 
     <home-manager/nixos>
@@ -19,7 +20,7 @@
 
   users.users.paschoal = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "audio"];
+    extraGroups = ["wheel" "docker" "audio" "input"];
     shell = pkgs.zsh;
     createHome = true;
     home = "/data/home";

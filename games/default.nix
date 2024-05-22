@@ -8,12 +8,23 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    mangohud
+    protonup
     wineWowPackages.staging
+    winetricks
     lutris
+    bottles
   ];
 
   programs = {
     steam.enable = true;
+    steam.gamescopeSession.enable = true;
+    gamescope.enable = true;
+    gamemode.enable = true;
+  };
+
+  users.users.paschoal = {
+    extraGroups = ["gamemode"];
   };
 }
 
