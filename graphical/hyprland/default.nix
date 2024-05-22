@@ -5,8 +5,13 @@
     hyprland
     wl-clipboard
     xdg-utils
-    xdg-desktop-portal-hyprland
+    vesktop
   ];
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  };
 
   programs = {
     hyprland = {
