@@ -1,27 +1,26 @@
 { config, pkgs, ... }:
 
-{
-  home.file.wowaddons-opie = {
-    source = (
-      with import <nixpkgs> {};
-      stdenv.mkDerivation rec {
-        name = "wowaddons-opie";
-        version = "zeta4.5b";
-        src = fetchzip {
-          url = "https://www.townlong-yak.com/addons/gate/93913ce981ba4e02/opie/OPie-${version}.zip";
-          sha256 = "sha256-SfYjFTaT/P7uuanfXsU5KH2ihvkjpZrrAjaAsOqbdaE=";
-        };
-        installPhase = ''
-          mv Bundle $out
-          mv Libs $out
-          mv Meta $out
-          mv gfx $out
-          mv *.lua $out
-          mv *.toc $out
-        '';
-      }
-    );
-
+with import <nixpkgs> {};
+let
+  addon = stdenv.mkDerivation rec {
+    name = "wowaddons-opie";
+    version = "zeta5a";
+    src = fetchurl {
+      url = "https://www.curseforge.com/api/v1/mods/19406/files/5290324/download";
+      sha256 = "sha256-oaO6ksDSErV4z/SrTyiC9JNVL9/hJBoZkGYm+FSlzc0=";
+    };
+    nativeBuildInputs = [unzip];
+    unpackPhase = ''
+      unzip $src
+    '';
+    installPhase = ''
+      mkdir $out/
+      mv OPie/* $out/
+    '';
+  };
+  in {
+    home.file.wowaddons-opie = {
+    source = addon;
     target = "games/addons/OPie";
   };
 }
