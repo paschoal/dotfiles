@@ -7,7 +7,6 @@
     ../../common
     ../../graphical/hyprland
     ../../locale
-    ../../hardware/tartarus
     ../../games
 
     <home-manager/nixos>
