@@ -10,6 +10,7 @@
     ./addons/plater
     ./addons/littlewigs
     ./addons/bigwigs
+    ./addons/tomtom
 
     ./logs
   ];
