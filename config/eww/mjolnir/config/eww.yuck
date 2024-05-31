@@ -17,8 +17,8 @@
     )
   )
 )
-(deflisten ww :initial '[]' 'bash ~/.config/eww/scripts/get-workspaces')
-(deflisten c :initial '1' 'bash ~/.config/eww/scripts/get-workspace')
+(deflisten ww :initial '[]' 'sh ~/.config/eww/scripts/get-workspaces')
+(deflisten c :initial '1' 'sh ~/.config/eww/scripts/get-workspace')
 
 (defwidget clock[]
   (box
