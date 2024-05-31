@@ -11,6 +11,8 @@
     ./addons/littlewigs
     ./addons/bigwigs
     ./addons/tomtom
+    ./addons/leatrix-plus
+    ./addons/narcissus
 
     ./logs
   ];
