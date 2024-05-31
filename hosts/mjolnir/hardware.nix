@@ -26,7 +26,9 @@
   };
   services.xserver.videoDrivers = ["amdgpu"];
   boot.initrd.kernelModules = ["amdgpu"];
-  boot.kernelParams = ["video=DP-3:2560x1440@144" "video=HDMI-A-1:1920x1080@60"];
+  boot.kernelParams = ["video=DP-3:2560x1440@144"];
+
+  # boot.kernelParams = ["video=DP-3:2560x1440@144" "video=HDMI-A-1:1920x1080@60"];
 
   #
   # kernel
