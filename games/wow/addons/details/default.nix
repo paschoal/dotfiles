@@ -4,10 +4,10 @@ with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-details";
-    version = "20240528.12717.156";
+    version = "20240519.12755.156";
     src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/61284/files/5328232/download";
-      hash = "sha256-2s8/PZN+Uo71j4Ow2rAhVz4vGuheR9ZxvU2Fe7EoZFA=";
+      url = "https://www.curseforge.com/api/v1/mods/61284/files/5356706/download";
+      hash = "sha256-H5APZL9on8g6BBJThtHkPE0N5CZ6jex9LR9EkLxd8mk=";
     };
     nativeBuildInputs = [unzip];
     unpackPhase = ''

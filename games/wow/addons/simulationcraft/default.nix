@@ -4,10 +4,10 @@ with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-simulationcraft";
-    version = "10.2.6-01";
+    version = "10.2.7-01";
     src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/82745/files/5196310/download";
-      hash = "sha256-xXMoEl/QU86Xzl2r6HCVKSSXg/qvqsJ4HV8ff/PWIO0=";
+      url = "https://www.curseforge.com/api/v1/mods/82745/files/5325008/download";
+      hash = "sha256-coJaeG/IUUqFVBmWhysyFI8LNa723RZhZiGqa/XZO/0=";
     };
     nativeBuildInputs = [unzip];
     unpackPhase = ''
