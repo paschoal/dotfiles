@@ -4,10 +4,10 @@ with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-leatrix-plus";
-    version = "10.2.28";
+    version = "10.2.29";
     src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/94855/files/5363538/download";
-      sha256 = "sha256-pqZsMAU69qmlTEaNAD06eZmJbDRPxoKvgOz3R7y7WCw=";
+      url = "https://www.curseforge.com/api/v1/mods/94855/files/5380879/download";
+      sha256 = "sha256-/2TFI5hpL6T7URUtb+MfyrGZsoF8jmawSihxA1qd6YU=";
     };
     nativeBuildInputs = [unzip];
     unpackPhase = ''
