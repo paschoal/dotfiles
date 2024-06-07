@@ -6,6 +6,7 @@
 
     ../../common
     ../../graphical/hyprland
+    ../../graphical/greetd
     ../../locale
     ../../games
 
