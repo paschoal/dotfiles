@@ -8,18 +8,24 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    mangohud
     protonup
     wineWowPackages.staging
     winetricks
-    lutris
-    bottles
+
+    (
+      lutris.override {
+        extraPkgs = pkgs: [
+          wineWowPackages.staging
+          gamemode
+          winetricks
+        ];
+        extraLibraries = pkgs: [gamemode];
+      }
+    )
   ];
 
   programs = {
     steam.enable = true;
-    steam.gamescopeSession.enable = true;
-    gamescope.enable = true;
     gamemode.enable = true;
   };
 
