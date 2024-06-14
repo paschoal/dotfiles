@@ -5,7 +5,7 @@
     let
       getFrom = url: hash: name: {
         name = name;
-        size = 64;
+        size = 32;
         package =
           pkgs.runCommand "moveUp" {} ''
             mkdir -p $out/share/icons
