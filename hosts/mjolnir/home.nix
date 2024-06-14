@@ -7,31 +7,25 @@
     "/data/home/bin"
   ];
 
-  screenshots = {
-    folder = "/data/home/screenshots";
-    bin = "/data/home/bin";
-  };
-
   imports = [
     ../../config/git
     ../../config/development
     ../../config/zsh
-    ../../config/wofi
     ../../config/nvim
-    ../../config/cursor
-    ../../config/kitty
-    ../../config/kitty-font/mjolnir
     ../../config/aws-vault
-    ../../config/wallpapers
-    ../../config/screenshot
-    ../../config/notes
-
     ../../games/wow
-
-    ../../config/qutebrowser/mjolnir
-    ../../config/eww/mjolnir
-    ../../config/hypr/mjolnir
     ../../config/manufact
+    ../../config/qutebrowser/mjolnir
+    ../../config/i3/mjolnir
+    ../../config/alacritty
+    ../../config/cursor
+    ../../config/wallpapers
+    ../../config/polybar/mjolnir
+    ../../config/rofi
+    ../../config/clipmenu
+    ../../config/platinum
+    ../../config/mangohud
+    ../../config/obs
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -52,10 +46,23 @@
   home.stateVersion = "24.05";
   home.enableNixpkgsReleaseCheck = false;
 
+  xdg.userDirs = {
+    createDirectories = true;
+    desktop = "${config.home.homeDirectory}/desktop";
+    documents = "${config.home.homeDirectory}/documents";
+    download = "${config.home.homeDirectory}/downloads";
+    music = "${config.home.homeDirectory}/downloads";
+    pictures = "${config.home.homeDirectory}/downloads";
+    publicShare = "${config.home.homeDirectory}/downloads";
+    templates = "${config.home.homeDirectory}/downloads";
+    videos = "${config.home.homeDirectory}/downloads";
+  };
+
   programs = {
     home-manager = {
       enable = true;
     };
   };
 
+  fonts.fontconfig.enable = true;
 }
