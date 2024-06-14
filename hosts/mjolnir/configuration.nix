@@ -5,10 +5,11 @@
     ./hardware.nix
 
     ../../common
-    ../../graphical/hyprland
-    ../../graphical/greetd
     ../../locale
     ../../games
+    ../../graphical/i3
+    # ../../graphical/hyprland
+    # ../../graphical/greetd
 
     <home-manager/nixos>
   ];

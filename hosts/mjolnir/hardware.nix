@@ -22,8 +22,8 @@
   hardware.opengl = {
     enable = true;
     driSupport = true;
-    driSupport32Bit = true;
   };
+
   services.xserver.videoDrivers = ["amdgpu"];
   boot.initrd.kernelModules = ["amdgpu"];
   boot.kernelParams = ["video=DP-3:2560x1440@144"];
