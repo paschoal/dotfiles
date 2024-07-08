@@ -5,6 +5,11 @@ font pango:Iosevka 13
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+#
+# Client for CKB-Next
+#
+exec --no-startup-id ckb-next --background
+
 exec --no-startup-id ~/bin/polybar-launcher
 
 # Use pactl to adjust volume in PulseAudio.
