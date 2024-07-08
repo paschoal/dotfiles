@@ -7,6 +7,10 @@
     "/data/home/bin"
   ];
 
+  screenshots = {
+    folder = "${config.home.homeDirectory}/screenshots";
+  };
+
   imports = [
     ../../config/git
     ../../config/development
@@ -22,10 +26,11 @@
     ../../config/wallpapers
     ../../config/polybar/mjolnir
     ../../config/rofi
-    ../../config/clipmenu
     ../../config/platinum
     ../../config/mangohud
     ../../config/obs
+    ../../config/clipmenu
+    ../../config/screenshot/flameshot
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
