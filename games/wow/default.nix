@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./addons/auctionator
     ./addons/weakauras
     ./addons/opie
     ./addons/details
