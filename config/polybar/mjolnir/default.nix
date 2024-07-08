@@ -8,16 +8,33 @@
         recursive = true;
       };
     };
+    
+    nixpkgs.config = {
+      packageOverrides = pkgs: rec {
+        polybar = pkgs.polybar.override {
+          i3Support = true;
+        };
+      };
+    };
 
-    home.packages = [pkgs.polybar pkgs.killall];
+    home.packages = with pkgs; [
+      polybar
+    ];
+
     home.file = {
       "polybar-launcher" = {
         target = "${config.home.homeDirectory}/bin/polybar-launcher";
         enable = true;
         source = let
           script = pkgs.writeShellScriptBin "launcher" ''
-            ${pkgs.killall}/bin/killall -q polybar
-            while pgrep -x polybar > /dev/null; do sleep 1; done
+            ps aux \
+              | grep polybar \
+              | grep -v grep \
+              | awk '{print $2}' \
+              | sed -n 's/^[^ ]*[ ]*\([^ ]*\).*/\1/p' \
+              | while read pid; do
+                  kill "$pid"
+                done
             ${pkgs.polybar}/bin/polybar default &
           '';
           in "${script}/bin/launcher";
