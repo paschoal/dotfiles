@@ -4,11 +4,16 @@ with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-bigwigs";
-    version = "v333";
+
+    version = "v341";
+    project = "2382";
+    file = "5505609";
+
     src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/2382/files/5395603/download";
-      hash = "sha256-T52GuBqaOJNPfD8j8/QFI9BzPoWTHDot7kiGgWnxSfI=";
+      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
+      hash = "sha256-SVf/jxPkDFZ8vOvyALMrSp0iMfKQdN2UuaGW29Xv+vU=";
     };
+
     nativeBuildInputs = [unzip];
     unpackPhase = ''
       unzip $src

@@ -4,11 +4,16 @@ with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-littlewigs";
-    version = "v10.2.57";
+
+    version = "v10.2.73";
+    project = "4383";
+    file = "5505614";
+
     src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/4383/files/5379483/download";
-      hash = "sha256-UaVztVJMOikKWwukkoZleTcuDbUceePLGd/jsZiBupE=";
+      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
+      hash = "sha256-dtCkBpBXjCcot7gzp12Exsj77wUrHX3ECiQYbBjKnC8=";
     };
+
     nativeBuildInputs = [unzip];
     unpackPhase = ''
       unzip $src
