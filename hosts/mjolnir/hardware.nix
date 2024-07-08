@@ -19,16 +19,11 @@
   #
   # gpu
   #
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-  };
+  hardware.graphics.enable = true;
 
   services.xserver.videoDrivers = ["amdgpu"];
   boot.initrd.kernelModules = ["amdgpu"];
-  boot.kernelParams = ["video=DP-3:2560x1440@144"];
-
-  # boot.kernelParams = ["video=DP-3:2560x1440@144" "video=HDMI-A-1:1920x1080@60"];
+  boot.kernelParams = ["video=DP-3:2560x1440@150"];
 
   #
   # kernel
@@ -80,13 +75,32 @@
   #
   # mouse & keyboard
   #
-  environment.systemPackages = with pkgs; [
-    ckb-next
-  ];
   hardware.ckb-next.enable = true;
 
   #
-  # QMK
+  # monitor configuration
   #
-  hardware.keyboard.qmk.enable = true;
+  services.xserver = {
+    xrandrHeads = [
+      {
+        output = "HDMI-A-0";
+        monitorConfig = ''
+          Modeline "1920x1080@60" 148.50 1920 2008 2052 2200 1080 1084 1089 1125 +hsync +vsync
+          Option "PreferredMode" "1920x1080@60"
+          Option "Rotate" "right"
+          Option "LeftOf" "DisplayPort-2"
+        '';
+      }
+
+      {
+        output = "DisplayPort-2";
+        primary = true;
+        monitorConfig = ''
+          Modeline "2560x1440@150" 612.61 2560 2568 2600 2640 1440 1443 1453 1547 +hsync +vsync
+          Option "PreferredMode" "2560x1440@150"
+          Option "RightOf" "HDMI-A-0"
+        '';
+      }
+    ];
+  };
 }
