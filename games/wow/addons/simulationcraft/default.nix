@@ -4,11 +4,16 @@ with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-simulationcraft";
+
+    project = "82745";
+    file = "5325008";
     version = "10.2.7-01";
+
     src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/82745/files/5325008/download";
+      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
       hash = "sha256-coJaeG/IUUqFVBmWhysyFI8LNa723RZhZiGqa/XZO/0=";
     };
+
     nativeBuildInputs = [unzip];
     unpackPhase = ''
       unzip $src
@@ -18,6 +23,7 @@ let
       mv Simulationcraft $out/
     '';
   };
+
 in {
   home.file.wowaddons-simulationcraft = {
     source = "${addon}/Simulationcraft";

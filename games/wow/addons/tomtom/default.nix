@@ -4,10 +4,14 @@ with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-tomtom";
-    version = "v3.6.2-release";
+
+    project = "18808";
+    file = "5492608";
+    version = "v3.6.4-release";
+
     src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/18808/files/5325968/download";
-      hash = "sha256-+O2K8rxWam0/7/Z1TCrIwpFMRAZO9JW30vvTQ9d97PQ=";
+      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
+      hash = "sha256-A/cQ2u1kK6VcIUDa8szcq5969FFgUFSlw6rqikPi1+c=";
     };
 
     nativeBuildInputs = [unzip];

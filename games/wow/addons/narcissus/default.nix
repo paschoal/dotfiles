@@ -4,11 +4,16 @@ with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-narcissus";
-    version = "1.6.2c";
+
+    version = "1.6.5b";
+    project = "311718";
+    file = "5482704";
+
     src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/311718/files/5396873/download";
-      hash = "sha256-G+BImrmT2RnOBhbrfb+rbKVJbi4jrmXM9NSrA20KxVc=";
+      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
+      hash = "sha256-9/staTrwTIntnMFAlAUEWCGQFksJUlcZkzZzpCcIt3k=";
     };
+
     nativeBuildInputs = [unzip];
     unpackPhase = ''
       unzip $src

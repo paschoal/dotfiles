@@ -6,11 +6,16 @@
       with import <nixpkgs> {};
       stdenv.mkDerivation rec {
         name = "wowaddons-plater";
-        version = "v580";
+
+        version = "v582";
+        project = "100547";
+        file = "5468706";
+
         src = fetchurl {
-          url = "https://www.curseforge.com/api/v1/mods/100547/files/5374596/download";
-          hash = "sha256-fZU+blu9YyeCG+RL3s10nMCc+PdXn0Db/keuco50i+Y=";
+          url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
+          hash = "sha256-eVMbEObt5CA7tiJ+8G/h3PjE1PLQ5xjOEvlQ2g8BP0M=";
         };
+
         nativeBuildInputs = [unzip];
         unpackPhase = ''
           unzip $src
