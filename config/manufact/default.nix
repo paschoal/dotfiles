@@ -1,8 +1,10 @@
 { config, pkgs, ... }:
 
-{
-  home.packages = with pkgs; [
-    freecad
-    cura
+let
+  stable-pkgs = import <nixos-stable> { };
+in {
+  home.packages = [
+    stable-pkgs.freecad
+    stable-pkgs.cura
   ];
 }
