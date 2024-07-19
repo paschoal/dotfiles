@@ -3,6 +3,7 @@
 {
   imports = [
     ./addons/auctionator
+    ./addons/loot-appraiser
     ./addons/weakauras
     ./addons/opie
     ./addons/details
@@ -14,6 +15,7 @@
     ./addons/tomtom
     ./addons/leatrix-plus
     ./addons/narcissus
+    ./addons/dialogue-ui
 
     ./logs
   ];
