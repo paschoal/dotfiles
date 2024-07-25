@@ -67,12 +67,6 @@
   ];
 
   #
-  # network
-  #
-  networking.useDHCP = lib.mkDefault true;
-  networking.hostName = "mjolnir";
-
-  #
   # mouse & keyboard
   #
   hardware.ckb-next.enable = true;
