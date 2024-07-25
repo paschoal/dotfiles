@@ -6,12 +6,12 @@ let
     name = "wowaddons-simulationcraft";
 
     project = "82745";
-    file = "5325008";
-    version = "10.2.7-01";
+    file = "5557621";
+    version = "11.0.0-01";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-coJaeG/IUUqFVBmWhysyFI8LNa723RZhZiGqa/XZO/0=";
+      hash = "sha256-UrGmSPbEN822WR7IWWuqsaKH5DLNEIWL85MpZeRmR4g=";
     };
 
     nativeBuildInputs = [unzip];

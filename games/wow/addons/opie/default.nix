@@ -5,13 +5,13 @@ let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-opie";
 
-    version = "zeta7b";
+    version = "zeta8a";
     project = "19406";
-    file = "5483792";
+    file = "5535853";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-tUFRsMvTeU9z6TBbWR6YI3DusxVS17d2NSvZVIoj+mw=";
+      hash = "sha256-XhtYM95cQ2gO+AAQ7IsgtZzGfML2LZ0C+yAfXolKqH8=";
     };
 
     nativeBuildInputs = [unzip];
