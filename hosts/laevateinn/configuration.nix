@@ -9,20 +9,14 @@
       ./hardware.nix
       ./network.nix
 
+      ../../common
+      ../../locale
       ../../services/openssh
       ../../services/klipper
     ];
 
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
-
-  time.timeZone = "America/Montreal";
-
-  i18n.defaultLocale = "en_CA.UTF-8";
-
-  programs = {
-    zsh.enable = true;
-  };
 
   users.users.paschoal = {
     isNormalUser = true;
