@@ -179,6 +179,15 @@
         ";
       };
 
+      "gcode_macro BLTOUCH_RESET" = {
+        gcode = "
+          BLTOUCH_DEBUG COMMAND=reset
+          BLTOUCH_DEBUG COMMAND=pin_up
+          BLTOUCH_DEBUG COMMAND=pin_down
+          BLTOUCH_DEBUG COMMAND=pin_up
+        ";
+      }
+
       safe_z_home = {
         home_xy_position = "110,110";
         speed = 50;
