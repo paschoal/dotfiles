@@ -2,22 +2,18 @@
 
 {
   imports = [
+    <home-manager/nixos>
+
     ./hardware.nix
+    ./network.nix
 
     ../../common
     ../../locale
     ../../games
     ../../graphical/i3
-    # ../../graphical/hyprland
-    # ../../graphical/greetd
-
-    <home-manager/nixos>
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings.experimental-features = ["nix-command"];
 
   users.users.paschoal = {
     isNormalUser = true;
