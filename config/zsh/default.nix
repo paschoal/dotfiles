@@ -11,6 +11,7 @@
         enable = true;
         shellAliases = {
           cat = "bat";
+          nixos-rebuild = "nixos-rebuild --use-remote-sudo";
         };
 
         plugins = [
