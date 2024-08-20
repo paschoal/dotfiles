@@ -13,7 +13,7 @@
     ../../graphical/i3
   ];
 
-  nix.settings.experimental-features = ["nix-command"];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   users.users.paschoal = {
     isNormalUser = true;
