@@ -3,10 +3,11 @@
 let
   stable-pkgs = import <nixos-stable> { };
 in {
-  imports = [./orca-slicer];
+  imports = [
+    ./orca-slicer
+  ];
 
   home.packages = [
     stable-pkgs.freecad
-    stable-pkgs.cura
   ];
 }
