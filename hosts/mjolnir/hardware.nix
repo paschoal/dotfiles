@@ -9,6 +9,14 @@
     ../../audio/mjolnir
     ../../hardware/radeon
     ../../hardware/tartarus
+    ../../hardware/raid/mjolnir
+  ];
+
+  #
+  # raid
+  #
+  environment.systemPackages = [
+    pkgs.mdadm
   ];
 
   #
@@ -23,7 +31,10 @@
 
   services.xserver.videoDrivers = ["amdgpu"];
   boot.initrd.kernelModules = ["amdgpu"];
-  boot.kernelParams = ["video=DP-3:2560x1440@150"];
+  boot.kernelParams = [
+    "video=DP-3:2560x1440@150"
+    "raid0.default_layout=2"
+  ];
 
   #
   # kernel
@@ -60,6 +71,11 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/boot";
     fsType = "vfat";
+  };
+
+  fileSystems."/data/games" = {
+    device = "/dev/disk/by-label/games";
+    fsType = "ext4";
   };
 
   swapDevices = [
