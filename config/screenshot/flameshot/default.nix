@@ -18,7 +18,6 @@
       settings.General = {
         checkForUpdates = false;
         contrastOpacity = 188;
-        copyAndCloseAfterUpload = false;
         saveAsFileExtension = "png";
         savePath = config.screenshots.folder;
         savePathFixed = true;
