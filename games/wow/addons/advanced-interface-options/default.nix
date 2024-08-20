@@ -5,13 +5,13 @@ let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-advanced-interface-options";
 
-    version = "1.9.0-3";
+    version = "2.1.0";
     project = "99982";
-    file = "5418533";
+    file = "5626351";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-fZvktTCNKSybmA18xTB+BKDiDBhUn+h2z/SEB2s8S+Q=";
+      hash = "sha256-7+reU7+6Iak3BiZVcLEWrXC1Lc57XV5Kc5JQZoGmRPw=";
     };
 
     nativeBuildInputs = [unzip];
