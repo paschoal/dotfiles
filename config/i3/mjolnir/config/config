@@ -1,4 +1,4 @@
-set $mod Mod4
+set $mod Mod1
 font pango:Iosevka 13
 
 # Start XDG autostart .desktop files using dex. See also
@@ -10,9 +10,14 @@ exec --no-startup-id dex --autostart --environment i3
 #
 exec --no-startup-id ckb-next --background
 
+#
+# Polybar
+#
 exec --no-startup-id ~/bin/polybar-launcher
 
+#
 # Use pactl to adjust volume in PulseAudio.
+#
 set $refresh_i3status killall -SIGUSR1 i3status
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -28,7 +33,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+q kill
+bindsym $mod+z kill
 bindsym $mod+d exec --no-startup-id ~/bin/dmenu-launcher
 
 bindsym $mod+v exec "CM_LAUNCHER=rofi clipmenu"
