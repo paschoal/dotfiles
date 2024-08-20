@@ -4,10 +4,10 @@ with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-weakauras";
-    version = "5.15.1";
+    version = "5.16.1";
     src = fetchurl {
       url = "https://github.com/WeakAuras/WeakAuras2/releases/download/${version}/WeakAuras-${version}.zip";
-      hash = "sha256-an88ZfuNDDlbrIv8F7lBuxg4O+6OrV8SZY6alrJi5zY=";
+      hash = "sha256-bxn7OO9bzxZAeovadYyQEty4bs5F+Z2AniQ6KvC5bcU=";
     };
     nativeBuildInputs = [unzip];
     unpackPhase = ''

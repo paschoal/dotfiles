@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ./addons/shadowed-unit-frames
+    ./addons/cell
     ./addons/auctionator
     ./addons/advanced-interface-options
     ./addons/loot-appraiser
