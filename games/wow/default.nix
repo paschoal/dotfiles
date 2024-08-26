@@ -2,11 +2,14 @@
 
 {
   imports = [
+    ./addons/no-auto-close
+    ./addons/blizzmove
+    ./addons/better-fishing
+    ./addons/addon-usage
     ./addons/shadowed-unit-frames
     ./addons/cell
     ./addons/auctionator
     ./addons/advanced-interface-options
-    ./addons/loot-appraiser
     ./addons/weakauras
     ./addons/opie
     ./addons/details

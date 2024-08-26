@@ -7,11 +7,11 @@ let
 
     version = "10.2.55";
     project = "6124";
-    file = "5555034";
+    file = "5641402";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-jbXP4TAeKWKm+lnBZNXW6UY4NznFUqe3dGP4HkTtic8=";
+      hash = "sha256-oOSlpFg9bgxxEVLf+ydMuUVlOtFXfwZznQo1Fhz0KIU=";
     };
 
     nativeBuildInputs = [unzip];
