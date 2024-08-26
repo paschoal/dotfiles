@@ -5,13 +5,13 @@ let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-dialogue-ui";
 
-    version = "0.3.4";
+    version = "0.4.3";
     project = "989270";
-    file = "5557922";
+    file = "5659480";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-ScELsy+K06W6xqSI3byCzlSl0CjpRBz6d+Kx6GuEIkE=";
+      hash = "sha256-4Zh4w45L/rxghbeFs6BotD1uU+drbAWqFfBUD2RirMw=";
     };
 
     nativeBuildInputs = [unzip];

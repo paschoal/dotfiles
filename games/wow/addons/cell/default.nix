@@ -5,13 +5,13 @@ let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-cell";
 
-    version = "r238";
+    version = "r239";
     project = "409666";
-    file = "5604056";
+    file = "5656001";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-mwPR0vqWKfuu7Zeo3iZA+eMVebgB7w+1B1lvaNw4njM=";
+      hash = "sha256-/VTPWIm42Uepnyt3gSn1e1lBYd6UnanQ35jwKvSAUSI=";
     };
 
     nativeBuildInputs = [unzip];

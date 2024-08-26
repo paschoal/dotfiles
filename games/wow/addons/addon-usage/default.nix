@@ -3,15 +3,15 @@
 with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
-    name = "wowaddons-leatrix-plus";
+    name = "wowaddons-addon-usage";
 
-    version = "11.0.05";
-    project = "94855";
-    file = "5649300";
+    version = "3.2.2";
+    project = "67954";
+    file = "5626338";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-YFmvl9SkoBYaxrWc1F7/hBqSNyKLNhHxiXQ7FuP7lpg=";
+      hash = "sha256-z2sGY5sGkOzcBbvh3DJk3unNYsl9AlS66sLJm/kKgBw=";
     };
 
     nativeBuildInputs = [unzip];
@@ -19,13 +19,13 @@ let
       unzip $src
     '';
     installPhase = ''
-      mkdir $out
-      mv Leatrix_Plus $out/
+      mkdir $out/
+      mv AddonUsage $out/
     '';
   };
   in {
-    home.file.wowaddons-leatrix-plus = {
-      source = "${addon}/Leatrix_Plus";
-      target = "games/addons/Leatrix_Plus";
+    home.file.wowaddons-addon-usage = {
+      source = "${addon}/AddonUsage";
+      target = "games/addons/AddonUsage";
     };
   }

@@ -6,12 +6,12 @@ let
     name = "wowaddons-tomtom";
 
     project = "18808";
-    file = "5492608";
-    version = "v3.6.4-release";
+    file = "5655121";
+    version = "v4.0.3";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-A/cQ2u1kK6VcIUDa8szcq5969FFgUFSlw6rqikPi1+c=";
+      hash = "sha256-RTLDQ+0CDAOeiZDzyisAAtL3+ho5NwScKnZHHXLrxU0=";
     };
 
     nativeBuildInputs = [unzip];
