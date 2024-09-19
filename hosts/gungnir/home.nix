@@ -7,28 +7,25 @@
     "/data/home/bin"
   ];
 
-  screenshots = {
-    folder = "/data/home/screenshots";
-    bin = "/data/home/bin";
-  };
+  # screenshot = {
+  #  folder = "${config.home.homeDirectory}/screenshot";
+  # };
 
   imports = [
     ../../config/git
     ../../config/development
     ../../config/zsh
-    ../../config/wofi
     ../../config/nvim
-    ../../config/cursor
-    ../../config/kitty
-    ../../config/kitty-font/gungnir
-    ../../config/aws-vault
-    ../../config/wallpapers
-    ../../config/screenshot
-    ../../config/notes
-
+    # ../../config/aws-vault
     ../../config/qutebrowser/gungnir
-    ../../config/eww/gungnir
-    ../../config/hypr/gungnir
+    ../../config/i3/gungnir
+    ../../config/alacritty
+    ../../config/cursor
+    ../../config/wallpapers
+    ../../config/polybar/gungnir
+    ../../config/rofi
+    ../../config/clipmenu
+    # ../../config/screenshot/flameshot
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -53,4 +50,9 @@
       enable = true;
     };
   };
+
+   xdg.userDirs = {
+   };
+
+  fonts.fontconfig.enable = true;
 }
