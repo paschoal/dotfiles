@@ -31,6 +31,7 @@
     ../../config/obs
     ../../config/clipmenu
     ../../config/screenshot/flameshot
+    ../../config/clementine
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [

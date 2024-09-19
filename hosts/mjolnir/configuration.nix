@@ -15,9 +15,13 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  nixpkgs.config.allowUnfree = true;
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+
   users.users.paschoal = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "audio" "input"];
+    extraGroups = ["wheel" "docker" "audio" "input" "vboxusers"];
     shell = pkgs.zsh;
     createHome = true;
     home = "/data/home";
@@ -36,4 +40,5 @@
   fonts.packages = with pkgs; [
     iosevka
   ];
+
 }
