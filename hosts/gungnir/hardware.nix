@@ -5,6 +5,8 @@
 
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+
+     ../../audio/gugnir
   ];
 
   #
@@ -51,20 +53,4 @@
 
   swapDevices = [
   ];
-
-  #
-  # network
-  #
-  networking.useDHCP = lib.mkDefault true;
-  networking.wireless.enable = true;
-  networking.hostName = "gungnir";
-
-  #
-  # sound
-  #
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
 }

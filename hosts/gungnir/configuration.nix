@@ -2,23 +2,22 @@
 
 {
   imports = [
+    <home-manager/nixos>
+    <agenix/modules/age.nix>
+
     ./hardware.nix
+    ./network.nix
 
     ../../common
-    ../../graphical/hyprland
     ../../locale
-
-    <home-manager/nixos>
+    ../../graphical/i3
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   users.users.paschoal = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker"];
+    extraGroups = ["wheel" "docker" "audio" "input"];
     shell = pkgs.zsh;
     createHome = true;
     home = "/data/home";
@@ -31,6 +30,10 @@
       wheelNeedsPassword = false;
     };
   };
+
+  environment.systemPackages = [
+    (pkgs.callPackage <agenix/pkgs/agenix.nix> {})
+  ];
 
   system.stateVersion = "24.05";
 
