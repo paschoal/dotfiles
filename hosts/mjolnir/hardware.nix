@@ -58,7 +58,11 @@
   # virtualisation
   #
   boot.kernelModules = [ "kvm-amd" ];
+
   virtualisation.docker.enable = true;
+  users.users.paschoal = {
+    extraGroups = ["docker"];
+  };
 
   #
   # disks
