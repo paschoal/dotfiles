@@ -21,7 +21,7 @@
 
   users.users.paschoal = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "audio" "input" "vboxusers"];
+    extraGroups = ["wheel" "input"];
     shell = pkgs.zsh;
     createHome = true;
     home = "/data/home";
