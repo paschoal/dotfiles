@@ -31,4 +31,8 @@
       # ];
     };
   };
+
+  users.users.paschoal = {
+    extraGroups = ["audio"];
+  };
 }
