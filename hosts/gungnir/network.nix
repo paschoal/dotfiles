@@ -27,5 +27,6 @@
     networks."Rename 51 5G".psk = "@PSK_RENAME_51@";
     networks."Uaireless".psk = "@PSK_UAIRELESS@";
     networks."Uaireless 2.4G".psk = "@PSK_UAIRELESS_2_4_G@";
+    networks."UairelessMov".psk = "@PSK_UAIRELESS@";
   };
 }
