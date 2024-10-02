@@ -16,7 +16,6 @@
     services.flameshot = {
       enable = true;
       settings.General = {
-        checkForUpdates = false;
         contrastOpacity = 188;
         saveAsFileExtension = "png";
         savePath = config.screenshots.folder;
