@@ -7,13 +7,13 @@
       stdenv.mkDerivation rec {
         name = "wowaddons-plater";
 
-        version = "v585";
+        version = "v589";
         project = "100547";
-        file = "5663143";
+        file = "5773796";
 
         src = fetchurl {
           url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-          hash = "sha256-06v5fLFgSmk7ImuVLPP5COLhiuwUvZPwJZTtv4svU/M=";
+          hash = "sha256-XKpRw0jQs0FDxoXVwnIWrp5O3umoNnrI1ojgycUpUzw=";
         };
 
         nativeBuildInputs = [unzip];

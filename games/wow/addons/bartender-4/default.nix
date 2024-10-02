@@ -3,15 +3,15 @@
 with import <nixpkgs> {};
 let
   addon = stdenv.mkDerivation rec {
-    name = "wowaddons-no-auto-close";
+    name = "wowaddons-bartender-4";
 
-    version = "1.2.17";
-    project = "689952";
-    file = "5776528";
+    version = "4.15.1";
+    project = "13501";
+    file = "5754478";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-c65i8lMfxTdYBMGI5zjsFyXMBT4xK9B7JPTHhcs5MCk=";
+      hash = "sha256-IAvdnNTqA14GEhicy7gzue33KxVGKPo38yS8semmWCc=";
     };
 
     nativeBuildInputs = [unzip];
@@ -20,12 +20,12 @@ let
     '';
     installPhase = ''
       mkdir $out/
-      mv NoAutoClose $out/
+      mv Bartender4 $out/
     '';
   };
   in {
-    home.file.wowaddons-no-auto-close = {
-      source = "${addon}/NoAutoClose";
-      target = "games/addons/NoAutoClose";
+    home.file.wowaddons-bartender-4 = {
+      source = "${addon}/Bartender4";
+      target = "games/addons/Bartender4";
     };
   }

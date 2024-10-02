@@ -5,13 +5,13 @@ let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-auctionator";
 
-    version = "10.2.55";
+    version = "11.0.12";
     project = "6124";
-    file = "5641402";
+    file = "5755058";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-oOSlpFg9bgxxEVLf+ydMuUVlOtFXfwZznQo1Fhz0KIU=";
+      hash = "sha256-Jf8jRcNTcNvf/xM6voFS940B8tSz1P7pATwrJCUIQdU=";
     };
 
     nativeBuildInputs = [unzip];
