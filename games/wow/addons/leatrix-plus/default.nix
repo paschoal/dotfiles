@@ -5,13 +5,13 @@ let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-leatrix-plus";
 
-    version = "11.0.05";
+    version = "11.0.11";
     project = "94855";
-    file = "5649300";
+    file = "5775793";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-YFmvl9SkoBYaxrWc1F7/hBqSNyKLNhHxiXQ7FuP7lpg=";
+      hash = "sha256-vjh9ShodTaBXOHW6OB7j5wbyzggMsCev5rWPDdXMQ8c=";
     };
 
     nativeBuildInputs = [unzip];

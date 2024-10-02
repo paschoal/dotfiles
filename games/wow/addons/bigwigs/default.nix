@@ -5,13 +5,13 @@ let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-bigwigs";
 
-    version = "v355.3";
+    version = "v365.1";
     project = "2382";
-    file = "5662601";
+    file = "5775232";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-3eRG5Z7DhHD4FOdHqN3i3v9Z1U4x8KfglUZJiHGG0Vo=";
+      hash = "sha256-/nvcT7qGXIJeAmvE/8v9YDkgxbI2YgPsRXQxzeiyM30=";
     };
 
     nativeBuildInputs = [unzip];

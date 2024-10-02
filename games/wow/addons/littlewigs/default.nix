@@ -5,13 +5,13 @@ let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-littlewigs";
 
-    version = "v11.0.18";
+    version = "v11.0.39";
     project = "4383";
-    file = "5662569";
+    file = "5775187";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-gBadB9saWn1jlkpDJuVO+STQ8FOdtjmw0DyNagq4Rwk=";
+      hash = "sha256-aAq5g7zhrXwvKsBpuyl1ckaaWW6nNT8ta0h/BgWPxL4=";
     };
 
     nativeBuildInputs = [unzip];

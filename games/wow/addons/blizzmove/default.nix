@@ -5,13 +5,13 @@ let
   addon = stdenv.mkDerivation rec {
     name = "wowaddons-blizzmove";
 
-    version = "3.5.38";
+    version = "3.5.42";
     project = "17809";
-    file = "5662059";
+    file = "5764194";
 
     src = fetchurl {
       url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-pJZAO/r9ojaqQoHaXKTj6WB8W80GvAAzH2TYfDRXxFg=";
+      hash = "sha256-JbsqPruWHVQv0kLlDjYNK3tZd3twbrI4winPkIBQqiw=";
     };
 
     nativeBuildInputs = [unzip];

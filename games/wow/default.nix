@@ -20,6 +20,7 @@
     ./addons/tomtom
     ./addons/leatrix-plus
     ./addons/dialogue-ui
+    ./addons/bartender-4
 
     ./logs
   ];
