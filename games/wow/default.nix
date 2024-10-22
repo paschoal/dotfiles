@@ -14,7 +14,6 @@
     ./addons/opie
     ./addons/details
     ./addons/simulationcraft
-    ./addons/plater
     ./addons/littlewigs
     ./addons/bigwigs
     ./addons/tomtom

@@ -2,6 +2,9 @@
 
 {
   environment.pathsToLink = ["/libexec"];
+  environment.systemPackages = with pkgs; [
+    xclip
+  ];
 
   services.displayManager = {
     defaultSession = "none+i3";

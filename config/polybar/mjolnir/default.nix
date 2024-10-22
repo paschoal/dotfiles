@@ -39,6 +39,50 @@
           '';
           in "${script}/bin/launcher";
       };
+
+      "audio-switch" = {
+        target = "${config.home.homeDirectory}/bin/audio-switch";
+        enable = true;
+        source = let
+          script = pkgs.writeShellScriptBin "audio-switch" ''
+            #!/bin/sh
+
+            getVolume() {
+              volume=$(wpctl get-volume @DEFAULT_SINK@ | awk '{print $2 * 100}')
+              echo $volume%
+            }
+
+            raiseVolume() {
+              wpctl set-volume @DEFAULT_SINK@ 5%+
+              echo $(getVolume)
+            }
+
+            lowerVolume() {
+              wpctl set-volume @DEFAULT_SINK@ 5%-
+              echo $(getVolume)
+            }
+
+            toggleMute() {
+              wpctl set-mute @DEFAULT_SINK@ toggle
+              echo $(getVolume)
+            }
+
+            case $1 in
+              "--up")
+                raiseVolume
+                ;;
+              "--down")
+                lowerVolume
+                ;;
+              "--mute")
+                toggleMute
+                ;;
+              *)
+                getVolume
+            esac
+          '';
+          in "${script}/bin/audio-switch";
+      };
     };
   };
 }
