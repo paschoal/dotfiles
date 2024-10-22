@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     zsh
     gnupg
-    git
     pinentry-curses
   ];
 
@@ -19,6 +18,12 @@
     gnupg.agent = {
       enable = true;
       pinentryPackage = pkgs.pinentry-curses;
+    };
+    git = {
+      enable = true;
+      lfs = {
+        enable = true;
+      };
     };
   };
 
