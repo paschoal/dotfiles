@@ -26,10 +26,7 @@
     ../../config/wallpapers
     ../../config/polybar/mjolnir
     ../../config/rofi
-    ../../config/platinum
     ../../config/mangohud
-    ../../config/obs
-    ../../config/clipmenu
     ../../config/screenshot/flameshot
     ../../config/clementine
   ];
