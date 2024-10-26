@@ -1,20 +1,19 @@
 { config, pkgs, lib, ... }:
 
-with import <nixpkgs> {};
 let
-  addon = stdenv.mkDerivation rec {
-    name = "wowaddons-tomtom";
-
-    project = "18808";
-    file = "5655121";
+  fetchCurseForge = import ../../support/fetchcurseforge { fetchurl = pkgs.fetchurl; };
+  addon = pkgs.stdenv.mkDerivation rec {
     version = "v4.0.3";
+    name = "tomtom";
 
-    src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
+    src = fetchCurseForge {
+      inherit name;
+      game = "wow";
+      project = "18808";
+      file = "5655121";
       hash = "sha256-RTLDQ+0CDAOeiZDzyisAAtL3+ho5NwScKnZHHXLrxU0=";
     };
-
-    nativeBuildInputs = [unzip];
+    nativeBuildInputs = [pkgs.unzip];
     unpackPhase = ''
       unzip $src
     '';

@@ -1,20 +1,19 @@
 { config, pkgs, lib, ... }:
 
-with import <nixpkgs> {};
 let
-  addon = stdenv.mkDerivation rec {
-    name = "wowaddons-littlewigs";
+  fetchCurseForge = import ../../support/fetchcurseforge { fetchurl = pkgs.fetchurl; };
+  addon = pkgs.stdenv.mkDerivation rec {
+    version = "v11.0.44";
+    name = "littlewigs";
 
-    version = "v11.0.39";
-    project = "4383";
-    file = "5775187";
-
-    src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-aAq5g7zhrXwvKsBpuyl1ckaaWW6nNT8ta0h/BgWPxL4=";
+    src = fetchCurseForge {
+      inherit name;
+      game = "wow";
+      project = "4383";
+      file = "5833879";
+      hash = "sha256-/93s0TkK/IVpicD0JObBiTOZf91wf7CywMMwPKwZyfA=";
     };
-
-    nativeBuildInputs = [unzip];
+    nativeBuildInputs = [pkgs.unzip];
     unpackPhase = ''
       unzip $src
     '';
@@ -23,9 +22,9 @@ let
       mv LittleWigs $out/
     '';
   };
-  in {
-    home.file.wowaddons-littlewigs = {
-      source = "${addon}/LittleWigs";
-      target = "games/addons/LittleWigs";
-    };
-  }
+in {
+  home.file.wowaddons-littlewigs = {
+    source = "${addon}/LittleWigs";
+    target = "games/addons/LittleWigs";
+  };
+}

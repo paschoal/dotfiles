@@ -3,15 +3,15 @@
 let
   fetchCurseForge = import ../../support/fetchcurseforge { fetchurl = pkgs.fetchurl; };
   addon = pkgs.stdenv.mkDerivation rec {
-    version = "4.15.1";
-    name = "bartender-4";
+    version = "0.2.17";
+    name = "glider";
 
     src = fetchCurseForge {
       inherit name;
       game = "wow";
-      project = "13501";
-      file = "5754478";
-      hash = "sha256-IAvdnNTqA14GEhicy7gzue33KxVGKPo38yS8semmWCc=";
+      project = "905924";
+      file = "5655467";
+      hash = "sha256-OYALVnlUl9rAz25b/FsrikAT0f6OMnu9bMGlW6OIGAM=";
     };
     nativeBuildInputs = [pkgs.unzip];
     unpackPhase = ''
@@ -19,12 +19,12 @@ let
     '';
     installPhase = ''
       mkdir $out/
-      mv Bartender4 $out/
+      mv Glider $out/
     '';
   };
 in {
-  home.file.wowaddons-bartender-4 = {
-    source = "${addon}/Bartender4";
-    target = "games/addons/Bartender4";
+  home.file.wowaddons-glider = {
+    source = "${addon}/Glider";
+    target = "games/addons/Glider";
   };
 }

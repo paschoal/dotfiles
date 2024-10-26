@@ -1,20 +1,19 @@
 { config, pkgs, lib, ... }:
 
-with import <nixpkgs> {};
 let
-  addon = stdenv.mkDerivation rec {
-    name = "wowaddons-blizzmove";
+  fetchCurseForge = import ../../support/fetchcurseforge { fetchurl = pkgs.fetchurl; };
+  addon = pkgs.stdenv.mkDerivation rec {
+    version = "3.6.1";
+    name = "blizzmove";
 
-    version = "3.5.42";
-    project = "17809";
-    file = "5764194";
-
-    src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-JbsqPruWHVQv0kLlDjYNK3tZd3twbrI4winPkIBQqiw=";
+    src = fetchCurseForge {
+      inherit name;
+      game = "wow";
+      project = "17809";
+      file = "5841033";
+      hash = "sha256-Sj8P6DfFVTY8Y0F0eVuLEYrjo0M/eu+VjWw2TZVyl30=";
     };
-
-    nativeBuildInputs = [unzip];
+    nativeBuildInputs = [pkgs.unzip];
     unpackPhase = ''
       unzip $src
     '';
@@ -23,9 +22,9 @@ let
       mv BlizzMove $out/
     '';
   };
-  in {
-    home.file.wowaddons-blizzmove = {
-      source = "${addon}/BlizzMove";
-      target = "games/addons/BlizzMove";
-    };
-  }
+in {
+  home.file.wowaddons-blizzmove = {
+    source = "${addon}/BlizzMove";
+    target = "games/addons/BlizzMove";
+  };
+}

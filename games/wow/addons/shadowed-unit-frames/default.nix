@@ -1,20 +1,19 @@
 { config, pkgs, lib, ... }:
 
-with import <nixpkgs> {};
 let
-  addon = stdenv.mkDerivation rec {
-    name = "wowaddons-shadowed-unit-frames";
-
+  fetchCurseForge = import ../../support/fetchcurseforge { fetchurl = pkgs.fetchurl; };
+  addon = pkgs.stdenv.mkDerivation rec {
     version = "v4.4.11";
-    project = "19268";
-    file = "5634380";
+    name = "shadowed-unit-frames";
 
-    src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
+    src = fetchCurseForge {
+      inherit name;
+      game = "wow";
+      project = "19268";
+      file = "5634380";
       hash = "sha256-lPMI84YnyNrr9OBMoaKNKvihgHyJBh0QIH/Iwu+vKDA=";
     };
-
-    nativeBuildInputs = [unzip];
+    nativeBuildInputs = [pkgs.unzip];
     unpackPhase = ''
       unzip $src
     '';

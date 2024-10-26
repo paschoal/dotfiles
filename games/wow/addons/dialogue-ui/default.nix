@@ -1,20 +1,19 @@
 { config, pkgs, lib, ... }:
 
-with import <nixpkgs> {};
 let
-  addon = stdenv.mkDerivation rec {
-    name = "wowaddons-dialogue-ui";
+  fetchCurseForge = import ../../support/fetchcurseforge { fetchurl = pkgs.fetchurl; };
+  addon = pkgs.stdenv.mkDerivation rec {
+    version = "0.4.7";
+    name = "dialogue-ui";
 
-    version = "0.4.6";
-    project = "989270";
-    file = "5705362";
-
-    src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-1q/ysDR2CcvDM8dxRJgrUP/so9Qd97JW4xJa8dHkarw=";
+    src = fetchCurseForge {
+      inherit name;
+      game = "wow";
+      project = "989270";
+      file = "5833163";
+      hash = "sha256-fsexUnq6BtFIZ024fvt8AbdNwWsQpsUyVB4Ez5ansZY=";
     };
-
-    nativeBuildInputs = [unzip];
+    nativeBuildInputs = [pkgs.unzip];
     unpackPhase = ''
       unzip $src
     '';

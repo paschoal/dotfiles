@@ -1,32 +1,30 @@
 { config, pkgs, lib, ... }:
 
-with import <nixpkgs> {};
 let
-  addon = stdenv.mkDerivation rec {
-    name = "wowaddons-better-fishing";
+  fetchCurseForge = import ../../support/fetchcurseforge { fetchurl = pkgs.fetchurl; };
+  addon = pkgs.stdenv.mkDerivation rec {
+    version = "1.3.1";
+    name = "better-fishing";
 
-    version = "1.1.28";
-    project = "709520";
-    file = "5755864";
-
-    src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-kr6gDIgHRSN+MAr/REoGVr3qVhaQbhU9xs/cxAcGZ8s=";
+    src = fetchCurseForge {
+      inherit name;
+      game = "wow";
+      project = "709520";
+      file = "5844603";
+      hash = "sha256-OMcFslXnuBqCCOzVygyK4AhOgIBKb1vB+U3qJa25+FY=";
     };
-
-    nativeBuildInputs = [unzip];
+    nativeBuildInputs = [pkgs.unzip];
     unpackPhase = ''
       unzip $src
     '';
     installPhase = ''
       mkdir $out/
-      ls -la
       mv BetterFishing $out/
     '';
   };
-  in {
-    home.file.wowaddons-better-fishing = {
-      source = "${addon}/BetterFishing";
-      target = "games/addons/BetterFishing";
-    };
-  }
+in {
+  home.file.wowaddons-better-fishing = {
+    source = "${addon}/BetterFishing";
+    target = "games/addons/BetterFishing";
+  };
+}

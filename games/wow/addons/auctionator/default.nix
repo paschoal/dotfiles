@@ -1,20 +1,19 @@
 { config, pkgs, lib, ... }:
 
-with import <nixpkgs> {};
 let
-  addon = stdenv.mkDerivation rec {
-    name = "wowaddons-auctionator";
+  fetchCurseForge = import ../../support/fetchcurseforge { fetchurl = pkgs.fetchurl; };
+  addon = pkgs.stdenv.mkDerivation rec {
+    version = "11.0.13";
+    name = "auctionator";
 
-    version = "11.0.12";
-    project = "6124";
-    file = "5755058";
-
-    src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-Jf8jRcNTcNvf/xM6voFS940B8tSz1P7pATwrJCUIQdU=";
+    src = fetchCurseForge {
+      inherit name;
+      game = "wow";
+      project = "6124";
+      file = "5837148";
+      hash = "sha256-f61F/ZRShjlzNmqbzeVBza2/GySTuzPjtukZveE9Fz4=";
     };
-
-    nativeBuildInputs = [unzip];
+    nativeBuildInputs = [pkgs.unzip];
     unpackPhase = ''
       unzip $src
     '';
@@ -23,9 +22,9 @@ let
       mv Auctionator $out/
     '';
   };
-  in {
-    home.file.wowaddons-auctionator = {
-      source = "${addon}/Auctionator";
-      target = "games/addons/Auctionator";
-    };
-  }
+in {
+  home.file.wowaddons-auctionator = {
+    source = "${addon}/Auctionator";
+    target = "games/addons/Auctionator";
+  };
+}
