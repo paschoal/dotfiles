@@ -1,20 +1,19 @@
 { config, pkgs, lib, ... }:
 
-with import <nixpkgs> {};
 let
-  addon = stdenv.mkDerivation rec {
-    name = "wowaddons-addon-usage";
+  fetchCurseForge = import ../../support/fetchcurseforge { fetchurl = pkgs.fetchurl; };
+  addon = pkgs.stdenv.mkDerivation rec {
+    version = "3.2.3";
+    name = "addon-usage";
 
-    version = "3.2.2";
-    project = "67954";
-    file = "5626338";
-
-    src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-z2sGY5sGkOzcBbvh3DJk3unNYsl9AlS66sLJm/kKgBw=";
+    src = fetchCurseForge {
+      inherit name;
+      game = "wow";
+      project = "67954";
+      file = "5835429";
+      hash = "sha256-8AYwHHpPiXopnH7T/JQp6MeiLHYZMhkKDPgUvdDYeOI=";
     };
-
-    nativeBuildInputs = [unzip];
+    nativeBuildInputs = [pkgs.unzip];
     unpackPhase = ''
       unzip $src
     '';
@@ -23,9 +22,9 @@ let
       mv AddonUsage $out/
     '';
   };
-  in {
-    home.file.wowaddons-addon-usage = {
-      source = "${addon}/AddonUsage";
-      target = "games/addons/AddonUsage";
-    };
-  }
+in {
+  home.file.wowaddons-addon-usage = {
+    source = "${addon}/AddonUsage";
+    target = "games/addons/AddonUsage";
+  };
+}

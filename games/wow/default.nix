@@ -7,7 +7,6 @@
     ./addons/better-fishing
     ./addons/addon-usage
     ./addons/shadowed-unit-frames
-    ./addons/cell
     ./addons/auctionator
     ./addons/advanced-interface-options
     ./addons/weakauras
@@ -20,6 +19,8 @@
     ./addons/leatrix-plus
     ./addons/dialogue-ui
     ./addons/bartender-4
+    ./addons/minimalist-chat
+    ./addons/glider
 
     ./logs
   ];

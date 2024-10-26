@@ -1,17 +1,18 @@
 { config, pkgs, lib, ... }:
 
+with import <nixpkgs> {};
 let
   fetchCurseForge = import ../../support/fetchcurseforge { fetchurl = pkgs.fetchurl; };
   addon = pkgs.stdenv.mkDerivation rec {
-    version = "4.15.1";
-    name = "bartender-4";
+    version = "2.1.2";
+    name = "minimalist-chat";
 
     src = fetchCurseForge {
       inherit name;
       game = "wow";
-      project = "13501";
-      file = "5754478";
-      hash = "sha256-IAvdnNTqA14GEhicy7gzue33KxVGKPo38yS8semmWCc=";
+      project = "343965";
+      file = "5590929";
+      hash = "sha256-1P49kTtNt5VyLitGNJDhrBypRWAg7XD5aBX2V7F4e7k=";
     };
     nativeBuildInputs = [pkgs.unzip];
     unpackPhase = ''
@@ -19,12 +20,12 @@ let
     '';
     installPhase = ''
       mkdir $out/
-      mv Bartender4 $out/
+      mv MinimalistChat $out/
     '';
   };
 in {
-  home.file.wowaddons-bartender-4 = {
-    source = "${addon}/Bartender4";
-    target = "games/addons/Bartender4";
+  home.file.wowaddons-minimalist-chat = {
+    source = "${addon}/MinimalistChat";
+    target = "games/addons/MinimalistChat";
   };
 }

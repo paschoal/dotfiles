@@ -1,20 +1,19 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
-with import <nixpkgs> {};
 let
-  addon = stdenv.mkDerivation rec {
-    name = "wowaddons-opie";
+  fetchCurseForge = import ../../support/fetchcurseforge { fetchurl = pkgs.fetchurl; };
+  addon = pkgs.stdenv.mkDerivation rec {
+    version = "oerred1a";
+    name = "opie";
 
-    version = "oerred1";
-    project = "19406";
-    file = "5771730";
-
-    src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-44/yD7F6+eubw2GmnCVGHhCt/jbhiHaVrz4+YpR0+es=";
+    src = fetchCurseForge {
+      inherit name;
+      game = "wow";
+      project = "19406";
+      file = "5777633";
+      hash = "sha256-otU4kxaCEAnk6kI1/39Msbs1fdKd3ATlqQiU+3XlbSM=";
     };
-
-    nativeBuildInputs = [unzip];
+    nativeBuildInputs = [pkgs.unzip];
     unpackPhase = ''
       unzip $src
     '';
@@ -23,8 +22,8 @@ let
       mv OPie/* $out/
     '';
   };
-  in {
-    home.file.wowaddons-opie = {
+in {
+  home.file.wowaddons-opie = {
     source = addon;
     target = "games/addons/OPie";
   };

@@ -1,20 +1,19 @@
 { config, pkgs, lib, ... }:
 
-with import <nixpkgs> {};
 let
-  addon = stdenv.mkDerivation rec {
-    name = "wowaddons-leatrix-plus";
+  fetchCurseForge = import ../../support/fetchcurseforge { fetchurl = pkgs.fetchurl; };
+  addon = pkgs.stdenv.mkDerivation rec {
+    version = "11.0.14";
+    name = "leatrix-plus";
 
-    version = "11.0.11";
-    project = "94855";
-    file = "5775793";
-
-    src = fetchurl {
-      url = "https://www.curseforge.com/api/v1/mods/${project}/files/${file}/download";
-      hash = "sha256-vjh9ShodTaBXOHW6OB7j5wbyzggMsCev5rWPDdXMQ8c=";
+    src = fetchCurseForge {
+      inherit name;
+      game = "wow";
+      project = "94855";
+      file = "5836708";
+      hash = "sha256-6bKHmoPLzXjr4Kp2hkVWTJ5aGRRJM980RuwilFcNzXA=";
     };
-
-    nativeBuildInputs = [unzip];
+    nativeBuildInputs = [pkgs.unzip];
     unpackPhase = ''
       unzip $src
     '';
@@ -23,9 +22,9 @@ let
       mv Leatrix_Plus $out/
     '';
   };
-  in {
-    home.file.wowaddons-leatrix-plus = {
-      source = "${addon}/Leatrix_Plus";
-      target = "games/addons/Leatrix_Plus";
-    };
-  }
+in {
+  home.file.wowaddons-leatrix-plus = {
+    source = "${addon}/Leatrix_Plus";
+    target = "games/addons/Leatrix_Plus";
+  };
+}
