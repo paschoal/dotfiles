@@ -11,7 +11,6 @@
     ../../locale
     ../../games
     ../../graphical/i3
-    ../../services/ollama
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
