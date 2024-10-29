@@ -1,8 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.rofi
+  home.packages = with pkgs; [
+    rofi
+    rofi-pass
   ];
 
   home.file = {
@@ -19,8 +20,17 @@
 
   xdg.configFile = {
     rofi = {
-      source = ./config;
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/rofi/config";
       recursive = true;
     };
+
+    "rofi-pass/config".text = ''
+      BROWSER='xdg-open'
+      default_do='typePass'
+
+      clip='primary'
+      clip_clear=30
+      clipboard_backend=xclip
+    '';
   };
 }
