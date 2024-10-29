@@ -12,18 +12,12 @@
 
   services.xserver = {
     enable = true;
+    desktopManager.xterm.enable = false;
+    windowManager.i3.enable = true;
 
     excludePackages = with pkgs; [
       xterm
     ];
-
-    desktopManager = {
-      xterm.enable = false;
-    };
-
-    windowManager.i3 = {
-      enable = true;
-    };
 
     displayManager = {
       lightdm = {
@@ -35,5 +29,7 @@
         '';
       };
     };
+
+    videoDrivers = ["amdgpu"];
   };
 }
