@@ -25,8 +25,20 @@
   ];
 
   programs = {
-    steam.enable = true;
-    gamemode.enable = true;
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+
+    gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
+
+    gamemode = {
+      enable = true;
+      enableRenice = true;
+    };
   };
 
   users.users.paschoal = {

@@ -6,5 +6,6 @@
   networking.firewall.enable = true;
   networking.hosts = {
     "192.168.88.33" = ["laevateinn"];
+    "192.168.88.13" = ["headset"];
   };
 }
