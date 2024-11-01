@@ -4,8 +4,8 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      live_config_reload = true;
-      working_directory = "/data/home";
+      general.live_config_reload = true;
+      general.working_directory = "/data/home";
       window.padding = {
         x = 10;
         y = 10;
