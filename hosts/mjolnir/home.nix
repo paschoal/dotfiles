@@ -29,6 +29,8 @@
     ../../config/mangohud
     ../../config/screenshot/flameshot
     ../../config/clementine
+    ../../config/thunderbird
+    ../../config/dunst
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
