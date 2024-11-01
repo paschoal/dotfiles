@@ -11,17 +11,7 @@
     protonup
     wineWowPackages.staging
     winetricks
-
-    (
-      lutris.override {
-        extraPkgs = pkgs: [
-          wineWowPackages.staging
-          gamemode
-          winetricks
-        ];
-        extraLibraries = pkgs: [gamemode];
-      }
-    )
+    bottles
   ];
 
   programs = {
