@@ -17,7 +17,10 @@
     ../../config/zsh
     ../../config/nvim
     ../../config/aws-vault
+
     ../../games/wow
+    ../../games/eve
+
     ../../config/manufact
     ../../config/qutebrowser/mjolnir
     ../../config/i3/mjolnir
@@ -63,11 +66,6 @@
     videos = "${config.home.homeDirectory}/downloads";
   };
 
-  programs = {
-    home-manager = {
-      enable = true;
-    };
-  };
-
+  programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
 }
