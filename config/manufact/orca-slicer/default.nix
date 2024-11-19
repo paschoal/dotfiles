@@ -1,24 +1,19 @@
 { config, pkgs, lib, ... }:
 
-with import <nixpkgs> {};
-let
-  file = appimageTools.wrapType2 rec {
-    name = "orca-slicer";
-    version = "v2.1.1";
-    src = fetchurl {
-      url = "https://github.com/SoftFever/OrcaSlicer/releases/download/${version}/OrcaSlicer_Linux_${version}.AppImage";
-      hash = "sha256-kvM1rBGEJhjRqQt3a8+I0o4ahB1Uc9qB+4PzhYoNQdM=";
-    };
-    extraPkgs = pkgs: with pkgs; [
-      webkitgtk
-    ];
-  };
-in {
-  home.file = {
-    "orca-slicer" = {
-      target = "./bin/orca-slicer";
-      enable = true;
-      source = "${file}/bin/orca-slicer";
-    };
-  };
+{
+  home.packages = [
+    (
+      pkgs.appimageTools.wrapType2 rec {
+        name = "orca-slicer";
+        version = "v2.2.0";
+        src = pkgs.fetchurl {
+          url = "https://github.com/SoftFever/OrcaSlicer/releases/download/${version}/OrcaSlicer_Linux_${version}.AppImage";
+          hash = "sha256-3uqA3PXTrrOE0l8ziRAtmQ07gBFB+1Zx3S6JhmOPrZ8=";
+        };
+        extraPkgs = pkgs: with pkgs; [
+          webkitgtk
+        ];
+      }
+    )
+  ];
 }
