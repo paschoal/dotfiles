@@ -83,11 +83,6 @@
     fsType = "vfat";
   };
 
-  fileSystems."/data/games" = {
-    device = "/dev/disk/by-label/games";
-    fsType = "ext4";
-  };
-
   swapDevices = [
     { device = "/dev/disk/by-label/swap"; }
   ];
@@ -100,15 +95,6 @@
   #
   # monitor configuration
   #
-      # {
-      #   output = "HDMI-A-0";
-      #   monitorConfig = ''
-      #     Modeline "1920x1080@60" 148.50 1920 2008 2052 2200 1080 1084 1089 1125 +hsync +vsync
-      #     Option "PreferredMode" "1920x1080@60"
-      #     Option "Rotate" "right"
-      #     Option "LeftOf" "DisplayPort-2"
-      #   '';
-      # }
   services.xserver = {
     xrandrHeads = [
       {
@@ -117,7 +103,6 @@
         monitorConfig = ''
           Modeline "2560x1440@150" 612.61 2560 2568 2600 2640 1440 1443 1453 1547 +hsync +vsync
           Option "PreferredMode" "2560x1440@150"
-          Option "RightOf" "HDMI-A-0"
         '';
       }
     ];
