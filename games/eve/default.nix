@@ -1,19 +1,18 @@
-{ lib, pkgs, environment, ... }:
+{ pkgs, ... }:
 let
-  package = pkgs.python3Packages.buildPythonApplication rec {
+  pyfa = pkgs.python3Packages.buildPythonApplication rec {
     version = "2.61.0";
-    name = "pyfa";
-    pyproject = false;
+    pname = "pyfa";
+    format = "other";
 
     src = pkgs.fetchFromGitHub {
       owner = "pyfa-org";
-      repo = "pyfa";
+      repo = "Pyfa";
       rev = "v${version}";
       hash = "sha256-VSuRQugUODc+LbhKbzsA09pnqPEIAt0pQS2An/p7r9A=";
     };
 
-    build-system = [pkgs.python3Packages.setuptools];
-
+    build-system = [ pkgs.python3Packages.setuptools ];
     propagatedBuildInputs = with pkgs.python3Packages; [
       wxpython
       logbook
@@ -39,7 +38,7 @@ let
 
     dontWrapGApps = true;
     nativeBuildInputs = with pkgs; [
-      wrapGAppsHook
+      wrapGAppsHook3
       gdk-pixbuf
     ];
 
@@ -47,7 +46,7 @@ let
       cat > setup.py <<EOF
         from setuptools import setup
         setup(
-          name = "${name}",
+          name = "${pname}",
           version = "${version}",
           scripts = ["pyfa.py"],
           packages = setuptools.find_packages(),
@@ -66,21 +65,25 @@ let
         pyfa.spec
     '';
 
+    #
+    # pyinstaller builds up dist/pyfa/pyfa binary and
+    # dist/pyfa/apps directory with libraries and everything else.
+    # creating a symbolic link out in $out/bin to $out/share/pyfa to avoid
+    # exposing the innards of pyfa to the rest of the env.
+    #
     installPhase = ''
-      install -dm755 $out/bin
-      install -dm755 $out/share/pixmaps
+      mkdir -p $out/bin
+      mkdir -p $out/share/pixmaps
 
-      cp -r dist/pyfa/app $out/bin/app
-      cp dist/pyfa/pyfa $out/bin/pyfa
-
-      install -Dm644 imgs/gui/pyfa64.png $out/share/pixmaps/pyfa.png
+      cp -r dist/pyfa $out/share/
+      cp imgs/gui/pyfa64.png $out/share/pixmaps/pyfa.png
+      ln -sf $out/share/pyfa/pyfa $out/bin/pyfa
     '';
 
     fixupPhase = ''
       runHook preFixup
-
-      wrapProgramShell $out/bin/pyfa \
-        ''${gappsWrapperArgs[@]}
+        wrapProgramShell $out/share/pyfa/pyfa \
+          ''${gappsWrapperArgs[@]} \
 
       runHook postFixup
     '';
@@ -88,5 +91,5 @@ let
     doCheck = false;
   };
 in {
-  home.packages = [package];
+  home.packages = [ pyfa ];
 }
