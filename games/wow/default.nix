@@ -9,7 +9,7 @@ in {
   ];
 
   home.file = {
-    ".local/share/bottles/bottles/World-of-Warcraft/${wowPath}" = {
+    ".local/share/bottles/bottles/world-of-warcraft/${wowPath}" = {
       source = pkgs.symlinkJoin {
         name = "addons";
         paths = [
