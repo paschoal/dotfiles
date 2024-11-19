@@ -1,6 +1,0 @@
-configuration {
-  modes: "window,run,drun";
-  show-icons: false;
-}
-
-@theme "dracula"
