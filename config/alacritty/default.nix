@@ -13,10 +13,10 @@
       window.decorations = "None";
       window.dynamic_title = true;
       font.normal = {
-        family = "Iosevka";
+        family = "Monoid";
         style = "Regular";
       };
-      font.size = 13;
+      font.size = 10;
       cursor.style = {
         shape = "Block";
         blinking = "On";
