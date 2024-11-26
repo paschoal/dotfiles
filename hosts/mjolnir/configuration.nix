@@ -15,6 +15,7 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
+  programs.dconf.enable = true;
 
   users.users.paschoal = {
     isNormalUser = true;
@@ -36,6 +37,7 @@
 
   fonts.packages = with pkgs; [
     iosevka
+    monoid
   ];
 
 }
