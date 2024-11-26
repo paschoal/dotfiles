@@ -2,10 +2,6 @@
 
 {
   xdg.configFile = {
-    "i3/config.backup" = {
-      source = ./config/config;
-    };
-
     "i3/config" = {
       text = ''
         set $mod Mod1
