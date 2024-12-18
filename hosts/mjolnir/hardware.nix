@@ -29,13 +29,19 @@
   # gpu
   #
   hardware.graphics.enable = true;
-
   services.xserver.videoDrivers = ["amdgpu"];
   boot.initrd.kernelModules = ["amdgpu"];
   boot.kernelParams = [
     "video=DP-3:2560x1440@150"
     "raid0.default_layout=2"
   ];
+
+  services.libinput = {
+    enable = true;
+    mouse = {
+      accelProfile = "flat";
+    };
+  };
 
   #
   # kernel
