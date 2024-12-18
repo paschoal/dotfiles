@@ -28,21 +28,24 @@
         bindsym XF86AudioLowerVolume exec --no-startup-id audio-switch -hdown
         bindsym XF86AudioMute exec --no-startup-id audio-switch --mute
 
-        bindsym $mod+j focus left
+        bindsym $mod+h focus left
+        bindsym $mod+j focus up
         bindsym $mod+k focus down
-        bindsym $mod+l focus up
-        bindsym $mod+semicolon focus right
-        bindsym $mod+Shift+j move left
-        bindsym $mod+Shift+k move down
-        bindsym $mod+Shift+l move up
-        bindsym $mod+Shift+semicolon move right
+        bindsym $mod+l focus right
 
-        bindsym $mod+h split h
-        bindsym $mod+g split v
+        bindsym $mod+Shift+h move left
+        bindsym $mod+Shift+j move down
+        bindsym $mod+Shift+k move up
+        bindsym $mod+Shift+l move right
+
+        bindsym $mod+b split h
+        bindsym $mod+n split v
+
         bindsym $mod+f fullscreen toggle
         bindsym $mod+s layout stacking
         bindsym $mod+w layout tabbed
         bindsym $mod+e layout toggle split
+
         bindsym $mod+Shift+space floating toggle
         bindsym $mod+space focus mode_toggle
         bindsym $mod+a focus parent
@@ -85,10 +88,10 @@
         bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
         mode "resize" {
-          bindsym j resize shrink width 10 px or 10 ppt
-          bindsym k resize grow height 10 px or 10 ppt
-          bindsym l resize shrink height 10 px or 10 ppt
-          bindsym semicolon resize grow width 10 px or 10 ppt
+          bindsym h resize shrink width 10 px or 10 ppt
+          bindsym j resize grow height 10 px or 10 ppt
+          bindsym k resize shrink height 10 px or 10 ppt
+          bindsym l resize grow width 10 px or 10 ppt
 
           bindsym Return mode "default"
           bindsym Escape mode "default"
