@@ -4,7 +4,7 @@
   home.packages = [
     (
       pkgs.appimageTools.wrapType2 rec {
-        name = "orca-slicer";
+        pname = "orca-slicer";
         version = "v2.2.0";
         src = pkgs.fetchurl {
           url = "https://github.com/SoftFever/OrcaSlicer/releases/download/${version}/OrcaSlicer_Linux_${version}.AppImage";
