@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
-
   home.packages = with pkgs; [
     ruby_3_3
     postgresql
