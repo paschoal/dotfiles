@@ -34,5 +34,7 @@
   users.users.paschoal = {
     extraGroups = ["gamemode"];
   };
+
+  hardware.steam-hardware.enable = true;
 }
 
