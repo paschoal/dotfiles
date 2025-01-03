@@ -3,9 +3,7 @@
 {
   home.username = "paschoal";
   home.homeDirectory = "/data/home";
-  home.sessionPath = [
-    "/data/home/bin"
-  ];
+  home.sessionPath = [ "/data/home/bin" ];
 
   screenshots = {
     folder = "${config.home.homeDirectory}/screenshots";
@@ -39,8 +37,10 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
+
     "awscli2"
-    "obsidian"
+    "terraform"
+    "apple_cursor"
   ];
 
   home.packages = with pkgs; [
