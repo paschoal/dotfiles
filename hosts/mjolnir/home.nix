@@ -5,10 +5,6 @@
   home.homeDirectory = "/data/home";
   home.sessionPath = [ "/data/home/bin" ];
 
-  screenshots = {
-    folder = "${config.home.homeDirectory}/screenshots";
-  };
-
   imports = [
     ../../config/git
     ../../config/development
@@ -61,10 +57,14 @@
     documents = "${config.home.homeDirectory}/documents";
     download = "${config.home.homeDirectory}/downloads";
     music = "${config.home.homeDirectory}/downloads";
-    pictures = "${config.home.homeDirectory}/downloads";
-    publicShare = "${config.home.homeDirectory}/downloads";
+    pictures = "${config.home.homeDirectory}/screenshots";
+    publicShare = "${config.home.homeDirectory}/screenshots";
     templates = "${config.home.homeDirectory}/downloads";
     videos = "${config.home.homeDirectory}/downloads";
+  };
+
+  screenshots = {
+    folder = config.xdg.userDirs.pictures;
   };
 
   programs.home-manager.enable = true;

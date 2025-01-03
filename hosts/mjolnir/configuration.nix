@@ -17,6 +17,7 @@
   nixpkgs.config.allowUnfree = true;
   programs.dconf.enable = true;
 
+
   users.users.paschoal = {
     isNormalUser = true;
     extraGroups = ["wheel" "input"];
@@ -33,11 +34,14 @@
     };
   };
 
-  system.stateVersion = "24.05";
-
   fonts.packages = with pkgs; [
     iosevka
     monoid
   ];
 
+  environment.systemPackages = with pkgs; [
+    flameshot
+  ];
+
+  system.stateVersion = "24.05";
 }
