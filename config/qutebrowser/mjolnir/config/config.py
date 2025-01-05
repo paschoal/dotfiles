@@ -1,7 +1,7 @@
 config.load_autoconfig()
 
 c.fonts.default_family ='Monoid'
-c.fonts.default_size = '18pt'
+c.fonts.default_size = '14pt'
 
 c.content.geolocation = False
 c.content.pdfjs = False
