@@ -1,11 +1,11 @@
 config.load_autoconfig()
 
 c.fonts.default_family ='Monoid'
-c.fonts.default_size = '14pt'
+c.fonts.default_size = '20pt'
 
 c.content.geolocation = False
 c.content.pdfjs = False
-c.content.dns_prefetch = True
+c.content.dns_prefetch = False
 
 c.completion.height = '20%'
 c.completion.cmd_history_max_items = 2
@@ -16,7 +16,7 @@ c.downloads.location.prompt = False
 c.downloads.location.directory = '~/downloads/'
 c.downloads.remove_finished = 3000
 
-c.zoom.default = '100%'
+c.zoom.default = '125%'
 
 c.url.searchengines = {
         'DEFAULT': 'https://google.ca/search?hl=eng&q={}',

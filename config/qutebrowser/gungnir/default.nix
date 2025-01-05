@@ -7,7 +7,7 @@
 
   xdg.configFile = {
     "qutebrowser/config.py" = {
-      source = ./config.py;
+      source = ./config/config.py;
     };
   };
 }
