@@ -17,11 +17,13 @@
 
     ../../config/manufact
     ../../config/qutebrowser/mjolnir
-    ../../config/i3/mjolnir
+    ../../config/wallpapers
+
+    ../../config/sxhkd/mjolnir/bspwm
+    ../../config/bspwm
+
     ../../config/alacritty
     ../../config/cursor
-    ../../config/wallpapers
-    ../../config/polybar/mjolnir
     ../../config/rofi
     ../../config/mangohud
     ../../config/screenshot/flameshot

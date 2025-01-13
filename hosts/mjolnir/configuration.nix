@@ -10,7 +10,7 @@
     ../../common
     ../../locale
     ../../games
-    ../../graphical/i3
+    ../../graphical/bspwm
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
