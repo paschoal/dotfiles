@@ -6,30 +6,27 @@
     xclip
   ];
 
-  services.displayManager = {
-    defaultSession = "none+i3";
-  };
+  services = {
+    displayManager.defaultSession = "none+i3";
+    picom.enable = true;
 
-  services.xserver = {
-    enable = true;
-    desktopManager.xterm.enable = false;
-    windowManager.i3.enable = true;
+    xserver = {
+      enable = true;
+      desktopManager.xterm.enable = false;
+      windowManager.i3.enable = true;
 
-    excludePackages = with pkgs; [
-      xterm
-    ];
-
-    displayManager = {
-      lightdm = {
-        enable = true;
-        extraSeatDefaults = ''
-          autologin-quest = false
-          autologin-user = paschoal
-          autologin-user-timeout = 0
-        '';
+      excludePackages = with pkgs; [ xterm ];
+      displayManager = {
+        lightdm = {
+          enable = true;
+          extraSeatDefaults = ''
+            autologin-quest = false
+            autologin-user = paschoal
+            autologin-user-timeout = 0
+          '';
+        };
       };
+      videoDrivers = ["amdgpu"];
     };
-
-    videoDrivers = ["amdgpu"];
   };
 }
