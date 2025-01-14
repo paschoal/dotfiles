@@ -21,12 +21,35 @@
 
   networking.wireless = {
     enable = true;
-    environmentFile = config.age.secrets.wifi-networks.path;
-    networks."UARILESS_2G".psk = "@PSK_UARILESS_2G@";
-    networks."Rename 51".psk = "@PSK_RENAME_51@";
-    networks."Rename 51 5G".psk = "@PSK_RENAME_51@";
-    networks."Uaireless".psk = "@PSK_UAIRELESS@";
-    networks."Uaireless 2.4G".psk = "@PSK_UAIRELESS_2_4_G@";
-    networks."UairelessMov".psk = "@PSK_UAIRELESS@";
+    secretsFile = config.age.secrets.wifi-networks.path;
+    networks."UairelessMov".psk = "41335C66";
   };
+
+  # networking.networkmanager.ensureProfiles = {
+  #   environmentFiles = [
+  #     config.age.secrets.wifi-networks.path
+  #   ];
+
+  #   profiles = {
+  #     uairelessMov = {
+  #       connection = {
+  #         id = "uairelessMov";
+  #         type = "wifi";
+  #       };
+
+  #       ipv4.method = "auto";
+  #       ipv6.method = "auto";
+
+  #       wifi = {
+  #         mode = "infrastructure";
+  #         ssid = "UairelessMov";
+  #       };
+
+  #       wifi-security = {
+  #         key-mgmt = "wpa-psk";
+  #         psk = "$uaireless_mov";
+  #       };
+  #     };
+  #   };
+  # };
 }

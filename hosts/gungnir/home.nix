@@ -7,16 +7,17 @@
     "/data/home/bin"
   ];
 
-  # screenshot = {
-  #  folder = "${config.home.homeDirectory}/screenshot";
-  # };
+  screenshots = {
+    folder = "${config.home.homeDirectory}/screenshots";
+  };
 
   imports = [
     ../../config/git
     ../../config/development
     ../../config/zsh
     ../../config/nvim
-    # ../../config/aws-vault
+    ../../config/aws-vault
+
     ../../config/qutebrowser/gungnir
     ../../config/i3/gungnir
     ../../config/alacritty
@@ -24,20 +25,20 @@
     ../../config/wallpapers
     ../../config/polybar/gungnir
     ../../config/rofi
-    ../../config/clipmenu
-    # ../../config/screenshot/flameshot
+    ../../config/screenshot/flameshot
+    ../../config/dunst
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
     "awscli2"
-    "obsidian"
   ];
 
   home.packages = with pkgs; [
     docker-compose
     bat
     pass
+    discord
     vlc
     feh
   ];
@@ -45,14 +46,13 @@
   home.stateVersion = "23.11";
   home.enableNixpkgsReleaseCheck = false;
 
-  programs = {
-    home-manager = {
-      enable = true;
-    };
+
+  xdg.userDirs = {
+    createDirectories = true;
+    desktop = "${config.home.homeDirectory}/desktop";
+    download = "${config.home.homeDirectory}/downloads";
   };
 
-   xdg.userDirs = {
-   };
-
+  programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
 }
