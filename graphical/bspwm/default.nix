@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [ xclip ];
-  services.picom.enable = true;
   services.displayManager.defaultSession = "none+bspwm";
 
   services.xserver = {
