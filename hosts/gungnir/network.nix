@@ -22,5 +22,6 @@
     enable = true;
     secretsFile = config.age.secrets.wifi-networks.path;
     networks."UairelessMov".pskRaw = "ext:UairelessMov";
+    networks."Uaireless".pskRaw = "ext:Uaireless";
   };
 }
