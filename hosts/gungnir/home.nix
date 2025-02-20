@@ -5,6 +5,8 @@
   home.homeDirectory = "/data/home";
   home.sessionPath = [ "/data/home/bin" ];
 
+  bspwm-config.disable-caps = true;
+
   imports = [
     ../../config/git
     ../../config/development
@@ -15,8 +17,8 @@
     ../../config/qutebrowser/gungnir
     ../../config/wallpapers
 
-    ../../config/sxhkd/gungnir/i3
-    ../../config/i3/gungnir
+    ../../config/sxhkd/gungnir/bspwm
+    ../../config/bspwm
 
     ../../config/alacritty
     ../../config/cursor
