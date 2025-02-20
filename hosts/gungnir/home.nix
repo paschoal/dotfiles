@@ -13,12 +13,15 @@
     ../../config/aws-vault
 
     ../../config/qutebrowser/gungnir
+    ../../config/wallpapers
+
+    ../../config/sxhkd/gungnir/i3
     ../../config/i3/gungnir
+
     ../../config/alacritty
     ../../config/cursor
-    ../../config/wallpapers
-    ../../config/polybar/gungnir
     ../../config/rofi
+    ../../config/polybar/gungnir
     ../../config/screenshot/flameshot
     ../../config/dunst
   ];
