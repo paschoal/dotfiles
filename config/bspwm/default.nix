@@ -26,14 +26,6 @@
           Enable wallpaper
         '';
       };
-
-      load-ckb = lib.mkOption {
-        default = false;
-        type = lib.types.bool;
-        description = ''
-          Load ckb-next at startup
-        '';
-      };
     };
   };
 
@@ -52,7 +44,6 @@
           ++ optional config.bspwm-config.steam "bspc rule -a Steam desktop='^5' state=fullscreen follow=on"
           ++ optional config.bspwm-config.disable-caps "${pkgs.xorg.setxkbmap} -option 'caps:none' &"
           ++ optional config.bspwm-config.wallpaper "${pkgs.feh}/bin/feh --bg-fill ~/.wallpaper/landscape.jpg &"
-          ++ optional config.bspwm-config.load-ckb "${pkgs.ckb-next}/bin/ckb-next --background &"
         ;
 
         contnt = lib.strings.concatLines bits;

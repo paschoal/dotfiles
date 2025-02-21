@@ -5,7 +5,6 @@
   home.homeDirectory = "/data/home";
   home.sessionPath = [ "/data/home/bin" ];
 
-  bspwm-config.load-ckb = true;
   bspwm-config.steam = true;
 
   imports = [
