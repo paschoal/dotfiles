@@ -5,7 +5,9 @@
     enable = true;
     keybindings = {
       "alt + d" = "rofi -show run";
-      "alt + Tab" = "rofi -show window";
+      "alt + s" = "rofi -show drun";
+      "alt + f" = "rofi-pass";
+      "alt + Tab" = "rofi -shw window";
       "alt + Return" = "alacritty";
 
       "alt + {_,shift +}z" = "bspc node -{c,k}";
