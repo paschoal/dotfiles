@@ -47,6 +47,7 @@
 
       set list
       set listchars+=tab:··,eol:¬,trail:-,extends:>,precedes:<
+      set backspace=indent,eol,start
 
       set expandtab
       set autoindent
@@ -60,6 +61,9 @@
 
       set termguicolors
       set conceallevel=2
+
+      set undodir="~/.vim/undo"
+      set undofile
 
       au FileType ruby setlocal indentkeys-=.
 
