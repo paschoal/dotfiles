@@ -22,7 +22,7 @@
     ../../config/qutebrowser/mjolnir
     ../../config/wallpapers
 
-    ../../config/sxhkd/mjolnir/bspwm
+    ../../config/sxhkd
     ../../config/bspwm
     ../../config/eww/mjolnir
 
