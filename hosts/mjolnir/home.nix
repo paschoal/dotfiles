@@ -5,6 +5,9 @@
   home.homeDirectory = "/data/home";
   home.sessionPath = [ "/data/home/bin" ];
 
+  bspwm-config.load-ckb = true;
+  bspwm-config.steam = true;
+
   imports = [
     ../../config/git
     ../../config/development
@@ -21,6 +24,7 @@
 
     ../../config/sxhkd/mjolnir/bspwm
     ../../config/bspwm
+    ../../config/eww/mjolnir
 
     ../../config/alacritty
     ../../config/cursor

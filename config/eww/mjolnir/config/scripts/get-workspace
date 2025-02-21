@@ -1,7 +1,0 @@
-#!/bin/sh
-active=".[] | select(.focused) | .activeWorkspace.id"
-socket="$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
-
-hyprctl monitors -j | jq "${active}"
-socat -u UNIX-CONNECT:"${socket}" - |
-  stdbuf -o0 awk -F '>>|,' -e '/^workspace>>/ {print $2}' -e '/^focusedmon>>/ {print $3}'
