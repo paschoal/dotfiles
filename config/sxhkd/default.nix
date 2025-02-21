@@ -5,6 +5,8 @@
     enable = true;
     keybindings = {
       "alt + d" = "rofi -show run";
+      "alt + s" = "rofi -show drun";
+      "alt + f" = "rofi-pass";
       "alt + Tab" = "rofi -show window";
       "alt + Return" = "alacritty";
 
