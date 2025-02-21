@@ -8,20 +8,29 @@ in {
     ./logs
   ];
 
+  xdg.desktopEntries = {
+    battlenet = {
+      name = "Battle.net";
+      genericName = "Battle.net";
+      exec = "bottles-cli run -b world-of-warcraft-season-2 -p Battle.net";
+      categories = ["Game"];
+    };
+  };
+
   home.file = {
-    ".local/share/bottles/bottles/world-of-warcraft/${wowPath}" = {
+    ".local/share/bottles/bottles/world-of-warcraft-season-2/${wowPath}" = {
       source = pkgs.symlinkJoin {
         name = "addons";
         paths = [
-          (
-            wowAddon {
-              version = "3.2.3";
-              name = "addon-usage";
-              project = "67954";
-              file = "5835429";
-              hash = "sha256-8AYwHHpPiXopnH7T/JQp6MeiLHYZMhkKDPgUvdDYeOI=";
-            }
-          )
+          #(
+          #  wowAddon {
+          #    version = "3.2.3";
+          #    name = "addon-usage";
+          #    project = "67954";
+          #    file = "5835429";
+          #    hash = "sha256-8AYwHHpPiXopnH7T/JQp6MeiLHYZMhkKDPgUvdDYeOI=";
+          #  }
+          #)
           (
             wowAddon {
               version = "2.1.0";
@@ -33,94 +42,94 @@ in {
           )
           (
             wowAddon {
-              version = "11.0.13";
+              version = "11.0.7";
               name = "auctionator";
               project = "6124";
-              file = "5837148";
-              hash = "sha256-f61F/ZRShjlzNmqbzeVBza2/GySTuzPjtukZveE9Fz4=";
+              file = "6182618";
+              hash = "sha256-Um5IhwUEcEBYciEzfXe/fD30Q9jVwEDN3XBzmXFCmAM=";
             }
           )
           (
             wowAddon {
-              version = "4.15.1";
+              version = "4.15.2";
               name = "bartender-4";
               project = "13501";
-              file = "5754478";
-              hash = "sha256-IAvdnNTqA14GEhicy7gzue33KxVGKPo38yS8semmWCc=";
+              file = "6071960";
+              hash = "sha256-YTImH5V13VogS027vt8RUtDvXU0V0hC8vzok0F/CRPA=";
             }
           )
           (
             wowAddon {
-              version = "1.3.1";
+              version = "1.3.5";
               name = "better-fishing";
               project = "709520";
-              file = "5844603";
-              hash = "sha256-OMcFslXnuBqCCOzVygyK4AhOgIBKb1vB+U3qJa25+FY=";
+              file = "6158101";
+              hash = "sha256-4Q+qF6Skt9Log+WU9LcJ2qt3wjBJiPNSz3O85Xe81Ks=";
             }
           )
+          #(
+          #  wowAddon {
+          #    version = "v366.1";
+          #    name = "bigwigs";
+          #    project = "2382";
+          #    file = "5820495";
+          #    hash = "sha256-yy1RLWUk5GwSwGQEvP3iBbnV1U+vCgTJ2AjCif5m2h8=";
+          #  }
+          #)
           (
             wowAddon {
-              version = "v366.1";
-              name = "bigwigs";
-              project = "2382";
-              file = "5820495";
-              hash = "sha256-yy1RLWUk5GwSwGQEvP3iBbnV1U+vCgTJ2AjCif5m2h8=";
-            }
-          )
-          (
-            wowAddon {
-              version = "3.6.1";
+              version = "3.6.11";
               name = "blizzmove";
               project = "17809";
-              file = "5841033";
-              hash = "sha256-Sj8P6DfFVTY8Y0F0eVuLEYrjo0M/eu+VjWw2TZVyl30=";
+              file = "6145614";
+              hash = "sha256-ULNCeD53WzgDdpZ1dFkc1fbOI8RWuClS+Cylp2bzw4o=";
             }
           )
+          #(
+          #  wowAddon {
+          #    version = "13090.161";
+          #    name = "details";
+          #    project = "61284";
+          #    file = "5771594";
+          #    hash = "sha256-My6NZn96CmVjAMcGhF1kvNgcsUXS7sYwrr/CfWqm4b4=";
+          #  }
+          #)
           (
             wowAddon {
-              version = "13090.161";
-              name = "details";
-              project = "61284";
-              file = "5771594";
-              hash = "sha256-My6NZn96CmVjAMcGhF1kvNgcsUXS7sYwrr/CfWqm4b4=";
-            }
-          )
-          (
-            wowAddon {
-              version = "0.4.7";
+              version = "0.6.2";
               name = "dialogue-ui";
               project = "989270";
-              file = "5833163";
-              hash = "sha256-fsexUnq6BtFIZ024fvt8AbdNwWsQpsUyVB4Ez5ansZY=";
+              file = "6166632";
+              hash = "sha256-h9WCbrxHui1Wv/GDx1sY9RE+NpiUBOK1VzXY9XNkOFI=";
             }
           )
           (
             wowAddon {
-              version = "0.2.17";
+              version = "1.0";
               name = "glider";
               project = "905924";
-              file = "5655467";
-              hash = "sha256-OYALVnlUl9rAz25b/FsrikAT0f6OMnu9bMGlW6OIGAM=";
+              file = "6114533";
+              hash = "sha256-e96QYYJiCFworwqsMy47XNC6JI2OjLRVNjZuiHdZRKk=";
             }
           )
-          (
-            wowAddon {
-              version = "11.0.14";
-              name = "leatrix-plus";
-              project = "94855";
-              file = "5836708";
-              hash = "sha256-6bKHmoPLzXjr4Kp2hkVWTJ5aGRRJM980RuwilFcNzXA=";
-            }
-          )
-          (
-            wowAddon {
-              version = "v11.0.44";
-              name = "littlewigs";
-              project = "4383";
-              file = "5833879";
-              hash = "sha256-/93s0TkK/IVpicD0JObBiTOZf91wf7CywMMwPKwZyfA=";
-            }
-          )
+          #(
+          #  wowAddon {
+          #    version = "11.0.14";
+          #    name = "leatrix-plus";
+          #    project = "94855";
+          #    file = "5836708";
+          #    hash = "sha256-6bKHmoPLzXjr4Kp2hkVWTJ5aGRRJM980RuwilFcNzXA=";
+          #  }
+          #)
+          #(
+          #  wowAddon {
+          #    version = "v11.0.44";
+          #    name = "littlewigs";
+          #    project = "4383";
+          #    file = "5833879";
+          #    hash = "sha256-/93s0TkK/IVpicD0JObBiTOZf91wf7CywMMwPKwZyfA=";
+          #  }
+          #)
           (
             wowAddon {
               version = "2.1.2";
@@ -132,56 +141,56 @@ in {
           )
           (
             wowAddon {
-              version = "1.2.17";
+              version = "1.3.12";
               name = "no-auto-close";
               project = "689952";
-              file = "5776528";
-              hash = "sha256-c65i8lMfxTdYBMGI5zjsFyXMBT4xK9B7JPTHhcs5MCk=";
+              file = "6142677";
+              hash = "sha256-a/IP55TZ6MgS7cIQOU2/I0Fk49swkrqOw72CsAUSO+0=";
             }
           )
           (
             wowAddon {
-              version = "oerred1a";
+              version = "aand3";
               name = "opie";
               project = "19406";
-              file = "5777633";
-              hash = "sha256-otU4kxaCEAnk6kI1/39Msbs1fdKd3ATlqQiU+3XlbSM=";
+              file = "6182876";
+              hash = "sha256-2XiNFXmvkVOdbPa1FPzTYdnjxBoSY3sUaHrXErL1SxU=";
             }
           )
           (
             wowAddon {
-              version = "v4.4.11";
+              version = "v4.4.11-3-g77bd580";
               name = "shadowed-unit-frames";
               project = "19268";
-              file = "5634380";
-              hash = "sha256-lPMI84YnyNrr9OBMoaKNKvihgHyJBh0QIH/Iwu+vKDA=";
+              file = "5816205";
+              hash = "sha256-31TrrS/ocVdlka1x7bm27HkTAwdCqoOnKMmRl0EP59Y=";
             }
           )
-          (
-            wowAddon {
-              version = "11.0.2-02";
-              name = "simulationcraft";
-              project = "82745";
-              file = "5681282";
-              hash = "sha256-FTxiCQ7x8eaW0Es+H9sF6rb4ANEOgImfb7I4qDAv3wo=";
-            }
-          )
-          (
-            wowAddon {
-              version = "v4.0.3";
-              name = "tomtom";
-              project = "18808";
-              file = "5655121";
-              hash = "sha256-RTLDQ+0CDAOeiZDzyisAAtL3+ho5NwScKnZHHXLrxU0=";
-            }
-          )
+          #(
+          #  wowAddon {
+          #    version = "11.0.2-02";
+          #    name = "simulationcraft";
+          #    project = "82745";
+          #    file = "5681282";
+          #    hash = "sha256-FTxiCQ7x8eaW0Es+H9sF6rb4ANEOgImfb7I4qDAv3wo=";
+          #  }
+          #)
+          #(
+          #  wowAddon {
+          #    version = "v4.0.3";
+          #    name = "tomtom";
+          #    project = "18808";
+          #    file = "5655121";
+          #    hash = "sha256-RTLDQ+0CDAOeiZDzyisAAtL3+ho5NwScKnZHHXLrxU0=";
+          #  }
+          #)
           (
             pkgs.stdenv.mkDerivation rec {
-              version = "5.17.4";
+              version = "5.19.1";
               name = "weakauras";
               src = pkgs.fetchurl {
                 url = "https://github.com/WeakAuras/WeakAuras2/releases/download/${version}/WeakAuras-${version}.zip";
-                hash = "sha256-zI1THFk4XjGeAXrIk/2JB2PfgwxvYMkGJNwLPaHduTM=";
+                hash = "sha256-FFVqP21Sxa+Pa5EipUeq4WfdiXfPFvZ2C2DyFCWuY1k=";
               };
               nativeBuildInputs = [pkgs.unzip];
               unpackPhase = ''
