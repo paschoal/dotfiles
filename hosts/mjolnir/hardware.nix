@@ -94,11 +94,6 @@
   ];
 
   #
-  # mouse & keyboard
-  #
-  hardware.ckb-next.enable = true;
-
-  #
   # monitor configuration
   #
   services.xserver = {
