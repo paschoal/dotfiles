@@ -85,15 +85,15 @@ in {
               hash = "sha256-ULNCeD53WzgDdpZ1dFkc1fbOI8RWuClS+Cylp2bzw4o=";
             }
           )
-          #(
-          #  wowAddon {
-          #    version = "13090.161";
-          #    name = "details";
-          #    project = "61284";
-          #    file = "5771594";
-          #    hash = "sha256-My6NZn96CmVjAMcGhF1kvNgcsUXS7sYwrr/CfWqm4b4=";
-          #  }
-          #)
+          (
+            wowAddon {
+              version = "13090.161";
+              name = "details";
+              project = "61284";
+              file = "5771594";
+              hash = "sha256-My6NZn96CmVjAMcGhF1kvNgcsUXS7sYwrr/CfWqm4b4=";
+            }
+          )
           (
             wowAddon {
               version = "0.6.2";
