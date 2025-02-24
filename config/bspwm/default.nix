@@ -26,6 +26,14 @@
           Enable wallpaper
         '';
       };
+
+      eww = lib.mkOption {
+        default = true;
+        type = lib.types.bool;
+        description = ''
+          Launch Eww bar
+        '';
+      };
     };
   };
 
@@ -44,6 +52,7 @@
           ++ optional config.bspwm-config.steam "bspc rule -a Steam desktop='^5' state=fullscreen follow=on"
           ++ optional config.bspwm-config.disable-caps "${pkgs.xorg.setxkbmap} -option 'caps:none' &"
           ++ optional config.bspwm-config.wallpaper "${pkgs.feh}/bin/feh --bg-fill ~/.wallpaper/landscape.jpg &"
+          ++ optional config.bspwm-config.eww "${pkgs.eww}/bin/eww daemon && ${pkgs.eww}/bin/eww open bar &"
         ;
 
         contnt = lib.strings.concatLines bits;
