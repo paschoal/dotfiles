@@ -11,6 +11,7 @@
     ../../hardware/tartarus
     ../../hardware/raid/mjolnir
     ../../hardware/network/mjolnir
+    ../../hardware/mouse
   ];
 
   #
@@ -35,13 +36,6 @@
     "video=DP-3:2560x1440@150"
     "raid0.default_layout=2"
   ];
-
-  services.libinput = {
-    enable = true;
-    mouse = {
-      accelProfile = "flat";
-    };
-  };
 
   #
   # kernel
@@ -73,7 +67,7 @@
 
   virtualisation.docker.enable = true;
   users.users.paschoal = {
-    extraGroups = ["docker"];
+    extraGroups = [ "docker" ];
   };
 
   #
