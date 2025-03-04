@@ -26,6 +26,9 @@
     keybindings = lib.mkMerge [
       {
         "alt + Return" = "alacritty";
+        "XF86AudioMute" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        "XF86AudioLowerVolume" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+        "XF86AudioRaiseVolume" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
       }
 
       (
