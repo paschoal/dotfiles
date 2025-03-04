@@ -17,13 +17,12 @@
     ../../config/qutebrowser/gungnir
     ../../config/wallpapers
 
-    ../../config/sxhkd/gungnir/bspwm
+    ../../config/sxhkd
     ../../config/bspwm
 
     ../../config/alacritty
     ../../config/cursor
     ../../config/rofi
-    ../../config/polybar/gungnir
     ../../config/screenshot/flameshot
     ../../config/dunst
   ];
