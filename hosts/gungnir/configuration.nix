@@ -10,7 +10,7 @@
 
     ../../common
     ../../locale
-    ../../graphical/i3/gungnir
+    ../../graphical/bspwm
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -40,5 +40,7 @@
   fonts.packages = with pkgs; [
     iosevka
     monoid
+    nerd-fonts.iosevka
+    nerd-fonts.monoid
   ];
 }
