@@ -1,6 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
+  xorg-config.amd = true;
+
   imports = [
     <home-manager/nixos>
 
@@ -12,6 +14,7 @@
     ../../games
     ../../graphical/bspwm
   ];
+
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
