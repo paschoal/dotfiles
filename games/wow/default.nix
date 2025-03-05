@@ -22,15 +22,6 @@ in {
       source = pkgs.symlinkJoin {
         name = "addons";
         paths = [
-          #(
-          #  wowAddon {
-          #    version = "3.2.3";
-          #    name = "addon-usage";
-          #    project = "67954";
-          #    file = "5835429";
-          #    hash = "sha256-8AYwHHpPiXopnH7T/JQp6MeiLHYZMhkKDPgUvdDYeOI=";
-          #  }
-          #)
           (
             wowAddon {
               version = "2.1.0";
@@ -67,15 +58,24 @@ in {
               hash = "sha256-4Q+qF6Skt9Log+WU9LcJ2qt3wjBJiPNSz3O85Xe81Ks=";
             }
           )
-          #(
-          #  wowAddon {
-          #    version = "v366.1";
-          #    name = "bigwigs";
-          #    project = "2382";
-          #    file = "5820495";
-          #    hash = "sha256-yy1RLWUk5GwSwGQEvP3iBbnV1U+vCgTJ2AjCif5m2h8=";
-          #  }
-          #)
+          (
+            wowAddon {
+              version = "11.1.6";
+              name = "deadly-boss-mods";
+              project = "3358";
+              file = "6264326";
+              hash = "sha256-oumvAeeKJUEPYXFbK4gfi++OXk+8i1cSQoC/y1lHJqE=";
+            }
+          )
+          (
+            wowAddon {
+              version = "r191";
+              name = "dbm-dungeons-delves-events";
+              project = "314994";
+              file = "6264770";
+              hash = "sha256-nYU1FFvUJ0BowLq25hPaUStntscdFW0z97cChEgAVBo=";
+            }
+          )
           (
             wowAddon {
               version = "3.6.11";
@@ -112,24 +112,6 @@ in {
               hash = "sha256-e96QYYJiCFworwqsMy47XNC6JI2OjLRVNjZuiHdZRKk=";
             }
           )
-          #(
-          #  wowAddon {
-          #    version = "11.0.14";
-          #    name = "leatrix-plus";
-          #    project = "94855";
-          #    file = "5836708";
-          #    hash = "sha256-6bKHmoPLzXjr4Kp2hkVWTJ5aGRRJM980RuwilFcNzXA=";
-          #  }
-          #)
-          #(
-          #  wowAddon {
-          #    version = "v11.0.44";
-          #    name = "littlewigs";
-          #    project = "4383";
-          #    file = "5833879";
-          #    hash = "sha256-/93s0TkK/IVpicD0JObBiTOZf91wf7CywMMwPKwZyfA=";
-          #  }
-          #)
           (
             wowAddon {
               version = "2.1.2";
