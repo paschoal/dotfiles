@@ -8,15 +8,6 @@ in {
     ./logs
   ];
 
-  xdg.desktopEntries = {
-    battlenet = {
-      name = "Battle.net";
-      genericName = "Battle.net";
-      exec = "bottles-cli run -b world-of-warcraft-season-2 -p Battle.net";
-      categories = ["Game"];
-    };
-  };
-
   home.file = {
     ".local/share/bottles/bottles/world-of-warcraft-season-2/${wowPath}" = {
       source = pkgs.symlinkJoin {
@@ -87,11 +78,11 @@ in {
           )
           (
             wowAddon {
-              version = "13090.161";
+              version = "13410.162";
               name = "details";
               project = "61284";
-              file = "5771594";
-              hash = "sha256-My6NZn96CmVjAMcGhF1kvNgcsUXS7sYwrr/CfWqm4b4=";
+              file = "6267743";
+              hash = "sha256-+AfXMCe9aUCj8V7Y5qorjHC1u9u2MxrCb8WAevw5AGc=";
             }
           )
           (
