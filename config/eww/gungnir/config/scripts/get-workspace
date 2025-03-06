@@ -1,8 +1,0 @@
-#!/bin/bash
-
-socket="/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
-filter='.[] | select(.focused) | .activeWorkspace.id'
-
-hyprctl monitors -j | jq "$filter"
-socat -u UNIX-CONNECT:"$socket" - |
-  stdbuf -o0 awk -F '>>|,' -e '/^workspace>>/ {print $2}' -e '/^focusedmon>>/ {print $3}'
