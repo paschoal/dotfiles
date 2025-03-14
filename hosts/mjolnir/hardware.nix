@@ -67,7 +67,7 @@
 
   virtualisation.docker.enable = true;
   users.users.paschoal = {
-    extraGroups = [ "docker" ];
+    extraGroups = [ "docker" "kvm" ];
   };
 
   #
