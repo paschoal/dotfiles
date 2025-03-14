@@ -13,6 +13,7 @@
     ./plugins/nvim-cmp
     ./plugins/nvim-notify
     ./plugins/pomo-nvim
+    ./plugins/lsp-config
   ];
 
   programs.neovim = {
