@@ -2,7 +2,12 @@
 
 {
   home.packages = with pkgs; [
-    ruby_3_3
+    (
+      ruby.withPackages (g: [ ])
+    )
+    rustup
+    flutter
+    lua-language-server
     postgresql
     terraform
     dbeaver-bin
