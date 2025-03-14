@@ -23,9 +23,9 @@
 
     "eww/clock.yuck".text = ''
       (defpoll time
-        :interval "5s"
-        :initial `{"hour": "XX", "minutes": "YY", "seconds": "ZZ" }`
-        `date +'{"hour":"%H", "minutes":"%M", "seconds": "%S" }'`
+        :interval "1s"
+        :initial `{"hour":"XX","minutes":"YY","seconds":"ZZ"}`
+        `date +'{"hour":"%H","minutes":"%M","seconds":"%S"}'`
       )
       (defwidget clock[]
         (box

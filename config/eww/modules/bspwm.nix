@@ -44,7 +44,7 @@
     };
 
     "eww/workspaces.yuck".text = ''
-      (deflisten spaces :initial `[]` `./workspaces.sh`)
+      (deflisten spaces :initial `[{"id":1,"active":false,"occupied":false},{"id":1,"active":false,"occupied":false},{"id":1,"active":false,"occupied":false},{"id":1,"active":false,"occupied":false},{"id":1,"active":false,"occupied":false}]` `./workspaces.sh`)
       (defwidget workspaces []
         (eventbox
           :onscroll "bspc desktop -f next"
