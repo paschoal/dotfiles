@@ -4,6 +4,7 @@
     ../modules/bspwm.nix
     ../modules/clock.nix
     ../modules/sound.nix
+    ../modules/date.nix
   ];
 
   xdg.configFile = {
@@ -23,6 +24,7 @@
       @import './workspaces.scss';
       @import './clock.scss';
       @import './sound.scss';
+      @import './date.scss';
 
       .bar {
         padding: 0px;
@@ -36,6 +38,7 @@
       (include "sound.yuck")
       (include "clock.yuck")
       (include "workspaces.yuck")
+      (include "date.yuck")
 
       (defwidget left[] (box :class "left"))
 
@@ -52,6 +55,7 @@
           :space-evenly "false"
           :halign "end"
           (sound)
+          (date)
           (clock)
         )
       )
