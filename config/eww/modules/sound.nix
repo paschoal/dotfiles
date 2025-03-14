@@ -13,7 +13,7 @@
     '';
 
     "eww/sound.yuck".text = ''
-      (defpoll volume :interval "5s" :initial 5 `wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2}'`)
+      (defpoll volume :interval "1s" :initial 5 `wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2}'`)
       (defwidget sound[]
         (eventbox
           :onscroll `echo {} | sed -e 's/up/+/g' -e 's/down/-/g' | xargs -I% wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01%`
