@@ -139,24 +139,24 @@ in {
               hash = "sha256-31TrrS/ocVdlka1x7bm27HkTAwdCqoOnKMmRl0EP59Y=";
             }
           )
-          #(
-          #  wowAddon {
-          #    version = "11.0.2-02";
-          #    name = "simulationcraft";
-          #    project = "82745";
-          #    file = "5681282";
-          #    hash = "sha256-FTxiCQ7x8eaW0Es+H9sF6rb4ANEOgImfb7I4qDAv3wo=";
-          #  }
-          #)
-          #(
-          #  wowAddon {
-          #    version = "v4.0.3";
-          #    name = "tomtom";
-          #    project = "18808";
-          #    file = "5655121";
-          #    hash = "sha256-RTLDQ+0CDAOeiZDzyisAAtL3+ho5NwScKnZHHXLrxU0=";
-          #  }
-          #)
+          (
+            wowAddon {
+              version = "11.1.2-02";
+              name = "simulationcraft";
+              project = "82745";
+              file = "6261675";
+              hash = "sha256-UEjm7hcTlhdYHxRHsUSCORWXZDQq0QXkt0tEbXzepIE=";
+            }
+          )
+          (
+            wowAddon {
+              version = "v4.0.8";
+              name = "tomtom";
+              project = "18808";
+              file = "6241089";
+              hash = "sha256-B0M75L3sGsve84KM8H+62lRiKkrAKnQZkSzjFymwyc4=";
+            }
+          )
           (
             pkgs.stdenv.mkDerivation rec {
               version = "5.19.1";
