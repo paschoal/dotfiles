@@ -2,9 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    (
-      ruby.withPackages (g: [ ])
-    )
     rustup
     flutter
     lua-language-server
