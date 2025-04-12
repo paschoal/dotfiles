@@ -51,21 +51,29 @@
     discord
     vlc
     feh
+    zathura
   ];
 
   home.stateVersion = "24.05";
   home.enableNixpkgsReleaseCheck = false;
 
-  xdg.userDirs = {
-    createDirectories = true;
-    desktop = "${config.home.homeDirectory}/desktop";
-    documents = "${config.home.homeDirectory}/documents";
-    download = "${config.home.homeDirectory}/downloads";
-    music = "${config.home.homeDirectory}/downloads";
-    pictures = "${config.home.homeDirectory}/screenshots";
-    publicShare = "${config.home.homeDirectory}/screenshots";
-    templates = "${config.home.homeDirectory}/downloads";
-    videos = "${config.home.homeDirectory}/downloads";
+  xdg = {
+    userDirs = {
+      createDirectories = true;
+      desktop = "${config.home.homeDirectory}/desktop";
+      documents = "${config.home.homeDirectory}/documents";
+      download = "${config.home.homeDirectory}/downloads";
+      music = "${config.home.homeDirectory}/downloads";
+      pictures = "${config.home.homeDirectory}/screenshots";
+      publicShare = "${config.home.homeDirectory}/screenshots";
+      templates = "${config.home.homeDirectory}/downloads";
+      videos = "${config.home.homeDirectory}/downloads";
+    };
+    mimeApps = {
+      defaultApplications = {
+        "application/pdf" = ["zathura.desktop"];
+      };
+    };
   };
 
   screenshots = {
@@ -74,4 +82,10 @@
 
   programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
+
+  services.home-manager.autoExpire = {
+    enable = true;
+    frequency = "weekly";
+    store.cleanup = true;
+  };
 }
