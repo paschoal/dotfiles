@@ -5,7 +5,14 @@
       {
         plugin = lualine-nvim;
         type = "lua";
-        config = builtins.readFile ./config.lua;
+        config = ''
+          require("lualine").setup {
+            options = {
+              theme = "onedark",
+              icons_enabled = false,
+            },
+          }
+        '';
       }
     ];
   };

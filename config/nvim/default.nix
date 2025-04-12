@@ -1,19 +1,18 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, specialArgs, options, modulesPath }:
 
 {
   imports = [
     ./plugins/onedark-nvim
-    ./plugins/lualine-nvim
-    ./plugins/indent-blankline-nvim
     ./plugins/neo-tree-nvim
+    ./plugins/lualine-nvim
     ./plugins/telescope-nvim
     ./plugins/nvim-treesitter
-    ./plugins/vim-endwise
-    ./plugins/vim-matchup
-    ./plugins/nvim-cmp
-    ./plugins/nvim-notify
-    ./plugins/pomo-nvim
-    ./plugins/lsp-config
+    ./plugins/indent-blankline-nvim
+
+    #./plugins/vim-endwise
+    #./plugins/nvim-notify
+    #./plugins/pomo-nvim
+    #./plugins/lsp-config
   ];
 
   programs.neovim = {
@@ -32,10 +31,11 @@
     extraConfig = ''
       let mapleader=","
 
-      set updatetime=250
+      set updatetime=750
       set nohlsearch
       set incsearch 
       set number
+      set relativenumber
       set noruler
       set nowrap
       set nocursorline
@@ -43,6 +43,7 @@
       set nowrapscan
       set noerrorbells
       set novisualbell
+      set signcolumn=yes
 
       set clipboard=unnamedplus
 
@@ -52,13 +53,8 @@
 
       set expandtab
       set autoindent
-      set smartindent
-      set nocindent
       set shiftwidth=2
       set softtabstop=2
-
-      set foldmethod=indent
-      set foldlevel=20
 
       set termguicolors
       set conceallevel=2
@@ -76,12 +72,6 @@
       nmap <space> za
       nmap <leader>ff <Cmd>Telescope find_files<CR>
       nmap <leader>fb <Cmd>Telescope buffers<CR>
-
-      nmap <leader>ot <Cmd>ObsidianToday<CR>
-      nmap <leader>oy <Cmd>ObsidianYesterday<CR>
-      nmap <leader>ow <Cmd>ObsidianTomorrow<CR>
-      nmap <leader>on <Cmd>ObsidianNew
-      nmap <leader>os <Cmd>ObsidianSearch<CR>
     '';
   };
 }

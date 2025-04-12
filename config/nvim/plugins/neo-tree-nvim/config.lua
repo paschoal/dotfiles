@@ -1,4 +1,4 @@
-require('neo-tree').setup {
+require("neo-tree").setup {
   add_blank_line_at_top = false,
   auto_clean_after_session_restore = false,
   close_if_last_window = false,
@@ -9,12 +9,11 @@ require('neo-tree').setup {
   enable_refresh_on_write = true,
   enable_git_status = true,
 
-  git_status_async = false,
   hide_root_node = false,
   retain_hidden_root_indent = false,
-  log_level = 'info',
+  log_level = "info",
   log_to_file = false,
-  popup_border_style = 'rounded',
+  popup_border_style = "rounded",
   sort_case_insensitive = false,
 
   default_component_configs = {
@@ -26,48 +25,48 @@ require('neo-tree').setup {
       indent_size = 2,
       padding = 1,
       with_markers = true,
-      indent_marker = '|',
-      last_indent_marker = '└',
-      highlight = 'NeoTreeIndentMarker',
+      indent_marker = "|",
+      last_indent_marker = "└",
+      highlight = "NeoTreeIndentMarker",
       with_expanders = nil,
-      expander_collapsed = '',
-      expander_expanded = '',
-      expander_highlight = 'NeoTreeExpander',
+      expander_collapsed = "",
+      expander_expanded = "",
+      expander_highlight = "NeoTreeExpander",
     },
 
     icon = {
-      folder_closed = '',
-      folder_open = '',
-      folder_empty = '󰉖',
-      folder_empty_open = '󰷏',
-      default = '',
-      highlight = 'NeoTreeFileIcon'
+      folder_closed = "",
+      folder_open = "",
+      folder_empty = "󰉖",
+      folder_empty_open = "󰷏",
+      default = "",
+      highlight = "NeoTreeFileIcon"
     },
 
     modified = {
-      symbol = '[+] ',
-      highlight = 'NeoTreeFileIcon',
+      symbol = "[+] ",
+      highlight = "NeoTreeFileIcon",
     },
 
     name = {
       trailing_slash = false,
       use_git_status_colors = true,
-      highlight = 'NeoTreeFileName',
+      highlight = "NeoTreeFileName",
     },
 
     git_status = {
       symbols = {
-        added     = '✚',
-        deleted   = '✖',
-        modified  = '',
-        renamed   = '󰁕',
-        untracked = '',
-        ignored   = '',
-        unstaged  = '󰄱',
-        staged    = '',
-        conflict  = '',
+        added     = "✚",
+        deleted   = "✖",
+        modified  = "",
+        renamed   = "󰁕",
+        untracked = "",
+        ignored   = "",
+        unstaged  = "󰄱",
+        staged    = "",
+        conflict  = "",
       },
-      align = 'right',
+      align = "right",
     },
 
     file_size = {
@@ -95,34 +94,34 @@ require('neo-tree').setup {
 
   renderers = {
     directory = {
-      { 'indent' },
-      { 'icon' },
-      { 'name' },
+      { "indent" },
+      { "icon" },
+      { "name" },
     },
     file = {
-      { 'indent' },
-      { 'name' },
+      { "indent" },
+      { "name" },
     },
   },
 
   window = {
     width = 40,
-    position = 'current',
+    position = "current",
     mapping_options = {
       noremap = true,
       nowait = true,
     },
 
     mappings = {
-      ['<space>'] = { 'toggle_node', nowait = false },
-      ['q'] = 'close_window',
-      ['a'] = 'add',
-      ['d'] = 'delete',
-      ['m'] = 'rename',
-      ['A'] = 'add_directory',
-      ['r'] = 'refresh',
-      ['i'] = 'open_vsplit',
-      ['s'] = 'open_split',
+      ["<space>"] = { "toggle_node", nowait = false },
+      ["q"] = "close_window",
+      ["a"] = "add",
+      ["d"] = "delete",
+      ["m"] = "rename",
+      ["A"] = "add_directory",
+      ["r"] = "refresh",
+      ["i"] = "open_vsplit",
+      ["s"] = "open_split",
     },
   },
 
@@ -132,13 +131,14 @@ require('neo-tree').setup {
       hide_dotfiles = false,
       hide_gitignored = false,
       hide_by_name = {
-        'node_modules',
+        "node_modules",
       },
       never_show = {},
     },
     follow_current_file = {
       enabled = true,
+      leave_dirs_open = true,
     },
-    hijack_netrw_behavior = 'open_default',
+    hijack_netrw_behavior = "open_default",
   },
 }
