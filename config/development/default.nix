@@ -5,6 +5,7 @@
     rustup
     flutter
     lua-language-server
+    nil
     postgresql
     terraform
     dbeaver-bin

@@ -8,7 +8,7 @@
         config = ''
           require("onedark").setup {
             style = "warmer",
-            transparent = true,
+            transparent = false,
             term_colors = true,
           }
           require("onedark").load()
