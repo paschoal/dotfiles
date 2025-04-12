@@ -1,4 +1,13 @@
-{ lib, pkgs, nixpkgs, environment, ... }:
+{
+  lib,
+  pkgs,
+  nixpkgs,
+  environment,
+  config,
+  options,
+  specialArgs,
+  modulesPath,
+}:
 
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -10,6 +19,7 @@
   environment.systemPackages = with pkgs; [
     protonup
     wineWowPackages.staging
+    wine64
     winetricks
     bottles
   ];
