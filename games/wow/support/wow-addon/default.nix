@@ -1,5 +1,12 @@
 { pkgs }:
-{ project, file, hash, name, version }:
+{
+  project,
+  file,
+  hash,
+  name,
+  version
+}:
+
 let
   fetchCurseForge = import ../fetchcurseforge { fetchurl = pkgs.fetchurl; };
   game = "wow";
