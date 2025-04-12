@@ -15,6 +15,13 @@
   ];
 
   #
+  # power
+  #
+  environment.extraInit = ''
+    xset s off -dpms
+  '';
+
+  #
   # raid
   #
   environment.systemPackages = [
