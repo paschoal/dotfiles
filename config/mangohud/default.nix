@@ -6,9 +6,18 @@
   ];
 
   xdg.configFile = {
-    "MangoHud" = {
-      source = ./config;
-      recursive = false;
+    "MangoHud/MangoHud.conf" = {
+      text = ''
+        gpu_load_change
+        gpu_power
+        gpu_temp
+
+        cpu_load_change
+        cpu_power
+        cpu_temp
+
+        fps
+      '';
     };
   };
 }
