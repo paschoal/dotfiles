@@ -7,6 +7,7 @@
   options,
   specialArgs,
   modulesPath,
+  ...
 }:
 
 {
@@ -47,4 +48,3 @@
 
   hardware.steam-hardware.enable = true;
 }
-

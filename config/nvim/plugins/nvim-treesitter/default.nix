@@ -1,4 +1,4 @@
-{ config, pkgs, lib, specialArgs, modulesPath, options, }:
+{ config, pkgs, lib, ... }:
 {
   #
   # solving treesitter error for missing cc bin.

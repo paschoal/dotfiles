@@ -184,25 +184,6 @@ in {
               '';
             }
           )
-          (
-            pkgs.stdenv.mkDerivation rec {
-              version = "20.460";
-              name = "tukui";
-              src = pkgs.fetchurl {
-                url = "https://api.tukui.org/v1/download/tukui/CUnuUngQj8koQLNVvErKIDfFoZrjJ0sB7CF063OqcYBz_fILbG8XrTDfT59g7N2fSg9bfJiI8Bs0pi2rSpdu8vRIijvw7vIJ-S-ulz0NrJpc7GCbXh5MZBz-44P3B0bSnrAAdMCWyQFkSOzdqNg8s8knPdGyuMZrLjEI0urCLmrFDDGlTiWa6Vnaub9PD9UjkdnWEjMj1c61zzW82e8BzMs9B9g6ibkJGQnXLx1F8TCx4ysALuSmIsbG9xElh4jWoPdzJV3t91ZYE9yyNhnHCMuVXiytQsHOQ4WojTpSXeKYTRBGAveOShuzDRrnRpaDAi_vGqIVjZ0Cf0Ph4i94Hw";
-                hash = "sha256-YB1Qaf1hgfwKtXF9a+jdjDTkNTNB/r1BosQFQe9fPkk=";
-              };
-              nativeBuildInputs = [pkgs.unzip];
-              unpackPhase = ''
-                unzip $src
-                ls -la
-              '';
-              installPhase = ''
-                mkdir $out/
-                cp -R Tukui/ $out/
-              '';
-            }
-          )
         ];
       };
     };
