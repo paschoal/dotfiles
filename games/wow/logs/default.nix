@@ -1,11 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  specialArgs,
-  modulesPath,
-  options,
-}:
+{ config, pkgs, lib, ... }:
 
 {
   home.packages = [
