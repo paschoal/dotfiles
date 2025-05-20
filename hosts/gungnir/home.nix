@@ -20,7 +20,7 @@
     ../../config/sxhkd
     ../../config/bspwm
 
-    ../../config/alacritty
+    ../../config/st
     ../../config/cursor
     ../../config/rofi
     ../../config/screenshot/flameshot
@@ -42,6 +42,7 @@
     discord
     vlc
     feh
+    zathura
   ];
 
   home.stateVersion = "23.11";
@@ -60,4 +61,10 @@
 
   programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
+
+  services.home-manager.autoExpire = {
+    enable = true;
+    frequency = "weekly";
+    store.cleanup = true;
+  };
 }
