@@ -1,6 +1,8 @@
+import dracula.draw
+
 config.load_autoconfig()
 
-c.fonts.default_family ='Monoid'
+c.fonts.default_family ='Isosevka'
 c.fonts.default_size = '20pt'
 
 c.content.geolocation = False
@@ -29,3 +31,10 @@ c.url.searchengines = {
         '!reddit': 'https://www.reddit.com/search?q={}'
 }
 c.url.start_pages = 'https://google.ca/'
+
+dracula.draw.blood(c, {
+    'spacing': {
+        'vertical': 6,
+        'horizontal': 8
+    }
+})
