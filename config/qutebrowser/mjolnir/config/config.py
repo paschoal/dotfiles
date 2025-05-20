@@ -1,11 +1,13 @@
+import dracula.draw
+
 config.load_autoconfig()
 
-c.fonts.default_family ='Monoid'
-c.fonts.default_size = '14pt'
+c.fonts.default_family ='Iosevka'
+c.fonts.default_size = '16pt'
 
 c.content.geolocation = False
 c.content.pdfjs = False
-c.content.dns_prefetch = True
+c.content.dns_prefetch = False
 
 c.completion.height = '20%'
 c.completion.cmd_history_max_items = 2
@@ -29,3 +31,10 @@ c.url.searchengines = {
         '!reddit': 'https://www.reddit.com/search?q={}'
 }
 c.url.start_pages = 'https://google.ca/'
+
+dracula.draw.blood(c, {
+    'spacing': {
+        'vertical': 6,
+        'horizontal': 8
+    }
+})
