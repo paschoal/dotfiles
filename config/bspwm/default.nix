@@ -3,14 +3,6 @@
 {
   options = {
     bspwm-config = {
-      steam = lib.mkOption {
-        default = false;
-        type = lib.types.bool;
-        description = ''
-          Configure Steam window
-        '';
-      };
-
       disable-caps = lib.mkOption {
         default = false;
         type = lib.types.bool;
@@ -46,10 +38,13 @@
           bspc config window_gap          12
           bspc config split_ratio         0.52
           bspc config borderless_monocle  true
+          bspc config pointer_modifier    mod1
+          bspc config pointer_action1     move
+
+          bspc rule -a Emulator state=floating
         '';
 
         bits = with lib.lists; [ base ]
-          ++ optional config.bspwm-config.steam "bspc rule -a Steam desktop='^5' state=fullscreen follow=on"
           ++ optional config.bspwm-config.disable-caps "${pkgs.xorg.setxkbmap} -option 'caps:none' &"
           ++ optional config.bspwm-config.wallpaper "${pkgs.feh}/bin/feh --bg-fill ~/.wallpaper/landscape.jpg &"
           ++ optional config.bspwm-config.eww "${pkgs.eww}/bin/eww daemon && ${pkgs.eww}/bin/eww open bar &"
