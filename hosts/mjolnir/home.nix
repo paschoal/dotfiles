@@ -5,8 +5,6 @@
   home.homeDirectory = "/data/home";
   home.sessionPath = [ "/data/home/bin" ];
 
-  bspwm-config.steam = true;
-
   imports = [
     ../../config/git
     ../../config/development
@@ -25,7 +23,7 @@
     ../../config/bspwm
     ../../config/eww/mjolnir
 
-    ../../config/alacritty
+    ../../config/st
     ../../config/cursor
     ../../config/rofi
     ../../config/mangohud
@@ -58,16 +56,13 @@
   home.enableNixpkgsReleaseCheck = false;
 
   xdg = {
+    cacheHome = "${config.home.homeDirectory}/.cache";
     userDirs = {
       createDirectories = true;
       desktop = "${config.home.homeDirectory}/desktop";
       documents = "${config.home.homeDirectory}/documents";
       download = "${config.home.homeDirectory}/downloads";
-      music = "${config.home.homeDirectory}/downloads";
       pictures = "${config.home.homeDirectory}/screenshots";
-      publicShare = "${config.home.homeDirectory}/screenshots";
-      templates = "${config.home.homeDirectory}/downloads";
-      videos = "${config.home.homeDirectory}/downloads";
     };
     mimeApps = {
       defaultApplications = {
