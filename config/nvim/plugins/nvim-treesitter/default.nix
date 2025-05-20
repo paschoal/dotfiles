@@ -31,6 +31,7 @@
           p.gitcommit
           p.gitignore
           p.go
+          p.gotmpl
           p.gpg
           p.graphql
           p.html
