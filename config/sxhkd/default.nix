@@ -25,7 +25,7 @@
     enable = true;
     keybindings = lib.mkMerge [
       {
-        "alt + Return" = "alacritty";
+        "alt + Return" = "st";
         "XF86AudioMute" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         "XF86AudioLowerVolume" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
         "XF86AudioRaiseVolume" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
@@ -33,10 +33,8 @@
 
       (
         lib.mkIf config.sxhkd-config.rofi {
-          "alt + d" = "rofi -show run";
-          "alt + s" = "rofi -show drun";
+          "alt + {d,s,a}" = "rofi -show {run,drun,window}";
           "alt + f" = "rofi-pass";
-          "alt + Tab" = "rofi -show window";
         }
       )
 
