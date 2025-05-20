@@ -26,6 +26,19 @@
             };
           }
         ];
+
+        autocd = true;
+        autosuggestion.enable = true;
+        syntaxHighlighting.enable = true;
+        history = {
+          append = true;
+          share = true;
+          ignoreDups = true;
+          ignoreSpace = true;
+          path = "${config.xdg.cacheHome}/zsh_history";
+          size = 10000;
+          save = 10000;
+        };
       };
     };
   };

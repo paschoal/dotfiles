@@ -7,7 +7,6 @@
     lua-language-server
     nil
     postgresql
-    terraform
     dbeaver-bin
     (
       google-cloud-sdk.withExtraComponents [
