@@ -72,7 +72,12 @@
   #
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    autoPrune.enable = true;
+    enableOnBoot = true;
+  };
+
   users.users.paschoal = {
     extraGroups = [ "docker" "kvm" ];
   };
@@ -88,6 +93,7 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/boot";
     fsType = "vfat";
+    options = [ "fmask=0077" "dmask=0077" "defaults" ];
   };
 
   swapDevices = [
