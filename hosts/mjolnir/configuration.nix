@@ -12,7 +12,7 @@
     ../../common
     ../../locale
     ../../games
-    ../../graphical/bspwm
+    ../../graphical/dwm
   ];
 
 
