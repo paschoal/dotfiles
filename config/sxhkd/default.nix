@@ -12,10 +12,18 @@
       };
 
       bspwm = lib.mkOption {
-        default = true;
+        default = false;
         type = lib.types.bool;
         description = ''
           Enable bspwm keybindings
+        '';
+      };
+
+      dwm = lib.mkOption {
+        default = true;
+        type = lib.types.bool;
+        description = ''
+          Enable dwm keybindings
         '';
       };
     };
@@ -45,6 +53,16 @@
           "alt + {_,shift +}{h,j,k,l}" = "bspc node -{f,s} {west,south,north,east}";
           "alt + {w,e,r,t}" = "bspc node -t {tiled,pseudo_tiled,floating,fullscreen}";
           "alt + b" = "bspc desktop -l next";
+        }
+      )
+
+      (
+        lib.mkIf config.sxhkd-config.dwm {
+          "alt + {h,l}" = "dwmc setmfact {-,+}0.05";
+          "alt + {k,j}" = "dwmc focusstack {-,+}1";
+          "alt + z" = "dwmc killclient";
+          "alt + {_, shift +}{1-9}" = "dwmc {viewex,tagex} {0-8}";
+          "alt + q" = "dwmc quit";
         }
       )
     ];
