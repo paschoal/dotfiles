@@ -106,7 +106,7 @@ require("neo-tree").setup {
 
   window = {
     width = 40,
-    position = "current",
+    position = "left",
     mapping_options = {
       noremap = true,
       nowait = true,
@@ -122,6 +122,7 @@ require("neo-tree").setup {
       ["r"] = "refresh",
       ["i"] = "open_vsplit",
       ["s"] = "open_split",
+      ["t"] = "open_tabnew",
     },
   },
 
@@ -139,6 +140,9 @@ require("neo-tree").setup {
       enabled = true,
       leave_dirs_open = true,
     },
+    use_libuv_file_watcher = true,
     hijack_netrw_behavior = "open_default",
   },
 }
+
+vim.keymap.set("n", "<leader>/", "<Cmd>Neotree toggle<CR>", { noremap = true, silent = true })
