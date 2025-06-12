@@ -8,10 +8,8 @@
     ./plugins/telescope-nvim
     ./plugins/nvim-treesitter
     ./plugins/indent-blankline-nvim
-
-    #./plugins/vim-endwise
-    #./plugins/nvim-notify
-    #./plugins/pomo-nvim
+    ./plugins/vim-dadbod
+    ./plugins/nvim-notify
     #./plugins/lsp-config
   ];
 
@@ -61,17 +59,6 @@
 
       set undodir="~/.vim/undo"
       set undofile
-
-      au FileType ruby setlocal indentkeys-=.
-
-      augroup filetypedetect
-        au! BufRead,BufNewFile dockerfile.yml setfiletype dockerfile
-        au! BufRead,BufNewFile dockerfile.yaml setfiletype dockerfile
-      augroup END
-
-      nmap <space> za
-      nmap <leader>ff <Cmd>Telescope find_files<CR>
-      nmap <leader>fb <Cmd>Telescope buffers<CR>
     '';
   };
 }

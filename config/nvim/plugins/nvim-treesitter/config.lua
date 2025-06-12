@@ -10,6 +10,7 @@ require("nvim-treesitter.configs").setup {
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.wo.foldlevel = 99
+vim.keymap.set("n", "<space>", "za", { noremap = true, silent = true })
 
 vim.filetype.add({
   extension = {
@@ -19,5 +20,17 @@ vim.filetype.add({
     [".*/templates/.*%.tpl"] = "helm",
     [".*/templates/.*%.ya?ml"] = "helm",
     ["helmfile.*%.ya?ml"] = "helm",
+
+    ["dockerfile.ya?ml"] = "dockerfile",
   },
 })
+
+vim.api.nvim_create_autocmd(
+  "FileType",
+  {
+    pattern = "ruby",
+    callback = function()
+      vim.opt_local.indentkeys:remove(".")
+    end,
+  }
+)
