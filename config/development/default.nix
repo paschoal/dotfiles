@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     rustup
-    flutter
     lua-language-server
     nil
     postgresql

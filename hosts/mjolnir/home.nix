@@ -14,6 +14,7 @@
 
     ../../games/wow
     ../../games/eve
+    ../../config/mangohud
 
     ../../config/manufact
     ../../config/qutebrowser/mjolnir
@@ -26,10 +27,8 @@
     ../../config/st
     ../../config/cursor
     ../../config/rofi
-    ../../config/mangohud
     ../../config/screenshot/flameshot
     ../../config/clementine
-    ../../config/thunderbird
     ../../config/dunst
     ../../config/ranger
   ];
