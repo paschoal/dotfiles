@@ -106,7 +106,7 @@ require("neo-tree").setup {
 
   window = {
     width = 40,
-    position = "left",
+    position = "current",
     mapping_options = {
       noremap = true,
       nowait = true,
@@ -144,5 +144,3 @@ require("neo-tree").setup {
     hijack_netrw_behavior = "open_default",
   },
 }
-
-vim.keymap.set("n", "<leader>/", "<Cmd>Neotree toggle<CR>", { noremap = true, silent = true })
