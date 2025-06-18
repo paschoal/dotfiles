@@ -14,7 +14,6 @@
   };
 
   config = {
-    environment.systemPackages = with pkgs; [ xclip ];
     services.displayManager.defaultSession = "none+dwm";
 
     services.xserver = lib.mkMerge [
@@ -29,6 +28,7 @@
                 ../../config/dwm/patches/1-dwmc.diff
                 ../../config/dwm/patches/2-disable-bars.diff
                 ../../config/dwm/patches/3-remove-keybinds.diff
+                ../../config/dwm/patches/4-disable-resize.diff
               ];
 
               postInstall = ''
