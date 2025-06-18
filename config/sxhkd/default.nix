@@ -62,7 +62,7 @@
           "alt + {k,j}" = "dwmc focusstack {-,+}1";
           "alt + z" = "dwmc killclient";
           "alt + {_, shift +}{1-9}" = "dwmc {viewex,tagex} {0-8}";
-          "alt + q" = "dwmc quit";
+          "alt + {e,r,t}" = "dwmc setlayoutex {0,1,2}";
         }
       )
     ];
