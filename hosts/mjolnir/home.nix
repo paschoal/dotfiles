@@ -48,7 +48,11 @@
     discord
     vlc
     feh
+    nemo
     zathura
+    flameshot
+    calibre
+    xclip
   ];
 
   home.stateVersion = "24.05";
@@ -64,8 +68,10 @@
       pictures = "${config.home.homeDirectory}/screenshots";
     };
     mimeApps = {
+      enable = true;
       defaultApplications = {
         "application/pdf" = ["zathura.desktop"];
+        "inode/directory" = ["nemo.desktop"];
       };
     };
   };
