@@ -1,0 +1,11 @@
+--- a/config.def.h	2025-06-06 10:33:25.890705314 -0400
++++ b/config.def.h	2025-06-06 10:58:51.109371742 -0400
+@@ -35,7 +35,7 @@
+ /* layout(s) */
+ static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+ static const int nmaster     = 1;    /* number of clients in master area */
+-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
++static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
+ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+ 
+ static const Layout layouts[] = {
