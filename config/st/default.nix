@@ -10,6 +10,7 @@
           ./patches/st-dracula-0.8.5.diff
           ./patches/st-scrollback-ringbuffer-0.9.2.diff
           ./patches/st-scrollback-mouse-0.9.2.diff
+          ./patches/st-anysize-0.8.4.diff
         ];
       }
     ))
