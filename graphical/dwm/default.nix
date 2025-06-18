@@ -14,7 +14,6 @@
   };
 
   config = {
-    environment.systemPackages = with pkgs; [ xclip ];
     services.displayManager.defaultSession = "none+dwm";
 
     services.xserver = lib.mkMerge [
