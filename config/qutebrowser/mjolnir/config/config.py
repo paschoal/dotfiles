@@ -8,6 +8,13 @@ c.fonts.default_size = '16pt'
 c.content.geolocation = False
 c.content.pdfjs = False
 c.content.dns_prefetch = False
+c.content.notifications.enabled = False
+
+#
+# ask if site load raise ssl error, block
+# silently if third party raise ssl error.
+#
+c.content.tls.certificate_errors = 'ask-block-thirdparty'
 
 c.completion.height = '20%'
 c.completion.cmd_history_max_items = 2
