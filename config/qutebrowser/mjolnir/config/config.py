@@ -39,11 +39,6 @@ c.url.searchengines = {
 }
 c.url.start_pages = 'https://google.ca/'
 
-c.fileselect.folder.command = ["st", "-e", "ranger", "--choosefiles={}"]
-c.fileselect.multiple_files.command = ["st", "-e", "ranger", "--choosefiles={}"]
-c.fileselect.single_file.command = ["st", "-e", "ranger", "--choosefiles={}"]
-c.fileselect.handler = "external"
-
 dracula.draw.blood(c, {
     'spacing': {
         'vertical': 6,
