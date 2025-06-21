@@ -97,12 +97,12 @@
       };
 
       extruder = {
-        max_extrude_only_distance = 100.0;
+        max_extrude_only_distance = 101.0;
         step_pin = "PB4";
         dir_pin = "PB3";
         enable_pin = "!PC3";
         microsteps = 16;
-        rotation_distance = 34.406;
+        rotation_distance = 32.34164;
         nozzle_diameter = 0.400;
         filament_diameter = 1.750;
         heater_pin = "PA1";
@@ -145,6 +145,7 @@
         gcode = "
           TURN_OFF_HEATERS
           CANCEL_PRINT_BASE
+          G1 X0 Y210 F5000
         ";
       };
 
@@ -175,18 +176,16 @@
           G1 X-2 Y-2 E-3 F300
           G1 Z10 F300
           G90
+          G1 X0 Y210 F5000
           M84
         ";
       };
 
-      "gcode_macro BLTOUCH_RESET" = {
+      "gcode_macro PIN_DOWN" = {
         gcode = "
-          BLTOUCH_DEBUG COMMAND=reset
-          BLTOUCH_DEBUG COMMAND=pin_up
           BLTOUCH_DEBUG COMMAND=pin_down
-          BLTOUCH_DEBUG COMMAND=pin_up
         ";
-      }
+      };
 
       safe_z_home = {
         home_xy_position = "110,110";
@@ -202,7 +201,7 @@
         speed = 2;
         x_offset = -42.5;
         y_offset = -6;
-        z_offset = 2.925;
+        z_offset = 3.195;
       };
 
       bed_mesh = {
@@ -212,6 +211,20 @@
         mesh_max = "204.5,205";
         probe_count = "5,5";
         adaptive_margin = 5;
+      };
+
+      screws_tilt_adjust = {
+        screw1 = "70,30";
+        screw1_name = "front left screw";
+        screw2 = "240,30";
+        screw2_name = "front right screw";
+        screw3 = "240,200";
+        screw3_name = "rear right screw";
+        screw4 = "70,200";
+        screw4_name = "rear left screw";
+        screw_thread = "CW-M4";
+        horizontal_move_z = 10;
+        speed = 50;
       };
 
       exclude_object = {};
