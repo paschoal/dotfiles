@@ -5,9 +5,7 @@
       {
         plugin = indent-blankline-nvim;
         type = "lua";
-        config = ''
-          require("ibl").setup()
-        '';
+        config = builtins.readFile ./config.lua;
       }
     ];
   };

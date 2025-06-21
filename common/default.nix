@@ -4,21 +4,20 @@
   environment.systemPackages = with pkgs; [
     zsh
     gnupg
-    git
-    pinentry-curses
+    pinentry-gtk2
   ];
 
-  services = {
-    pcscd = {
-      enable = true;
-    };
-  };
+  services.pcscd.enable = true;
 
   programs = {
     zsh.enable = true;
     gnupg.agent = {
       enable = true;
-      pinentryPackage = pkgs.pinentry-curses;
+      pinentryPackage = pkgs.pinentry-gtk2;
+    };
+    git = {
+      enable = true;
+      lfs.enable = true;
     };
   };
 
@@ -27,7 +26,6 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than= 7d";
     };
   };
 }

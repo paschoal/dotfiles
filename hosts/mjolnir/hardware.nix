@@ -7,8 +7,26 @@
     (modulesPath + "/installer/scan/not-detected.nix")
 
     ../../audio/mjolnir
+    ../../hardware/headphones
     ../../hardware/radeon
     ../../hardware/tartarus
+    ../../hardware/raid/mjolnir
+    ../../hardware/network/mjolnir
+    ../../hardware/mouse
+  ];
+
+  #
+  # power
+  #
+  environment.extraInit = ''
+    xset s off -dpms
+  '';
+
+  #
+  # raid
+  #
+  environment.systemPackages = [
+    pkgs.mdadm
   ];
 
   #
@@ -20,10 +38,13 @@
   # gpu
   #
   hardware.graphics.enable = true;
-
   services.xserver.videoDrivers = ["amdgpu"];
   boot.initrd.kernelModules = ["amdgpu"];
-  boot.kernelParams = ["video=DP-3:2560x1440@150"];
+  boot.kernelParams = [
+    "video=DP-3:2560x1440@150"
+    "raid0.default_layout=2"
+    "amdgpu.ppfeaturemask=0xffffffff"
+  ];
 
   #
   # kernel
@@ -47,7 +68,21 @@
   # virtualisation
   #
   boot.kernelModules = [ "kvm-amd" ];
-  virtualisation.docker.enable = true;
+
+  #
+  # using latest kernel instead of LTS
+  #
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  virtualisation.docker = {
+    enable = true;
+    autoPrune.enable = true;
+    enableOnBoot = true;
+  };
+
+  users.users.paschoal = {
+    extraGroups = [ "docker" "kvm" ];
+  };
 
   #
   # disks
@@ -60,6 +95,7 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/boot";
     fsType = "vfat";
+    options = [ "fmask=0077" "dmask=0077" "defaults" ];
   };
 
   swapDevices = [
@@ -67,38 +103,16 @@
   ];
 
   #
-  # network
-  #
-  networking.useDHCP = lib.mkDefault true;
-  networking.hostName = "mjolnir";
-
-  #
-  # mouse & keyboard
-  #
-  hardware.ckb-next.enable = true;
-
-  #
   # monitor configuration
   #
   services.xserver = {
     xrandrHeads = [
-      {
-        output = "HDMI-A-0";
-        monitorConfig = ''
-          Modeline "1920x1080@60" 148.50 1920 2008 2052 2200 1080 1084 1089 1125 +hsync +vsync
-          Option "PreferredMode" "1920x1080@60"
-          Option "Rotate" "right"
-          Option "LeftOf" "DisplayPort-2"
-        '';
-      }
-
       {
         output = "DisplayPort-2";
         primary = true;
         monitorConfig = ''
           Modeline "2560x1440@150" 612.61 2560 2568 2600 2640 1440 1443 1453 1547 +hsync +vsync
           Option "PreferredMode" "2560x1440@150"
-          Option "RightOf" "HDMI-A-0"
         '';
       }
     ];

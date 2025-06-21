@@ -3,13 +3,7 @@
 {
   home.username = "paschoal";
   home.homeDirectory = "/data/home";
-  home.sessionPath = [
-    "/data/home/bin"
-  ];
-
-  screenshots = {
-    folder = "${config.home.homeDirectory}/screenshots";
-  };
+  home.sessionPath = [ "/data/home/bin" ];
 
   imports = [
     ../../config/git
@@ -17,26 +11,34 @@
     ../../config/zsh
     ../../config/nvim
     ../../config/aws-vault
+
     ../../games/wow
+    ../../games/eve
+    ../../config/mangohud
+
     ../../config/manufact
     ../../config/qutebrowser/mjolnir
-    ../../config/i3/mjolnir
-    ../../config/alacritty
-    ../../config/cursor
     ../../config/wallpapers
-    ../../config/polybar/mjolnir
+
+    ../../config/sxhkd
+    ../../config/bspwm
+    ../../config/eww/mjolnir
+
+    ../../config/st
+    ../../config/cursor
     ../../config/rofi
-    ../../config/platinum
-    ../../config/mangohud
-    ../../config/obs
-    ../../config/clipmenu
     ../../config/screenshot/flameshot
+    ../../config/clementine
+    ../../config/dunst
+    ../../config/ranger
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
+
     "awscli2"
-    "obsidian"
+    "terraform"
+    "apple_cursor"
   ];
 
   home.packages = with pkgs; [
@@ -46,28 +48,44 @@
     discord
     vlc
     feh
+    nemo
+    zathura
+    flameshot
+    calibre
+    xclip
   ];
 
   home.stateVersion = "24.05";
   home.enableNixpkgsReleaseCheck = false;
 
-  xdg.userDirs = {
-    createDirectories = true;
-    desktop = "${config.home.homeDirectory}/desktop";
-    documents = "${config.home.homeDirectory}/documents";
-    download = "${config.home.homeDirectory}/downloads";
-    music = "${config.home.homeDirectory}/downloads";
-    pictures = "${config.home.homeDirectory}/downloads";
-    publicShare = "${config.home.homeDirectory}/downloads";
-    templates = "${config.home.homeDirectory}/downloads";
-    videos = "${config.home.homeDirectory}/downloads";
-  };
-
-  programs = {
-    home-manager = {
+  xdg = {
+    cacheHome = "${config.home.homeDirectory}/.cache";
+    userDirs = {
+      createDirectories = true;
+      desktop = "${config.home.homeDirectory}/desktop";
+      documents = "${config.home.homeDirectory}/documents";
+      download = "${config.home.homeDirectory}/downloads";
+      pictures = "${config.home.homeDirectory}/screenshots";
+    };
+    mimeApps = {
       enable = true;
+      defaultApplications = {
+        "application/pdf" = ["zathura.desktop"];
+        "inode/directory" = ["nemo.desktop"];
+      };
     };
   };
 
+  screenshots = {
+    folder = config.xdg.userDirs.pictures;
+  };
+
+  programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
+
+  services.home-manager.autoExpire = {
+    enable = true;
+    frequency = "weekly";
+    store.cleanup = true;
+  };
 }

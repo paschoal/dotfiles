@@ -1,4 +1,14 @@
-{ lib, pkgs, nixpkgs, environment, ... }:
+{
+  lib,
+  pkgs,
+  nixpkgs,
+  environment,
+  config,
+  options,
+  specialArgs,
+  modulesPath,
+  ...
+}:
 
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -10,27 +20,31 @@
   environment.systemPackages = with pkgs; [
     protonup
     wineWowPackages.staging
+    wine64
     winetricks
-
-    (
-      lutris.override {
-        extraPkgs = pkgs: [
-          wineWowPackages.staging
-          gamemode
-          winetricks
-        ];
-        extraLibraries = pkgs: [gamemode];
-      }
-    )
+    bottles
   ];
 
   programs = {
-    steam.enable = true;
-    gamemode.enable = true;
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+
+    gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
+
+    gamemode = {
+      enable = true;
+      enableRenice = true;
+    };
   };
 
   users.users.paschoal = {
     extraGroups = ["gamemode"];
   };
-}
 
+  hardware.steam-hardware.enable = true;
+}

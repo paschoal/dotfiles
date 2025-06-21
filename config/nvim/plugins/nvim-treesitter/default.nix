@@ -1,9 +1,14 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
+  #
+  # solving treesitter error for missing cc bin.
+  #
+  home.packages = with pkgs; [ gcc ];
+
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      (
-        nvim-treesitter.withPlugins(p: [
+      {
+        plugin = nvim-treesitter.withPlugins(p: [
           p.astro
           p.awk
           p.bash
@@ -26,6 +31,7 @@
           p.gitcommit
           p.gitignore
           p.go
+          p.gotmpl
           p.gpg
           p.graphql
           p.html
@@ -44,6 +50,7 @@
           p.proto
           p.python
           p.ruby
+          p.rbs
           p.rust
           p.scss
           p.sql
@@ -53,8 +60,11 @@
           p.xml
           p.yaml
           p.yuck
-        ])
-      )
+        ]);
+        type = "lua";
+        config = builtins.readFile ./config.lua;
+      }
+      nvim-treesitter-endwise
     ];
   };
 }
