@@ -11,7 +11,7 @@
           hash = "sha256-cwediOw28GFdt5GdAKom/jAeNIum4FGGKnz8QEAVDAM=";
         };
         extraPkgs = pkgs: with pkgs; [
-          # webkitgtk
+          webkitgtk_4_0
         ];
       }
     )
