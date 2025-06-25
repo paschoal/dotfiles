@@ -5,6 +5,11 @@
   home.homeDirectory = "/data/home";
   home.sessionPath = [ "/data/home/bin" ];
 
+  sxhkd-config = {
+    rofi = true;
+    bspwm = true;
+  };
+
   imports = [
     ../../config/git
     ../../config/development
@@ -53,6 +58,7 @@
     flameshot
     calibre
     xclip
+    nix-index
   ];
 
   home.stateVersion = "24.05";

@@ -5,6 +5,7 @@
 
   imports = [
     <home-manager/nixos>
+    <agenix/modules/age.nix>
 
     ./hardware.nix
     ./network.nix
@@ -12,7 +13,9 @@
     ../../common
     ../../locale
     ../../games
-    ../../graphical/dwm
+    ../../graphical/bspwm
+    ../../services/ollama
+    ../../services/openssh
   ];
 
 
@@ -44,8 +47,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    flameshot
-    calibre
+    (callPackage <agenix/pkgs/agenix.nix> {})
   ];
   services.udisks2.enable = true;
 
