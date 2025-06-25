@@ -5,7 +5,7 @@
     enable = true;
     ports = [22];
     settings = {
-      PasswordAuthentication = true;
+      PasswordAuthentication = false;
       AllowUsers = ["paschoal"];
       UseDns = true;
       PermitRootLogin = "no";
