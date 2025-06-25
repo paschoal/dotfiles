@@ -4,7 +4,7 @@
   options = {
     sxhkd-config = {
       rofi = lib.mkOption {
-        default = true;
+        default = false;
         type = lib.types.bool;
         description = ''
           Enable rofi keybindings
@@ -20,7 +20,7 @@
       };
 
       dwm = lib.mkOption {
-        default = true;
+        default = false;
         type = lib.types.bool;
         description = ''
           Enable dwm keybindings
