@@ -20,9 +20,9 @@
   environment.systemPackages = with pkgs; [
     protonup
     wineWowPackages.staging
-    wine64
     winetricks
     bottles
+    mangohud
   ];
 
   programs = {
