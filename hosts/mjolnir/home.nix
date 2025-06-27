@@ -5,6 +5,11 @@
   home.homeDirectory = "/data/home";
   home.sessionPath = [ "/data/home/bin" ];
 
+  bspwm-config = {
+    steam-games-fullscreen = true;
+    steam-games-library = /data/home/.steam;
+  };
+
   sxhkd-config = {
     rofi = true;
     bspwm = true;
