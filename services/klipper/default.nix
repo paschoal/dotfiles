@@ -178,6 +178,7 @@
           BED_MESH_CALIBRATE ADAPTIVE=1
 
           M109 S{EXTRUDER_TEMP}
+          PURGE_LINE
         ";
       };
 
