@@ -11,6 +11,7 @@
         enable = true;
         shellAliases = {
           cat = "bat";
+          feh = "feh --scale-down";
           nixos-rebuild = "nixos-rebuild --sudo";
         };
 
