@@ -27,13 +27,16 @@
     ../../config/mangohud
 
     ../../config/manufact
-    ../../config/qutebrowser/mjolnir
     ../../config/wallpapers
 
     ../../config/sxhkd
     ../../config/bspwm
     ../../config/eww/mjolnir
 
+    ../../config/qutebrowser/mjolnir
+    ../../config/chromium/mjolnir
+
+    ../../config/feh
     ../../config/st
     ../../config/cursor
     ../../config/rofi
@@ -57,7 +60,6 @@
     pass
     discord
     vlc
-    feh
     nemo
     zathura
     flameshot
