@@ -19,7 +19,7 @@
           :onscroll `echo {} | sed -e 's/up/+/g' -e 's/down/-/g' | xargs -I% wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.01%`
           (box
            :class 'sound'
-            (label :text '')
+            (label :class 'icon' :text '')
             (circular-progress
               :start-at 0
               :thickness 4
