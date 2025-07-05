@@ -6,6 +6,7 @@
   home.sessionPath = [ "/data/home/bin" ];
 
   bspwm-config.disable-caps = true;
+  bspwm-config.eww = true;
 
   imports = [
     ../../config/git
@@ -19,6 +20,7 @@
 
     ../../config/sxhkd
     ../../config/bspwm
+    ../../config/eww/gungnir
 
     ../../config/st
     ../../config/cursor
