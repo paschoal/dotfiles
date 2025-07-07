@@ -43,7 +43,6 @@
     ../../config/screenshot/flameshot
     ../../config/clementine
     ../../config/dunst
-    ../../config/ranger
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
