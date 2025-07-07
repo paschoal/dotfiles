@@ -1,9 +1,13 @@
 require("nvim-treesitter.configs").setup {
   highlight = {
     enable = true,
-    additional_vim_regex_highlightning = false,
+    additional_vim_regex_highlightning = { "ruby" },
   },
-  indent = { enable = true },
+  indent = {
+    enable = true,
+    disable = { "ruby" },
+  },
+  endwise = { enable = true },
   matchup = { enable = true },
   incremental_selection = {
     enable = true,

@@ -7,6 +7,8 @@
 
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
+      nvim-treesitter-endwise
+
       {
         plugin = nvim-treesitter.withPlugins(p: [
           p.astro
