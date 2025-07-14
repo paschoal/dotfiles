@@ -14,6 +14,7 @@
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  programs.dconf.enable = true;
 
   users.users.paschoal = {
     isNormalUser = true;
