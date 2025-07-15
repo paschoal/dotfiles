@@ -41,8 +41,10 @@
     ../../config/cursor
     ../../config/rofi
     ../../config/screenshot/flameshot
-    ../../config/clementine
     ../../config/dunst
+
+    ../../config/clementine
+    ../../config/nicotine
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
