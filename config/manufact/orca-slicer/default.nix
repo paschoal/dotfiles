@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
+  nixpkgs.config.permittedInsecurePackages = [
+    "libsoup-2.74.3"
+  ];
+
   home.packages = [
     (
       pkgs.appimageTools.wrapType2 rec {
