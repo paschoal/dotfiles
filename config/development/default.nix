@@ -17,6 +17,7 @@
     )
     kubernetes
     sops
+    hurl
     helmfile
     (
       wrapHelm kubernetes-helm {
