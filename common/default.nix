@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    zsh
     gnupg
     pinentry-gtk2
   ];
@@ -10,6 +9,7 @@
   services.pcscd.enable = true;
 
   programs = {
+    fish.enable = true;
     zsh.enable = true;
     gnupg.agent = {
       enable = true;
