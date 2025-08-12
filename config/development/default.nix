@@ -6,6 +6,7 @@
   ];
 
   home.packages = with pkgs; [
+    docker-compose
     rustup
     lua-language-server
     nil
