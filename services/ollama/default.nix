@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ lib, pkgs, nixpkgs, environment, config, options, specialArgs, modulesPath, ... }:
 
 {
   services.ollama = {
@@ -7,7 +7,7 @@
   };
 
   services.open-webui = {
-    enable = false;
+    enable = true;
   };
 
   #
@@ -15,7 +15,7 @@
   # since affect system wide.
   # programs.nix-ld.enable = true;
 
-  environment.systemPackages = with pkgs; [ uv ];
+  environment.systemPackages = with pkgs; [ uv goose-cli ];
 
   #
   # disable for running it by default; trigger it on demand.
