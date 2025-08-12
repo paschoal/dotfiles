@@ -1,23 +1,6 @@
-{
-  lib,
-  pkgs,
-  nixpkgs,
-  environment,
-  config,
-  options,
-  specialArgs,
-  modulesPath,
-  ...
-}:
+{ lib, pkgs, nixpkgs, environment, config, options, specialArgs, modulesPath, ... }:
 
 {
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam-unwrapped"
-    "steam"
-    "steam-original"
-    "steam-run"
-  ];
-
   environment.systemPackages = with pkgs; [
     protonup
     wineWowPackages.staging

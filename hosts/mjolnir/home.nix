@@ -18,12 +18,10 @@
   imports = [
     ../../config/git
     ../../config/development
-    ../../config/zsh
+    ../../config/fish
     ../../config/nvim
     ../../config/aws-vault
 
-    ../../games/wow
-    ../../games/eve
     ../../config/mangohud
 
     ../../config/manufact
@@ -56,14 +54,12 @@
   ];
 
   home.packages = with pkgs; [
-    docker-compose
     bat
     pass
     discord
     vlc
     nemo
     zathura
-    flameshot
     calibre
     xclip
     nix-index
@@ -84,8 +80,10 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "application/pdf" = ["zathura.desktop"];
-        "inode/directory" = ["nemo.desktop"];
+        "application/pdf" = [ "zathura.desktop" ];
+        "inode/directory" = [ "nemo.desktop" ];
+        "x-scheme-handler/http" = [ "org.qutebrowser.qutebrowser.desktop" ];
+        "x-scheme-handler/https" = [ "org.qutebrowser.qutebrowser.desktop" ];
       };
     };
   };
