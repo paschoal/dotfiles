@@ -15,17 +15,23 @@
     ../../games
     ../../graphical/bspwm
     ../../services/ollama
-    ../../services/openssh
   ];
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam-unwrapped"
+    "steam"
+    "steam-original"
+    "steam-run"
+    "open-webui"
+  ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" ];
   programs.dconf.enable = true;
 
   users.users.paschoal = {
     isNormalUser = true;
-    extraGroups = ["wheel" "input"];
-    shell = pkgs.zsh;
+    extraGroups = [ "wheel" "input" ];
+    shell = pkgs.fish;
     createHome = true;
     home = "/data/home";
   };
