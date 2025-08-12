@@ -18,7 +18,6 @@
   imports = [
     ../../config/git
     ../../config/development
-    #../../config/zsh
     ../../config/fish
     ../../config/nvim
     ../../config/aws-vault
