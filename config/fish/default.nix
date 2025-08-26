@@ -2,6 +2,7 @@
 
 {
   config = {
+    home.packages = with pkgs; [ grc ];
     programs = {
       fish = {
         enable = true;
@@ -11,9 +12,9 @@
         functions = {
           fish_prompt = ''
             if functions -q fish_is_root_user; and fish_is_root_user
-              printf '%s[%s] %s#%s ' (set_color $fish_color_cwd) (prompt_pwd) (set_color "red") (set_color normal) 
+              printf '(%s)%s[%s] %s#%s ' $hostname (set_color $fish_color_cwd) (prompt_pwd) (set_color "red") (set_color normal) 
             else
-              printf '%s[%s] %s$%s ' (set_color $fish_color_cwd) (prompt_pwd) (set_color "blue") (set_color normal)
+              printf '(%s)%s[%s] %s$%s ' $hostname (set_color $fish_color_cwd) (prompt_pwd) (set_color "blue") (set_color normal)
             end
           '';
         };
