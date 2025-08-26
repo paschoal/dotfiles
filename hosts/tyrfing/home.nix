@@ -4,6 +4,8 @@
   home.homeDirectory = "/data/home";
   home.sessionPath = [ "/data/home/bin" ];
 
+  git-config.sign-gpg = false;
+
   imports = [
     ../../config/git
     ../../config/fish
