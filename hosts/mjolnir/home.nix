@@ -63,6 +63,7 @@
     calibre
     xclip
     nix-index
+    unzip
   ];
 
   home.stateVersion = "24.05";
