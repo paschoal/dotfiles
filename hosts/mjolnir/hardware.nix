@@ -9,10 +9,8 @@
     ../../audio/mjolnir
     ../../hardware/headphones
     ../../hardware/radeon
-    ../../hardware/tartarus
     ../../hardware/raid/mjolnir
     ../../hardware/network/mjolnir
-    ../../hardware/mouse
   ];
 
   #
@@ -74,14 +72,13 @@
   #
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  virtualisation.docker = {
-    enable = true;
-    autoPrune.enable = true;
-    enableOnBoot = true;
-  };
-
+  #
+  # add aarch64 to support building remotely to
+  # raspberry pis.
+  #
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   users.users.paschoal = {
-    extraGroups = [ "docker" "kvm" ];
+    extraGroups = [ "kvm" ];
   };
 
   #
@@ -111,7 +108,7 @@
         output = "DisplayPort-2";
         primary = true;
         monitorConfig = ''
-          Modeline "2560x1440@150" 612.61 2560 2568 2600 2640 1440 1443 1453 1547 +hsync +vsync
+          Modeline "2560x1440@150" 612.61 2560 2568 2600 2640 1440 1443 1453 1547 -hsync -vsync
           Option "PreferredMode" "2560x1440@150"
         '';
       }

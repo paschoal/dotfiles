@@ -15,6 +15,8 @@
     ../../games
     ../../graphical/bspwm
     ../../services/ollama
+    ../../services/openssh
+    ../../virtualisation/docker
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -25,7 +27,7 @@
     "open-webui"
   ];
 
-  nix.settings.experimental-features = [ "nix-command" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   programs.dconf.enable = true;
 
   users.users.paschoal = {
