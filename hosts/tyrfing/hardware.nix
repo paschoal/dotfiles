@@ -11,6 +11,15 @@
     deviceTree = {
       enable = true;
       filter = "*rpi-4-*.dtb";
+      dtboBuildExtraIncludePaths = [
+        ./overlays
+      ];
+      overlays = [
+        {
+          name = "imx219-overlay";
+          dtsFile = ./overlays/imx219-overlay.dts;
+        }
+      ];
     };
   };
 

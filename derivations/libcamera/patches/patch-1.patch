@@ -1,0 +1,32 @@
+From aa4e31f3cf4982df46dbb489cf2f7a5c51f7a906 Mon Sep 17 00:00:00 2001
+From: Matheus Paschoal <paschoal@gmail.com>
+Date: Tue, 26 Aug 2025 20:55:41 -0400
+Subject: patch-1
+
+---
+ src/libcamera/source_paths.cpp | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+diff --git a/src/libcamera/source_paths.cpp b/src/libcamera/source_paths.cpp
+index 1af5386a..3fc7d044 100644
+--- a/src/libcamera/source_paths.cpp
++++ b/src/libcamera/source_paths.cpp
+@@ -39,15 +39,6 @@ namespace {
+  */
+ bool isLibcameraInstalled()
+ {
+-	/*
+-	 * DT_RUNPATH (DT_RPATH when the linker uses old dtags) is removed on
+-	 * install.
+-	 */
+-	for (const ElfW(Dyn) *dyn = _DYNAMIC; dyn->d_tag != DT_NULL; ++dyn) {
+-		if (dyn->d_tag == DT_RUNPATH || dyn->d_tag == DT_RPATH)
+-			return false;
+-	}
+-
+ 	return true;
+ }
+ 
+-- 
+2.50.1
+

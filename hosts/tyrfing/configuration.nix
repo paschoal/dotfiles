@@ -17,6 +17,12 @@
     sudo.wheelNeedsPassword = false;
   };
 
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+  };
+
   users.users.paschoal = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "plugdev" ];
@@ -28,7 +34,7 @@
 
   environment.systemPackages = with pkgs; [
     (callPackage <agenix/pkgs/agenix.nix> {})
-    libcamera
+    (callPackage ../../derivations/libcamera {})
   ];
 
   system.stateVersion = "25.11";
