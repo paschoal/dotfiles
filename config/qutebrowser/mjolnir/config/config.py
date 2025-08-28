@@ -28,7 +28,7 @@ c.downloads.remove_finished = 3000
 c.zoom.default = '100%'
 
 c.url.searchengines = {
-        'DEFAULT': 'https://google.ca/search?hl=eng&q={}',
+        'DEFAULT': 'https://google.ca/search?hl=eng&udm=14&q={}',
         '!amazon': 'https://www.amazon.ca/s?k={}',
         '!github': 'https://github.com/search?o=desc&s=stars&q={}',
         '!gist': 'https://gist.github.com/search?q={}',
