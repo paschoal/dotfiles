@@ -32,6 +32,7 @@
 
   users.users.paschoal = {
     isNormalUser = true;
+    group = "users";
     extraGroups = [ "wheel" "input" ];
     shell = pkgs.fish;
     createHome = true;
