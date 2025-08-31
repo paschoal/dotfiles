@@ -27,4 +27,3 @@
   environment.systemPackages = with pkgs; [ libraspberrypi ];
   nixpkgs.hostPlatform = "aarch64-linux";
 }
-
