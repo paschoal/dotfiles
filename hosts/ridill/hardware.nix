@@ -12,6 +12,19 @@
     kernelModules = [ ];
   };
 
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/nixos";
+    fsType = "ext4";
+  };
+
+  swapDevices = [
+    {
+      device = "/.swap";
+      size = 2 * 1024;
+    }
+  ];
+
   environment.systemPackages = with pkgs; [ libraspberrypi ];
   nixpkgs.hostPlatform = "aarch64-linux";
 }
+
