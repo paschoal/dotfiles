@@ -10,6 +10,7 @@
     ../../locale
 
     ../../services/openssh
+    ../../services/pihole
   ];
 
   security = {
@@ -24,7 +25,7 @@
     createHome = true;
     home = "/data/home";
     openssh.authorizedKeys.keys = [
-    	(builtins.readFile ../../services/openssh/pub/paschoal)
+      (builtins.readFile ../../services/openssh/pub/paschoal)
     ];
   };
 
