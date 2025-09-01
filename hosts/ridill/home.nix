@@ -1,30 +1,30 @@
 { config, pkgs, lib, ... }:
 {
-	git-config.sign-gpg = false;
+  git-config.sign-gpg = false;
 
-	imports = [
-		../../config/git
-		../../config/fish
-	];
+  imports = [
+    ../../config/git
+      ../../config/fish
+      ../../config/nvim/minimal.nix
+  ];
 
-	home = {
-		username = "paschoal";
-		homeDirectory = "/data/home";
-		sessionPath = [ "/data/home/bin" ];
-		stateVersion = "25.05";
-		enableNixpkgsReleaseCheck = false;
-		packages = with pkgs; [ bat ];
-	};
+  home = {
+    username = "paschoal";
+    homeDirectory = "/data/home";
+    sessionPath = [ "/data/home/bin" ];
+    stateVersion = "25.05";
+    enableNixpkgsReleaseCheck = false;
+    packages = with pkgs; [ bat ];
+  };
 
-	programs = {
-		home-manager.enable = true;
-		neovim.enable = true;
-	};
+  programs = {
+    home-manager.enable = true;
+  };
 
-	services.home-manager.autoExpire = {
-		enable = true;
-		frequency = "weekly";
-		store.cleanup = true;
-	};
+  services.home-manager.autoExpire = {
+    enable = true;
+    frequency = "weekly";
+    store.cleanup = true;
+  };
 }
 
