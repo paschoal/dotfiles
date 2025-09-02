@@ -1,25 +1,61 @@
-{ lib, pkgs, nixpkgs, environment, config, options, specialArgs, modulesPath, ... }:
+{ lib, pkgs, config, options, ... }:
 
 {
-  services.ollama = {
-    enable = true;
-    acceleration = "rocm";
+  options = {
+    ollama-config = {
+      with-open-webui = lib.mkOption {
+        default = false;
+        type = lib.types.bool;
+        description = ''
+          Enable open-webui
+        '';
+      };
+
+      with-goose-cli = lib.mkOption {
+        default = false;
+        type = lib.types.bool;
+        description = ''
+          Enable goose-cli
+        '';
+      };
+    };
   };
 
-  services.open-webui = {
-    enable = true;
+  config = {
+    services = lib.mkMerge [
+      {
+        ollama = {
+          enable = true;
+          acceleration = "rocm";
+        };
+      }
+
+      (
+        lib.mkIf config.ollama-config.with-open-webui {
+          open-webui.enable = true;
+        }
+      )
+    ];
+
+    environment.systemPackages = lib.mkMerge [
+      []
+      (
+        lib.mkIf config.ollama-config.with-goose-cli [
+          pkgs.goose-cli
+        ]
+      )
+    ];
+
+    systemd.services = lib.mkMerge [
+      #
+      # don't run on boot.
+      #
+      { ollama.wantedBy = lib.mkForce []; }
+      (
+        lib.mkIf config.ollama-config.with-open-webui {
+          open-webui.wantedBy = lib.mkForce [];
+        }
+      )
+    ];
   };
-
-  #
-  # avoiding using nix-ld for now
-  # since affect system wide.
-  # programs.nix-ld.enable = true;
-
-  environment.systemPackages = with pkgs; [ uv goose-cli ];
-
-  #
-  # disable for running it by default; trigger it on demand.
-  #
-  systemd.services.ollama.wantedBy = lib.mkForce [];
-  systemd.services.open-webui.wantedBy = lib.mkForce [];
 }
