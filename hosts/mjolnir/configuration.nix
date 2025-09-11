@@ -16,7 +16,7 @@
     ../../graphical/bspwm
     ../../services/ollama
     ../../services/openssh
-    ../../virtualisation/docker
+    ../../virtualisation/podman
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
