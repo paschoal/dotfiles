@@ -32,7 +32,8 @@
     ../../config/eww/mjolnir
 
     ../../config/qutebrowser/mjolnir
-    ../../config/chromium/mjolnir
+    ../../config/chromium
+    ../../config/thunderbird
 
     ../../config/feh
     ../../config/st
