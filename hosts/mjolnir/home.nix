@@ -20,18 +20,20 @@
     ../../config/development
     ../../config/fish
     ../../config/nvim
-    ../../config/aws-vault
 
-    ../../config/mangohud
+    #
+    # build is taking heck of long time
+    # need to eval why
+    #
+    #./../config/manufact
 
-    ../../config/manufact
     ../../config/wallpapers
 
     ../../config/sxhkd
     ../../config/bspwm
     ../../config/eww/mjolnir
 
-    ../../config/qutebrowser/mjolnir
+    ../../config/qutebrowser
     ../../config/chromium
     ../../config/thunderbird
 

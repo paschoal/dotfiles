@@ -10,6 +10,8 @@
     bspwm = true;
   };
 
+  qutebrowser-config.small-screen = true;
+
   imports = [
     ../../config/git
     ../../config/development
@@ -23,7 +25,7 @@
     ../../config/bspwm
     ../../config/eww/gungnir
 
-    ../../config/qutebrowser/gungnir
+    ../../config/qutebrowser
 
     ../../config/feh
     ../../config/st
