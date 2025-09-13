@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [clipmenu];
+  home.packages = [ pkgs.clipmenu ];
 }
