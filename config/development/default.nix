@@ -6,7 +6,6 @@
   ];
 
   home.packages = with pkgs; [
-    docker-compose
     rustup
     lua-language-server
     nil
@@ -31,4 +30,9 @@
     )
     dia
   ];
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 }
