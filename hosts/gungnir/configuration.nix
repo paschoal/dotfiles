@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -11,6 +11,7 @@
     ../../common
     ../../locale
     ../../graphical/bspwm
+    ../../virtualisation/podman
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -19,7 +20,7 @@
   users.users.paschoal = {
     isNormalUser = true;
     extraGroups = ["wheel" "docker" "audio" "input"];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     createHome = true;
     home = "/data/home";
   };

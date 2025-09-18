@@ -15,9 +15,8 @@
   imports = [
     ../../config/git
     ../../config/development
-    ../../config/zsh
+    ../../config/fish
     ../../config/nvim
-    ../../config/aws-vault
 
     ../../config/wallpapers
 
@@ -26,6 +25,7 @@
     ../../config/eww/gungnir
 
     ../../config/qutebrowser
+    ../../config/thunderbird
 
     ../../config/feh
     ../../config/st
@@ -44,21 +44,21 @@
   ];
 
   home.packages = with pkgs; [
-    docker-compose
     bat
     pass
     discord
     vlc
     nemo
-    feh
     zathura
     xclip
+    unzip
   ];
 
   home.stateVersion = "23.11";
   home.enableNixpkgsReleaseCheck = false;
 
   xdg = {
+    cacheHome = "${config.home.homeDirectory}/.cache";
     userDirs = {
       createDirectories = true;
       desktop = "${config.home.homeDirectory}/desktop";
@@ -70,6 +70,8 @@
       defaultApplications = {
         "applications/pdf" = [ "zathura.desktop" ];
         "inode/directory" = [ "nemo.desktop" ];
+        "x-scheme-handler/http" = [ "org.qutebrowser.qutebrowser.desktop" ];
+        "x-scheme-handler/https" = [ "org.qutebrowser.qutebrowser.desktop" ];
       };
     };
   };
