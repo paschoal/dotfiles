@@ -10,7 +10,7 @@
     ./plugins/indent-blankline-nvim
     ./plugins/vim-dadbod
     ./plugins/nvim-notify
-    #./plugins/lsp-config
+    ./plugins/lsp-config
   ];
 
   programs.neovim = {
