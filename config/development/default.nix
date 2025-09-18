@@ -1,20 +1,21 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [
-    ./dbeaver
-  ];
+  imports = [ ./dbeaver ];
 
   home.packages = with pkgs; [
-    rustup
-    lua-language-server
+    #
+    # language servers for nvim
+    #
     nil
+
     postgresql
     (
       google-cloud-sdk.withExtraComponents [
         google-cloud-sdk.components.gke-gcloud-auth-plugin
       ]
     )
+
     kubernetes
     sops
     hurl
