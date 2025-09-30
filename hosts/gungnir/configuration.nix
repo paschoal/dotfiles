@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [
@@ -38,11 +38,4 @@
   ];
 
   system.stateVersion = "24.05";
-
-  fonts.packages = with pkgs; [
-    iosevka
-    monoid
-    nerd-fonts.iosevka
-    nerd-fonts.monoid
-  ];
 }
