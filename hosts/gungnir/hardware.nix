@@ -1,4 +1,4 @@
-{ config, lib, modulesPath, ... }:
+{ pkgs, config, lib, modulesPath, ... }:
 
 {
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
@@ -41,7 +41,11 @@
   # virtualisation
   #
   boot.kernelModules = [ "kvm-intel" ];
-  virtualisation.docker.enable = true;
+
+  #
+  # latest kernel
+  #
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   #
   # disks
