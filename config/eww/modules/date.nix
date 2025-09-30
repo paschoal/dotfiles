@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   xdg.configFile = {
     "eww/date.scss".text = ''

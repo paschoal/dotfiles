@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   imports = [
     ../modules/bspwm.nix
@@ -6,6 +6,7 @@
     ../modules/sound.nix
     ../modules/date.nix
     ../modules/battery.nix
+    ../modules/wifi.nix
   ];
 
   xdg.configFile = {
@@ -27,6 +28,7 @@
       @import './sound.scss';
       @import './date.scss';
       @import './battery.scss';
+      @import './wifi.scss';
 
       .bar {
         padding: 0px;
@@ -42,6 +44,7 @@
       (include "workspaces.yuck")
       (include "date.yuck")
       (include "battery.yuck")
+      (include "wifi.yuck")
 
       (defwidget left[] (box :class "left"))
 
@@ -57,6 +60,7 @@
           :class "right"
           :space-evenly "false"
           :halign "end"
+          (wifi)
           (battery)
           (sound)
           (date)
