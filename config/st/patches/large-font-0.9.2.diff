@@ -1,0 +1,11 @@
+--- ../st/config.def.h	2025-09-23 09:53:28.595987810 -0400
++++ ./config.def.h	2025-09-23 10:05:20.870954599 -0400
+@@ -5,7 +5,7 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char *font = "Iosevka:pixelsize=16:antialias=true:autohint=true";
++static char *font = "Iosevka:pixelsize=24:antialias=true:autohint=true";
+ static int borderpx = 8;
+ 
+ /*

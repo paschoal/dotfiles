@@ -1,9 +1,21 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 {
-  home.packages = with pkgs; [
+  options = {
+    st-config = {
+      small-screen = lib.mkOption {
+        default = false;
+        type = lib.types.bool;
+        description = ''
+          Switch to a larger font.
+        '';
+      };
+    };
+  };
+
+  config.home.packages = with pkgs; [
     (st.overrideAttrs (
-      _: rec {
+      _: {
         configFile = writeText "config.def.h" (builtins.readFile ./config/config.source.h);
         patches = [
           ./patches/appearance-0.9.2.diff
@@ -11,7 +23,7 @@
           ./patches/st-scrollback-ringbuffer-0.9.2.diff
           ./patches/st-scrollback-mouse-0.9.2.diff
           ./patches/st-anysize-0.8.4.diff
-        ];
+        ] ++ lib.optionals config.st-config.small-screen [ ./patches/large-font-0.9.2.diff ];
       }
     ))
   ];
