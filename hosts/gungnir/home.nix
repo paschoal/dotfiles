@@ -11,6 +11,7 @@
   };
 
   qutebrowser-config.small-screen = true;
+  st-config.small-screen = true;
 
   imports = [
     ../../config/git
