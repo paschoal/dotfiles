@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{  ... }:
 {
   imports = [
     ../modules/bspwm.nix
     ../modules/clock.nix
-    ../modules/sound.nix
+    ../modules/volume.nix
     ../modules/date.nix
+    ../modules/wireplumber.nix
   ];
 
   xdg.configFile = {
@@ -23,8 +24,9 @@
 
       @import './workspaces.scss';
       @import './clock.scss';
-      @import './sound.scss';
+      @import './volume.scss';
       @import './date.scss';
+      @import './wireplumber.scss';
 
       .bar {
         padding: 0px;
@@ -35,10 +37,11 @@
 
     "eww/eww.yuck".text = ''
       (defvar eww "eww")
-      (include "sound.yuck")
+      (include "volume.yuck")
       (include "clock.yuck")
       (include "workspaces.yuck")
       (include "date.yuck")
+      (include "wireplumber.yuck")
 
       (defwidget left[] (box :class "left"))
 
@@ -54,7 +57,8 @@
           :class "right"
           :space-evenly "false"
           :halign "end"
-          (sound)
+          (wireplumber)
+          (volume)
           (date)
           (clock)
         )
