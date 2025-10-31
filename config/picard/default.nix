@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    clementine
+    picard
     rockbox-utility
   ];
 }
