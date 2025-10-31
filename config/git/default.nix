@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, ... }:
 
 {
   options = {
@@ -15,10 +15,12 @@
 
   config.programs.git = {
     enable = true;
-    userName = "Matheus Paschoal";
-    userEmail = "paschoal@gmail.com";
-    extraConfig = lib.mkMerge [
+    settings = lib.mkMerge [
       {
+        user = {
+          name = "Matheus Paschoal";
+          email = "paschoal@gmail.com";
+        };
         rerere.enabled = true;
         color = {
           ui = true;
