@@ -5,7 +5,10 @@
     autoPrune.enable = true;
   };
 
-  environment.systemPackages = [ pkgs.docker-compose ];
+  environment.systemPackages = with pkgs; [
+    docker-compose
+    lazydocker
+  ];
 
   users.users.paschoal = {
     extraGroups = [ "docker" ];
