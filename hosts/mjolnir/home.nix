@@ -25,7 +25,7 @@
     # build is taking heck of long time
     # need to eval why
     #
-    #./../config/manufact
+    ../../config/manufact
 
     ../../config/wallpapers
 
@@ -44,8 +44,9 @@
     ../../config/screenshot/flameshot
     ../../config/dunst
 
-    ../../config/clementine
+    ../../config/calibre
     ../../config/nicotine
+    ../../config/picard
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -63,7 +64,6 @@
     vlc
     nemo
     zathura
-    calibre
     xclip
     nix-index
     unzip

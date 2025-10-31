@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   xorg-config.amd = true;
@@ -14,9 +14,8 @@
     ../../locale
     ../../games
     ../../graphical/bspwm
-    ../../services/ollama
     ../../services/openssh
-    ../../virtualisation/podman
+    ../../virtualisation/docker
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
