@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./dbeaver ];
-
   home.packages = with pkgs; [
     #
     # language servers for nvim
@@ -10,6 +8,8 @@
     nil
 
     postgresql
+    dbeaver-bin
+
     (
       google-cloud-sdk.withExtraComponents [
         google-cloud-sdk.components.gke-gcloud-auth-plugin
