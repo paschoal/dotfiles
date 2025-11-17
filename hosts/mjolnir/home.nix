@@ -18,6 +18,7 @@
   imports = [
     ../../config/git
     ../../config/development
+    ../../config/lazydocker
     ../../config/fish
     ../../config/nvim
 
