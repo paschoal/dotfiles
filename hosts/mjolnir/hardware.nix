@@ -41,8 +41,13 @@
   boot.kernelParams = [
     "video=DP-3:2560x1440@150"
     "raid0.default_layout=2"
-    "amdgpu.ppfeaturemask=0xffffffff"
   ];
+
+  #
+  # boot kernel params for amd
+  # overdrive support
+  #
+  # "amdgpu.ppfeaturemask=0xffffffff"
 
   #
   # kernel
