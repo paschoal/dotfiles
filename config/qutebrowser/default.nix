@@ -46,8 +46,11 @@
           config.set("downloads.location.directory", "~/downloads/")
           config.set("downloads.remove_finished", 3000)
 
-          config.set("url.searchengines", { "DEFAULT": "https://google.ca/search?hl=eng&udm=14&q={}" })
-          config.set("url.start_pages", "https://google.ca")
+          config.set("url.searchengines", {
+            "DEFAULT": "https://duckduckgo.com/search?q={}",
+            "!q": "https://google.ca/search?hl=eng&udm=14&q={}",
+          })
+          config.set("url.start_pages", "https://duckduckgo.com")
 
           import dracula.draw
           dracula.draw.blood(c, { "spacing": { "vertical": 6, "horizontal": 8 }})
