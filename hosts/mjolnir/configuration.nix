@@ -14,8 +14,11 @@
     ../../locale
     ../../games
     ../../graphical/bspwm
-    ../../services/openssh
+
     ../../virtualisation/docker
+
+    ../../virtualisation/postgres.nix
+    ../../virtualisation/valkey.nix
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
