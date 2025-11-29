@@ -15,8 +15,6 @@
     ../../games
     ../../graphical/bspwm
 
-    ../../virtualisation/docker
-
     ../../virtualisation/postgres.nix
     ../../virtualisation/valkey.nix
   ];
@@ -29,8 +27,11 @@
     "open-webui"
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  programs.dconf.enable = true;
+  nix.settings.experimental-features = [ "nix-command" ];
+  programs = {
+    dconf.enable = true;
+    nix-index.enable = true;
+  };
 
   users.users.paschoal = {
     isNormalUser = true;
@@ -49,17 +50,27 @@
     };
   };
 
-  fonts.packages = with pkgs; [
-    iosevka
-    monoid
-    nerd-fonts.iosevka
-    nerd-fonts.monoid
-  ];
-
   environment.systemPackages = with pkgs; [
     (callPackage <agenix/pkgs/agenix.nix> {})
   ];
-  services.udisks2.enable = true;
+
+  services = {
+    #
+    # d-bus interface to query and manipulate
+    # storage devices
+    #
+    # provides udiskctl to mount storages instead
+    # of regular mount
+    #
+    udisks2.enable = true;
+
+    #
+    # middleware for power management
+    # maintains statistics and history data
+    # provides upower cli
+    #
+    upower.enable = true;
+  };
 
   system.stateVersion = "24.05";
 }

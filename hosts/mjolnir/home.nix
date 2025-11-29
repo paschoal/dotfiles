@@ -52,10 +52,10 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
-
     "awscli2"
     "terraform"
     "apple_cursor"
+    "winbox"
   ];
 
   home.packages = with pkgs; [
@@ -66,8 +66,8 @@
     nemo
     zathura
     xclip
-    nix-index
     unzip
+    winbox4
   ];
 
   home.stateVersion = "24.05";
@@ -98,8 +98,6 @@
   };
 
   programs.home-manager.enable = true;
-  fonts.fontconfig.enable = true;
-
   services.home-manager.autoExpire = {
     enable = true;
     frequency = "weekly";
