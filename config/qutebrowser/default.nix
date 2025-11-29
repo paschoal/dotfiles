@@ -1,5 +1,20 @@
 { config, pkgs, lib, ... }:
-{
+let
+  #
+  # cage qutebrowser with nice on process priority 19
+  # so qtwebengine does not cause stutters while processing
+  # some heavy content.
+  #
+  package = pkgs.qutebrowser.overrideAttrs (o: {
+    postInstall = ''
+      ${o.postInstall}
+
+      sed -i '48s|Exec=qutebrowser --untrusted-args %u|Exec=nice -n 19 qutebrowser --untrusted-args %u|' \
+        "$out/share/applications/org.qutebrowser.qutebrowser.desktop"
+    '';
+  });
+
+in {
   options = {
     qutebrowser-config = {
       small-screen = lib.mkOption {
@@ -13,7 +28,7 @@
   };
 
   config = {
-    home.packages = [ pkgs.qutebrowser ];
+    home.packages = [ package ];
 
     xdg.configFile = {
       "qutebrowser/dracula" = {
@@ -33,6 +48,7 @@
           config.set("fonts.default_size", "16pt")
 
           config.set("content.geolocation", False)
+          config.set("content.notifications.enabled", False)
           config.set("content.pdfjs", False)
           config.set("content.dns_prefetch", True)
           config.set("content.tls.certificate_errors", "ask-block-thirdparty")
