@@ -1,5 +1,13 @@
 { pkgs, ... }:
 {
+  #
+  # language servers
+  #
+  home.packages = with pkgs; [
+    nil # nix
+    marksman # markdown
+  ];
+
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       lspcontainers-nvim
@@ -10,8 +18,8 @@
         plugin = nvim-lspconfig;
         type = "lua";
         config = ''
-          local c = require("cmp_nvim_lsp").default_capabilities()
-          vim.lsp.config("nil_ls", { capabilities = c })
+          vim.lsp.enable("marksman")
+          vim.lsp.enable("nil_ls")
         '';
       }
 

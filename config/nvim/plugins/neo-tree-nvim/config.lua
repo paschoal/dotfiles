@@ -1,6 +1,6 @@
 require("neo-tree").setup {
   add_blank_line_at_top = false,
-  auto_clean_after_session_restore = false,
+  auto_clean_after_session_restore = true,
   close_if_last_window = false,
 
   enable_diagnostics = false,
@@ -106,7 +106,7 @@ require("neo-tree").setup {
 
   window = {
     width = 40,
-    position = "current",
+    position = "left",
     mapping_options = {
       noremap = true,
       nowait = true,
