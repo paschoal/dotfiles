@@ -2,11 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    #
-    # language servers for nvim
-    #
-    nil
-
     postgresql
     dbeaver-bin
 
