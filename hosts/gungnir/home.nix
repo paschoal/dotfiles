@@ -26,7 +26,6 @@
     ../../config/eww/gungnir
 
     ../../config/qutebrowser
-    ../../config/thunderbird
 
     ../../config/feh
     ../../config/st
