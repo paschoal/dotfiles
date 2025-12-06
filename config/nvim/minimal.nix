@@ -4,6 +4,7 @@
   imports = [
     ./plugins/onedark-nvim
     ./plugins/lualine-nvim
+    ./plugins/neo-tree-nvim
   ];
 
   programs.neovim = {
