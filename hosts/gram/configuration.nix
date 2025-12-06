@@ -3,12 +3,17 @@
 {
   imports = [
     <home-manager/nixos>
+
     ./hardware.nix
     ./network.nix
     ../../common
     ../../locale
+
     ../../services/openssh
+    ../../services/k3s
   ];
+
+  nix.settings.experimental-features = [ "nix-command" ];
 
   users.users.paschoal = {
     isNormalUser = true;
@@ -26,6 +31,5 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [];
   system.stateVersion = "25.05";
 }
