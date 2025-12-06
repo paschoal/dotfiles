@@ -7,6 +7,8 @@
     ../../config/nvim/minimal.nix
   ];
 
+  git-config.sign-gpg = false;
+
   home = {
     username = "paschoal";
     homeDirectory = "/data/home";

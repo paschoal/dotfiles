@@ -1,1 +1,6 @@
 secrets/*.age
+
+# ignore k3s secrets
+# until I figure out a good way to
+# manage it.
+services/k3s/manifests/**/secret*
