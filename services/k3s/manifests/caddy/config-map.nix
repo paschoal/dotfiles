@@ -7,13 +7,13 @@
   };
   data =  {
     "Caddyfile" = ''
-      
+
       pihole.paschoal.me {
         tls {
           dns route53 {
           }
         }
-        reverse_proxy 10.42.0.87:80
+        reverse_proxy pihole-http.default.svc.cluster.local
       }
     '';
   };
