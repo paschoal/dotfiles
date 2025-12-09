@@ -29,18 +29,19 @@ let
     esac
   '';
 in {
-  services.k3s = {
-    enable = true;
-    role = "server";
-    disable = [
-      "metrics-server"
-      "traefik"
-    ];
+  services = {
+    k3s = {
+      enable = true;
+      role = "server";
+      disable = [
+        "metrics-server"
+        "traefik"
+      ];
+      extraFlags = [
+        "--write-kubeconfig-mode 644"
+      ];
+    };
   };
 
   environment.systemPackages = [ kube-from-nix ];
-
-  users.users.paschoal = {
-    extraGroups = [ "k3s" ];
-  };
 }
