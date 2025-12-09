@@ -8,7 +8,7 @@
   spec = {
     replicas = 1;
     selector.matchLabels.app = "pihole";
-    strategy.type = "rollingUpdate";
+    strategy.type = "RollingUpdate";
     strategy.rollingUpdate = {
       maxSurge = 1;
       maxUnavailable = 1;
@@ -16,6 +16,12 @@
     template = {
       metadata.labels.app = "pihole";
       spec = {
+        volumes = [
+          {
+            name = "pihole-storage";
+            persistentVolumeClaim.claimName = "pihole-storage";
+          }
+        ];
         containers = [
           {
             name = "pihole";
@@ -71,17 +77,14 @@
               }
             ];
             volumeMounts = [
-              { mounthPath = "/etc/pihole"; name = "pihole-storage"; }
+              {
+                mountPath = "/etc/pihole";
+                name = "pihole-storage";
+              }
             ];
           }
         ];
       };
-      volumes = [
-        {
-          name = "pihole-storage";
-          persistentVolumeClaim.claimName = "pihole-storage";
-        }
-      ];
     };
   };
 }
