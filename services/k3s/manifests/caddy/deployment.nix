@@ -28,14 +28,14 @@
                 name = "AWS_ACCESS_KEY_ID";
                 valueFrom.secretKeyRef = {
                   name = "caddy-secrets";
-                  key = "keyID";
+                  key = "accessKeyID";
                 };
               }
               {
                 name = "AWS_SECRET_ACCESS_KEY";
                 valueFrom.secretKeyRef = {
                   name = "caddy-secrets";
-                  key = "accessKey";
+                  key = "secretAccessKey";
                 };
               }
             ];
