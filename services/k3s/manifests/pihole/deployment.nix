@@ -26,38 +26,15 @@
           {
             name = "pihole";
             image = "pihole/pihole";
-            env = [
-              {
-                name = "TZ";
-                valueFrom.configMapKeyRef = {
-                  name = "pihole-env";
-                  key = "tz";
-                };
-              }
-              {
-                name = "FTLCONF_DNS_UPSTREAMS";
-                valueFrom.configMapKeyRef = {
-                  name = "pihole-env";
-                  key = "forward-addr";
-                };
-              }
-              {
-                name = "FTLCONF_DNS_LISTENINGMODE";
-                valueFrom.configMapKeyRef = {
-                  name = "pihole-env";
-                  key = "listening-mode";
-                };
-              }
+            imagePullPolicy = "IfNotPresent";
+            envFrom = [
+              { configMapRef.name = "pihole-env"; }
             ];
             resources = {
-              limits = {
-                memory = "1Gi";
-                cpu = "2";
-              };
-              requests = {
-                memory = "512Mi";
-                cpu = "1";
-              };
+              limits.memory = "1Gi";
+              limits.cpu = "2";
+              requests.memory = "512Mi";
+              requests.cpu = "1";
             };
             ports = [
               {
@@ -75,12 +52,14 @@
                 containerPort = 53;
                 protocol = "UDP";
               }
+              {
+                name = "pihole-dhcp";
+                containerPort = 67;
+                protocol = "UDP";
+              }
             ];
             volumeMounts = [
-              {
-                mountPath = "/etc/pihole";
-                name = "pihole-storage";
-              }
+              { mountPath = "/etc/pihole"; name = "pihole-storage"; }
             ];
           }
         ];

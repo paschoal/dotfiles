@@ -8,8 +8,8 @@
     };
   };
   data = {
-    tz = "America/New_York";
-    forward-addr = "9.9.9.9;149.112.112.112";
-    listening-mode = "all";
+    TZ = "America/New_York";
+    FTLCONF_DNS_UPSTREAMS = "1.1.1.1;1.0.0.1";
+    FTLCONF_DNS_LISTENINGMODE = "all";
   };
 }

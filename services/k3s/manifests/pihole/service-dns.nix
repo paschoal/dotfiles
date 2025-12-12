@@ -20,6 +20,12 @@
         protocol = "UDP";
         port = 53;
       }
+      {
+        name = "pihole-dhcp";
+        targetPort = "pihole-dhcp-udp";
+        protocol = "UDP";
+        port = 67;
+      }
     ];
     type = "LoadBalancer";
     externalTrafficPolicy = "Local";
