@@ -15,6 +15,14 @@
         }
         reverse_proxy pihole-http.default.svc.cluster.local
       }
+
+      vw.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy vaultwarden-http.default.svc.cluster.local
+      }
     '';
   };
 }
