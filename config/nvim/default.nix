@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -11,6 +11,7 @@
     ./plugins/vim-dadbod
     ./plugins/nvim-notify
     ./plugins/lsp-config
+    ./plugins/vim-tmux-navigator
   ];
 
   programs.neovim = {

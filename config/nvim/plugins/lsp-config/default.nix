@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     nil # nix
     marksman # markdown
+    gopls # golang
   ];
 
   programs.neovim = {
@@ -20,6 +21,7 @@
         config = ''
           vim.lsp.enable("marksman")
           vim.lsp.enable("nil_ls")
+          vim.lsp.enable("gopls")
         '';
       }
 
