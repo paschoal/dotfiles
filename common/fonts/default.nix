@@ -10,7 +10,7 @@
       nerd-fonts.monoid
     ];
 
-    enableDefaultFonts = true;
+    enableDefaultPackages = true;
     enableGhostscriptFonts = true;
 
     fontconfig = {
@@ -22,4 +22,6 @@
       };
     };
   };
+
+  console.font = "Lat2-Terminus16";
 }
