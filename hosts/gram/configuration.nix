@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -6,6 +6,7 @@
 
     ./hardware.nix
     ./network.nix
+
     ../../common
     ../../locale
 

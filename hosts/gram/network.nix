@@ -1,29 +1,52 @@
 { config, lib, pkgs, ... }:
-
 {
-  networking = {
-    hostName = "gram";
-    domain = "gram.local";
-
-    useDHCP = lib.mkDefault false;
-    enableIPv6 = false;
-    firewall.enable = false;
-    wireless.enable = false;
-
-    #
-    # use quad9 dns to avoid any dependency-circle
-    # with pi-hole for the rest of the network.
-    #
-    nameservers = [ "9.9.9.9" "142.112.112.112" ];
-
-    interfaces = {
-      enp2s0f0 = {
-        ipv4.addresses = [
-          { address = "192.168.2.8"; prefixLength = 24; }
-        ];
+  systemd.network = {
+    enable = true;
+    netdevs = {
+      "20-br0" = {
+        netdevConfig = {
+          Kind = "bridge";
+          Name = "br0";
+        };
+        bridgeConfig.STP = true;
       };
     };
 
-    defaultGateway = "192.168.2.1";
+    networks."30-ethernet" = {
+      matchConfig.Name = "enp2s0f0";
+      networkConfig.Bridge = "br0";
+      linkConfig.RequiredForOnline = "enslaved";
+    };
+
+    networks."40-br0" = {
+      matchConfig.Name = "br0";
+      networkConfig = {
+        DNS = [ "1.1.1.1" ];
+        Gateway = "192.168.2.1";
+        DHCP = "ipv4";
+      };
+      linkConfig.RequiredForOnline = "routable";
+      dhcpV4Config.UseDNS = false;
+    };
+  };
+
+  networking = {
+    hostName = "gram";
+    useDHCP = lib.mkDefault false;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        22    # ssh
+        53    # dns
+        80    # http
+        443   # http-tls
+        5432  # postgres
+      ];
+      allowedUDPPorts = [
+        53    # dns
+        67    # dhcp
+        443   # http-tls
+      ];
+    };
   };
 }
