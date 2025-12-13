@@ -1,41 +1,23 @@
-{ config, lib, ... }:
+{ lib, ... }:
 
 {
-  imports = [
-    <agenix/modules/age.nix>
-  ];
-
-  age = {
-    secrets = {
-      wireguard-private-key.file = ../../secrets/wireguard-private-key.age;
-      wireguard-public-key.file = ../../secrets/wireguard-public-key.age;
-      wireguard-preshared-key.file = ../../secrets/wireguard-preshared-key.age;
+  systemd.network = {
+    enable = true;
+    networks."10-ethernet" = {
+      matchConfig.Name = "enp42s0";
+      networkConfig = {
+        DNS = [ "192.168.2.10" ];
+        Gateway = "192.168.2.1";
+        DHCP = "ipv4";
+      };
+      linkConfig.RequiredForOnline = "routable";
+      dhcpV4Config.UseDNS = false;
     };
-    identityPaths = [ "/data/home/.ssh/id_rsa" ];
   };
 
   networking = {
     hostName = "mjolnir";
-    useDHCP = lib.mkDefault true;
-    firewall.enable = false;
-    enableIPv6 = false;
-    wireguard = {
-      enable = false;
-      interfaces = {
-        wg0 = {
-          ips = [ "" "" ];
-          privateKeyFile = config.age.secrets.wireguard-private-key.path;
-          peers = [
-            {
-              publicKeyFile = config.age.secrets.wireguard-public-key.path;
-              presharedKeyFile = config.age.secrets.wireguard-preshared-key.path;
-              allowedIPs = [ "0.0.0.0/0" "::/0" ];
-              endpoint = "";
-              persistentKeepalive = 25;
-            }
-          ];
-        };
-      };
-    };
+    useDHCP = lib.mkDefault false;
+    firewall.enable = true;
   };
 }

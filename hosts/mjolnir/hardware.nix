@@ -6,11 +6,16 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
 
+    #
+    # includes common/cpu/amd, common/pc/ssd and common/pc
+    #
+    <nixos-hardware/msi/b550-tomahawk>
+    <nixos-hardware/common/cpu/amd/pstate.nix>
+
     ../../audio/mjolnir
     ../../hardware/headphones
     ../../hardware/radeon
     ../../hardware/raid/mjolnir
-    ../../hardware/network/mjolnir
   ];
 
   #
@@ -26,11 +31,6 @@
   environment.systemPackages = [
     pkgs.mdadm
   ];
-
-  #
-  # cpu
-  #
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   #
   # gpu
@@ -119,4 +119,9 @@
       }
     ];
   };
+
+  #
+  # yubikey
+  #
+  services.udev.packages = [ pkgs.yubikey-personalization ];
 }

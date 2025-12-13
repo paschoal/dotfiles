@@ -21,6 +21,7 @@
     ../../config/lazydocker
     ../../config/fish
     ../../config/nvim
+    ../../config/tmux
 
     #
     # build is taking heck of long time
@@ -68,6 +69,7 @@
     xclip
     unzip
     winbox4
+    bitwarden-cli
   ];
 
   home.stateVersion = "24.05";
@@ -97,7 +99,9 @@
     folder = config.xdg.userDirs.pictures;
   };
 
+  news.display = "silent";
   programs.home-manager.enable = true;
+
   services.home-manager.autoExpire = {
     enable = true;
     frequency = "weekly";
