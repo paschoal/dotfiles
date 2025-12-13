@@ -15,8 +15,9 @@
     ../../games
     ../../graphical/bspwm
 
-    ../../virtualisation/postgres.nix
+    ../../virtualisation/docker
     ../../virtualisation/valkey.nix
+    ../../virtualisation/postgres.nix
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -52,6 +53,7 @@
 
   environment.systemPackages = with pkgs; [
     (callPackage <agenix/pkgs/agenix.nix> {})
+    yubikey-manager
   ];
 
   services = {
