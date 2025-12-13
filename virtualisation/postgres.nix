@@ -17,7 +17,7 @@
         enableTCPIP = true;
         authentication = pkgs.lib.mkOverride 10 ''
           local all all trust
-          host  all all 192.168.3.2/32 trust
+          host  all all 0.0.0.0/0 trust
         '';
       };
 

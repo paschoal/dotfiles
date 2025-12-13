@@ -1,4 +1,4 @@
-{ lib, pkgs, nixpkgs, environment, config, options, specialArgs, modulesPath, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
