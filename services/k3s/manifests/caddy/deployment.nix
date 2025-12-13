@@ -63,6 +63,22 @@
                 subPath = "Caddyfile";
               }
             ];
+            readinessProbe = {
+              httpGet = {
+                path = "/";
+                port = "caddy-http";
+              };
+              initialDelaySeconds = 30;
+              periodSeconds = 30;
+            };
+            livenessProbe = {
+              httpGet = {
+                path = "/";
+                port = "caddy-http";
+              };
+              initialDelaySeconds = 60;
+              periodSeconds = 60;
+            };
           }
         ];
         volumes = [

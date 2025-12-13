@@ -23,6 +23,10 @@
         }
         reverse_proxy vaultwarden-http.default.svc.cluster.local
       }
+
+      :80 {
+        respond "pong"
+      }
     '';
   };
 }
