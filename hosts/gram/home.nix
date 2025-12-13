@@ -12,7 +12,7 @@
   home = {
     username = "paschoal";
     homeDirectory = "/data/home";
-    stateVersion = "24.11";
+    stateVersion = "25.11";
     enableNixpkgsReleaseCheck = false;
     packages = with pkgs; [
       bat
