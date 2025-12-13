@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
@@ -8,7 +8,7 @@
         config = ''
           require("onedark").setup {
             style = "warmer",
-            transparent = false,
+            transparent = true,
             term_colors = true,
           }
           require("onedark").load()
