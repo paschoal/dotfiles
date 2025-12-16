@@ -3,7 +3,7 @@
   imports = [
     ../modules/bspwm.nix
     ../modules/clock.nix
-    ../modules/sound.nix
+    ../modules/volume.nix
     ../modules/date.nix
     ../modules/battery.nix
     ../modules/wifi.nix
@@ -25,7 +25,7 @@
 
       @import './workspaces.scss';
       @import './clock.scss';
-      @import './sound.scss';
+      @import './volume.scss';
       @import './date.scss';
       @import './battery.scss';
       @import './wifi.scss';
@@ -39,7 +39,7 @@
 
     "eww/eww.yuck".text = ''
       (defvar eww "eww")
-      (include "sound.yuck")
+      (include "volume.yuck")
       (include "clock.yuck")
       (include "workspaces.yuck")
       (include "date.yuck")
@@ -62,7 +62,7 @@
           :halign "end"
           (wifi)
           (battery)
-          (sound)
+          (volume)
           (date)
           (clock)
         )
