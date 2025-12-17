@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -11,15 +11,17 @@
     ../../common
     ../../locale
     ../../graphical/bspwm
+
     ../../virtualisation/podman
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" ];
+
   programs.dconf.enable = true;
 
   users.users.paschoal = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "audio" "input"];
+    extraGroups = [ "wheel" "audio" "input" ];
     shell = pkgs.fish;
     createHome = true;
     home = "/data/home";
@@ -36,6 +38,10 @@
   environment.systemPackages = [
     (pkgs.callPackage <agenix/pkgs/agenix.nix> {})
   ];
+
+  services = {
+    upower.enable = true;
+  };
 
   system.stateVersion = "24.05";
 }
