@@ -66,4 +66,16 @@
       size = 8 * 1024;
     }
   ];
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+        FastConnectable = false;
+      };
+      Policy.AutoEnable = true;
+    };
+  };
 }

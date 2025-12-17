@@ -18,6 +18,7 @@
     ../../config/development
     ../../config/fish
     ../../config/nvim
+    ../../config/tmux
 
     ../../config/wallpapers
 
@@ -37,7 +38,6 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
-
     "awscli2"
     "terraform"
     "apple_cursor"
@@ -52,6 +52,7 @@
     zathura
     xclip
     unzip
+    mons
   ];
 
   home.stateVersion = "23.11";
@@ -74,14 +75,19 @@
         "x-scheme-handler/https" = [ "org.qutebrowser.qutebrowser.desktop" ];
       };
     };
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+      config.default.common = [ "gtk" ];
+    };
   };
 
   screenshots = {
     folder = config.xdg.userDirs.pictures;
   };
 
+  news.display = "silent";
   programs.home-manager.enable = true;
-  fonts.fontconfig.enable = true;
 
   services.home-manager.autoExpire = {
     enable = true;
