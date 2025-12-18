@@ -1,6 +1,5 @@
-{ config, ... }:
+{ pkgs,  ... }:
+
 {
-  imports = [
-    ./pyfa
-  ];
+  home.packages = with pkgs; [ pyfa ];
 }
