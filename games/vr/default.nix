@@ -1,4 +1,4 @@
-{ lib, config, pkgs, nixpkgs, environment, ... }:
+{ pkgs, ... }:
 let
   #amdgpu-kernel-module = pkgs.callPackage ./amdgpu-kernel-module.nix {
   #  kernel = config.boot.kernelPackages.kernel;

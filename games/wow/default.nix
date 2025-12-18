@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
 let
   wowAddon = import ./support/wow-addon { inherit pkgs; };

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ ... }:
 {
   #
   # available through nixos-container bin.
