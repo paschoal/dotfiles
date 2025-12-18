@@ -12,6 +12,8 @@
     ../../locale
     ../../graphical/bspwm
 
+    ../../services/beszel-agent
+
     ../../virtualisation/podman
   ];
 
