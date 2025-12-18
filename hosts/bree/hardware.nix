@@ -12,10 +12,10 @@
     <nixos-hardware/msi/b550-tomahawk>
     <nixos-hardware/common/cpu/amd/pstate.nix>
 
-    ../../audio/mjolnir
+    ../../audio/bree
     ../../hardware/headphones
     ../../hardware/radeon
-    ../../hardware/raid/mjolnir
+    ../../hardware/raid/bree
   ];
 
   #

@@ -18,7 +18,6 @@
   imports = [
     ../../config/git
     ../../config/development
-    ../../config/lazydocker
     ../../config/fish
     ../../config/nvim
     ../../config/tmux
@@ -33,7 +32,7 @@
 
     ../../config/sxhkd
     ../../config/bspwm
-    ../../config/eww/mjolnir
+    ../../config/eww/bree
 
     ../../config/qutebrowser
     ../../config/chromium

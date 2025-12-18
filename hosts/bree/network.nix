@@ -16,7 +16,7 @@
   };
 
   networking = {
-    hostName = "mjolnir";
+    hostName = "bree";
     useDHCP = lib.mkDefault false;
     firewall.enable = true;
   };
