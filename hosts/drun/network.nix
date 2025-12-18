@@ -31,7 +31,7 @@
   };
 
   networking = {
-    hostName = "gram";
+    hostName = "drun";
     useDHCP = lib.mkDefault false;
     firewall = {
       enable = true;
