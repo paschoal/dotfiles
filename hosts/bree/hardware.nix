@@ -13,7 +13,6 @@
     <nixos-hardware/common/cpu/amd/pstate.nix>
 
     ../../audio/bree
-    ../../hardware/headphones
     ../../hardware/radeon
     ../../hardware/raid/bree
   ];
