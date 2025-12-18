@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 
 {
   imports = [
@@ -12,7 +12,7 @@
     identityPaths = ["/data/home/.ssh/id_rsa"];
   };
 
-  networking.hostName = "laevateinn";
+  networking.hostName = "ettendales";
   networking.firewall.enable = false;
   networking.useDHCP = lib.mkDefault true;
   networking.wireless = {

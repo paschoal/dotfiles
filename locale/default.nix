@@ -1,4 +1,4 @@
-{ time, i18n, ... }:
+{ ... }:
 
 {
   time.timeZone = "America/Montreal";

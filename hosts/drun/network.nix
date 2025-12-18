@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, ... }:
 {
   systemd.network = {
     enable = true;
@@ -31,7 +31,7 @@
   };
 
   networking = {
-    hostName = "gram";
+    hostName = "drun";
     useDHCP = lib.mkDefault false;
     firewall = {
       enable = true;

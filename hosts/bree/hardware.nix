@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ lib, pkgs, modulesPath, ... }:
 
 {
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
@@ -12,10 +12,9 @@
     <nixos-hardware/msi/b550-tomahawk>
     <nixos-hardware/common/cpu/amd/pstate.nix>
 
-    ../../audio/mjolnir
-    ../../hardware/headphones
+    ../../audio/bree
     ../../hardware/radeon
-    ../../hardware/raid/mjolnir
+    ../../hardware/raid/bree
   ];
 
   #

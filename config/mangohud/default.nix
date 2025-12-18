@@ -1,9 +1,7 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.mangohud
-  ];
+  home.packages = with pkgs; [ mangohud ];
 
   xdg.configFile = {
     "MangoHud/MangoHud.conf" = {

@@ -24,7 +24,7 @@
 
     ../../config/sxhkd
     ../../config/bspwm
-    ../../config/eww/gungnir
+    ../../config/eww/angband
 
     ../../config/qutebrowser
 

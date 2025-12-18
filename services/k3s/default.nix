@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   kube-from-nix = pkgs.writeScriptBin "kbnix" ''

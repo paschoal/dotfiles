@@ -12,7 +12,7 @@
     identityPaths = ["/data/home/.ssh/id_rsa"];
   };
 
-  networking.hostName = "gungnir";
+  networking.hostName = "angband";
   networking.firewall.enable = true;
   networking.useDHCP = lib.mkDefault true;
 
