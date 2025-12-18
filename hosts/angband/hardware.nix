@@ -6,7 +6,7 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
 
-     ../../audio/gugnir
+     ../../audio/angband
   ];
 
   #
