@@ -38,8 +38,8 @@
       # control space as prefix
       #
       unbind C-b
-      set -g prefix C-Space
-      bind C-space send-prefix
+      set -g prefix C-t
+      bind C-t send-prefix
 
       #
       # 24Bit colors for tmux
