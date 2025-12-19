@@ -10,7 +10,6 @@
       ./network.nix
 
       ../../common
-      ../../locale
       ../../services/openssh
       ../../services/klipper
     ];

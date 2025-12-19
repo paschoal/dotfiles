@@ -8,7 +8,6 @@
     ./network.nix
 
     ../../common
-    ../../locale
 
     ../../services/openssh
     ../../services/k3s
