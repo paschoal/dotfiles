@@ -12,7 +12,6 @@
     ./network.nix
 
     ../../common
-    ../../locale
     ../../games
     ../../graphical/bspwm
 

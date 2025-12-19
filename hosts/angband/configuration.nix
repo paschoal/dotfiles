@@ -10,7 +10,6 @@
     ./network.nix
 
     ../../common
-    ../../locale
     ../../graphical/bspwm
 
     ../../services/beszel-agent
