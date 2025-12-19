@@ -8,6 +8,7 @@
     <agenix/modules/age.nix>
 
     ./hardware.nix
+    ./audio.nix
     ./network.nix
 
     ../../common
@@ -15,7 +16,9 @@
     ../../games
     ../../graphical/bspwm
 
-    ../../virtualisation/docker
+    ../../services/beszel-agent
+
+    ../../virtualisation/podman
     ../../virtualisation/valkey.nix
     ../../virtualisation/postgres.nix
   ];
