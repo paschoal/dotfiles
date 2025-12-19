@@ -5,8 +5,6 @@
 
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-
-     ../../audio/angband
   ];
 
   #

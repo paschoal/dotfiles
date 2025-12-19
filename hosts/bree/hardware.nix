@@ -12,7 +12,6 @@
     <nixos-hardware/msi/b550-tomahawk>
     <nixos-hardware/common/cpu/amd/pstate.nix>
 
-    ../../audio/bree
     ../../hardware/radeon
     ../../hardware/raid/bree
   ];

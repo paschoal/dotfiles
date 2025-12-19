@@ -6,6 +6,7 @@
     <agenix/modules/age.nix>
 
     ./hardware.nix
+    ./audio.nix
     ./network.nix
 
     ../../common
