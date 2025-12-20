@@ -25,6 +25,8 @@
     home = "/data/home";
   };
 
+  services.openssh.settings.AllowUsers = [ "paschoal" ];
+
   security = {
     polkit.enable = true;
 

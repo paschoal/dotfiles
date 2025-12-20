@@ -24,6 +24,8 @@
     home = "/data/home";
   };
 
+  services.openssh.settings.AllowUsers = [ "paschoal" ];
+
   security = {
     rtkit.enable = true;
     sudo = {
