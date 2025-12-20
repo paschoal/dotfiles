@@ -12,6 +12,7 @@
       ../../common
       ../../services/openssh
       ../../services/klipper
+      ../../services/remote-builder-client
     ];
 
   boot.loader.grub.enable = false;
