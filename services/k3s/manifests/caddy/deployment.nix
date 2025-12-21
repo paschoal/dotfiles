@@ -14,78 +14,43 @@
             image = "ghcr.io/paschoal/caddy-route53:main";
             imagePullPolicy = "IfNotPresent";
             resources = {
-              limits = {
-                memory = "512Mi";
-                cpu = "0.5";
-              };
-              requests = {
-                memory = "128Mi";
-                cpu = "0.25";
-              };
+              limits.memory = "512Mi";
+              limits.cpu = "0.5";
+              requests.memory = "128Mi";
+              requests.cpu = "0.25";
             };
             env = [
               {
                 name = "AWS_ACCESS_KEY_ID";
-                valueFrom.secretKeyRef = {
-                  name = "caddy-secrets";
-                  key = "accessKeyID";
-                };
+                valueFrom.secretKeyRef = { name = "caddy-secrets"; key = "accessKeyID"; };
               }
               {
                 name = "AWS_SECRET_ACCESS_KEY";
-                valueFrom.secretKeyRef = {
-                  name = "caddy-secrets";
-                  key = "secretAccessKey";
-                };
+                valueFrom.secretKeyRef = { name = "caddy-secrets"; key = "secretAccessKey"; };
               }
             ];
             ports = [
-              {
-                name = "caddy-http";
-                containerPort = 80;
-                protocol = "TCP";
-              }
-              {
-                name = "caddy-tls";
-                containerPort = 443;
-                protocol = "TCP";
-              }
-              {
-                name = "caddy-tls-udp";
-                containerPort = 443;
-                protocol = "UDP";
-              }
+              { name = "caddy-http"; containerPort = 80; protocol = "TCP"; }
+              { name = "caddy-tls"; containerPort = 443; protocol = "TCP"; }
+              { name = "caddy-tls-udp"; containerPort = 443; protocol = "UDP"; }
             ];
             volumeMounts = [
-              {
-                name = "caddy-caddyfile";
-                mountPath = "/etc/caddy/Caddyfile";
-                subPath = "Caddyfile";
-              }
+              { name = "caddy-caddyfile"; mountPath = "/etc/caddy/Caddyfile"; subPath = "Caddyfile"; }
             ];
             readinessProbe = {
-              httpGet = {
-                path = "/";
-                port = "caddy-http";
-              };
+              httpGet = { path = "/"; port = "caddy-http"; };
               initialDelaySeconds = 30;
               periodSeconds = 30;
             };
             livenessProbe = {
-              httpGet = {
-                path = "/";
-                port = "caddy-http";
-              };
+              httpGet = { path = "/"; port = "caddy-http"; };
               initialDelaySeconds = 60;
               periodSeconds = 60;
             };
           }
         ];
         volumes = [
-          {
-            name = "caddy-caddyfile";
-            configMap.name = "caddy-caddyfile";
-          }
+          { name = "caddy-caddyfile"; configMap.name = "caddy-caddyfile"; }
         ];
       };
     };
