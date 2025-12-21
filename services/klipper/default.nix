@@ -216,7 +216,7 @@
         speed = 2;
         x_offset = -42.5;
         y_offset = -6;
-        z_offset = 3.349;
+        z_offset = 2.195;
       };
 
       bed_mesh = {

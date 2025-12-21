@@ -24,6 +24,18 @@
         reverse_proxy vaultwarden-http.default.svc.cluster.local
       }
 
+      beszel.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy beszel-http.default.svc.cluster.local {
+          transport http {
+            read_timeout 360s
+          }
+        }
+      }
+
       :80 {
         respond "pong"
       }
