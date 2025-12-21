@@ -12,6 +12,7 @@
       ../../common
       ../../services/openssh
       ../../services/klipper
+      ../../services/remote-builder-client
     ];
 
   boot.loader.grub.enable = false;
@@ -24,6 +25,8 @@
     createHome = true;
     home = "/data/home";
   };
+
+  services.openssh.settings.AllowUsers = [ "paschoal" ];
 
   security = {
     polkit.enable = true;

@@ -15,6 +15,7 @@
     ../../games
     ../../graphical/bspwm
 
+    ../../services/remote-builder
     ../../services/beszel-agent
 
     ../../virtualisation/podman
