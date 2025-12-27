@@ -2,7 +2,7 @@
   apiVersion = "apps/v1";
   kind = "StatefulSet";
   metadata = {
-    name = "vaultwarden-set";
+    name = "vaultwarden";
     labels.app = "vaultwarden";
   };
   spec = {
@@ -40,7 +40,7 @@
             ];
             volumeMounts = [
               {
-                mountPath = "/opt/vaultwarden-data";
+                mountPath = "/opt/data";
                 name = "vaultwarden-data";
               }
             ];

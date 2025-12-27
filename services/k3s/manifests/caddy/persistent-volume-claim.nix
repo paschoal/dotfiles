@@ -2,13 +2,13 @@
   apiVersion = "v1";
   kind = "PersistentVolumeClaim";
   metadata = {
-    name = "pihole-storage";
-    labels.app = "pihole";
+    name = "caddy-volume";
+    labels.app = "caddy";
   };
   spec = {
     accessModes = [ "ReadWriteOncePod" ];
-    resources.requests.storage = "2Gi";
     storageClassName = "";
-    selector.matchLabels.app = "pihole";
+    resources.requests.storage = "500Mi";
+    selector.matchLabels.app = "caddy";
   };
 }

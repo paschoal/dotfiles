@@ -2,15 +2,15 @@
   apiVersion = "v1";
   kind = "PersistentVolume";
   metadata = {
-    name = "vaultwarden-volume";
-    labels.app = "vaultwarden";
+    name = "pihole-volume";
+    labels.app = "pihole";
   };
   spec = {
     capacity.storage = "2Gi";
     accessModes = [ "ReadWriteOncePod" ];
     persistentVolumeReclaimPolicy = "Retain";
     hostPath = {
-      path = "/opt/data";
+      path = "/etc/pihole";
       type = "DirectoryOrCreate";
     };
   };

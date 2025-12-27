@@ -2,15 +2,15 @@
   apiVersion = "v1";
   kind = "PersistentVolume";
   metadata = {
-    name = "vaultwarden-volume";
-    labels.app = "vaultwarden";
+    name = "beszel-agent-volume";
+    labels.app = "beszel-agent";
   };
   spec = {
-    capacity.storage = "2Gi";
-    accessModes = [ "ReadWriteOncePod" ];
+    capacity.storage = "500Mi";
+    accessModes = [ "ReadWriteOnce" ];
     persistentVolumeReclaimPolicy = "Retain";
     hostPath = {
-      path = "/opt/data";
+      path = "/var/lib/beszel-agent";
       type = "DirectoryOrCreate";
     };
   };

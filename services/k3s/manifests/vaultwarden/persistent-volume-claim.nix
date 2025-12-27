@@ -6,9 +6,9 @@
     labels.app = "vaultwarden";
   };
   spec = {
-    accessModes = [ "ReadWriteOncePod" ];
+    accessModes = [ "ReadWriteOnce" ];
+    storageClassName = "default";
     resources.requests.storage = "2Gi";
-    storageClassName = "";
     selector.matchLabels.app = "vaultwarden";
   };
 }

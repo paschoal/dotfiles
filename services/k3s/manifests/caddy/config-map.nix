@@ -7,8 +7,12 @@
   };
   data =  {
     "Caddyfile" = ''
+      {
+        email paschoal@gmail.com
+        storage file_system /opt/caddy
+      }
 
-      pihole.paschoal.me {
+      dns.paschoal.me {
         tls {
           dns route53 {
           }
@@ -24,6 +28,21 @@
         reverse_proxy vaultwarden-http.default.svc.cluster.local
       }
 
+<<<<<<< Updated upstream
+=======
+      tlm.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy beszel-http.default.svc.cluster.local {
+          transport http {
+            read_timeout 360s
+          }
+        }
+      }
+
+>>>>>>> Stashed changes
       :80 {
         respond "pong"
       }
