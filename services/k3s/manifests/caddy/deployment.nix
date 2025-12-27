@@ -61,16 +61,8 @@
               }
             ];
             volumeMounts = [
-<<<<<<< Updated upstream
-              {
-                name = "caddy-caddyfile";
-                mountPath = "/etc/caddy/Caddyfile";
-                subPath = "Caddyfile";
-              }
-=======
               { name = "caddy-caddyfile"; mountPath = "/etc/caddy/Caddyfile"; subPath = "Caddyfile"; }
               { name = "caddy-volume"; mountPath = "/opt/caddy"; }
->>>>>>> Stashed changes
             ];
             readinessProbe = {
               httpGet = {
@@ -90,15 +82,9 @@
             };
           }
         ];
-<<<<<<< Updated upstream
         volumes = [
-          {
-            name = "caddy-caddyfile";
-            configMap.name = "caddy-caddyfile";
-          }
+          { name = "caddy-caddyfile"; configMap.name = "caddy-caddyfile"; }
         ];
-=======
->>>>>>> Stashed changes
       };
     };
   };
