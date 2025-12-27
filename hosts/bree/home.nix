@@ -38,6 +38,8 @@
     ../../config/chromium
     ../../config/thunderbird
 
+    ../../games/openttd
+
     ../../config/feh
     ../../config/st
     ../../config/cursor

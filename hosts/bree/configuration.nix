@@ -18,8 +18,6 @@
     ../../services/beszel-agent
 
     ../../virtualisation/podman
-    ../../virtualisation/valkey.nix
-    ../../virtualisation/postgres.nix
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
