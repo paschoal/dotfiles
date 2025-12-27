@@ -28,8 +28,6 @@
         reverse_proxy vaultwarden-http.default.svc.cluster.local
       }
 
-<<<<<<< Updated upstream
-=======
       tlm.paschoal.me {
         tls {
           dns route53 {
@@ -42,7 +40,6 @@
         }
       }
 
->>>>>>> Stashed changes
       :80 {
         respond "pong"
       }
