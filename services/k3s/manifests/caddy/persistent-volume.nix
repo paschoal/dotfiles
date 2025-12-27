@@ -2,15 +2,15 @@
   apiVersion = "v1";
   kind = "PersistentVolume";
   metadata = {
-    name = "vaultwarden-volume";
-    labels.app = "vaultwarden";
+    name = "caddy-volume";
+    labels.app = "caddy";
   };
   spec = {
-    capacity.storage = "2Gi";
+    capacity.storage = "500Mi";
     accessModes = [ "ReadWriteOncePod" ];
     persistentVolumeReclaimPolicy = "Retain";
     hostPath = {
-      path = "/opt/data";
+      path = "/opt/caddy";
       type = "DirectoryOrCreate";
     };
   };

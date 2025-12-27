@@ -6,6 +6,12 @@
     labels.app = "beszel-agent";
   };
   spec = {
+    updateStrategy = {
+      rollingUpdate = {
+        maxSurge = 0;
+        maxUnavailable = 1;
+      };
+    };
     selector.matchLabels.app = "beszel-agent";
     template = {
       metadata.labels.app = "beszel-agent";
@@ -28,10 +34,9 @@
             ports = [
               { containerPort = 45876; protocol = "TCP"; name = "beszel-agent"; }
             ];
-            env = [
-              { name = "HUB_URL"; value = "https://beszel.paschoal.me"; }
-              { name = "KEY"; value = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPI+aLbYT9LI+ex3nm7Gk0ui3gTAWbfuX5jjQHljQcOy"; }
-              { name = "LISTEN"; value = "45876"; }
+            envFrom = [
+              { configMapRef.name = "beszel-agent-env"; }
+              { secretRef.name = "beszel-agent-secret"; }
             ];
           }
         ];
@@ -43,15 +48,9 @@
         volumes = [
           {
             name = "beszel-agent-data";
-            persistentVolumeClaim.claimName = "beszel-agent-data";
+            persistentVolumeClaim.claimName = "beszel-agent-volume";
           }
         ];
-      };
-    };
-    updateStrategy = {
-      rollingUpdate = {
-        maxSurge = 0;
-        maxUnavailable = "100%";
       };
     };
   };

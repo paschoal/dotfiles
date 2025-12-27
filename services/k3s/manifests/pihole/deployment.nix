@@ -10,7 +10,7 @@
     selector.matchLabels.app = "pihole";
     strategy.type = "RollingUpdate";
     strategy.rollingUpdate = {
-      maxSurge = 1;
+      maxSurge = 0;
       maxUnavailable = 1;
     };
     template = {

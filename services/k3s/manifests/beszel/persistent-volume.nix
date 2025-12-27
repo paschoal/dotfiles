@@ -2,15 +2,15 @@
   apiVersion = "v1";
   kind = "PersistentVolume";
   metadata = {
-    name = "vaultwarden-volume";
-    labels.app = "vaultwarden";
+    name = "beszel-volume";
+    labels.app = "beszel";
   };
   spec = {
-    capacity.storage = "2Gi";
+    capacity.storage = "1Gi";
     accessModes = [ "ReadWriteOncePod" ];
     persistentVolumeReclaimPolicy = "Retain";
     hostPath = {
-      path = "/opt/data";
+      path = "/var/lib/beszel";
       type = "DirectoryOrCreate";
     };
   };

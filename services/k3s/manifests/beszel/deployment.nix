@@ -2,7 +2,7 @@
   apiVersion = "apps/v1";
   kind = "Deployment";
   metadata = {
-    name = "beszel-deployment";
+    name = "beszel";
     labels.app = "beszel";
   };
   spec = {
@@ -17,8 +17,7 @@
       metadata.labels.app = "beszel";
       spec = {
         volumes = [
-          { persistentVolumeClaim.claimName = "beszel-data"; name = "data"; }
-          { persistentVolumeClaim.claimName = "beszel-socket"; name = "socket"; }
+          { persistentVolumeClaim.claimName = "beszel-volume"; name = "data"; }
         ];
         containers = [
           {
@@ -42,8 +41,7 @@
               }
             ];
             volumeMounts = [
-              { mountPath = "./beszel_data"; name = "data"; }
-              { mountPath = "./beszel_socket"; name = "socket"; }
+              { mountPath = "/var/lib/beszel"; name = "data"; }
             ];
           }
         ];

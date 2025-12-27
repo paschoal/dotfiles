@@ -36,6 +36,7 @@ in {
       disable = [
         "metrics-server"
         "traefik"
+        "servicelb"
       ];
       extraFlags = [
         "--write-kubeconfig-mode 644"

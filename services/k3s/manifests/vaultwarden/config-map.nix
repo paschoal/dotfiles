@@ -7,5 +7,6 @@
   };
   data = {
     DOMAIN = "https://vw.paschoal.me";
+    DATA_FOLDER  = "/opt/data";
   };
 }
