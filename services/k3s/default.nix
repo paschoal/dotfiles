@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   kube-from-nix = pkgs.writeScriptBin "kbnix" ''
@@ -29,20 +29,59 @@ let
     esac
   '';
 in {
-  services = {
-    k3s = {
-      enable = true;
-      role = "server";
-      disable = [
-        "metrics-server"
-        "traefik"
-        "servicelb"
-      ];
-      extraFlags = [
-        "--write-kubeconfig-mode 644"
-      ];
+  options = {
+    k3s-config = {
+      role = lib.mkOption {
+        default = "agent";
+        type = lib.types.raw;
+        description = ''
+          Specify K3S server role
+        '';
+      };
+
+      server-address = lib.mkOption {
+        type = lib.types.raw;
+        description = ''
+          K3S server address
+        '';
+      };
+
+      token = lib.mkOption {
+        type = lib.types.raw;
+        description = ''
+          K3S server token
+        '';
+      };
     };
   };
 
-  environment.systemPackages = [ kube-from-nix ];
+  config = {
+    services = {
+      k3s = lib.mkMerge [
+        {
+          enable = true;
+          role = config.k3s-config.role;
+        }
+
+        (
+          lib.mkIf (config.k3s-config.role != "server") {
+            serverAddr = config.k3s-config.server-address;
+            token = config.k3s-config.token;
+          }
+        )
+
+        (
+          lib.mkIf ( config.k3s-config.role == "server") {
+            disable = [
+              "metrics-server"
+              "traefik"
+              "servicelb"
+            ];
+            extraFlags = [ "--write-kubeconfig-mode 644" ];
+          }
+        )
+      ];
+    };
+    environment.systemPackages = [ kube-from-nix ];
+  };
 }
