@@ -5,7 +5,7 @@
     name = "pihole-dns-udp";
     labels.app = "pihole";
     annotations."metallb.io/allow-shared-ip" = "2.9";
-    annotations."metallb.io/loadBalancerIPs" = "192.168.2.9";
+    annotations."metallb.io/loadBalancerIPs" = "192.168.2.11";
   };
   spec = {
     selector.app = "pihole";
