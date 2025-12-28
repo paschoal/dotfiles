@@ -20,18 +20,22 @@
 
     networks."40-br0" = {
       matchConfig.Name = "br0";
-      networkConfig = {
-        DNS = [ "1.1.1.1" ];
-        Gateway = "192.168.2.1";
-        DHCP = "ipv4";
-      };
+      address = [
+        "192.168.2.10/24"
+        "192.168.2.11/24"
+      ];
+      routes = [
+        { Gateway = "192.168.2.1"; }
+      ];
+      dns = [ "192.168.2.1" ];
       linkConfig.RequiredForOnline = "routable";
-      dhcpV4Config.UseDNS = false;
     };
   };
 
   networking = {
     hostName = "drun";
+    hosts = {
+    };
     useDHCP = lib.mkDefault false;
     firewall = {
       enable = true;
