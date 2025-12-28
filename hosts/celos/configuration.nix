@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -9,6 +9,7 @@
 
     ../../common
     ../../services/openssh
+    ../../services/beszel-agent
   ];
 
   nix.settings.experimental-features = [ "nix-command" ];
