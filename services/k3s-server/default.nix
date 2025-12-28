@@ -38,9 +38,7 @@ in {
         "traefik"
         "servicelb"
       ];
-      extraFlags = [
-        "--write-kubeconfig-mode 644"
-      ];
+      extraFlags = [ "--write-kubeconfig-mode 644" ];
     };
   };
 
