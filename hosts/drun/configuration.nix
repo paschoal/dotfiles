@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -7,12 +7,15 @@
     ./hardware.nix
     ./network.nix
 
+    ../../secrets
     ../../common
     ../../services/openssh
     ../../services/beszel-agent
     ../../services/k3s
   ];
 
+  k3s-config.role = "server";
+  beszel-config.environmentFile = config.sops.templates."drun/beszel-agent.env".path;
   nix.settings.experimental-features = [ "nix-command" ];
 
   users.users.paschoal = {

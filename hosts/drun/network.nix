@@ -23,6 +23,7 @@
       address = [
         "192.168.2.10/24"
         "192.168.2.11/24"
+        "192.168.2.12/24"
       ];
       routes = [
         { Gateway = "192.168.2.1"; }
@@ -37,20 +38,6 @@
     hosts = {
     };
     useDHCP = lib.mkDefault false;
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [
-        22    # ssh
-        53    # dns
-        80    # http
-        443   # http-tls
-        5432  # postgres
-      ];
-      allowedUDPPorts = [
-        53    # dns
-        67    # dhcp
-        443   # http-tls
-      ];
-    };
+    firewall.enable = false;
   };
 }
