@@ -36,13 +36,6 @@
     hosts = {
     };
     useDHCP = lib.mkDefault false;
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [
-        22 # SSH
-      ];
-      allowedUDPPorts = [
-      ];
-    };
+    firewall.enable = false;
   };
 }

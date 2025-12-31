@@ -11,7 +11,7 @@
     strategy.type = "RollingUpdate";
     strategy.rollingUpdate = {
       maxSurge = 1;
-      maxUnavailable = 1;
+      maxUnavailable = 0;
     };
     template = {
       metadata.labels.app = "beszel";
@@ -34,11 +34,7 @@
               { configMapRef.name = "beszel-env"; }
             ];
             ports = [
-              {
-                name = "beszel-http";
-                containerPort = 8090;
-                protocol = "TCP";
-              }
+              { name = "beszel-http"; containerPort = 8090; protocol = "TCP"; }
             ];
             volumeMounts = [
               { mountPath = "/var/lib/beszel"; name = "data"; }

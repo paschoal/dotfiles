@@ -1,0 +1,12 @@
+keys:
+  - &paschoal-bree age1m5ucfqz4tdj2k088h2r0uzhhj2uc3gaz4swns7x6fgl6665s8uqstttsaq
+  - &paschoal-drun age1ewtpr8729y3z9hnmr6nas0ja708muaq2upr9f9n2qjvd4sk74gwqkt7q8h
+  - &paschoal-celos age1v7njywz205n2jlz4lvgmymqptlxxtstduh9u5pv3qzew5ynqd99q9nqcth
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env)$
+    key_groups:
+    - age:
+        - *paschoal-bree
+        - *paschoal-drun
+        - *paschoal-celos

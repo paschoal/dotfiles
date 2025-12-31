@@ -40,6 +40,14 @@
         }
       }
 
+      lh.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy 10.43.118.207:80
+      }
+
       :80 {
         respond "pong"
       }

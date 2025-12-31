@@ -12,10 +12,7 @@
       metadata.labels.app = "vaultwarden";
       spec = {
         volumes = [
-          {
-            name = "vaultwarden-data";
-            persistentVolumeClaim.claimName = "vaultwarden-data";
-          }
+          { name = "vaultwarden-data"; persistentVolumeClaim.claimName = "vaultwarden-volume"; }
         ];
         containers = [
           {
@@ -39,10 +36,7 @@
               { configMapRef.name = "vaultwarden-env"; }
             ];
             volumeMounts = [
-              {
-                mountPath = "/opt/data";
-                name = "vaultwarden-data";
-              }
+              { mountPath = "/opt/data"; name = "vaultwarden-data"; }
             ];
           }
         ];

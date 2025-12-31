@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -7,10 +7,23 @@
     ./hardware.nix
     ./network.nix
 
+    ../../secrets
     ../../common
     ../../services/openssh
     ../../services/beszel-agent
+    ../../services/k3s
   ];
+
+  k3s-config = {
+    role = "agent";
+    #
+    # drun static ip
+    #
+    serverAddress = "https://192.168.2.10:6443";
+  };
+
+  k3s-config.environmentFile = config.sops.templates."celos/k3s.env".path;
+  beszel-config.environmentFile = config.sops.templates."celos/beszel-agent.env".path;
 
   nix.settings.experimental-features = [ "nix-command" ];
 

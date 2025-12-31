@@ -8,6 +8,7 @@
     template = {
       metadata.labels.app = "caddy";
       spec = {
+        nodeName = "drun";
         volumes = [
           { name = "caddy-caddyfile"; configMap.name = "caddy-caddyfile"; }
           { name = "caddy-volume"; persistentVolumeClaim.claimName = "caddy-volume"; }
@@ -23,15 +24,8 @@
               requests.memory = "128Mi";
               requests.cpu = "0.25";
             };
-            env = [
-              {
-                name = "AWS_ACCESS_KEY_ID";
-                valueFrom.secretKeyRef = { name = "caddy-secrets"; key = "accessKeyID"; };
-              }
-              {
-                name = "AWS_SECRET_ACCESS_KEY";
-                valueFrom.secretKeyRef = { name = "caddy-secrets"; key = "secretAccessKey"; };
-              }
+            envFrom = [
+              { secretRef.name = "caddy-secret"; }
             ];
             ports = [
               { name = "caddy-http"; containerPort = 80; protocol = "TCP"; }

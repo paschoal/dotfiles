@@ -1,14 +1,10 @@
 {
   apiVersion = "v1";
   kind = "PersistentVolumeClaim";
-  metadata = {
-    name = "pihole-storage";
-    labels.app = "pihole";
-  };
+  metadata.name = "pihole-volume";
   spec = {
-    accessModes = [ "ReadWriteOncePod" ];
-    resources.requests.storage = "2Gi";
-    storageClassName = "";
-    selector.matchLabels.app = "pihole";
+    accessModes = [ "ReadWriteOnce" ];
+    resources.requests.storage = "1Gi";
+    storageClassName = "nvme";
   };
 }

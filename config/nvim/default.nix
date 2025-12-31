@@ -48,6 +48,7 @@
 
       set list
       set listchars+=tab:··,eol:¬,trail:-,extends:>,precedes:<
+      execute "set colorcolumn=" . join(range(80,100), ',')
       set backspace=indent,eol,start
 
       set expandtab
