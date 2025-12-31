@@ -16,11 +16,12 @@
     template = {
       metadata.labels.app = "pihole";
       spec = {
+        #
+        # traffic set to local policy require pod in the same node as lb
+        #
+        nodeName = "drun";
         volumes = [
-          {
-            name = "pihole-storage";
-            persistentVolumeClaim.claimName = "pihole-storage";
-          }
+          { name = "pihole-storage"; persistentVolumeClaim.claimName = "pihole-volume"; }
         ];
         containers = [
           {
@@ -37,26 +38,9 @@
               requests.cpu = "1";
             };
             ports = [
-              {
-                name = "pihole-http";
-                containerPort = 80;
-                protocol = "TCP";
-              }
-              {
-                name = "pihole-dns";
-                containerPort = 53;
-                protocol = "TCP";
-              }
-              {
-                name = "pihole-dns-udp";
-                containerPort = 53;
-                protocol = "UDP";
-              }
-              {
-                name = "pihole-dhcp";
-                containerPort = 67;
-                protocol = "UDP";
-              }
+              { name = "pihole-http"; containerPort = 80; protocol = "TCP"; }
+              { name = "pihole-dns"; containerPort = 53; protocol = "TCP"; }
+              { name = "pihole-dns-udp"; containerPort = 53; protocol = "UDP"; }
             ];
             volumeMounts = [
               { mountPath = "/etc/pihole"; name = "pihole-storage"; }
