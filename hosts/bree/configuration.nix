@@ -1,16 +1,16 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   xorg-config.amd = true;
 
   imports = [
     <home-manager/nixos>
-    <agenix/modules/age.nix>
 
     ./hardware.nix
     ./audio.nix
     ./network.nix
 
+    ../../secrets
     ../../common
     ../../games
     ../../graphical/bspwm
@@ -19,6 +19,8 @@
 
     ../../virtualisation/podman
   ];
+
+  beszel-config.environmentFile = config.sops.templates."bree/beszel-agent.env".path;
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam-unwrapped"
@@ -51,10 +53,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    (callPackage <agenix/pkgs/agenix.nix> {})
-    yubikey-manager
-  ];
+  environment.systemPackages = with pkgs; [ yubikey-manager ];
 
   services = {
     #
