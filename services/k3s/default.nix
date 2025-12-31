@@ -1,34 +1,6 @@
 { config, pkgs, lib, ... }:
 
-let
-  kube-from-nix = pkgs.writeScriptBin "kbnix" ''
-    #!${pkgs.stdenv.shell}
-    apply () {
-      local filename="$1"
-      nix eval --file "$filename" --json | kubectl apply -f -
-    }
-
-    delete () {
-      local filename="$1"
-      nix eval --file "$filename" --json | kubectl delete -f -
-    }
-
-    if [ "$#" -lt 2 ]; then
-      echo "Usage: $0 [COMMAND] [FILENAME]"
-      echo "Evaluate [FILENAME] from nix to json and use as input to kubectl [COMMAND]"
-    fi
-
-    case "$1" in
-      apply)
-        apply "$2"
-        ;;
-      delete)
-        delete "$2"
-        ;;
-      *)
-    esac
-  '';
-in {
+{
   options = {
     k3s-config = {
       role = lib.mkOption {
@@ -39,17 +11,17 @@ in {
         '';
       };
 
-      server-address = lib.mkOption {
+      serverAddress = lib.mkOption {
         type = lib.types.raw;
         description = ''
           K3S server address
         '';
       };
 
-      token = lib.mkOption {
-        type = lib.types.raw;
+      environmentFile = lib.mkOption {
+        type = lib.types.path;
         description = ''
-          K3S server token
+          Environment ilfe to be used as configuration
         '';
       };
     };
@@ -61,12 +33,12 @@ in {
         {
           enable = true;
           role = config.k3s-config.role;
+          environmentFile = config.k3s-config.environmentFile;
         }
 
         (
           lib.mkIf (config.k3s-config.role != "server") {
-            serverAddr = config.k3s-config.server-address;
-            token = config.k3s-config.token;
+            serverAddr = config.k3s-config.serverAddress;
           }
         )
 
@@ -78,10 +50,35 @@ in {
               "servicelb"
             ];
             extraFlags = [ "--write-kubeconfig-mode 644" ];
+            manifests = {
+              longhorn.source = pkgs.fetchurl {
+                url = "https://raw.githubusercontent.com/longhorn/longhorn/v1.10.1/deploy/longhorn.yaml";
+                hash = "sha256-nc0kcrAJ5GhCT8cIgC5KOg4eCIDkSt1gNewkJtMSmUo=";
+              };
+
+              metallb.source = pkgs.fetchurl {
+                url = "https://raw.githubusercontent.com/metallb/metallb/v0.15.3/config/manifests/metallb-native.yaml";
+                hash = "sha256-hLThAvK2X11pCF9YFsKTYrdGQYc9isPemW5fhqghkXY=";
+              };
+            };
           }
         )
       ];
+
+      #
+      # https://github.com/longhorn/longhorn/issues/2166#issuecomment-2994323945
+      #
+      openiscsi = {
+        enable = true;
+        name = "${config.networking.hostName}-initiatorhost";
+      };
     };
-    environment.systemPackages = [ kube-from-nix ];
+
+    systemd.services.iscsid.serviceConfig = {
+      PrivateMounts = "yes";
+      BindPaths = "/run/current-system/sw/bin:/bin";
+    };
+
+    environment.systemPackages = [ ];
   };
 }
