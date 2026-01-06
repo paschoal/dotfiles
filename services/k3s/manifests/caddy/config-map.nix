@@ -48,6 +48,62 @@
         reverse_proxy 10.43.118.207:80
       }
 
+      storage.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy nextcloud-http.default.svc.cluster.local
+      }
+
+      sonarr.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy sonarr-http.default.svc.cluster.local
+      }
+
+      prowlarr.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy prowlarr-http.default.svc.cluster.local
+      }
+
+      nzbget.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy nzbget-http.default.svc.cluster.local
+      }
+
+      sab.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy sabnzb-http.default.svc.cluster.local
+      }
+
+      jellyfin.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy jellyfin-http.default.svc.cluster.local
+      }
+
+      bazarr.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy bazarr-http.default.svc.cluster.local
+      }
+
       :80 {
         respond "pong"
       }
