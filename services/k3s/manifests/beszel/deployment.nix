@@ -37,7 +37,7 @@
               { name = "beszel-http"; containerPort = 8090; protocol = "TCP"; }
             ];
             volumeMounts = [
-              { mountPath = "/var/lib/beszel"; name = "data"; }
+              { mountPath = "/beszel_data"; name = "data"; }
             ];
           }
         ];
