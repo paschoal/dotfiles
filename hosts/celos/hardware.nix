@@ -7,6 +7,7 @@
   hardware.graphics.enable = true;
 
   boot = {
+    supportedFilesystems = [ "nfs" ];
     initrd = {
       kernelModules = [];
       availableKernelModules = [
@@ -36,6 +37,11 @@
     device = "/dev/disk/by-label/boot";
     fsType = "vfat";
     options = [ "fmask=0077" "dmask=0077" ];
+  };
+
+  fileSystems."/storage" = {
+    device = "/dev/disk/by-label/storage";
+    fsType = "ext4";
   };
 
   swapDevices = [
