@@ -33,12 +33,12 @@
         {
           enable = true;
           role = config.k3s-config.role;
-          environmentFile = config.k3s-config.environmentFile;
         }
 
         (
           lib.mkIf (config.k3s-config.role != "server") {
             serverAddr = config.k3s-config.serverAddress;
+            environmentFile = config.k3s-config.environmentFile;
           }
         )
 
@@ -79,6 +79,6 @@
       BindPaths = "/run/current-system/sw/bin:/bin";
     };
 
-    environment.systemPackages = [ ];
+    environment.systemPackages = [ pkgs.nfs-utils ];
   };
 }
