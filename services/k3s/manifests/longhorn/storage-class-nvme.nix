@@ -17,5 +17,6 @@
     fsType = "ext4";
     numberOfReplicas = "2";
     staleReplicaTimeout = "30";
+    diskSelector = "nvme";
   };
 }
