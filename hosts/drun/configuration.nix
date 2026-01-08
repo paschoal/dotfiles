@@ -8,7 +8,7 @@
     ./network.nix
 
     ../../secrets
-    ../../common
+    ../../nixos/common
     ../../nixos/services/openssh
     ../../nixos/services/beszel-agent
     ../../nixos/services/k3s
