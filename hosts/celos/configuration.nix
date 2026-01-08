@@ -9,9 +9,9 @@
 
     ../../secrets
     ../../common
-    ../../services/openssh
-    ../../services/beszel-agent
-    ../../services/k3s
+    ../../nixos/services/openssh
+    ../../nixos/services/beszel-agent
+    ../../nixos/services/k3s
   ];
 
   k3s-config = {

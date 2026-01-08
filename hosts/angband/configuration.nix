@@ -12,9 +12,8 @@
     ../../common
     ../../graphical/bspwm
 
-    ../../services/beszel-agent
-
-    ../../virtualisation/podman
+    ../../nixos/services/beszel-agent
+    ../../nixos/virtualisation/podman
   ];
 
   nix.settings.experimental-features = [ "nix-command" ];
