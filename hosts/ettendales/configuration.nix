@@ -8,7 +8,7 @@
       ./hardware.nix
       ./network.nix
 
-      ../../common
+      ../../nixos/common
       ../../nixos/services/openssh
       ../../nixos/services/klipper
     ];

@@ -11,10 +11,10 @@
     ./network.nix
 
     ../../secrets
-    ../../common
-    ../../games
 
+    ../../nixos/common
     ../../nixos/graphical/bspwm
+    ../../nixos/games
     ../../nixos/services/beszel-agent
     ../../nixos/virtualisation/podman
   ];

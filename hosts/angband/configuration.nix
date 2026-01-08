@@ -3,14 +3,12 @@
 {
   imports = [
     <home-manager/nixos>
-    <agenix/modules/age.nix>
 
     ./hardware.nix
     ./audio.nix
     ./network.nix
 
-    ../../common
-
+    ../../nixos/common
     ../../nixos/graphical/bspwm
     ../../nixos/services/beszel-agent
     ../../nixos/virtualisation/podman
@@ -35,10 +33,6 @@
       wheelNeedsPassword = false;
     };
   };
-
-  environment.systemPackages = [
-    (pkgs.callPackage <agenix/pkgs/agenix.nix> {})
-  ];
 
   services = {
     upower.enable = true;
