@@ -8,9 +8,9 @@
   ];
 
   imports = [
-    ../../config/git
-    ../../config/zsh
-    ../../config/nvim
+    ../../home-manager/git
+    ../../home-manager/zsh
+    ../../home-manager/nvim
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
