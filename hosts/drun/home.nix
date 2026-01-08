@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ../../config/git
-    ../../config/fish
-    ../../config/nvim/minimal.nix
+    ../../home-manager/git
+    ../../home-manager/fish
+    ../../home-manager/nvim/minimal.nix
   ];
 
   git-config.sign-gpg = false;

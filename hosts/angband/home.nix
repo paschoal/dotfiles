@@ -14,26 +14,26 @@
   st-config.small-screen = true;
 
   imports = [
-    ../../config/git
-    ../../config/development
-    ../../config/fish
-    ../../config/nvim
-    ../../config/tmux
+    ../../home-manager/git
+    ../../home-manager/development
+    ../../home-manager/fish
+    ../../home-manager/nvim
+    ../../home-manager/tmux
 
-    ../../config/wallpapers
+    ../../home-manager/wallpapers
 
-    ../../config/sxhkd
-    ../../config/bspwm
-    ../../config/eww/angband
+    ../../home-manager/sxhkd
+    ../../home-manager/bspwm
+    ../../home-manager/eww/angband
 
-    ../../config/qutebrowser
+    ../../home-manager/qutebrowser
 
-    ../../config/feh
-    ../../config/st
-    ../../config/cursor
-    ../../config/rofi
-    ../../config/screenshot/flameshot
-    ../../config/dunst
+    ../../home-manager/feh
+    ../../home-manager/st
+    ../../home-manager/cursor
+    ../../home-manager/rofi
+    ../../home-manager/screenshot/flameshot
+    ../../home-manager/dunst
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [

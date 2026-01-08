@@ -16,40 +16,40 @@
   };
 
   imports = [
-    ../../config/git
-    ../../config/development
-    ../../config/fish
-    ../../config/nvim
-    ../../config/tmux
+    ../../home-manager/git
+    ../../home-manager/development
+    ../../home-manager/fish
+    ../../home-manager/nvim
+    ../../home-manager/tmux
 
     #
     # build is taking heck of long time
     # need to eval why
     #
-    ../../config/manufact
+    ../../home-manager/manufact
 
-    ../../config/wallpapers
+    ../../home-manager/wallpapers
 
-    ../../config/sxhkd
-    ../../config/bspwm
-    ../../config/eww/bree
+    ../../home-manager/sxhkd
+    ../../home-manager/bspwm
+    ../../home-manager/eww/bree
 
-    ../../config/qutebrowser
-    ../../config/chromium
-    ../../config/thunderbird
+    ../../home-manager/qutebrowser
+    ../../home-manager/chromium
+    ../../home-manager/thunderbird
 
-    ../../games/openttd
+    ../../home-manager/games/openttd
 
-    ../../config/feh
-    ../../config/st
-    ../../config/cursor
-    ../../config/rofi
-    ../../config/screenshot/flameshot
-    ../../config/dunst
+    ../../home-manager/feh
+    ../../home-manager/st
+    ../../home-manager/cursor
+    ../../home-manager/rofi
+    ../../home-manager/screenshot/flameshot
+    ../../home-manager/dunst
 
-    ../../config/calibre
-    ../../config/nicotine
-    ../../config/picard
+    ../../home-manager/calibre
+    ../../home-manager/nicotine
+    ../../home-manager/picard
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
