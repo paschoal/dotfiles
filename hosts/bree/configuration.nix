@@ -15,9 +15,8 @@
     ../../games
     ../../graphical/bspwm
 
-    ../../services/beszel-agent
-
-    ../../virtualisation/podman
+    ../../nixos/services/beszel-agent
+    ../../nixos/virtualisation/podman
   ];
 
   beszel-config.environmentFile = config.sops.templates."bree/beszel-agent.env".path;

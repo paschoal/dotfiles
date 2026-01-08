@@ -4,14 +4,13 @@
   imports =
     [
       <home-manager/nixos>
-      <agenix/modules/age.nix>
 
       ./hardware.nix
       ./network.nix
 
       ../../common
-      ../../services/openssh
-      ../../services/klipper
+      ../../nixos/services/openssh
+      ../../nixos/services/klipper
     ];
 
   boot.loader.grub.enable = false;
@@ -32,10 +31,6 @@
       wheelNeedsPassword = false;
     };
   };
-
-  environment.systemPackages = [
-    (pkgs.callPackage <agenix/pkgs/agenix.nix> {})
-  ];
 
   system.stateVersion = "24.05";
 }
