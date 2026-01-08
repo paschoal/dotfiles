@@ -10,8 +10,8 @@
     ./network.nix
 
     ../../common
-    ../../graphical/bspwm
 
+    ../../nixos/graphical/bspwm
     ../../nixos/services/beszel-agent
     ../../nixos/virtualisation/podman
   ];

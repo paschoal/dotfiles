@@ -13,8 +13,8 @@
     ../../secrets
     ../../common
     ../../games
-    ../../graphical/bspwm
 
+    ../../nixos/graphical/bspwm
     ../../nixos/services/beszel-agent
     ../../nixos/virtualisation/podman
   ];
