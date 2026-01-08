@@ -72,14 +72,6 @@
         reverse_proxy prowlarr-http.default.svc.cluster.local
       }
 
-      nzbget.paschoal.me {
-        tls {
-          dns route53 {
-          }
-        }
-        reverse_proxy nzbget-http.default.svc.cluster.local
-      }
-
       sab.paschoal.me {
         tls {
           dns route53 {
