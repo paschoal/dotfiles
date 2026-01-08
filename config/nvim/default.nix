@@ -61,6 +61,8 @@
 
       set undodir="~/.vim/undo"
       set undofile
+
+      autocmd Filetype markdown setlocal wrap textwidth=100
     '';
   };
 }
