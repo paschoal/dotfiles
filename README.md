@@ -56,7 +56,6 @@ dotfiles
 |  |  |- files/
 ```
 ```
-dotfiles
 |- hosts/
 |  |- angband/
 |  |- bree/
@@ -65,7 +64,6 @@ dotfiles
 |  |- ettendales/
 ```
 ```
-dotfiles
 |- hosts/
 |  |- angband/
 |  |- bree/
@@ -74,7 +72,6 @@ dotfiles
 |  |- ettendales/
 ```
 ```
-dotfiles
 |- k8s/
 |  |- bazarr/
 |  |- beszel/
@@ -92,7 +89,6 @@ dotfiles
 |  |- vaultwarden/
 ```
 ```
-dotfiles
 |- nixos/
 |  |- common/
 |  |  |- fonts/
