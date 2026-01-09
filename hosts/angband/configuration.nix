@@ -1,0 +1,42 @@
+{ pkgs, ... }:
+
+{
+  imports = [
+    <home-manager/nixos>
+
+    ./hardware.nix
+    ./audio.nix
+    ./network.nix
+
+    ../../nixos/common
+    ../../nixos/graphical/bspwm
+    ../../nixos/services/beszel-agent
+    ../../nixos/virtualisation/podman
+  ];
+
+  nix.settings.experimental-features = [ "nix-command" ];
+
+  programs.dconf.enable = true;
+
+  users.users.paschoal = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "audio" "input" ];
+    shell = pkgs.fish;
+    createHome = true;
+    home = "/data/home";
+  };
+
+  security = {
+    rtkit.enable = true;
+
+    sudo = {
+      wheelNeedsPassword = false;
+    };
+  };
+
+  services = {
+    upower.enable = true;
+  };
+
+  system.stateVersion = "24.05";
+}

@@ -1,6 +1,0 @@
-{ config, ... }:
-{
-  imports = [
-    ./pyfa
-  ];
-}
