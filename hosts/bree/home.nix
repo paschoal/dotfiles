@@ -15,6 +15,21 @@
     bspwm = true;
   };
 
+  eww = {
+    enable = true;
+    width = 2536;
+    modules = {
+      date = true;
+      clock = true;
+      bspwm = true;
+      volume = true;
+      wireplumber = true;
+    };
+    left = [ "wireplumber" "volume" ];
+    center = [ "bspwm" ];
+    right = [ "date" "clock" ];
+  };
+
   imports = [
     ../../home-manager/git
     ../../home-manager/development
@@ -32,7 +47,7 @@
 
     ../../home-manager/sxhkd
     ../../home-manager/bspwm
-    ../../home-manager/eww/bree
+    ../../home-manager/eww
 
     ../../home-manager/qutebrowser
     ../../home-manager/chromium

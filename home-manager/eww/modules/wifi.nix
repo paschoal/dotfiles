@@ -1,6 +1,6 @@
-{ ... }:
+{ config, lib, ... }:
 {
-  xdg.configFile = {
+  xdg.configFile = lib.mkIf config.eww.modules.wifi {
     "eww/wifi.scss".text = ''
       .wifi {
         background: #FF8400;

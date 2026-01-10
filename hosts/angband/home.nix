@@ -13,6 +13,23 @@
   qutebrowser-config.small-screen = true;
   st-config.small-screen = true;
 
+  eww = {
+    enable = true;
+    width = 1900;
+    modules = {
+      date = true;
+      clock = true;
+      bspwm = true;
+      volume = true;
+      wireplumber = true;
+      battery = true;
+      wifi = true;
+    };
+    left = [ "wireplumber" "volume" "wifi" ];
+    center = [ "bspwm" ];
+    right = [ "battery" "date" "clock" ];
+  };
+
   imports = [
     ../../home-manager/git
     ../../home-manager/development
@@ -24,7 +41,7 @@
 
     ../../home-manager/sxhkd
     ../../home-manager/bspwm
-    ../../home-manager/eww/angband
+    ../../home-manager/eww
 
     ../../home-manager/qutebrowser
 

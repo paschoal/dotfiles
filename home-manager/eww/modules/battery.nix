@@ -1,7 +1,6 @@
-{ ... }:
-
+{ config, lib, ... }:
 {
-  xdg.configFile = {
+  xdg.configFile = lib.mkIf config.eww.modules.battery {
     "eww/battery.scss".text = ''
       .battery {
         margin-left: $between;

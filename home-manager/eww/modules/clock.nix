@@ -1,6 +1,6 @@
-{ ... }:
+{ config, lib, ... }:
 {
-  xdg.configFile = {
+  xdg.configFile = lib.mkIf config.eww.modules.clock {
     "eww/clock.scss".text = ''
       .clock {
         margin-left: $between;

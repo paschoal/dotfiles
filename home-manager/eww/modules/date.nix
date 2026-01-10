@@ -1,6 +1,6 @@
-{ ... }:
+{ config, lib, ... }:
 {
-  xdg.configFile = {
+  xdg.configFile = lib.mkIf config.eww.modules.date {
     "eww/date.scss".text = ''
       .date {
         margin-left: $between;
