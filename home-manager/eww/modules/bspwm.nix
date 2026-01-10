@@ -1,9 +1,7 @@
-{ pkgs, ... }:
-
+{ config, lib, ... }:
 {
-  home.packages = with pkgs; [ eww jq ];
-  xdg.configFile = {
-    "eww/workspaces.scss".text = ''
+  xdg.configFile = lib.mkIf config.eww.modules.bspwm {
+    "eww/bspwm.scss".text = ''
       .workspaces {
         border-radius: $radius;
         background: $background;
@@ -15,9 +13,9 @@
           color: $foreground;
           .empty {
             opacity: .2;
-          }
-        }
-      }
+          };
+        };
+      };
     '';
 
     "eww/workspaces.sh" = {
@@ -43,9 +41,9 @@
       '';
     };
 
-    "eww/workspaces.yuck".text = ''
+    "eww/bspwm.yuck".text = ''
       (deflisten spaces :initial `[{"id":1,"active":false,"occupied":false},{"id":1,"active":false,"occupied":false},{"id":1,"active":false,"occupied":false},{"id":1,"active":false,"occupied":false},{"id":1,"active":false,"occupied":false}]` `./workspaces.sh`)
-      (defwidget workspaces []
+      (defwidget bspwm []
         (eventbox
           :onscroll "bspc desktop -f next"
           (box

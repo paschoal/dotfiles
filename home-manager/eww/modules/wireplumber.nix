@@ -1,6 +1,6 @@
-{ ... }:
+{ config, lib, ... }:
 {
-  xdg.configFile = {
+  xdg.configFile = lib.mkIf config.eww.modules.wireplumber {
     "eww/wireplumber.scss".text = ''
       .device {
         margin-left: $between;

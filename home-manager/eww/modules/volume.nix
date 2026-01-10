@@ -1,7 +1,6 @@
-{ ... }:
-
+{ config, lib, ... }:
 {
-  xdg.configFile = {
+  xdg.configFile = lib.mkIf config.eww.modules.volume {
     "eww/volume.scss".text = ''
         .volume {
           margin-left: $between;
