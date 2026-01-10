@@ -19,6 +19,16 @@ in {
         type = lib.types.bool;
         description = "Enable eww configuration";
       };
+      width = lib.mkOption {
+        default = 1900;
+        type = lib.types.numbers.positive;
+        description = "Width in pixels of the main bar";
+      };
+      height = lib.mkOption {
+        default = 30;
+        type = lib.types.numbers.positive;
+        description = "Height in pixels of the main bar";
+      };
       modules = {
         battery = lib.mkOption { default = false; type = lib.types.bool; };
         bspwm = lib.mkOption { default = false; type = lib.types.bool; };
@@ -131,12 +141,12 @@ in {
           :class "bar"
           :monitor 0
           :exclusive "true"
-          :reserve (struts :distance "35px" :size "top")
+          :reserve (struts :distance "${builtins.toString (cfg.height + 5)}px" :size "top")
           :geometry
             (geometry
               :y "10px"
-              :width "2536px"
-              :height "30px"
+              :width "${builtins.toString cfg.width}px"
+              :height "${builtins.toString cfg.height}px"
               :anchor "top center"
             )
           (main)

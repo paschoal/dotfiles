@@ -17,6 +17,7 @@
 
   eww = {
     enable = true;
+    width = 2536;
     modules = {
       date = true;
       clock = true;
