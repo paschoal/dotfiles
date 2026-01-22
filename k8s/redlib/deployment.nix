@@ -14,12 +14,6 @@
             name = "redlib";
             image = "quay.io/redlib/redlib:latest";
             imagePullPolicy = "IfNotPresent";
-            # resources = {
-            #   limits.memory = "";
-            #   limits.cpu = "";
-            #   requests.memory = "";
-            #   request.cpu = "";
-            # };
             ports = [
               { name = "redlib-http"; containerPort = 8080; protocol = "TCP"; }
             ];

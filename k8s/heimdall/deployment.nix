@@ -17,12 +17,6 @@
             name = "heimdall";
             image = "lscr.io/linuxserver/heimdall:latest";
             imagePullPolicy = "IfNotPresent";
-            # resources = {
-            #   limits.memory = "";
-            #   limits.cpu = "";
-            #   requests.memory = "";
-            #   request.cpu = "";
-            # };
             envFrom = [
               { configMapRef.name = "heimdall-env"; }
             ];

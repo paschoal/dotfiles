@@ -17,12 +17,6 @@
             name = "jellyseerr";
             image = "ghcr.io/fallenbagel/jellyseerr:latest";
             imagePullPolicy = "IfNotPresent";
-            # resources = {
-            #   limits.memory = "";
-            #   limits.cpu = "";
-            #   requests.memory = "";
-            #   request.cpu = "";
-            # };
             envFrom = [
               { configMapRef.name = "jellyseerr-env"; }
             ];
