@@ -96,6 +96,38 @@
         reverse_proxy bazarr-http.default.svc.cluster.local
       }
 
+      redlib.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy redlib-http.default.svc.cluster.local
+      }
+
+      heimdall.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy heimdall-http.default.svc.cluster.local
+      }
+
+      jellyseerr.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy jellyseerr-http.default.svc.cluster.local
+      }
+
+      budget.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy ab-http.default.svc.cluster.local
+      }
+
       :80 {
         respond "pong"
       }
