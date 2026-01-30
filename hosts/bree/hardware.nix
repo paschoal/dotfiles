@@ -17,13 +17,6 @@
   ];
 
   #
-  # power
-  #
-  environment.extraInit = ''
-    xset s off -dpms
-  '';
-
-  #
   # raid
   #
   environment.systemPackages = [
@@ -34,7 +27,7 @@
   # gpu
   #
   hardware.graphics.enable = true;
-  services.xserver.videoDrivers = ["amdgpu"];
+  services.xserver.videoDrivers = [ "modesetting" "amdgpu" ];
   boot.initrd.kernelModules = ["amdgpu"];
   boot.kernelParams = [
     "video=DP-3:2560x1440@150"
