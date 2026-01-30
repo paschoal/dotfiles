@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  xorg-config.amd = true;
-
   imports = [
     <home-manager/nixos>
 
@@ -13,7 +11,9 @@
     ../../secrets
 
     ../../nixos/common
-    ../../nixos/graphical/bspwm
+
+    ../../nixos/graphical/niri
+
     ../../nixos/games
     ../../nixos/services/beszel-agent
     ../../nixos/virtualisation/podman
@@ -33,12 +33,13 @@
   programs = {
     dconf.enable = true;
     nix-index.enable = true;
+    ydotool.enable = true;
   };
 
   users.users.paschoal = {
     isNormalUser = true;
     group = "users";
-    extraGroups = [ "wheel" "input" ];
+    extraGroups = [ "wheel" "input" "ydotool" ];
     shell = pkgs.fish;
     createHome = true;
     home = "/data/home";
