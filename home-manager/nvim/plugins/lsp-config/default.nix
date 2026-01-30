@@ -19,9 +19,19 @@
         plugin = nvim-lspconfig;
         type = "lua";
         config = ''
-          vim.lsp.enable("marksman")
-          vim.lsp.enable("nil_ls")
-          vim.lsp.enable("gopls")
+          local s = {
+            { "marksman" },
+            { "nil_ls" },
+            { "gopls" },
+          }
+
+          for _, lsp in pairs(s) do
+            local name, config = lsp[1], lsp[2]
+            vim.lsp.enable(name)
+            if config then
+              vim.lsp.config(name, config)
+            end
+          end
         '';
       }
 
