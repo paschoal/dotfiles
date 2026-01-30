@@ -65,8 +65,14 @@ in {
           config.set("url.searchengines", {
             "DEFAULT": "https://duckduckgo.com/search?q={}",
             "!q": "https://google.ca/search?hl=eng&udm=14&q={}",
+            "!r": "https://redlib.paschoal.me/r/{}",
           })
-          config.set("url.start_pages", "https://duckduckgo.com")
+          config.set("url.start_pages", "https://heimdall.paschoal.me")
+
+          #
+          # too many crashes, is this an work-around?
+          #
+          config.set("qt.workarounds.disable_accessibility", "always")
 
           import dracula.draw
           dracula.draw.blood(c, { "spacing": { "vertical": 6, "horizontal": 8 }})
