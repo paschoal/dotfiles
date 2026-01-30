@@ -19,6 +19,7 @@
     extraPackages = with pkgs; [
       fd
       ripgrep
+      go
     ];
 
     vimAlias = true;
