@@ -5,11 +5,14 @@
   home.homeDirectory = "/data/home";
   home.sessionPath = [ "/data/home/bin" ];
 
+  wallpaper.image = "/data/home/.wallpaper/landscape.jpg";
+
   imports = [
     ../../home-manager/git
     ../../home-manager/development
     ../../home-manager/fish
     ../../home-manager/nvim
+    ../../home-manager/tmux
 
     #
     # build is taking heck of long time
@@ -18,6 +21,8 @@
     ../../home-manager/manufact
 
     ../../home-manager/niri
+    ../../home-manager/wallpapers
+    ../../home-manager/swaybg
     ../../home-manager/fuzzel
     ../../home-manager/fuzzel-password-manager
     ../../home-manager/foot
@@ -51,6 +56,7 @@
     unzip
     winbox4
     imv
+    irssi
   ];
 
   home.stateVersion = "24.05";
@@ -74,7 +80,15 @@
         "x-scheme-handler/https" = [ "org.qutebrowser.qutebrowser.desktop" ];
       };
     };
-    portal.config.common.default = [ "gtk" ];
+    portal.config.common = {
+      default = [ "gtk" ];
+      "org.freedesktop.impl.portal.ScreenCast" = "gtk";
+      #
+      # not sure of benefits for now.
+      #
+      # "org.freedesktop.impl.portal.Screenshot" = "gtk";
+      # "org.freedesktop.impl.portal.RemoteDesktop" = "gtk";
+    };
   };
 
   news.display = "silent";
