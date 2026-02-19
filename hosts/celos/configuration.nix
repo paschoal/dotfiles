@@ -54,5 +54,7 @@
     };
   };
 
+  environment.systemPackages = [ pkgs.sshfs ];
+
   system.stateVersion = "25.05";
 }
