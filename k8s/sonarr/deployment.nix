@@ -16,6 +16,7 @@
         volumes = [
           { name = "media"; persistentVolumeClaim.claimName = "media"; }
           { name = "sonarr-config"; persistentVolumeClaim.claimName = "sonarr-config"; }
+          { name = "seedbox"; hostPath = { path = "/storage/seedbox"; type = "Directory"; }; }
         ];
         containers = [
           {
@@ -31,6 +32,7 @@
             volumeMounts = [
               { name = "sonarr-config"; mountPath = "/config"; }
               { name = "media"; mountPath = "/media"; }
+              { name = "seedbox"; mountPath = "/seedbox"; }
             ];
           }
         ];
