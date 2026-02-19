@@ -12,17 +12,17 @@
     template = {
       metadata.labels.app = "jellyfin";
       spec = {
-        securityContext = {
-          fsGroup = 1000;
-        };
         volumes = [
           { name = "media"; persistentVolumeClaim.claimName = "media"; }
           { name = "jellyfin-config"; persistentVolumeClaim.claimName = "jellyfin-config"; }
+          { name = "jellyfin-cache"; persistentVolumeClaim.claimName = "jellyfin-cache"; }
+          { name = "dri-0"; hostPath = { path = "/dev/dri/card0"; }; }
+          { name = "dri-d128"; hostPath = { path = "/dev/dri/renderD128"; }; }
         ];
         containers = [
           {
             name = "jellyfin";
-            image = "lscr.io/linuxserver/jellyfin:latest";
+            image = "jellyfin/jellyfin:latest";
             imagePullPolicy = "IfNotPresent";
             securityContext = {
               privileged = true;
@@ -34,6 +34,9 @@
             volumeMounts = [
               { name = "media"; mountPath = "/media"; }
               { name = "jellyfin-config"; mountPath = "/config"; }
+              { name = "jellyfin-cache"; mountPath = "/cache"; }
+              { name = "dri-0"; mountPath = "/dev/dri/card0"; }
+              { name = "dri-d128"; mountPath = "/dev/dri/renderD128"; }
             ];
           }
         ];
