@@ -15,6 +15,10 @@
   networking = {
     hostName = "bree";
     useDHCP = lib.mkDefault false;
-    firewall.enable = true;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 27036 27037 ];
+      allowedUDPPorts = [ 27031 27036 ];
+    };
   };
 }
