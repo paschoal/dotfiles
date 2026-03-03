@@ -18,7 +18,7 @@
         }
 
         layout {
-          gaps 16
+          gaps 0
 
           focus-ring {
             off
@@ -28,6 +28,13 @@
             off
           }
         }
+
+        window-rule {
+          match is-active=false
+          opacity 0.8
+        }
+
+        prefer-no-csd
 
         screenshot-path "~/screenshots/%Y%m%d%H%M%S.png"
 
