@@ -10,14 +10,6 @@
           Enable open-webui
         '';
       };
-
-      with-goose-cli = lib.mkOption {
-        default = false;
-        type = lib.types.bool;
-        description = ''
-          Enable goose-cli
-        '';
-      };
     };
   };
 
@@ -26,7 +18,7 @@
       {
         ollama = {
           enable = true;
-          acceleration = "rocm";
+          package = pkgs.ollama-rocm;
         };
       }
 
@@ -39,11 +31,6 @@
 
     environment.systemPackages = lib.mkMerge [
       []
-      (
-        lib.mkIf config.ollama-config.with-goose-cli [
-          pkgs.goose-cli
-        ]
-      )
     ];
 
     systemd.services = lib.mkMerge [
