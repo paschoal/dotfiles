@@ -14,6 +14,7 @@
 
     ../../nixos/hardware/radeon
     ../../nixos/hardware/raid/bree
+    ../../nixos/hardware/betaflight
   ];
 
   #
