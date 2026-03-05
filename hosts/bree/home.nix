@@ -36,6 +36,11 @@
     ../../home-manager/calibre
     ../../home-manager/nicotine
     ../../home-manager/picard
+    #
+    # depends on hardware/betaflight
+    # for detection / firmware flash
+    #
+    ../../home-manager/betaflight
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
