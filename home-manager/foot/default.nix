@@ -37,7 +37,7 @@
       # github.com/dracula/foot.git
       #
 
-      [colors]
+      [colors-dark]
       background=1b1d20
       foreground=f8f8f2
       regular0=21222c  # black
