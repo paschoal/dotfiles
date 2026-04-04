@@ -58,11 +58,10 @@
   #
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  #
-  # virtualisation
-  #
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [
+    "kvm-amd"
+    "ntsync"
+  ];
 
   #
   # using latest kernel instead of LTS
