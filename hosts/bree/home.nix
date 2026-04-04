@@ -49,6 +49,7 @@
     "terraform"
     "apple_cursor"
     "winbox"
+    "github-copilot-cli"
   ];
 
   home.packages = with pkgs; [

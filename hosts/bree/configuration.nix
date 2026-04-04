@@ -15,18 +15,14 @@
     ../../nixos/graphical/niri
 
     ../../nixos/games
-    ../../nixos/services/beszel-agent
     ../../nixos/virtualisation/podman
   ];
-
-  beszel-config.environmentFile = config.sops.templates."bree/beszel-agent.env".path;
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam-unwrapped"
     "steam"
     "steam-original"
     "steam-run"
-    "open-webui"
   ];
 
   nix.settings.experimental-features = [ "nix-command" ];
