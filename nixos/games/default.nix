@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     protonup-ng
-    wineWowPackages.staging
+    wine
     winetricks
     bottles
     mangohud
