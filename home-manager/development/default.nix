@@ -29,6 +29,8 @@
       }
     )
 
+    github-copilot-cli
+    opencode
     dia
   ];
 
