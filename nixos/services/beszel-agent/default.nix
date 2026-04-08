@@ -26,8 +26,8 @@
       };
 
       skipSystemd = lib.mkOption {
-        default = "false";
-        type = lib.types.str;
+        default = false;
+        type = lib.types.bool;
         description = ''
           Disable Systemd monitoring
         '';
