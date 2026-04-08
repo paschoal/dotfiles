@@ -8,11 +8,7 @@
   spec = {
     replicas = 1;
     selector.matchLabels.app = "pihole";
-    strategy.type = "RollingUpdate";
-    strategy.rollingUpdate = {
-      maxSurge = 0;
-      maxUnavailable = 1;
-    };
+    strategy.type = "Recreate";
     template = {
       metadata.labels.app = "pihole";
       spec = {
