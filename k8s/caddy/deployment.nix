@@ -16,7 +16,7 @@
         containers = [
           {
             name = "caddy";
-            image = "ghcr.io/paschoal/caddy-route53:main";
+            image = "ghcr.io/paschoal/caddy-route53:sha-eb9934d";
             imagePullPolicy = "IfNotPresent";
             resources = {
               limits.memory = "512Mi";
