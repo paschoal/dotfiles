@@ -1,9 +1,9 @@
 { config, ... }:
 let
-  commit = "61b39c7";
+  commit = "3e0d543";
   tar = builtins.fetchTarball {
     url = "https://github.com/Mic92/sops-nix/archive/${commit}.tar.gz";
-    sha256 = "0i6rncwj4xa6qzysrfrp0cg1gmb1v44xgarrzj8sr3ns2z3h0zx6";
+    sha256 = "0s06zk9psh0v27ggvw09c74dqgz7n72k4ddj7vzafx6jh2bfxi6f";
   };
 
 in {
@@ -19,15 +19,9 @@ in {
   sops.age.generateKey = true;
 
   sops.secrets."beszel/key" = {};
-  sops.secrets."beszel/bree/token" = {};
   sops.secrets."beszel/drun/token" = {};
   sops.secrets."beszel/celos/token" = {};
   sops.secrets."k3s/celos/token" = {};
-
-  sops.templates."bree/beszel-agent.env".content = ''
-    KEY=${config.sops.placeholder."beszel/key"}
-    TOKEN=${config.sops.placeholder."beszel/bree/token"}
-  '';
 
   sops.templates."drun/beszel-agent.env".content = ''
     KEY=${config.sops.placeholder."beszel/key"}
