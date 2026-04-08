@@ -27,7 +27,7 @@
   beszel-config = {
     extraFileSystems = "sdd1__sata_disk1,/storage";
     skipGPU = "true";
-    skipSystemd = "true";
+    skipSystemd = true;
     environmentFile = config.sops.templates."celos/beszel-agent.env".path;
   };
 

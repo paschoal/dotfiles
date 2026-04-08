@@ -23,7 +23,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelModules = [ "kvm-amd" ];
+    kernelModules = [ "kvm-amd" "dm-crypt" ];
     kernelPackages = pkgs.linuxPackages_latest;
   };
   users.users.paschoal.extraGroups = [ "kvm" ];
