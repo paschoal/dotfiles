@@ -1,13 +1,11 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  programs.foot = {
-    enable = true;
-  };
+  programs.foot.enable = true;
 
   xdg.configFile."foot/foot.ini" = {
     enable = true;
     text = ''
-      font=Iosevka:pixelsize=16:antialias=true:autohint=true;
+      font=Monoid:pixelsize=14:antialias=true:autohint=true;
       term=xterm-256color
       pad=16x16
       initial-window-mode=windowed
