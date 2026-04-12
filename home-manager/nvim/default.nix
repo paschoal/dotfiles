@@ -12,6 +12,7 @@
     ./plugins/nvim-notify
     ./plugins/lsp-config
     ./plugins/vim-tmux-navigator
+    ./plugins/tiny-inline-diagnostic-nvim
   ];
 
   programs.neovim = {
