@@ -13,6 +13,7 @@
     ./plugins/lsp-config
     ./plugins/vim-tmux-navigator
     ./plugins/tiny-inline-diagnostic-nvim
+    ./plugins/vim-go
   ];
 
   programs.neovim = {
@@ -56,6 +57,7 @@
       set expandtab
       set autoindent
       set shiftwidth=2
+      set tabstop=2
       set softtabstop=2
 
       set termguicolors
