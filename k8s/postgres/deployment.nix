@@ -9,7 +9,7 @@
       metadata.labels.app = "postgres";
       spec = {
         volumes = [
-          { name = "postgres-data"; persistentVolumeClaim.claimName = "postgres-volume"; }
+          { name = "postgres-data"; persistentVolumeClaim.claimName = "postgres"; }
         ];
         containers = [
           {
