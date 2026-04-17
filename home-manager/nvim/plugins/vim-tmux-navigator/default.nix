@@ -4,6 +4,7 @@
     plugins = with pkgs.vimPlugins; [
       {
         plugin = vim-tmux-navigator;
+        type = "viml";
         config = ''
           let g:tmux_navigator_no_mappings = 1
           nnoremap <silent> <C-h> :<C-U>TmuxNavigateLeft<cr>

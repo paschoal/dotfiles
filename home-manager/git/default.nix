@@ -15,6 +15,7 @@
 
   config.programs.git = {
     enable = true;
+    signing.format = "openpgp";
     settings = lib.mkMerge [
       {
         user = {
