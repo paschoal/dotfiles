@@ -22,11 +22,10 @@
         extraConfig = ''
           set -g @dracula-plugins "git ram-usage cpu-usage"
           set -g @dracula-show-empty-plugins false
-          set -g @dracula-transparent-powerline-bg true
           set -g @dracula-show-left-icon "#h | #S"
-          set -g @dracula-show-powerline true
-          set -g @dracula-show-left-sep 
-          set -g @dracula-show-right-sep 
+          set -g @dracula-show-powerline false
+          set -g @dracula-show-edge-icons false
+          set -g @dracula-transparent-powerline-bg true
         '';
       }
     ];
