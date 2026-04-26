@@ -3,11 +3,9 @@
   fonts = {
     packages = with pkgs; [
       iosevka
-      monoid
       noto-fonts
       nerd-fonts.noto
       nerd-fonts.iosevka
-      nerd-fonts.monoid
     ];
 
     enableDefaultPackages = true;
@@ -18,10 +16,10 @@
       defaultFonts = {
         serif = [ "Noto Serif" ];
         sansSerif = [ "Noto Sans" ];
-        monospace = [ "Monoid" ];
+        monospace = [ "Iosevka" ];
       };
     };
   };
 
-  console.font = "Lat2-Terminus16";
+  console.font = "${pkgs.kbd}/share/consolefonts/Lat2-Terminus16.psfu.gz";
 }
