@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [
@@ -9,13 +9,9 @@
     ./network.nix
 
     ../../secrets
-
     ../../nixos/common
-
     ../../nixos/graphical/niri
-
     ../../nixos/games
-    ../../nixos/virtualisation/podman
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -49,8 +45,6 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ yubikey-manager ];
-
   services = {
     #
     # d-bus interface to query and manipulate
@@ -69,5 +63,5 @@
     upower.enable = true;
   };
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.11";
 }
