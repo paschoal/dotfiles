@@ -9,19 +9,10 @@
     #
     # includes common/cpu/amd, common/pc/ssd and common/pc
     #
-    <nixos-hardware/msi/b550-tomahawk>
     <nixos-hardware/common/cpu/amd/pstate.nix>
 
     ../../nixos/hardware/radeon
-    ../../nixos/hardware/raid/bree
     ../../nixos/hardware/betaflight
-  ];
-
-  #
-  # raid
-  #
-  environment.systemPackages = [
-    pkgs.mdadm
   ];
 
   #
@@ -30,10 +21,9 @@
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "modesetting" "amdgpu" ];
   boot.initrd.kernelModules = ["amdgpu"];
-  boot.kernelParams = [
-    "video=DP-3:2560x1440@150"
-    "raid0.default_layout=2"
-  ];
+  #boot.kernelParams = [
+  #  "video=DP-3:2560x1440@150"
+  #];
 
   #
   # boot kernel params for amd
@@ -72,7 +62,7 @@
   # add aarch64 to support building remotely to
   # raspberry pis.
   #
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   users.users.paschoal = {
     extraGroups = [ "kvm" ];
   };
@@ -91,28 +81,28 @@
     options = [ "fmask=0077" "dmask=0077" "defaults" ];
   };
 
-  swapDevices = [
-    { device = "/dev/disk/by-label/swap"; }
-  ];
+  fileSystems."/data" = {
+    device = "/dev/disk/by-label/data";
+    fsType = "ext4";
+  };
+
+  swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
 
   #
   # monitor configuration
   #
-  services.xserver = {
-    xrandrHeads = [
-      {
-        output = "DisplayPort-2";
-        primary = true;
-        monitorConfig = ''
-          Modeline "2560x1440@150" 612.61 2560 2568 2600 2640 1440 1443 1453 1547 -hsync -vsync
-          Option "PreferredMode" "2560x1440@150"
-        '';
-      }
-    ];
-  };
+  # services.xserver = {
+  #   xrandrHeads = [
+  #     {
+  #       output = "DisplayPort-2";
+  #       primary = true;
+  #       monitorConfig = ''
+  #         Modeline "2560x1440@150" 612.61 2560 2568 2600 2640 1440 1443 1453 1547 -hsync -vsync
+  #         Option "PreferredMode" "2560x1440@150"
+  #       '';
+  #     }
+  #   ];
+  # };
 
-  #
-  # yubikey
-  #
-  services.udev.packages = [ pkgs.yubikey-personalization ];
+  hardware.bluetooth.enable = true;
 }
