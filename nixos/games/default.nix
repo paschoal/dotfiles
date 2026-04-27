@@ -1,12 +1,20 @@
 { pkgs, ... }:
 
 {
+  nixpkgs.overlays = [
+    (final: prev: {
+      openldap = prev.openldap.overrideAttrs (_: {
+        doCheck = false;
+      });
+    })
+  ];
+
   environment.systemPackages = with pkgs; [
     protonup-ng
     wine
     winetricks
-    bottles
     mangohud
+    lutris
   ];
 
   programs = {
