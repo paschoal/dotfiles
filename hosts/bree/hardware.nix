@@ -91,18 +91,18 @@
   #
   # monitor configuration
   #
-  # services.xserver = {
-  #   xrandrHeads = [
-  #     {
-  #       output = "DisplayPort-2";
-  #       primary = true;
-  #       monitorConfig = ''
-  #         Modeline "2560x1440@150" 612.61 2560 2568 2600 2640 1440 1443 1453 1547 -hsync -vsync
-  #         Option "PreferredMode" "2560x1440@150"
-  #       '';
-  #     }
-  #   ];
-  # };
+  services.xserver = {
+    xrandrHeads = [
+      {
+        output = "DisplayPort-2";
+        primary = true;
+        monitorConfig = ''
+          Modeline "2560x1440@150" 612.61 2560 2568 2600 2640 1440 1443 1453 1547 -hsync -vsync
+          Option "PreferredMode" "2560x1440@150"
+        '';
+      }
+    ];
+  };
 
   hardware.bluetooth.enable = true;
 }
