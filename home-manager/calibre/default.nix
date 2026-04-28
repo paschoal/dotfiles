@@ -1,7 +1,4 @@
-{ ... }:
-
-let
-  stable = import <nixos-stable> {};
-in {
-  home.packages = with stable; [ calibre ];
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [ calibre ];
 }
