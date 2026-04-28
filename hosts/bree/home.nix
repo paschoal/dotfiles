@@ -26,21 +26,23 @@
     ../../home-manager/fuzzel
     ../../home-manager/fuzzel-password-manager
     ../../home-manager/foot
+    ../../home-manager/waybar
 
     ../../home-manager/qutebrowser
+    ../../home-manager/waybar
     ../../home-manager/chromium
-    ../../home-manager/thunderbird
+    #../../home-manager/thunderbird
 
-    ../../home-manager/games/openttd
+    #../../home-manager/games/openttd
 
-    ../../home-manager/calibre
-    ../../home-manager/nicotine
-    ../../home-manager/picard
+    #../../home-manager/calibre
+    #../../home-manager/nicotine
+    #../../home-manager/picard
     #
     # depends on hardware/betaflight
     # for detection / firmware flash
     #
-    ../../home-manager/betaflight
+    #../../home-manager/betaflight
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
