@@ -5,7 +5,7 @@
   xdg.configFile."foot/foot.ini" = {
     enable = true;
     text = ''
-      font=Iosevka Nerd Font Mono:pixelsize=14:antialias=true:autohint=true;
+      font=Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true;
       term=xterm-256color
       pad=16x16
       initial-window-mode=windowed
