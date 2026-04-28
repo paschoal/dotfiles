@@ -5,6 +5,8 @@
     "niri/config.kdl" = {
       enable = true;
       text = ''
+        spawn-at-startup "waybar"
+
         output "DP-3" {
           mode "2560x1440@150.000"
         }

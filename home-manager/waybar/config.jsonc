@@ -1,0 +1,17 @@
+{
+  "height": 25,
+  "spacing": 0,
+  "modules-left":[],
+  "modules-center": [],
+  "modules-right":[
+    "tray",
+    "clock"
+  ],
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  }
+}
