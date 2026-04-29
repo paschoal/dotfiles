@@ -12,6 +12,7 @@
     ../../nixos/common
     ../../nixos/graphical/niri
     ../../nixos/games
+    ../../nixos/virtualisation/docker
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
