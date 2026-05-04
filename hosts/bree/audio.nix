@@ -5,6 +5,7 @@
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
+    wireplumber.enable = true;
   };
 
   users.users.paschoal = {
