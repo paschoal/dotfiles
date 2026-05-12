@@ -25,9 +25,15 @@
       battery = true;
       wifi = true;
     };
-    left = [ "wireplumber" "volume" "wifi" ];
+    left = [ ];
     center = [ "bspwm" ];
     right = [ "battery" "date" "clock" ];
+  };
+
+  development = {
+    helm.enable = true;
+    gcp.enable = true;
+    k8s.enable = true;
   };
 
   imports = [
