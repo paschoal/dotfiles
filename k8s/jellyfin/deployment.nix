@@ -13,7 +13,7 @@
       metadata.labels.app = "jellyfin";
       spec = {
         volumes = [
-          { name = "media"; persistentVolumeClaim.claimName = "media"; }
+          { name = "media"; hostPath = { path = "/storage/media"; }; }
           { name = "jellyfin-config"; persistentVolumeClaim.claimName = "jellyfin-config"; }
           { name = "jellyfin-cache"; persistentVolumeClaim.claimName = "jellyfin-cache"; }
           { name = "dri-0"; hostPath = { path = "/dev/dri/card0"; }; }
