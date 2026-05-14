@@ -14,6 +14,10 @@
 
   networking = {
     hostName = "bree";
+    hosts = {
+      "192.168.2.10" = [ "drun" ];
+      "192.168.2.20" = [ "celos" ];
+    };
     useDHCP = lib.mkDefault false;
     firewall = {
       enable = true;
