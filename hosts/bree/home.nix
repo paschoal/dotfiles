@@ -7,6 +7,15 @@
 
   wallpaper.image = "/data/home/.wallpaper/landscape.jpg";
 
+  development = {
+    helm.enable = true;
+    gcp.enable = true;
+    k8s.enable = true;
+    sql.enable = true;
+    coding-agent.enable = true;
+    sops.enable = true;
+  };
+
   imports = [
     ../../home-manager/git
     ../../home-manager/development
