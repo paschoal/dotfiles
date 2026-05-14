@@ -22,6 +22,8 @@
         shellAliases = {
           cat = "bat";
           feh = "feh --scale-down";
+          sync-nix-drun = "rsync --archive --verbose --delete /data/git/dotfiles drun:/data/git/";
+          sync-nix-celos = "rsync --archive --verbose --delete /data/git/dotfiles celos:/data/git/";
         };
         plugins = [
           { name = "grc"; src = pkgs.fishPlugins.grc.src; }
