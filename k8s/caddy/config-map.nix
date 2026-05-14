@@ -28,18 +28,6 @@
         reverse_proxy vaultwarden-http.default.svc.cluster.local
       }
 
-      tlm.paschoal.me {
-        tls {
-          dns route53 {
-          }
-        }
-        reverse_proxy beszel-http.default.svc.cluster.local {
-          transport http {
-            read_timeout 360s
-          }
-        }
-      }
-
       lh.paschoal.me {
         tls {
           dns route53 {
@@ -64,20 +52,20 @@
         reverse_proxy sonarr-http.default.svc.cluster.local
       }
 
+      radarr.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy radarr-http.default.svc.cluster.local
+      }
+
       prowlarr.paschoal.me {
         tls {
           dns route53 {
           }
         }
         reverse_proxy prowlarr-http.default.svc.cluster.local
-      }
-
-      sab.paschoal.me {
-        tls {
-          dns route53 {
-          }
-        }
-        reverse_proxy sabnzb-http.default.svc.cluster.local
       }
 
       jellyfin.paschoal.me {
@@ -94,14 +82,6 @@
           }
         }
         reverse_proxy bazarr-http.default.svc.cluster.local
-      }
-
-      redlib.paschoal.me {
-        tls {
-          dns route53 {
-          }
-        }
-        reverse_proxy redlib-http.default.svc.cluster.local
       }
 
       heimdall.paschoal.me {
