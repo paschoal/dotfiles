@@ -25,7 +25,12 @@
 
     gamescope = {
       enable = true;
-      capSysNice = true;
+      #
+      # bubblewrap moved aways from setuid, but
+      # gamescope + capsysnice uses setuid, which
+      # breaks steam.
+      #
+      # capSysNice = true;
     };
 
     gamemode = {
