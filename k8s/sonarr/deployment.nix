@@ -14,9 +14,9 @@
       spec = {
         securityContext.fsGroup = 1000;
         volumes = [
-          { name = "media"; persistentVolumeClaim.claimName = "media"; }
           { name = "sonarr-config"; persistentVolumeClaim.claimName = "sonarr-config"; }
           { name = "seedbox"; hostPath = { path = "/storage/seedbox"; type = "Directory"; }; }
+          { name = "tv"; hostPath = { path = "/storage/media/tv"; type = "Directory"; }; }
         ];
         containers = [
           {
@@ -31,7 +31,7 @@
             ];
             volumeMounts = [
               { name = "sonarr-config"; mountPath = "/config"; }
-              { name = "media"; mountPath = "/media"; }
+              { name = "tv"; mountPath = "/tv"; }
               { name = "seedbox"; mountPath = "/seedbox"; }
             ];
           }
