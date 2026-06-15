@@ -44,7 +44,7 @@
 
     #../../home-manager/games/openttd
 
-    #../../home-manager/calibre
+    ../../home-manager/calibre
     #../../home-manager/nicotine
     #../../home-manager/picard
     #
