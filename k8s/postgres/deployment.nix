@@ -14,7 +14,8 @@
         containers = [
           {
             name = "postgres";
-            image = "postgres:18-alpine";
+            image = "tensorchord/vchord-postgres:pg18-v1.1.1";
+            # image = "postgres:18-alpine";
             imagePullPolicy = "IfNotPresent";
             resources = {
               limits.memory = "1Gi";

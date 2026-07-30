@@ -12,6 +12,14 @@
         storage file_system /opt/caddy
       }
 
+      imm.paschoal.me {
+        tls {
+          dns route53 {
+          }
+        }
+        reverse_proxy immich-http.default.svc.cluster.local
+      }
+
       dns.paschoal.me {
         tls {
           dns route53 {
