@@ -36,6 +36,12 @@
           opacity 0.8
         }
 
+        window-rule {
+          match is-floating=true
+          match app-id="steam_app_default"
+          default-floating-position x=10 y=10 relative-to="top-left"
+        }
+
         prefer-no-csd
 
         screenshot-path "~/screenshots/%Y%m%d%H%M%S.png"
