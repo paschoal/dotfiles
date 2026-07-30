@@ -11,7 +11,7 @@
     #
     <nixos-hardware/common/cpu/amd/pstate.nix>
 
-    ../../nixos/hardware/radeon
+    # ../../nixos/hardware/radeon
     ../../nixos/hardware/betaflight
   ];
 
