@@ -22,7 +22,7 @@
     "steam-run"
   ];
 
-  nix.settings.experimental-features = [ "nix-command" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   programs = {
     dconf.enable = true;
     nix-index.enable = true;
