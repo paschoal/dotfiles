@@ -29,6 +29,7 @@ in {
 
   config = {
     home.packages = [ package ];
+    home.sessionVariables = { QTWEBENGINE_FORCE_USE_GBM = 0; };
 
     xdg.configFile = {
       "qutebrowser/dracula" = {
