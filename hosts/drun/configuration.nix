@@ -11,6 +11,7 @@
     ../../nixos/common
     ../../nixos/services/openssh
     ../../nixos/services/k3s
+    ../../nixos/services/tailscale
   ];
 
   k3s-config.role = "server";
