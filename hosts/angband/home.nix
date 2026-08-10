@@ -1,120 +1,63 @@
-{ config, pkgs, lib, ... }:
+{ ... }:
 
 {
-  home.username = "paschoal";
-  home.homeDirectory = "/data/home";
-  home.sessionPath = [ "/data/home/bin" ];
-
-  sxhkd-config = {
-    rofi = true;
-    bspwm = true;
-  };
-
-  qutebrowser-config.small-screen = true;
-  st-config.small-screen = true;
-
-  eww = {
-    enable = true;
-    width = 1900;
-    modules = {
-      date = true;
-      clock = true;
-      bspwm = true;
-      volume = true;
-      wireplumber = true;
-      battery = true;
-      wifi = true;
-    };
-    left = [ ];
-    center = [ "bspwm" ];
-    right = [ "battery" "date" "clock" ];
-  };
-
-  development = {
-    helm.enable = true;
-    gcp.enable = true;
-    k8s.enable = true;
-  };
-
   imports = [
-    ../../home-manager/git
-    ../../home-manager/development
-    ../../home-manager/fish
-    ../../home-manager/nvim
-    ../../home-manager/tmux
-
-    ../../home-manager/wallpapers
-
-    ../../home-manager/sxhkd
-    ../../home-manager/bspwm
-    ../../home-manager/eww
-
-    ../../home-manager/qutebrowser
-
-    ../../home-manager/feh
-    ../../home-manager/st
-    ../../home-manager/cursor
-    ../../home-manager/rofi
-    ../../home-manager/screenshot/flameshot
-    ../../home-manager/dunst
+    <home-manager/nixos>
   ];
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "discord"
-    "awscli2"
-    "terraform"
-    "apple_cursor"
-  ];
+  home-manager.users.paschoal = { pkgs, ... }: {
+    wallpaper.image = "/home/paschoal/.wallpaper/landscape.jpg";
 
-  home.packages = with pkgs; [
-    bat
-    pass
-    discord
-    vlc
-    nemo
-    zathura
-    xclip
-    unzip
-    mons
-  ];
+    imports = [
+      ../../home-manager/git
+      ../../home-manager/fish
+      ../../home-manager/nvim
+      ../../home-manager/tmux
 
-  home.stateVersion = "23.11";
-  home.enableNixpkgsReleaseCheck = false;
+      ../../home-manager/niri
+      ../../home-manager/swaybg
+      ../../home-manager/wallpapers
+      ../../home-manager/fuzzel
+      ../../home-manager/fuzzel-password-manager
+      ../../home-manager/foot
+      ../../home-manager/waybar
+      ../../home-manager/qutebrowser
+    ];
 
-  xdg = {
-    cacheHome = "${config.home.homeDirectory}/.cache";
-    userDirs = {
-      createDirectories = true;
-      desktop = "${config.home.homeDirectory}/desktop";
-      download = "${config.home.homeDirectory}/downloads";
-      pictures = "${config.home.homeDirectory}/screenshots";
-    };
-    mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "applications/pdf" = [ "zathura.desktop" ];
-        "inode/directory" = [ "nemo.desktop" ];
-        "x-scheme-handler/http" = [ "org.qutebrowser.qutebrowser.desktop" ];
-        "x-scheme-handler/https" = [ "org.qutebrowser.qutebrowser.desktop" ];
+    home.packages = with pkgs; [
+      bat
+      vlc
+      zathura
+      imv
+    ];
+
+    xdg = {
+      cacheHome = "/home/paschoal/.cache";
+      userDirs = {
+        createDirectories = true;
+        desktop = "/home/paschoal/desktop";
+        documents = "/home/paschoal/documents";
+        download = "/home/paschoal/downloads";
+        pictures = "/home/paschoal/screenshots";
+      };
+      mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "application/pdf" = [ "zathura.desktop" ];
+          "x-scheme-handler/http" = [ "org.qutebrowser.qutebrowser.desktop" ];
+          "x-scheme-handler/https" = [ "org.qutebrowser.qutebrowser.desktop" ];
+        };
       };
     };
-    portal = {
+
+    home.enableNixpkgsReleaseCheck = false;
+    home.stateVersion = "26.11";
+
+    news.display = "silent";
+    services.home-manager.autoExpire = {
       enable = true;
-      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-      config.default.common = [ "gtk" ];
+      frequency = "weekly";
+      store.cleanup = true;
     };
-  };
-
-  screenshots = {
-    folder = config.xdg.userDirs.pictures;
-  };
-
-  news.display = "silent";
-  programs.home-manager.enable = true;
-
-  services.home-manager.autoExpire = {
-    enable = true;
-    frequency = "weekly";
-    store.cleanup = true;
   };
 }

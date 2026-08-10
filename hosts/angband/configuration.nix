@@ -2,40 +2,40 @@
 
 {
   imports = [
-    <home-manager/nixos>
-
     ./hardware.nix
     ./audio.nix
     ./network.nix
+    ./home.nix
 
     ../../nixos/common
-    ../../nixos/graphical/bspwm
-    ../../nixos/virtualisation/podman
+    ../../nixos/graphical/niri
   ];
 
-  nix.settings.experimental-features = [ "nix-command" ];
-
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   programs.dconf.enable = true;
 
   users.users.paschoal = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "input" ];
+    extraGroups = ["wheel" "networkmanager" "audio" "input"];
     shell = pkgs.fish;
-    createHome = true;
-    home = "/data/home";
   };
 
   security = {
     rtkit.enable = true;
-
     sudo = {
       wheelNeedsPassword = false;
     };
   };
 
   services = {
+    udisks2.enable = true;
     upower.enable = true;
   };
 
-  system.stateVersion = "24.05";
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+  ];
+
+  system.stateVersion = "26.05";
 }
+
