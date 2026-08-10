@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   imports = [
@@ -24,11 +24,18 @@
       ../../home-manager/qutebrowser
     ];
 
+    nixpkgs.config = {
+      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+        "discord"
+      ];
+    };
+
     home.packages = with pkgs; [
       bat
       vlc
       zathura
       imv
+      discord
     ];
 
     xdg = {
