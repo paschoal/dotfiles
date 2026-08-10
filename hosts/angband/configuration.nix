@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  common.localization = "America/Sao_Paulo";
+
   imports = [
     ./hardware.nix
     ./audio.nix
@@ -12,6 +14,7 @@
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   programs.dconf.enable = true;
 
   users.users.paschoal = {
