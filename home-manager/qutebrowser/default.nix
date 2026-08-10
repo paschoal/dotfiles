@@ -24,12 +24,26 @@ in {
           Increase font-size and zoom for small screens
         '';
       };
+
+      disable-gbm = lib.mkOption {
+        default = false;
+        type = lib.types.bool;
+        description = ''
+          Disable force-use GBM for QTWebEngine
+        '';
+      };
     };
   };
 
   config = {
     home.packages = [ package ];
-    home.sessionVariables = { QTWEBENGINE_FORCE_USE_GBM = 0; };
+    home.sessionVariables = lib.mkMerge [
+      (
+        lib.mkIf config.qutebrowser-config.disable-gbm {
+          QTWEBENGINE_FORCE_USE_GBM = 0;
+        }
+      )
+    ];
 
     xdg.configFile = {
       "qutebrowser/dracula" = {
