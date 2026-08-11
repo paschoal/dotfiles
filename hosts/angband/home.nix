@@ -8,6 +8,12 @@
   home-manager.users.paschoal = { pkgs, ... }: {
     wallpaper.image = "/home/paschoal/.wallpaper/landscape.jpg";
 
+    development = {
+      sops.enable = true;
+      gcp.enable = true;
+      k8s.enable = true;
+    };
+
     imports = [
       ../../home-manager/git
       ../../home-manager/fish
@@ -22,6 +28,8 @@
       ../../home-manager/foot
       ../../home-manager/waybar
       ../../home-manager/qutebrowser
+
+      ../../home-manager/development
     ];
 
     nixpkgs.config = {
