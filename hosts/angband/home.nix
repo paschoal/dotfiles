@@ -14,6 +14,8 @@
       k8s.enable = true;
     };
 
+    qutebrowser-config.small-screen = true;
+
     imports = [
       ../../home-manager/git
       ../../home-manager/fish
