@@ -9,6 +9,7 @@
         interactiveShellInit = ''
           set fish_greeting
           fish_config theme choose "dracula"
+          direnv hook fish | source
         '';
         functions = {
           fish_prompt = ''
