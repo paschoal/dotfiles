@@ -91,6 +91,15 @@
 
           Mod+q { close-window; }
           Mod+z { quit; }
+
+          XF86AudioMute { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+          XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
+          XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+"; }
+          XF86AudioMicMute { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+          XF86MonBrightnessDown { spawn "brightnessctl" "set" "5%-"; }
+          XF86MonBrightnessUp { spawn "brightnessctl" "set" "5%+"; }
+          // XF86Display {}
+          // XF86WLAN {}
         }
       '';
     };
