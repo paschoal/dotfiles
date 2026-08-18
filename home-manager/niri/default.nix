@@ -1,14 +1,36 @@
-{ ... }:
+{ config, lib, ... }:
 
 {
+  options = {
+    niri-config = {
+      video = {
+        resolution = lib.mkOption {
+          default = "1920x1080@60";
+          type = lib.types.str;
+        };
+
+        display = lib.mkOption {
+          default = "eDP-1";
+          type = lib.types.str;
+        };
+      };
+
+      screenshot = {
+        path = lib.mkOption {
+          default = "~/screenshots/%Y%m%d%H%M%S.png";
+          type = lib.types.str;
+        };
+      };
+    };
+  };
   config.xdg.configFile = {
     "niri/config.kdl" = {
       enable = true;
       text = ''
         spawn-at-startup "waybar"
 
-        output "DP-3" {
-          mode "2560x1440@150.000"
+        output "${config.niri-config.video.display}" {
+          mode "${config.niri-config.video.resolution}"
         }
 
         input {
@@ -44,7 +66,7 @@
 
         prefer-no-csd
 
-        screenshot-path "~/screenshots/%Y%m%d%H%M%S.png"
+        screenshot-path "${config.niri-config.screenshot.path}"
 
         hotkey-overlay {
           skip-at-startup
