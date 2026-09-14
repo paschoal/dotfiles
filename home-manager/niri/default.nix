@@ -87,6 +87,9 @@
           Mod+Shift+k { move-window-up; }
           Mod+Shift+l { move-column-right; }
 
+          Mod+Control+h { focus-monitor-left; }
+          Mod+Control+l { focus-monitor-right; }
+
           Mod+c { center-column; }
           Mod+Shift+c { center-visible-columns; }
 
@@ -115,11 +118,11 @@
           Mod+z { quit; }
 
           XF86AudioMute { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-          XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
-          XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+"; }
+          XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.5-"; }
+          XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.5+"; }
           XF86AudioMicMute { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-          XF86MonBrightnessDown { spawn "brightnessctl" "set" "5%-"; }
-          XF86MonBrightnessUp { spawn "brightnessctl" "set" "5%+"; }
+          XF86MonBrightnessDown { spawn "brightnessctl" "set" "10%-"; }
+          XF86MonBrightnessUp { spawn "brightnessctl" "set" "10%+"; }
           // XF86Display {}
           // XF86WLAN {}
         }
