@@ -67,6 +67,11 @@
       };
     };
 
+    programs.direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+
     home.enableNixpkgsReleaseCheck = false;
     home.stateVersion = "26.11";
 

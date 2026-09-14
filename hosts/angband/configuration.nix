@@ -17,7 +17,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.dconf.enable = true;
-  services.lorri.enable = true;
 
   users.users.paschoal = {
     isNormalUser = true;
@@ -35,6 +34,7 @@
   services = {
     udisks2.enable = true;
     upower.enable = true;
+    journald.storage = "volatile";
   };
 
   environment.systemPackages = with pkgs; [
