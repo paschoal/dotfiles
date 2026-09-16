@@ -14,7 +14,7 @@
       k8s.enable = true;
     };
 
-    qutebrowser-config.small-screen = true;
+    qutebrowser-config.small-screen = false;
 
     imports = [
       ../../home-manager/git
@@ -23,11 +23,14 @@
       ../../home-manager/tmux
 
       ../../home-manager/niri
+      ../../home-manager/windowmaker
+
       ../../home-manager/swaybg
       ../../home-manager/wallpapers
       ../../home-manager/fuzzel
       ../../home-manager/fuzzel-password-manager
       ../../home-manager/foot
+      ../../home-manager/st
       ../../home-manager/waybar
       ../../home-manager/qutebrowser
 
