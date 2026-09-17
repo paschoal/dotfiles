@@ -10,6 +10,10 @@
           set fish_greeting
           fish_config theme choose "dracula"
           direnv hook fish | source
+          if status is-interactive
+          and not set -q TMUX
+            exec tmux
+          end
         '';
         functions = {
           fish_prompt = ''
