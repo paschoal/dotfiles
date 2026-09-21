@@ -16,6 +16,7 @@
     ../../nixos/graphical/niri
 
     ../../nixos/virtualisation/docker
+    ../../nixos/services/postgresql
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
