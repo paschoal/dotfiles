@@ -12,7 +12,6 @@
     ../../nixos/common
 
     ../../nixos/graphical/sddm
-    ../../nixos/graphical/windowmaker
     ../../nixos/graphical/niri
 
     ../../nixos/virtualisation/docker
