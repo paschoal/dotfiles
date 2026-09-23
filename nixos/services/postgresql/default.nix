@@ -9,4 +9,8 @@
       host    all all 0.0.0.0/0  trust
     '';
   };
+
+  environment.systemPackages = with pkgs; [
+    postgresql.pg_config
+  ];
 }
