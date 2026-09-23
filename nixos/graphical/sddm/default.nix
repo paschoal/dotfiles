@@ -12,12 +12,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    (
-      where-is-my-sddm-theme.override {
-        themeConfig.General = {
-          showSessionsByDefault = "true";
-        };
-      }
-    )
+    where-is-my-sddm-theme
   ];
 }
