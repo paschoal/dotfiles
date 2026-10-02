@@ -45,6 +45,7 @@
           p.passwd
           p.proto
           p.python
+          p.qmljs
           p.ruby
           p.rbs
           p.rust
