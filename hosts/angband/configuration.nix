@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   common.localization = "America/Sao_Paulo";
@@ -43,6 +43,13 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
+  ];
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "nvidia-x11"
+    "nvidia-settings"
+    "nvidia-kernel-modules"
+    "nvidia-persistenced"
   ];
 
   system.stateVersion = "26.05";
