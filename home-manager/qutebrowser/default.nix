@@ -78,11 +78,10 @@ in {
           config.set("downloads.remove_finished", 3000)
 
           config.set("url.searchengines", {
-            "DEFAULT": "https://duckduckgo.com/search?q={}",
-            "!q": "https://google.ca/search?hl=eng&udm=14&q={}",
-            "!r": "https://redlib.paschoal.me/r/{}",
+            "DEFAULT": "https://google.ca/search?hl=eng&udm=14&q={}",
+            "!d": "https://duckduckgo.com/search?q={}",
           })
-          config.set("url.start_pages", "https://heimdall.paschoal.me")
+          config.set("url.start_pages", "https://google.ca/")
 
           #
           # too many crashes, is this an work-around?
