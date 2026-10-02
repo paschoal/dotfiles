@@ -27,7 +27,7 @@
     "niri/config.kdl" = {
       enable = true;
       text = ''
-        spawn-at-startup "waybar"
+        spawn-sh-at-startup "QSG_RHI_BACKEND=vulkan quickshell --config main"
 
         output "${config.niri-config.video.display}" {
           mode "${config.niri-config.video.resolution}"
