@@ -23,13 +23,13 @@
       ../../home-manager/tmux
 
       ../../home-manager/niri
+      ../../home-manager/quickshell-niri
 
       ../../home-manager/swaybg
       ../../home-manager/wallpapers
       ../../home-manager/fuzzel
       ../../home-manager/fuzzel-password-manager
       ../../home-manager/foot
-      ../../home-manager/waybar
       ../../home-manager/qutebrowser
 
       ../../home-manager/development
