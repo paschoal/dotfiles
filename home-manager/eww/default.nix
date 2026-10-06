@@ -19,6 +19,11 @@ in {
         type = lib.types.bool;
         description = "Enable eww configuration";
       };
+      daemon-systemd = lib.mkOption {
+        default = false;
+        type = lib.types.bool;
+        description = "Enable systemd daemon";
+      };
       width = lib.mkOption {
         default = 1900;
         type = lib.types.numbers.positive;
@@ -69,10 +74,26 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [ eww jq ];
 
+    systemd.user.services.eww-daemon = lib.mkIf cfg.daemon-systemd {
+      Unit = {
+        Description = "Eww Daemon";
+        PartOf = [ "graphical-session.target" ];
+        After = [ "graphical-session.target" ];
+        Requisite = [ "graphical-session.target" ];
+      };
+      Service = {
+        ExecStart = "${pkgs.eww}/bin/eww daemon --no-daemonize";
+        Restart = "on-failure";
+      };
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
+    };
+
     xdg.configFile = {
       "eww/eww.scss".text = ''
         *{ all: unset; };
-        $font: 'Monoisome';
+        $font: 'Iosevka Nerd Font Mono';
         $font-size: 16px;
         $background: #1A1B2C;
         $foreground: #A9B1D6;
