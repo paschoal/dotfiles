@@ -16,6 +16,19 @@
 
     qutebrowser-config.small-screen = true;
 
+    eww = {
+      enable = true;
+      daemon-systemd = true;
+      modules = {
+        battery = true;
+        wireplumber = true;
+        clock = true;
+        date = true;
+      };
+      left = [ "battery" "wireplumber" ];
+      right = [ "date" "clock" ];
+    };
+
     imports = [
       ../../home-manager/git
       ../../home-manager/fish
@@ -23,6 +36,7 @@
       ../../home-manager/tmux
 
       ../../home-manager/niri
+      ../../home-manager/eww
 
       ../../home-manager/swaybg
       ../../home-manager/wallpapers
