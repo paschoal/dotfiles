@@ -23,7 +23,6 @@
       ../../home-manager/tmux
 
       ../../home-manager/niri
-      ../../home-manager/quickshell-niri
 
       ../../home-manager/swaybg
       ../../home-manager/wallpapers
@@ -31,6 +30,7 @@
       ../../home-manager/fuzzel-password-manager
       ../../home-manager/foot
       ../../home-manager/qutebrowser
+      ../../home-manager/nomacs
 
       ../../home-manager/development
     ];
