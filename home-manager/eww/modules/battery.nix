@@ -17,10 +17,9 @@
         (box
           :class 'battery'
           (label :class 'icon' :text '')
-          (circular-progress
-            :start_at 0
-            :thickness 4
-            :value {power}
+          (box
+            (label :text {power})
+            (label :text '%')
           )
         )
       )
