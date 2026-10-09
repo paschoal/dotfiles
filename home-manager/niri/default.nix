@@ -2,7 +2,7 @@
 
 {
   options = {
-    niri-config = {
+    niri = {
       video = {
         resolution = lib.mkOption {
           default = "1920x1080@60";
@@ -21,14 +21,25 @@
           type = lib.types.str;
         };
       };
+
+      status-bar = {
+        launch = lib.mkOption {
+          default = "";
+          type = lib.types.str;
+          description = "Status bar launch command";
+        };
+      };
     };
   };
+
   config.xdg.configFile = {
     "niri/config.kdl" = {
       enable = true;
       text = ''
-        output "${config.niri-config.video.display}" {
-          mode "${config.niri-config.video.resolution}"
+        spawn-sh-at-startup "${config.niri.status-bar.launch}"
+
+        output "${config.niri.video.display}" {
+          mode "${config.niri.video.resolution}"
         }
 
         input {
@@ -64,7 +75,7 @@
 
         prefer-no-csd
 
-        screenshot-path "${config.niri-config.screenshot.path}"
+        screenshot-path "${config.niri.screenshot.path}"
 
         hotkey-overlay {
           skip-at-startup

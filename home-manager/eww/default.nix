@@ -19,21 +19,25 @@ in {
         type = lib.types.bool;
         description = "Enable eww configuration";
       };
+
       daemon-systemd = lib.mkOption {
         default = false;
         type = lib.types.bool;
         description = "Enable systemd daemon";
       };
+
       width = lib.mkOption {
         default = 1900;
         type = lib.types.numbers.positive;
         description = "Width in pixels of the main bar";
       };
+
       height = lib.mkOption {
         default = 30;
         type = lib.types.numbers.positive;
         description = "Height in pixels of the main bar";
       };
+
       modules = {
         battery = lib.mkOption { default = false; type = lib.types.bool; };
         bspwm = lib.mkOption { default = false; type = lib.types.bool; };
@@ -43,20 +47,29 @@ in {
         wifi = lib.mkOption { default = false; type = lib.types.bool; };
         wireplumber = lib.mkOption { default = false; type = lib.types.bool; };
       };
+
       left = lib.mkOption {
         default = [];
         type = lib.types.listOf mod;
         description = "List of modules to be displayed in left panel";
       };
+
       center = lib.mkOption {
         default = [];
         type = lib.types.listOf mod;
         description = "List of modules to be displayed in center panel";
       };
+
       right = lib.mkOption {
         default = [];
         type = lib.types.listOf mod;
         description = "List of modules to be displayed in right panel";
+      };
+
+      launch = lib.mkOption {
+        default = "${pkgs.eww}/bin/eww open bar";
+        type = lib.types.str;
+        description = "Launch command to be used";
       };
     };
   };

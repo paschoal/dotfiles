@@ -5,7 +5,27 @@
     <home-manager/nixos>
   ];
 
-  home-manager.users.paschoal = { pkgs, ... }: {
+  home-manager.users.paschoal = { config, pkgs, ... }: {
+    imports = [
+      ../../home-manager/git
+      ../../home-manager/fish
+      ../../home-manager/nvim
+      ../../home-manager/tmux
+
+      ../../home-manager/eww
+      ../../home-manager/niri
+
+      ../../home-manager/swaybg
+      ../../home-manager/wallpapers
+      ../../home-manager/fuzzel
+      ../../home-manager/fuzzel-password-manager
+      ../../home-manager/foot
+      ../../home-manager/qutebrowser
+      ../../home-manager/nomacs
+
+      ../../home-manager/development
+    ];
+
     wallpaper.image = "/home/paschoal/.wallpaper/landscape.jpg";
 
     development = {
@@ -29,25 +49,9 @@
       right = [ "date" "clock" ];
     };
 
-    imports = [
-      ../../home-manager/git
-      ../../home-manager/fish
-      ../../home-manager/nvim
-      ../../home-manager/tmux
-
-      ../../home-manager/niri
-      ../../home-manager/eww
-
-      ../../home-manager/swaybg
-      ../../home-manager/wallpapers
-      ../../home-manager/fuzzel
-      ../../home-manager/fuzzel-password-manager
-      ../../home-manager/foot
-      ../../home-manager/qutebrowser
-      ../../home-manager/nomacs
-
-      ../../home-manager/development
-    ];
+    niri = {
+      status-bar.launch = config.eww.launch;
+    };
 
     nixpkgs.config = {
       allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
